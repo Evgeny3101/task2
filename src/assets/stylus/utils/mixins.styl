@@ -1,0 +1,21 @@
+//  for containers
+container(aligh = space-between, flex-wrap = wrap, al-items = center)
+  display: flex
+  justify-content: aligh
+  flex-wrap: flex-wrap
+  align-items: al-items
+
+
+//  px to rem  (size, pagging...)
+rem(pixels, context = mainFontSize)
+  1rem * pixels / context
+
+
+// colors
+fade-out(amount = 0.75, color = primary-color)
+  valye = 1 - amount
+  color - rgba(0,0,0,valye)
+
+
+
+
