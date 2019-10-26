@@ -2,6 +2,8 @@ include ../assets/pug/bemto/bemto
 
 // modules
 include ../modules/head/head
+include ../modules/logo/logo
+include ../modules/text-field/text-field
 
 
 
@@ -10,9 +12,6 @@ include ../modules/head/head
 doctype html
 head
   block head
-    +head({
-      "title": "Toxin"
-    })
 
 body.page
   block content

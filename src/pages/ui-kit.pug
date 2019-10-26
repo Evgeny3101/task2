@@ -2,13 +2,66 @@ extends ../layout/supporting.pug
 
 //- modules
 
+
+
 block head
   +head({
     "title": "Toxin - UI Kit"
   })
 
 block content
+  +b.ui-kit
+    +e.page1
+      +logo()
+      +b.ui-kit-page1.wrapper
+        +e.container-colors
+          mixin color-demo(title, hex, mod)
+            +b.color-demo
+              +e.demo(class=mod)
+              +e.text
+                +e.title= title
+                +e.hex= hex
+          +color-demo("Dark Shade 100%", "#1F2041")
+          +color-demo("Dark Shade 75%", "#1F2041", "_fade075")
+          +color-demo("Dark Shade 50%", "#1F2041", "_fade05")
+          +color-demo("Dark Shade 25%", "#1F2041", "_fade025")
+          +color-demo("Dark Shade 5%", "#1F2041", "_fade005")
+          +color-demo("Purple", "#BC9CFF", "_regular")
+          +color-demo("Green", "#6FCF97", "_second")
 
+        +e.container-titles
+
+          +b.title-demo
+            +e.container
+              +e.demo-h1 H1
+            H1.title This one is the sub-section or widget title
+
+            +e.container
+              +e.demo-h2 H2
+            H2.title Next one is the item title inside widgets
+
+            +e.container
+              +e.demo-h3 H3
+            H3.title This is a label or CTA text
+
+            +e.container
+              +e.demo-body body
+            +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+
+    +e.page2
+      +logo()
+      +b.ui-kit-page2.wrapper
+        mixin module-title(title, comment)
+          +b.module-title
+            +e.H3.title.title= title
+            +e.comment= comment
+
+        div
+          +e.column1
+            +e.pb
+              +module-title("Text Field", "Default")
+              +e.block-wrapper
+                +text-field("text", "Email")
 
 
 

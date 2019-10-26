@@ -4,8 +4,9 @@
 @require "../assets/stylus/utils/vars.styl"
 @require "../assets/stylus/utils/mixins.styl"
 
-
-
+// modules
+@require "../modules/logo/logo"
+@require "../modules/text-field/text-field"
 
 //  Common styles
 html
@@ -28,6 +29,27 @@ body
   font-family: mainFont
   font-size: 14px
   color fade-out()
+
+h1, h2, h3
+  font-weight: bold
+  color fade-out(0)
+
+h1
+  font-family: secondFont
+  font-size: 24px
+  line-height: 30px
+  letter-spacing -0.017em
+
+h2
+  font-family: secondFont
+  font-size: 19px
+  line-height: 24px
+  letter-spacing: -0.4px
+
+h3
+  font-family: mainFont
+  text-transform: uppercase
+  font-size: 12px
 
 
 

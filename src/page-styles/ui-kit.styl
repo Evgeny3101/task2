@@ -2,9 +2,119 @@
 
 
 
+.ui-kit
+  &__page1
+    background default-color
+    margin: 50px 0
+  & .logo
+    width 60px
+    height 60px
+    padding: 30px 0 0 30px
+    &__icon
+      width 48px
+      height 48px
+    &__title
+      display none
+//
+// page1
+//
+.ui-kit-page1
+  height 840px
+  padding: 85px 10px 0
+  display flex
+
+  &__container-colors,
+  &__container-titles
+    display flex
+    flex-direction: column
+
+  &__container-colors
+    width 693px
+
+  //
+
+  .color-demo
+    display flex
+    margin-bottom 20px
+
+    &__text
+      padding-top: 9px
+      width 160px
+
+    &__title
+      line-height: 24px
+      font-family: secondFont
+      font-size: 19px
+      font-weight: bold
+      color fade-out(0)
+      letter-spacing: -0.4px
+
+    &__hex
+      padding-top: 6px
+      font-size: 19px
+      letter-spacing: -0.5px
+
+    &__demo
+      height 70px
+      width 70px
+      border-radius: 6px
+      background: fade-out(0)
+      margin-right: 40px
+
+      &_fade075
+        background: fade-out()
+
+      &_fade05
+        background: fade-out(0.5)
+
+      &_fade025
+        background: fade-out(0.25)
+
+      &_fade005
+        background: fade-out(0.05)
+
+      &_regular
+        background: fade-out(0, regular-color)
+
+      &_second
+        background: fade-out(0, secondary-color)
+
+  //
+
+  .title-demo
+    width 410px
+    display grid
+    grid-template-columns: 40px auto
+    grid-gap: 50px 30px
+    font-weight: normal
+    color fade-out(0.25)
 
 
+    &__container
+      width 40px
+      text-align: right
+      margin-right: 20px
 
+    &__demo-h1
+      font-size: 24px
+      line-height: 29px
+
+    &__demo-h2
+      font-size: 19px
+      line-height: 23px
+
+    &__demo-h3
+      font-size: 12px
+      line-height: 15px
+
+    &__body
+      margin-top: -3px
+      width 302px
+      line-height: 24px
+      color fade-out()
+//
+// page 2
+//
 
 
 
