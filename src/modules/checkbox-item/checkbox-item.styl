@@ -1,0 +1,33 @@
+.checkbox-item
+  cursor pointer
+  display: grid
+  grid-template-columns: 20px auto
+  grid-gap: 10px
+  &__input
+    display none
+    &:checked ~ .checkbox-item__box
+      border: 1px solid regular-color
+      &:after
+        border-right: 2px solid regular-color
+        border-bottom: 2px solid regular-color
+  &__box
+    position relative
+    display block
+    width 20px
+    height 20px
+    border: 1px solid fade-out(, 0.25)
+    border-radius: 4px
+    margin-right: 10px
+    &:after
+      content: ''
+      position absolute
+      width 6px
+      height 8px
+      top 4px
+      left 6px
+      transform: rotate(45deg)
+  &__text
+    margin-top 1px
+    line-height: 18px
+    font-style 14px
+    color fade-out(, 0.5)

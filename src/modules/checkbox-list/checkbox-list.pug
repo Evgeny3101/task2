@@ -1,0 +1,25 @@
+include ../checkbox-item/checkbox-item
+
+mixin checkbox-list(title)
+  +b.checkbox-list
+    +e.BUTTON.btn
+      +e.H3.title= title
+      +e.I.icon-up.material-icons keyboard_arrow_up
+      +e.I.icon-down.material-icons keyboard_arrow_down
+    +e.menu
+      +e.checkbox-item
+        +checkbox-item("Завтрак")
+      +e.checkbox-item
+        +checkbox-item("Письменный стол", "checked")
+      +e.checkbox-item
+        +checkbox-item("Стул для кормления", "checked")
+      +e.checkbox-item
+        +checkbox-item("Кроватка", "checked")
+      +e.checkbox-item
+        +checkbox-item("Телевизор")
+      +e.checkbox-item
+        +checkbox-item("Шампунь")
+      +e.checkbox-item
+        +checkbox-item("Телевизор")
+      +e.checkbox-item
+        +checkbox-item("Шампунь")

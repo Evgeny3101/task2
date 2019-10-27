@@ -1,0 +1,5 @@
+mixin checkbox-item(text, checked)
+  +b.LABEL.checkbox-item
+    +e.INPUT.input(type='checkbox', checked=checked)&attributes(attributes)
+    +e.box
+    +e.text= text

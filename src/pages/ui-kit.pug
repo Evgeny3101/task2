@@ -53,19 +53,135 @@ block content
       +b.ui-kit-page2.wrapper
         mixin module-title(title, comment)
           +b.module-title
-            +e.H3.title.title= title
-            +e.comment= comment
+            +e.H3.title= title
+            if (comment)
+              +e.comment= comment
 
         div
           +e.column1
-            +e.pb
+            +e.mod_pb21
               +module-title("Text Field", "Default")
               +e.block-wrapper
                 +text-field("text", "Email")
 
+            +e.mod_pb20
+              +module-title("Text Field", "Hover / Focus")
+              +e.block-wrapper
+                +text-field("text", "Email", "This is pretty awesome")._checked
+
+            +e.mod_pb22
+              +module-title("Dropdown", "Default")
+              +e.block-wrapper
+                +dropdown({
+                  "type" : "text",
+                  "place": "Сколько гостей",
+                  "icon" : "keyboard_arrow_down"
+                })
+
+            +e.mod_pb41
+              +module-title("masked text field", "Default")
+              +e.block-wrapper
+                +text-field("text", "ДД.ММ.ГГГГ")
+
+            +e.mod_pb40
+              +e.container-date-dropdown
+                +e.date-dropdown
+                  +module-title("date Dropdown")
+                  +e.block-wrapper
+                    +dropdown({
+                      "type" : "text",
+                      "place": "ДД.ММ.ГГГГ",
+                      "icon" : "keyboard_arrow_down"
+                    })
+
+                +e.date-dropdown
+                  +module-title("date Dropdown")
+                  +e.block-wrapper
+                    +dropdown({
+                      "type" : "text",
+                      "value": "19.08.2019",
+                      "icon" : "keyboard_arrow_down"
+                    })
+
+          +e.column10
+
+            +e.mod_pb41
+              +module-title("filter date dropdown")
+              +e.block-wrapper
+                +dropdown({
+                  "type" : "text",
+                  "value": "19 авг - 23 авг",
+                  "icon" : "keyboard_arrow_down"
+                })
+
+            +e.mod_pb100
+              +module-title("subscription text field")
+              +e.block-wrapper
+                +subscription({
+                  "type" : "email",
+                  "place": "Email",
+                  "icon" : "arrow_forward"
+                })
 
 
+            +e.mod_pb20
+              +module-title("dropdown", "default")
+              +e.block-wrapper
+                +b.dropdown-menu
+                  +dropdown({
+                    "type" : "text",
+                    "place": "2 спальни, 2 кровати...",
+                    "icon" : "keyboard_arrow_down"
+                  })
 
+            +e.mod_pb170
+              +module-title("dropdown", "expanded")
+              +e.block-wrapper
+                +dropdown-menu("2 спальни, 2 кровати...", {
+                  "count1": {
+                      "mod": "item1",
+                      "title": "спальни",
+                      "result": 2
+                    },
+                  "count2": {
+                      "mod": "item2",
+                      "title": "кровати",
+                      "result": 2
+                    },
+                  "count3": {
+                      "mod"      : "item3",
+                      "title"    : "ванные комнаты",
+                      "result"   : 0,
+                      "deactive" : "btn-deactive"
+                    }
+                  }).count-active
+
+            +e.mod_pb50
+              +b.checkbox-list1
+                +e.BUTTON.btn
+                  +e.H3.title expandable checkbox list
+                  +e.I.icon-down.material-icons keyboard_arrow_down
+
+            +e.mod_pb10
+              +checkbox-list("expandable checkbox list")
+
+            +e.mod_pb21
+
+              +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+
+              +item-info("location_city", "Удобство", "Окно в каждой из спален")
+
+        div
+          +e.column2
+            +e.mod_pb17
+              +module-title("Checkbox Buttons")
+            +e.mod_pb20
+              +e.checkbox-item
+                +checkbox-item("Можно курить")
+              +e.checkbox-item
+                +checkbox-item("Можно с питомцами", "checked")
+              +e.checkbox-item
+                +checkbox-item("Можно пригласить гостей (до 10 человек)", "checked")
 
 
 

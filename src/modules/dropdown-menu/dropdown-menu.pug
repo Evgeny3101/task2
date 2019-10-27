@@ -1,0 +1,33 @@
+include ../dropdown/dropdown
+
+mixin dropdown-menu(place, data)
+  +b.dropdown-menu&attributes(attributes)
+    +dropdown({
+      "type" : "text",
+      "place": place,
+      "icon" : "keyboard_arrow_down"
+    })
+
+    +b.dropdown-menu-count
+      +e.wrapper
+
+        mixin item-count(mod, title, result, deactive)
+          +b.item-count(class=mod)
+            +e.title= title
+            +e.container-btn
+              +e.minus-btn(class=deactive) -
+              +e.result= result
+              +e.plus-btn +
+
+        +e.container
+          +item-count(data.count1.mod, data.count1.title, data.count1.result, data.count1.deactive)
+        +e.container
+          +item-count(data.count2.mod, data.count2.title, data.count2.result, data.count2.deactive)
+        +e.container
+          +item-count(data.count3.mod, data.count3.title, data.count3.result, data.count3.deactive)
+
+        +e.container-btn
+          div
+            +b.btn._fade05.clear очистить
+          div
+            +b.btn._blue.apply применить
