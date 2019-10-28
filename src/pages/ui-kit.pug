@@ -59,17 +59,17 @@ block content
 
         div
           +e.column1
-            +e.mod_pb21
+            +e.container-pb21
               +module-title("Text Field", "Default")
               +e.block-wrapper
                 +text-field("text", "Email")
 
-            +e.mod_pb20
+            +e.container-pb20
               +module-title("Text Field", "Hover / Focus")
               +e.block-wrapper
                 +text-field("text", "Email", "This is pretty awesome")._checked
 
-            +e.mod_pb22
+            +e.container-pb22
               +module-title("Dropdown", "Default")
               +e.block-wrapper
                 +dropdown({
@@ -78,12 +78,12 @@ block content
                   "icon" : "keyboard_arrow_down"
                 })
 
-            +e.mod_pb41
+            +e.container-pb41
               +module-title("masked text field", "Default")
               +e.block-wrapper
                 +text-field("text", "ДД.ММ.ГГГГ")
 
-            +e.mod_pb40
+            +e.container-pb40
               +e.container-date-dropdown
                 +e.date-dropdown
                   +module-title("date Dropdown")
@@ -105,7 +105,7 @@ block content
 
           +e.column10
 
-            +e.mod_pb41
+            +e.container-pb41
               +module-title("filter date dropdown")
               +e.block-wrapper
                 +dropdown({
@@ -114,7 +114,7 @@ block content
                   "icon" : "keyboard_arrow_down"
                 })
 
-            +e.mod_pb100
+            +e.container-pb100
               +module-title("subscription text field")
               +e.block-wrapper
                 +subscription({
@@ -124,7 +124,7 @@ block content
                 })
 
 
-            +e.mod_pb20
+            +e.container-pb20
               +module-title("dropdown", "default")
               +e.block-wrapper
                 +b.dropdown-menu
@@ -134,7 +134,7 @@ block content
                     "icon" : "keyboard_arrow_down"
                   })
 
-            +e.mod_pb170
+            +e.container-pb170
               +module-title("dropdown", "expanded")
               +e.block-wrapper
                 +dropdown-menu("2 спальни, 2 кровати...", {
@@ -156,16 +156,16 @@ block content
                     }
                   }).count-active
 
-            +e.mod_pb50
+            +e.container-pb50
               +b.checkbox-list1
                 +e.BUTTON.btn
                   +e.H3.title expandable checkbox list
                   +e.I.icon-down.material-icons keyboard_arrow_down
 
-            +e.mod_pb10
+            +e.container-pb10
               +checkbox-list("expandable checkbox list")
 
-            +e.mod_pb21
+            +e.container-pb21
 
               +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
 
@@ -173,9 +173,11 @@ block content
 
         div
           +e.column2
-            +e.mod_pb17
+
+            //-  Checkbox Buttons
+            +e.container-pb17
               +module-title("Checkbox Buttons")
-            +e.mod_pb20
+            +e.container-pb31
               +e.checkbox-item
                 +checkbox-item("Можно курить")
               +e.checkbox-item
@@ -183,6 +185,34 @@ block content
               +e.checkbox-item
                 +checkbox-item("Можно пригласить гостей (до 10 человек)", "checked")
 
+            //-  Radio Buttons
+            +e.container-pb17
+              +module-title("Radio Buttons")
+            +e.container-pb35
+              +radio-buttons()
+
+            //-  Toggle
+            +e.container-pb17
+              +module-title("Toggle")
+            +e.container-pb16
+              +toggle("Получать спецпредложения", "checked")
+            +e.container-pb45
+              +toggle("Получать спецпредложения")
+
+            //-  Like button
+            +e.container-pb16
+              +module-title("Like button")
+            +e.container-pb40
+              +e.container-like-buttons
+                +like-button("2")
+                +like-button("12", "_checked")
+
+            //-  Rate button
+            +e.container-pb16
+              +module-title("rate button")
+            +e.container-rate-button
+              +rate-button("4")
+              +rate-button("5")
 
 
 

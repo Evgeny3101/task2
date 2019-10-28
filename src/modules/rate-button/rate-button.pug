@@ -1,0 +1,7 @@
+mixin rate-button(stars)
+
+  +b.rate-button
+    - for (var n = 0; n < stars; n++)
+      +e.I.icon.material-icons star
+    - for (var n = 0; n < (5-stars); n++)
+      +e.I.icon.material-icons star_border
