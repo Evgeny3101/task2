@@ -103,7 +103,7 @@ block content
                       "icon" : "keyboard_arrow_down"
                     })
 
-          +e.column10
+          +e.column4
 
             +e.container-pb41
               +module-title("filter date dropdown")
@@ -181,9 +181,9 @@ block content
               +e.checkbox-item
                 +checkbox-item("Можно курить")
               +e.checkbox-item
-                +checkbox-item("Можно с питомцами", "checked")
+                +checkbox-item("Можно с питомцами")(checked)
               +e.checkbox-item
-                +checkbox-item("Можно пригласить гостей (до 10 человек)", "checked")
+                +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
 
             //-  Radio Buttons
             +e.container-pb17
@@ -195,7 +195,7 @@ block content
             +e.container-pb17
               +module-title("Toggle")
             +e.container-pb16
-              +toggle("Получать спецпредложения", "checked")
+              +toggle("Получать спецпредложения")(checked)
             +e.container-pb45
               +toggle("Получать спецпредложения")
 
@@ -205,16 +205,70 @@ block content
             +e.container-pb40
               +e.container-like-buttons
                 +like-button("2")
-                +like-button("12", "_checked")
+                +like-button("12")(checked)
 
             //-  Rate button
             +e.container-pb16
               +module-title("rate button")
-            +e.container-rate-button
-              +rate-button("4")
-              +rate-button("5")
+            +e.container-pb170
+              +e.container-rate-button
+                +rate-button("4")
+                +rate-button("5")
+
+            //-  Dropdown, guest count
+            +e.container-pb170
+              +module-title("dropdown", "expanded")
+              +e.block-wrapper
+                +dropdown-menu("Сколько гостей", {
+                  "count1": {
+                      "mod"      : "guest1",
+                      "title"    : "взрослые",
+                      "result"   : 0,
+                      "deactive" : "btn-deactive"
+                    },
+                  "count2": {
+                      "mod"      : "guest2",
+                      "title"    : "дети",
+                      "result"   : 0,
+                      "deactive" : "btn-deactive"
+                    },
+                  "count3": {
+                      "mod"      : "guest3",
+                      "title"    : "младенцы",
+                      "result"   : 0,
+                      "deactive" : "btn-deactive"
+                    }
+                  }).count-active
 
 
+        div
+          +e.column3
+            //-  Range Slider
+            +e.container-pb44
+              +e.container-range-slider
+                +range-slider("Range Slider", "5 000₽ - 10 000₽")
+
+
+            //-  Buttons
+            +e.container-pb15
+              +module-title("Buttons")
+            +e.container-pb40
+              +b.button-ui-kit
+                +e.container
+                  +e.wrapper
+                    +b.A(href="#").button._transparent CLICK ME
+                  +e.wrapper
+                    +b.A(href="#").button._transparent.active CLICK ME
+                  +e.wrapper
+                    +b.A(href="#").button._regular CLICK ME
+                  +e.wrapper
+                    +b.A(href="#").button._regular.active CLICK ME
+                +e.wrapper-two-item
+                  +b.A(href="#").button._fade05 CLICK ME
+                  +b.A(href="#").button._blue CLICK ME
+                +e.wrapper-to-pay
+                  +b.BUTTON.button._regular._rel перейти к оплате
+                    +e.I.icon.material-icons arrow_forward
 
 
 
