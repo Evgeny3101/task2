@@ -56,7 +56,6 @@ block content
             +e.H3.title= title
             if (comment)
               +e.comment= comment
-
         div
           +e.column1
             +e.container-pb21
@@ -85,7 +84,7 @@ block content
 
             +e.container-pb40
               +e.container-date-dropdown
-                +e.date-dropdown
+                div
                   +module-title("date Dropdown")
                   +e.block-wrapper
                     +dropdown({
@@ -94,7 +93,7 @@ block content
                       "icon" : "keyboard_arrow_down"
                     })
 
-                +e.date-dropdown
+                div
                   +module-title("date Dropdown")
                   +e.block-wrapper
                     +dropdown({
@@ -103,26 +102,26 @@ block content
                       "icon" : "keyboard_arrow_down"
                     })
 
-          +e.column4
+            +e.column1_2
+              +e.container-pb41
+                +module-title("filter date dropdown")
+                +e.block-wrapper
+                  +dropdown({
+                    "type" : "text",
+                    "value": "19 авг - 23 авг",
+                    "icon" : "keyboard_arrow_down"
+                  })
 
-            +e.container-pb41
-              +module-title("filter date dropdown")
-              +e.block-wrapper
-                +dropdown({
-                  "type" : "text",
-                  "value": "19 авг - 23 авг",
-                  "icon" : "keyboard_arrow_down"
-                })
+              +e.container-pb100
+                +module-title("subscription text field")
+                +e.block-wrapper
+                  +subscription({
+                    "type" : "email",
+                    "place": "Email",
+                    "icon" : "arrow_forward"
+                  })
 
-            +e.container-pb100
-              +module-title("subscription text field")
-              +e.block-wrapper
-                +subscription({
-                  "type" : "email",
-                  "place": "Email",
-                  "icon" : "arrow_forward"
-                })
-
+          +e.column1_2
 
             +e.container-pb20
               +module-title("dropdown", "default")
@@ -156,7 +155,7 @@ block content
                     }
                   }).count-active
 
-            +e.container-pb50
+            +e.container-pb48
               +b.checkbox-list1
                 +e.BUTTON.btn
                   +e.H3.title expandable checkbox list
@@ -171,7 +170,8 @@ block content
 
               +item-info("location_city", "Удобство", "Окно в каждой из спален")
 
-        div
+        +e.column2-3
+
           +e.column2
 
             //-  Checkbox Buttons
@@ -204,44 +204,18 @@ block content
               +module-title("Like button")
             +e.container-pb40
               +e.container-like-buttons
-                +like-button("2")
-                +like-button("12")(checked)
+                +like-button(2)
+                +like-button(12, 'checked')
 
             //-  Rate button
             +e.container-pb16
               +module-title("rate button")
-            +e.container-pb170
+            +e.container-pb17
               +e.container-rate-button
                 +rate-button("4")
                 +rate-button("5")
 
-            //-  Dropdown, guest count
-            +e.container-pb170
-              +module-title("dropdown", "expanded")
-              +e.block-wrapper
-                +dropdown-menu("Сколько гостей", {
-                  "count1": {
-                      "mod"      : "guest1",
-                      "title"    : "взрослые",
-                      "result"   : 0,
-                      "deactive" : "btn-deactive"
-                    },
-                  "count2": {
-                      "mod"      : "guest2",
-                      "title"    : "дети",
-                      "result"   : 0,
-                      "deactive" : "btn-deactive"
-                    },
-                  "count3": {
-                      "mod"      : "guest3",
-                      "title"    : "младенцы",
-                      "result"   : 0,
-                      "deactive" : "btn-deactive"
-                    }
-                  }).count-active
 
-
-        div
           +e.column3
             //-  Range Slider
             +e.container-pb44
@@ -254,25 +228,106 @@ block content
               +module-title("Buttons")
             +e.container-pb40
               +b.button-ui-kit
-                +e.container
-                  +e.wrapper
-                    +b.A(href="#").button._transparent CLICK ME
-                  +e.wrapper
-                    +b.A(href="#").button._transparent.active CLICK ME
-                  +e.wrapper
-                    +b.A(href="#").button._regular CLICK ME
-                  +e.wrapper
-                    +b.A(href="#").button._regular.active CLICK ME
-                +e.wrapper-two-item
-                  +b.A(href="#").button._fade05 CLICK ME
-                  +b.A(href="#").button._blue CLICK ME
-                +e.wrapper-to-pay
-                  +b.BUTTON.button._regular._rel перейти к оплате
-                    +e.I.icon.material-icons arrow_forward
+                  +e.container
+                    +e.wrapper
+                      +b.A(href="#").button._transparent CLICK ME
+                    +e.wrapper
+                      +b.A(href="#").button._transparent.active CLICK ME
+                    +e.wrapper
+                      +b.A(href="#").button._regular CLICK ME
+                    +e.wrapper
+                      +b.A(href="#").button._regular.active CLICK ME
+                  +e.wrapper-two-item
+                    +b.A(href="#").button._fade05 CLICK ME
+                    +b.A(href="#").button._blue CLICK ME
+                  +e.wrapper-to-pay
+                    +b.BUTTON.button._regular._rel перейти к оплате
+                      +e.I.icon.material-icons arrow_forward
+
+            //-  Pagination
+            +e.container-pb17
+              +module-title("pagination")
+            +e.container-pb17
+              +pagination()
 
 
+          +e.column4
+
+            //-  Dropdown, guest count
+            +e.container-pb256
+              +module-title("dropdown")
+              +e.block-wrapper
+                +dropdown-menu("Сколько гостей", {
+                    "count1": {
+                        "mod"      : "guest1",
+                        "title"    : "взрослые",
+                        "result"   : 0,
+                        "deactive" : "btn-deactive"
+                      },
+                    "count2": {
+                        "mod"      : "guest2",
+                        "title"    : "дети",
+                        "result"   : 0,
+                        "deactive" : "btn-deactive"
+                      },
+                    "count3": {
+                        "mod"      : "guest3",
+                        "title"    : "младенцы",
+                        "result"   : 0,
+                        "deactive" : "btn-deactive"
+                      }
+                    }).count-active
+
+            //-  Rich Checkbox Buttons
+            +e.container-pb17
+              +module-title("Rich Checkbox Buttons")
+            +e.container-pb31
+              +e.rich-checkbox-item1
+                +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+              +e.rich-checkbox-item2
+                +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
 
 
+          +e.column5
 
+            //-  Dropdown, guest count
+            +e.container-pb256
+              +module-title("dropdown")
+              +e.block-wrapper
+                +dropdown-menu("3 гостя", {
+                    "count1": {
+                        "mod"      : "guest1",
+                        "title"    : "взрослые",
+                        "result"   : 2
+                      },
+                    "count2": {
+                        "mod"      : "guest2",
+                        "title"    : "дети",
+                        "result"   : 1
+                      },
+                    "count3": {
+                        "mod"      : "guest3",
+                        "title"    : "младенцы",
+                        "result"   : 0,
+                        "deactive" : "btn-deactive"
+                      }
+                    }).count-active
+
+            //-  Bullet list
+            +e.container-pb13
+              +module-title("Bullet list")
+
+            +bullet-list()
+
+
+          +e.container-reviews
+            +reviews(
+              '../assets/img/user-img/image1.jpg',
+              'Мурад Сарафанов',
+              '5 дней назад',
+              'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              12,
+              'checked'
+              )
 
 

@@ -1,0 +1,9 @@
+mixin reviews(img, name, date, text, number, checked)
+
+  +b.reviews
+    +e.img-container
+      +e.IMG.img= img
+    +e.name= name
+      +e.date= date
+    +like-button(number, checked)
+    +e.text= text
