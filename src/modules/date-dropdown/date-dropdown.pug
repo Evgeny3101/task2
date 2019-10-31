@@ -1,0 +1,20 @@
+mixin date-dropdown()
+
+  +b.date-dropdown
+    div
+      +e.H3.title прибытие
+
+      +dropdown({
+        "type" : "text",
+        "place": "ДД.ММ.ГГГГ",
+        "icon" : "keyboard_arrow_down"
+      })
+
+    div
+      +e.H3.title выезд
+
+      +dropdown({
+        "type" : "text",
+        "value": "ДД.ММ.ГГГГ",
+        "icon" : "keyboard_arrow_down"
+      })

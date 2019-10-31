@@ -11,7 +11,7 @@ block head
 
 block content
   +b.ui-kit
-    +e.page1
+    +e.page
       +logo()
       +b.ui-kit-page1.wrapper
         +e.container-colors
@@ -48,7 +48,7 @@ block content
               +e.demo-body body
             +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
-    +e.page2
+    +e.page
       +logo()
       +b.ui-kit-page2.wrapper
         mixin module-title(title, comment)
@@ -59,101 +59,110 @@ block content
         div
           +e.column1
             +e.container-pb21
-              +module-title("Text Field", "Default")
-              +e.block-wrapper
-                +text-field("text", "Email")
+              +e.container-pb5
+                +module-title("Text Field", "Default")
+
+              +text-field("text", "Email")
 
             +e.container-pb20
-              +module-title("Text Field", "Hover / Focus")
-              +e.block-wrapper
-                +text-field("text", "Email", "This is pretty awesome")._checked
+              +e.container-pb5
+                +module-title("Text Field", "Hover / Focus")
+
+              +text-field("text", "Email", "This is pretty awesome")._checked
 
             +e.container-pb22
-              +module-title("Dropdown", "Default")
-              +e.block-wrapper
-                +dropdown({
-                  "type" : "text",
-                  "place": "Сколько гостей",
-                  "icon" : "keyboard_arrow_down"
-                })
+              +e.container-pb5
+                +module-title("Dropdown", "Default")
+
+              +dropdown({
+                "type" : "text",
+                "place": "Сколько гостей",
+                "icon" : "keyboard_arrow_down"
+              })
 
             +e.container-pb41
-              +module-title("masked text field", "Default")
-              +e.block-wrapper
-                +text-field("text", "ДД.ММ.ГГГГ")
+              +e.container-pb5
+                +module-title("masked text field", "Default")
+
+              +text-field("text", "ДД.ММ.ГГГГ")
 
             +e.container-pb40
               +e.container-date-dropdown
                 div
-                  +module-title("date Dropdown")
-                  +e.block-wrapper
-                    +dropdown({
-                      "type" : "text",
-                      "place": "ДД.ММ.ГГГГ",
-                      "icon" : "keyboard_arrow_down"
-                    })
+                  +e.container-pb5
+                    +module-title("date Dropdown")
 
-                div
-                  +module-title("date Dropdown")
-                  +e.block-wrapper
-                    +dropdown({
-                      "type" : "text",
-                      "value": "19.08.2019",
-                      "icon" : "keyboard_arrow_down"
-                    })
-
-            +e.column1_2
-              +e.container-pb41
-                +module-title("filter date dropdown")
-                +e.block-wrapper
                   +dropdown({
                     "type" : "text",
-                    "value": "19 авг - 23 авг",
+                    "place": "ДД.ММ.ГГГГ",
                     "icon" : "keyboard_arrow_down"
                   })
 
-              +e.container-pb100
-                +module-title("subscription text field")
-                +e.block-wrapper
-                  +subscription({
-                    "type" : "email",
-                    "place": "Email",
-                    "icon" : "arrow_forward"
+                div
+                  +e.container-pb5
+                    +module-title("date Dropdown")
+
+                  +dropdown({
+                    "type" : "text",
+                    "value": "19.08.2019",
+                    "icon" : "keyboard_arrow_down"
                   })
+
+            +e.column1_2
+              +e.container-pb41
+                +e.container-pb5
+                  +module-title("filter date dropdown")
+                +dropdown({
+                  "type" : "text",
+                  "value": "19 авг - 23 авг",
+                  "icon" : "keyboard_arrow_down"
+                })
+
+              +e.container-pb100
+                +e.container-pb5
+                  +module-title("subscription text field")
+
+                +subscription({
+                  "type" : "email",
+                  "place": "Email",
+                  "icon" : "arrow_forward"
+                })
 
           +e.column1_2
 
             +e.container-pb20
-              +module-title("dropdown", "default")
-              +e.block-wrapper
-                +b.dropdown-menu
-                  +dropdown({
-                    "type" : "text",
-                    "place": "2 спальни, 2 кровати...",
-                    "icon" : "keyboard_arrow_down"
-                  })
+              +e.container-pb5
+                +module-title("dropdown", "default")
+
+              +b.dropdown-menu
+                +dropdown({
+                  "type" : "text",
+                  "place": "2 спальни, 2 кровати...",
+                  "icon" : "keyboard_arrow_down"
+                })
 
             +e.container-pb170
-              +module-title("dropdown", "expanded")
-              +e.block-wrapper
-                +dropdown-menu("2 спальни, 2 кровати...", {
-                  "count1": {
-                      "mod": "item1",
-                      "title": "спальни",
-                      "result": 2
-                    },
-                  "count2": {
-                      "mod": "item2",
-                      "title": "кровати",
-                      "result": 2
-                    },
-                  "count3": {
-                      "mod"      : "item3",
-                      "title"    : "ванные комнаты",
-                      "result"   : 0,
-                      "deactive" : "btn-deactive"
-                    }
-                  }).count-active
+              +e.container-pb5
+                +module-title("dropdown", "expanded")
+
+              +dropdown-menu("2 спальни, 2 кровати...", {
+                "count1": {
+                    "mod": "item1",
+                    "title": "спальни",
+                    "result": 2
+                  },
+                "count2": {
+                    "mod": "item2",
+                    "title": "кровати",
+                    "result": 2
+                  },
+                "count3": {
+                    "mod"      : "item3",
+                    "title"    : "ванные комнаты",
+                    "result"   : 0,
+                    "deactive" : "btn-deactive"
+                  }
+                }).count-active
 
             +e.container-pb48
               +b.checkbox-list1
@@ -329,5 +338,13 @@ block content
               12,
               'checked'
               )
+
+    +e.page_bg-gray
+      +logo()
+      +b.ui-kit-page3.wrapper
+
+        +search-hotel()
+
+        +login-card()
 
 

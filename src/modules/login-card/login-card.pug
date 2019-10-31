@@ -1,0 +1,20 @@
+mixin login-card()
+
+  +b.FORM.login-card
+    +e.wrapper
+      +e.container-title
+        +b.H1.title Войти
+
+      +e.container
+        +text-field("email", "Email")
+      +e.container
+        +text-field("password", "Пароль")
+
+      +e.login-button
+        +b.BUTTON.button._regular._rel войти
+          +e.I.icon.material-icons arrow_forward
+
+      +e.container-create
+        +e.text Нет аккаунта на Toxin?
+        +e.button-create
+          +b.A.button._transparent(href="registration.html") создать

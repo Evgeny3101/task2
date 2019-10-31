@@ -1,0 +1,22 @@
+mixin search-hotel()
+
+  +b.FORM.search-hotel
+    +e.wrapper
+      +e.title
+        +b.H1.title Найдём номера под ваши пожелания
+
+
+      +date-dropdown()
+
+      div
+        +e.H3.title-guest гости
+
+        +dropdown({
+          "type" : "text",
+          "place": "Сколько гостей",
+          "icon" : "keyboard_arrow_down"
+        })
+
+      +e.button
+        +b.BUTTON.button._regular._rel Подобрать номер
+          +e.I.icon.material-icons arrow_forward
