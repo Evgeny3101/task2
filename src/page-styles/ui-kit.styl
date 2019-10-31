@@ -312,14 +312,19 @@
 //
 .ui-kit-page3
   height 1350px
+  width 100%
   margin-top: 89px
+
+
+
 
   display: grid
   grid-template-columns: 380px 380px auto
-  grid-gap: 40px 40px
-
-
-
+  grid-gap: 0 40px
+  &__column
+    display: grid
+    grid-template-rows: minmax( min-content, min-content ) 1fr
+    grid-gap: 40px 0
 
 
 

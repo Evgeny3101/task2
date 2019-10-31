@@ -1,0 +1,46 @@
+mixin payment()
+
+  +b.FORM.payment
+    +e.wrapper
+      +e.room-price
+        div
+          +e.SPAN.icon №
+          +e.SPAN.number 888
+          +e.SPAN.room-class люкс
+
+        div
+          +e.SPAN.price 9 990₽
+          +e.SPAN.text-price в сутки
+
+      +date-dropdown()
+
+      +e.H3.title гости
+
+      +dropdown({
+        "type" : "text",
+        "value": "3 гостя",
+        "icon" : "keyboard_arrow_down"
+      })
+
+      +e.price-list
+        +b.price-list
+          +e.item
+            span 9 990₽ х 4 суток
+            span
+            +e.sum 39 960₽
+          +e.item
+            span Сбор за услуги: скидка 2 179₽
+            +e.info i
+            +e.sum 0₽
+          +e.item
+            span Сбор за дополнительные услуги
+            +e.info i
+            +e.sum 300₽
+          +e.total
+            span Итого
+            +e.line
+            +e.total-number 38 081₽
+
+      +e.button
+        +b.BUTTON.button._regular._rel забронировать
+          +e.I.icon.material-icons arrow_forward
