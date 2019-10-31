@@ -1,0 +1,72 @@
+mixin card-date-piker()
+  +b.card-date-piker
+    +e.calendar
+      +b.calendar
+        +e.wrapper
+          +e.container-month
+            +b.month-selection
+              +e.I.icon.material-icons arrow_back
+              +e.H4.month Август 2019
+              +e.I.icon.material-icons arrow_forward
+
+          +e.container-days
+            +b.TABLE.days
+              +e.TR.weekly-day
+                +b.TD.number Пн
+                +b.TD.number Вт
+                +b.TD.number Ср
+                +b.TD.number Чт
+                +b.TD.number Пт
+                +b.TD.number Сб
+                +b.TD.number Вс
+              +e.TR.week
+                +b.TD.number._fade 29
+                +b.TD.number._fade 30
+                +b.TD.number._fade 31
+                +b.TD.number 1
+                +b.TD.number 2
+                +b.TD.number 3
+                +b.TD.number 4
+              +e.TR.week
+                +b.TD.number 5
+                +b.TD.number 6
+                +b.TD.number 7
+                +b.TD.number._gradient 8
+                +b.TD.number 9
+                +b.TD.number 10
+                +b.TD.number 11
+              +e.TR.week
+                +b.TD.number 12
+                +b.TD.number 13
+                +b.TD.number 14
+                +b.TD.number 15
+                +b.TD.number 16
+                +b.TD.number 17
+                +b.TD.number 18
+              +e.TR.week
+                +b.TD.number._blue 19
+                  +e.checked._first
+                +b.TD.number 20
+                  +e.checked
+                +b.TD.number 21
+                  +e.checked
+                +b.TD.number 22
+                  +e.checked
+                +b.TD.number._blue 23
+                  +e.checked._last
+                +b.TD.number 24
+                +b.TD.number 25
+              +e.TR.week
+                +b.TD.number.item 26
+                +b.TD.number 27
+                +b.TD.number 28
+                +b.TD.number 29
+                +b.TD.number 30
+                +b.TD.number 31
+                +b.TD.number._fade 1
+
+          +e.container-button
+            div
+              +b.button._fade05 очистить
+            div
+              +b.button._blue применить

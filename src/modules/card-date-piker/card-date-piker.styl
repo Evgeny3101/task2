@@ -1,0 +1,96 @@
+.card-date-piker
+  &__calendar
+    width: 100%
+
+//
+.calendar
+  width 100%
+  height: 369px
+  background: default-color
+  border: 1px solid fade-out(0.25)
+  box-shadow: 0px 10px 20px fade-out(0.05)
+  border-radius: 4px
+
+  &__wrapper
+    padding 18px 20px 0 20px
+
+  &__container-month
+    padding-bottom 31px
+
+  &__container-days
+    padding-left 1px
+    width 280px
+    height 240px
+
+  &__container-button
+    padding  13px 1px 0 0
+    container()
+//
+//
+.month-selection
+  container()
+  &__month
+    font-family: secondFont
+    color: primary-color
+    font-weight: bold
+    font-size: 20px
+    line-height: 24px
+    text-align: center
+    letter-spacing -0.06em
+
+  &__icon
+    color regular-color
+//
+//
+.days
+  width 100%
+  border-collapse: collapse
+  font-size: 12px;
+
+  &__weekly-day
+    color regular-color
+    font-weight bold
+
+  & tr
+    display flex
+//
+//
+.number
+  color fade-out(0.5)
+  font-size: 12px
+  width: 40px
+  height 40px
+  cursor: pointer
+  container(space-around)
+
+  &__icon
+    font-size: 24px
+
+  &__checked
+    z-index: 0
+    position absolute
+    height 40px
+    width 40px
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    opacity 0.25
+    &_first
+      border-top-left-radius: 100%
+      border-bottom-left-radius: 100%
+    &_last
+      border-top-right-radius: 100%
+      border-bottom-right-radius: 100%
+
+
+  &_fade
+    color fade-out(0.25)
+
+  &_blue
+    color default-color
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    border-radius: 22px
+
+  &_gradient
+    color default-color
+    padding: 0 8px
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border-radius: 22px

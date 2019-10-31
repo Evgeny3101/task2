@@ -1,0 +1,43 @@
+mixin hotel-item(src,number,price,stars,rating,mod,slader)
+
+  +b.hotel-item
+    +b.gallery-slader
+      if (slader)
+        +e.control-deactive
+          +b.slader-prev
+            a(href="#")
+              +e.I.icon.material-icons expand_more
+          +b.slader-next
+            a(href="#")
+              +e.I.icon.material-icons expand_more
+      div
+        div
+          +e.IMG(src=src).img.curry
+
+        +b.control
+          +e.A(href="#").circle.circle-curry
+          +e.A(href="#").circle.
+          +e.A(href="#").circle.
+          +e.A(href="#").circle.
+
+    +b.room-price.hotel-item-room-price
+      div
+        +e.SPAN.icon №
+        +e.SPAN.number= number
+        +e.SPAN.room-class(class=mod) люкс
+      div
+        +e.SPAN.price= price
+        +e.SPAN.text-price в сутки
+
+    +e.line
+
+    +b.review.hotel-item-review
+      +e.stars
+        - for (var n = 0; n < stars; n++)
+          +e.I.icon.material-icons star
+        - for (var n = 0; n < (5-stars); n++)
+          +e.I.icon.material-icons star_border
+
+      +e.text
+        span= rating
+        +e.SPAN.text-rating Отзывов
