@@ -135,7 +135,7 @@ block content
                 +subscription({
                   "type" : "email",
                   "place": "Email",
-                  "icon" : "arrow_forward"
+                  "icon" : "!"
                 })
 
           +e.column1_2
@@ -374,7 +374,7 @@ block content
       +label-icon()
 
       +b.ui-kit-page4
-        +e.header
+        +e.container
           +header("login", "register", { "link" : [
               {
               "href"  : "#",
@@ -409,7 +409,7 @@ block content
             }]}
           )
 
-        +e.header
+        +e.container
           +header("login", "register", { "link" : [
               {
               "href"  : "#",
@@ -443,3 +443,76 @@ block content
               "mod"   : "_mr10"
             }]}, "Cosmin Negoita"
           )
+
+
+        +e.container
+          +footer({
+              "text"     : "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+
+              "subTitle": "Subscribe to our newsletter",
+
+              "subText" : "Receive our latest news and promotions in your inbox!",
+
+              "subPlace": "Your email address",
+
+              "bottomText" : "Copyright © 2018 Toxin UI Kit. All rights reserved.",
+
+            "menu1": [
+              {
+                "title": "Navigation"
+              },{
+                "text": "About Us",
+                "href": "#"
+              },{
+                "text": "News",
+                "href": "#"
+              },{
+                "text": "Support",
+                "href": "#"
+              },{
+                "text": "Products",
+                "href": "#"
+              }
+            ],
+
+            "menu2": [
+              {
+                "title": "ABOUT US"
+              },{
+                "text": "Who we are",
+                "href": "#"
+              },{
+                "text": "Our team",
+                "href": "#"
+              },{
+                "text": "Careers",
+                "href": "#"
+              },{
+                "text": "Investors",
+                "href": "#"
+              }
+            ],
+
+            "menu3": [
+              {
+                "title": "Support"
+              },{
+                "text": "Documentation",
+                "href": "#"
+              },{
+                "text": "Community",
+                "href": "#"
+              },{
+                "text": "Get in Touch",
+                "href": "#"
+              }
+            ]
+          })
+
+        +e.container
+          +b.FOOTER.footer2
+            +e.container
+              +e.logo
+                +logo()
+              +e.text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+              +social-link()

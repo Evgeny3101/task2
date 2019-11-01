@@ -1,0 +1,53 @@
+//- include ../logo/logo
+//- include ../social-link/social-link
+
+
+mixin footer(data)
+  +b.FOOTER.footer
+    +e.top-area
+      +e.container-top.wrapper
+        +e.container-logo
+          +e.logo
+            +logo()
+          +e.text= data.text
+
+        +b.NAV.footer-menu
+          +e.container
+            each item in data.menu1
+              if (item.title)
+                +e.H3.title-menu= item.title
+              else
+                +e.A.link(href=item.href)= item.text
+
+          +e.container
+            each item in data.menu2
+              if (item.title)
+                +e.H3.title-menu= item.title
+              else
+                +e.A.link(href=item.href)= item.text
+
+          +e.container
+            each item in data.menu3
+              if (item.title)
+                +e.H3.title-menu= item.title
+              else
+                +e.A.link(href=item.href)= item.text
+
+
+          +e.container._w260
+            +e.H3.title-sub= data.subTitle
+            +e.text= data.subText
+
+            +e.subscription
+              +subscription({
+                "type" : "email",
+                "place" : data.subPlace,
+                "icon" : "!"
+              })
+
+    +e.bottom-area
+      +e.container.wrapper
+        +e.container-bottom
+          +e.text= data.bottomText
+          +social-link()
+
