@@ -3,24 +3,33 @@ extends ../layout/supporting.pug
 //- modules
 
 
+//- local mixins
+mixin label-icon()
+  +b.label-icon
+    +e.IMG.img(src='assets/img/logo/ui-kit-icon.svg')
+
+
+mixin color-demo(title, hex, mod)
+  +b.color-demo
+    +e.demo(class=mod)
+    +e.text
+      +e.title= title
+      +e.hex= hex
+
 
 block head
   +head({
     "title": "Toxin - UI Kit"
   })
 
+
 block content
   +b.ui-kit
     +e.page
-      +logo()
+      +label-icon()
+
       +b.ui-kit-page1.wrapper
         +e.container-colors
-          mixin color-demo(title, hex, mod)
-            +b.color-demo
-              +e.demo(class=mod)
-              +e.text
-                +e.title= title
-                +e.hex= hex
           +color-demo("Dark Shade 100%", "#1F2041")
           +color-demo("Dark Shade 75%", "#1F2041", "_fade075")
           +color-demo("Dark Shade 50%", "#1F2041", "_fade05")
@@ -49,7 +58,8 @@ block content
             +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
     +e.page
-      +logo()
+      +label-icon()
+
       +b.ui-kit-page2.wrapper
         mixin module-title(title, comment)
           +b.module-title
@@ -340,7 +350,8 @@ block content
               )
 
     +e.page_bg-gray
-      +logo()
+      +label-icon()
+
       +b.ui-kit-page3.wrapper
         +e.column
           +search-hotel()
@@ -359,5 +370,76 @@ block content
             "../../assets/img/search-room/image2.jpg",
             840, "9 900₽", 4, 65)
 
+    +e.page_bg-gray
+      +label-icon()
 
+      +b.ui-kit-page4
+        +e.header
+          +header("login", "register", { "link" : [
+              {
+              "href"  : "#",
+              "text"  : "Home",
+              "mod"   : "_bold _mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "About Us",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Services",
+              "icon"  : "!",
+              "mod"   : "_bo"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Careers",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "News",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Documentation",
+              "mod"   : "_mr10"
+            }]}
+          )
 
+        +e.header
+          +header("login", "register", { "link" : [
+              {
+              "href"  : "#",
+              "text"  : "Home",
+              "mod"   : "_bold _mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "About Us",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Services",
+              "icon"  : "!",
+              "mod"   : "_bo"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Careers",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "News",
+              "mod"   : "_mr10"
+            },
+              {
+              "href"  : "#",
+              "text"  : "Documentation",
+              "mod"   : "_mr10"
+            }]}, "Cosmin Negoita"
+          )

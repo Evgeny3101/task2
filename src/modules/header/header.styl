@@ -1,0 +1,58 @@
+@require "../logo/logo"
+@require "../button/button"
+
+.header
+  position relative
+  z-index: 1
+  padding 15px 0
+  line-height: 40px
+  background default-color
+  box-shadow:  0px 10px 20px fade-out(0.05)
+
+  &__container, &-menu, &-auth
+    container()
+
+  & .header-menu__link, & .auth__button-login, & .auth__button-sign-up
+    margin-left: 20px
+
+  & .user
+    margin-left: 24px
+
+
+  &-menu
+    color: fade-out(0.5)
+
+    &__link
+      display flex
+      align-items: center
+
+      &_mr10
+        margin-right 8.5px
+
+      &_bold
+        color fade-out()
+        font-weight bold
+
+    &__icon
+      font-size: 24px
+      margin-top: 4px
+
+.auth
+  margin-bottom: 1px
+
+  &__button-login
+    height 34px
+    width 87px
+
+  &__button-sign-up
+    height 34px
+    width 196px
+
+
+.user
+  line-height 30px
+  border-left: 1px solid fade-out(0.1)
+
+  &__item-container
+    margin-left: 30px
+

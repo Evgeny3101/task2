@@ -1,0 +1,28 @@
+include ../logo/logo
+
+mixin header(login, register, data, user)
+  +b.HEADER.header
+    +e.container.wrapper
+      +b.logo
+        +logo()
+
+      +e.container
+        +b.NAV.header-menu
+          each item in data.link
+            +e.A.link(href=item.href class=item.mod)= item.text
+              if (item.icon)
+                +e.I.icon.material-icons keyboard_arrow_down
+
+        if (user)
+          +b.user
+            +e.item-container
+              +b.A.button._default= user
+
+        else
+          +b.auth.header-auth
+            +e.button-login
+              +b.A(href="login.html").button._transparent= login
+
+            +e.button-sign-up
+              +b.A(href="sign-up.html").button._regular= register
+
