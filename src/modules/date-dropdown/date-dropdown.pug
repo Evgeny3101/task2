@@ -1,20 +1,23 @@
-mixin date-dropdown()
+include ../dropdown/dropdown
+
+
+mixin date-dropdown(data)
 
   +b.date-dropdown
-    div
+    div(class=data.input1.ident)
       +e.H3.title прибытие
 
       +dropdown({
         "type" : "text",
-        "place": "ДД.ММ.ГГГГ",
-        "icon" : "keyboard_arrow_down"
-      })
+        "place": data.input1.place,
+        "value": data.input1.value
+        })
 
     div
       +e.H3.title выезд
 
       +dropdown({
         "type" : "text",
-        "value": "ДД.ММ.ГГГГ",
-        "icon" : "keyboard_arrow_down"
-      })
+        "place": data.input2.place,
+        "value": data.input2.value
+      })(class=data.input2.ident)

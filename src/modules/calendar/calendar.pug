@@ -1,0 +1,75 @@
+mixin calendar()
+  +b.calendar
+    +e.wrapper
+      +e.container-month
+        +b.month-selection
+          +e.I.icon.material-icons arrow_back
+          +e.H4.month Август 2019
+          +e.I.icon.material-icons arrow_forward
+
+      +e.container-days
+        +b.TABLE.days
+          +e.TR.weekly-day
+            +b.TD.day Пн
+            +b.TD.day Вт
+            +b.TD.day Ср
+            +b.TD.day Чт
+            +b.TD.day Пт
+            +b.TD.day Сб
+            +b.TD.day Вс
+
+          +e.TR.week
+            +b.TD.day._fade 29
+            +b.TD.day._fade 30
+            +b.TD.day._fade 31
+            +b.TD.day  1
+            +b.TD.day  2
+            +b.TD.day  3
+            +b.TD.day  4
+
+          +e.TR.week
+            +b.TD.day  5
+            +b.TD.day  6
+            +b.TD.day  7
+            +b.TD.day._gradient 8
+            +b.TD.day  9
+            +b.TD.day  10
+            +b.TD.day  11
+
+          +e.TR.week
+            +b.TD.day  12
+            +b.TD.day  13
+            +b.TD.day  14
+            +b.TD.day  15
+            +b.TD.day  16
+            +b.TD.day  17
+            +b.TD.day  18
+
+          +e.TR.week
+            +b.TD.day._checked._blue 19
+              +b.bg-checked._first
+            +b.TD.day._checked  20
+              +b.bg-checked
+            +b.TD.day._checked  21
+              +b.bg-checked
+            +b.TD.day._checked  22
+              +b.bg-checked
+            +b.TD.day._checked._blue  23
+              +b.bg-checked._last
+            +b.TD.day._checked  24
+            +b.TD.day  25
+
+          +e.TR.week
+            +b.TD.day  26
+            +b.TD.day  27
+            +b.TD.day  28
+            +b.TD.day  29
+            +b.TD.day  30
+            +b.TD.day  31
+            +b.TD.day._fade 1
+
+      +e.container-button
+        div
+          +b.button._fade05 очистить
+        div
+          +b.button._blue применить

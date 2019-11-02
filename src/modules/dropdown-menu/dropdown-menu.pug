@@ -1,24 +1,24 @@
 include ../dropdown/dropdown
 
+//-  local mixin
+mixin item-count(mod, title, result, deactive)
+  +b.item-count(class=mod)
+    +e.title= title
+    +e.container-btn
+      +e.minus-btn(class=deactive) -
+      +e.result= result
+      +e.plus-btn +
+
+
 mixin dropdown-menu(place, data)
   +b.dropdown-menu&attributes(attributes)
     +dropdown({
       "type" : "text",
-      "place": place,
-      "icon" : "keyboard_arrow_down"
+      "place": place
     })
 
     +b.dropdown-menu-count
       +e.wrapper
-
-        mixin item-count(mod, title, result, deactive)
-          +b.item-count(class=mod)
-            +e.title= title
-            +e.container-btn
-              +e.minus-btn(class=deactive) -
-              +e.result= result
-              +e.plus-btn +
-
         +e.container
           +item-count(data.count1.mod, data.count1.title, data.count1.result, data.count1.deactive)
 

@@ -1,3 +1,7 @@
+include ../dropdown/dropdown
+include ../date-dropdown/date-dropdown
+
+
 mixin search-hotel()
 
   +b.FORM.search-hotel
@@ -5,8 +9,17 @@ mixin search-hotel()
       +e.title
         +b.H1.title Найдём номера под ваши пожелания
 
+      +date-dropdown({
+        "input1": {
+            "place": "ДД.ММ.ГГГГ",
+            "ident": "item1"
+          },
 
-      +date-dropdown()
+        "input2": {
+            "place"  : "ДД.ММ.ГГГГ",
+            "ident"  : "item2"
+          }
+        })
 
       div
         +e.H3.title-guest гости
