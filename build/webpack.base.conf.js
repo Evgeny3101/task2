@@ -26,10 +26,10 @@ module.exports = {
   entry: {
     // app: `${PATHS.src}/js/index.js`,
     // login: `${PATHS.src}/js/login.js`,
-    // sign_up: `${PATHS.src}/js/sign-up.js`,
-    // search_room: `${PATHS.src}/js/search-room.js`,
-    // room_details: `${PATHS.src}/js/room-details.js`,
-    ui_kit: `${PATHS.src}/js/ui-kit.js`
+    // signUp: `${PATHS.src}/js/sign-up.js`,
+    // searchRoom: `${PATHS.src}/js/search-room.js`,
+    // roomDetails: `${PATHS.src}/js/room-details.js`,
+    uiKit: `${PATHS.src}/js/ui-kit.js`
   },
 
   output: {
@@ -129,9 +129,18 @@ module.exports = {
     }),
 
     new CopyWebpackPlugin([
-      { from: `${PATHS.src}/${PATHS.assets}img`, to: `${PATHS.assets}img` },
-      { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-      { from: `${PATHS.src}/static`, to: '' },
+      { from: '**/img/*',
+        to: `${PATHS.assets}img`,
+        flatten: true
+      },
+
+      { from: `${PATHS.src}/${PATHS.assets}fonts`,
+        to: `${PATHS.assets}fonts`
+      },
+
+      { from: `${PATHS.src}/static`,
+        to: ''
+      },
     ]),
 
     ...PAGES.map(page => new HtmlWebpackPlugin({

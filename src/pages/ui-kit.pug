@@ -6,7 +6,7 @@ extends ../layout/supporting.pug
 //- local mixins
 mixin label-icon()
   +b.label-icon
-    +e.IMG.img(src='assets/img/logo/ui-kit-icon.svg')
+    +e.IMG.img(src='assets/img/ui-kit-icon.svg')
 
 
 mixin color-demo(title, hex, mod)
@@ -336,7 +336,7 @@ block content
 
           +e.container-reviews
             +reviews(
-              '../assets/img/user-img/image1.jpg',
+              'assets/img/user-img1.jpg',
               'Мурад Сарафанов',
               '5 дней назад',
               'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
@@ -358,11 +358,11 @@ block content
           +calendar()
 
           +hotel-item(
-            "../../assets/img/search-room/image1.jpg",
+            "assets/img/image1.jpg",
             888, "9 990₽", 5, 145, "_visible","!")
 
           +hotel-item(
-            "../../assets/img/search-room/image2.jpg",
+            "assets/img/image2.jpg",
             840, "9 900₽", 4, 65)
 
     +e.page_bg-gray
