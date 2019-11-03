@@ -1,6 +1,15 @@
 extends ../layout/main
 
 //- modules
+include ../modules/range-slider/range-slider
+include ../modules/dropdown/dropdown
+include ../modules/checkbox-item/checkbox-item
+include ../modules/rich-checkbox-item/rich-checkbox-item
+include ../modules/checkbox-list/checkbox-list
+include ../modules/hotel-item/hotel-item
+include ../modules/pagination/pagination
+
+
 
 block head
   +head({
@@ -8,10 +17,174 @@ block head
   })
 
 block content
-  +b.MAIN.search-room.wrapper
+  +b.MAIN.search-room
+    +e.wrapper.wrapper
+      +b.filter-rooms
+        div
+          +e.H3.title даты пребывания в отеле
+          +dropdown({
+              "type" : "text",
+              "place": "ДД.ММ - ДД.ММ",
+              "value": "19 авг - 23 авг"
+            })
 
+        div
+          +e.H3.title гости
+          +dropdown({
+              "type" : "text",
+              "place": "Сколько гостей",
+              "value": "3 гостя, 1 младенец"
+            })
 
+        div
+          +range-slider("диапазон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
 
+        div
+          +e.H3.title Checkbox Buttons
+
+          +e.checkbox-item
+            +checkbox-item('Можно курить')
+          +e.checkbox-item
+            +checkbox-item('Можно с питомцами')(checked)
+          +e.checkbox-item
+            +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
+
+        div
+          +e.H3.title Доступность
+
+          +e.rich-checkbox-item._w230
+            +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+
+          +e.rich-checkbox-item._w260
+            +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+
+        div
+          +e.H3.title удобства номера
+          +dropdown({
+              "type" : "text",
+              "place": "Удобства",
+              "value": "2 спальни, 2 кровати..."
+            })
+
+        +checkbox-list("дополнительные удобства")
+
+      div
+        +b.H1.title Номера, которые мы для вас подобрали
+
+        +b.hotel-list
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item1.jpg",
+              "number"  : 888,
+              "price"   : "9 990₽",
+              "stars"   : 5,
+              "rating"  : 145,
+              "lux"     : "_visible",
+              "slader"  : "!"
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item2.jpg",
+              "number"  : 840,
+              "price"   : "9 900₽",
+              "stars"   : 4,
+              "rating"  : 65
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item3.jpg",
+              "number"  : 980,
+              "price"   : "8 500₽",
+              "stars"   : 3,
+              "rating"  : 35,
+              "lux"     : "_visible"
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item4.jpg",
+              "number"  : 856,
+              "price"   : "7 300₽",
+              "stars"   : 5,
+              "rating"  : 19
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item5.jpg",
+              "number"  : 740,
+              "price"   : "6 000₽",
+              "stars"   : 4,
+              "rating"  : 44
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item6.jpg",
+              "number"  : 982,
+              "price"   : "5 800₽",
+              "stars"   : 3,
+              "rating"  : 56
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item7.jpg",
+              "number"  : 678,
+              "price"   : "5 500₽",
+              "stars"   : 5,
+              "rating"  : 45
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item8.jpg",
+              "number"  : 450,
+              "price"   : "5 300₽",
+              "stars"   : 4,
+              "rating"  : 39
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item9.jpg",
+              "number"  : 350,
+              "price"   : "5 000₽",
+              "stars"   : 3,
+              "rating"  : 77
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item10.jpg",
+              "number"  : 666,
+              "price"   : "5 000₽",
+              "stars"   : 5,
+              "rating"  : 25
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item11.jpg",
+              "number"  : 444,
+              "price"   : "5 000₽",
+              "stars"   : 3,
+              "rating"  : 15
+            })
+
+          +e.item
+            +hotel-item({
+              "src"     :"assets/img/hotel-item12.jpg",
+              "number"  : 352,
+              "price"   : "5 000₽",
+              "stars"   : 3,
+              "rating"  : 55
+            })
+
+          +e.pagination
+            +pagination()
 
 
 

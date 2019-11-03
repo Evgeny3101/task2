@@ -1,14 +1,66 @@
 @require "../layout/main"
 
+// modules
+@require "../modules/range-slider/range-slider"
+@require "../modules/dropdown/dropdown"
+@require "../modules/checkbox-item/checkbox-item"
+@require "../modules/rich-checkbox-item/rich-checkbox-item"
+@require "../modules/checkbox-list/checkbox-list"
+@require "../modules/hotel-item/hotel-item"
+@require "../modules/pagination/pagination"
 
 
 
+.search-room
+  height 1355px
+  border-bottom: 1px solid fade-out(0.25)
+
+  &__wrapper
+    padding-top: 30px
+    display: grid
+    grid-template-columns: 266px auto
+    grid-gap: 60px
+
+
+.filter-rooms
+  width: 266px
+  display: grid
+  grid-template-rows: 64px 74px 82px 140px 155px 73px 273px
+  grid-gap: 20px
+
+  &__title
+    padding-bottom  5px
+
+
+  &__checkbox-item
+    width        240px
+    padding-top  10.4px
+
+  &__rich-checkbox-item
+    padding-top  10.5px
+    &_w230
+      width 230px
+    &_w260
+      width 260px
 
 
 
+.hotel-list
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr 1fr 1fr
+  grid-gap: 21px 12px
+  margin-top  20px
 
+  &__item
+    box-shadow: 0px 10px 20px fade-out(0.05)
+    border-radius: 4px
 
-
+  &__pagination
+    grid-column: 1/4
+    margin: 0 auto
+    padding-top: 21px
+    padding-right: 14px
 
 
 

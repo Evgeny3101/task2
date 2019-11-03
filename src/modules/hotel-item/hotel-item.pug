@@ -1,8 +1,8 @@
-mixin hotel-item(src,number,price,stars,rating,mod,slader)
+mixin hotel-item(data)
 
   +b.hotel-item
     +b.gallery-slader
-      if (slader)
+      if (data.slader)
         +e.control-deactive
           +b.slader-prev
             a(href="#")
@@ -12,7 +12,7 @@ mixin hotel-item(src,number,price,stars,rating,mod,slader)
               +e.I.icon.material-icons expand_more
       div
         div
-          +e.IMG(src=src).img.curry
+          +e.IMG(src=data.src).img.curry
 
         +b.control
           +e.A(href="#").circle.circle-curry
@@ -23,21 +23,21 @@ mixin hotel-item(src,number,price,stars,rating,mod,slader)
     +b.room-price.hotel-item-room-price
       div
         +e.SPAN.icon №
-        +e.SPAN.number= number
-        +e.SPAN.room-class(class=mod) люкс
+        +e.SPAN.number= data.number
+        +e.SPAN.room-class(class=data.lux) люкс
       div
-        +e.SPAN.price= price
+        +e.SPAN.price= data.price
         +e.SPAN.text-price в сутки
 
     +e.line
 
     +b.review.hotel-item-review
       +e.stars
-        - for (var n = 0; n < stars; n++)
+        - for (var n = 0; n < data.stars; n++)
           +e.I.icon.material-icons star
-        - for (var n = 0; n < (5-stars); n++)
+        - for (var n = 0; n < (5-data.stars); n++)
           +e.I.icon.material-icons star_border
 
       +e.text
-        span= rating
+        span= data.rating
         +e.SPAN.text-rating Отзывов
