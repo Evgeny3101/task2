@@ -1,5 +1,5 @@
 // Stylus
-import "../page-styles/search-room.styl"
+import "../pages/search-room.styl"
 
 
 

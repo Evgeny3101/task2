@@ -1,5 +1,5 @@
 // Stylus
-import "../page-styles/ui-kit.styl"
+import "../pages/ui-kit.styl"
 
 
 

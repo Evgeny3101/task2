@@ -1,5 +1,5 @@
 // Stylus
-import "../page-styles/index.styl"
+import "../pages/index.styl"
 
 
 

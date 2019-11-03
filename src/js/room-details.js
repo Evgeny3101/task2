@@ -1,5 +1,5 @@
 // Stylus
-import "../page-styles/room-details.styl"
+import "../pages/room-details.styl"
 
 
 

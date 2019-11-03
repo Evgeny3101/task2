@@ -1,5 +1,5 @@
 // Stylus
-import "../page-styles/sign-up.styl"
+import "../pages/sign-up.styl"
 
 
 

@@ -1,20 +1,103 @@
 extends ../layout/main
 
 //- modules
+include ../modules/item-info/item-info
+include ../modules/bullet-list/bullet-list
+include ../modules/reviews/reviews
+include ../modules/payment/payment
+
 
 block head
   +head({
-    "title": "Room Details"
+    "title": "Toxin - Room Details"
   })
 
 block content
-  +b.MAIN.room-details.wrapper
+  +b.MAIN.room-details
+    +b.room-details-gallery
+      +e.IMG.img1(src='assets/img/room-details1.jpg')
+      div
+        +e.IMG.img2(src='assets/img/room-details2.jpg')
+        +e.IMG.img3(src='assets/img/room-details3.jpg')
 
+    +e.wrapper.wrapper
+      +e.details
 
+        +b.details
 
+          +e.info
+            +e.info-title
+              h2 Сведения о номере
+            +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+            +item-info("location_city", "Удобство", "Окно в каждой из спален")
+            +item-info("whatshot", "Уют", "Номер оснащён камином")
 
+          +e.impression
+            +e.impression-title
+              h2 Впечатления от номера
 
+            +b.impression
+              +e.diagram
+                +b.diagram
+                  +e.IMG.img1(src='assets/img/ellipse1.svg')
+                  +e.IMG.img2(src='assets/img/ellipse2.svg')
+                  +e.IMG.img3(src='assets/img/ellipse3.svg')
+                  +e.text голосов
+                    +e.number 260
 
+              +e.chart-values
+                +b.chart-values
+                  +e.circle
+                  +e.text Великолепно
+
+                  +e.circle._2
+                  +e.text Хорошо
+
+                  +e.circle._3
+                  +e.text Удовлетворительно
+
+                  +e.circle._4
+                  +e.text Разочарован
+
+          +e.reviews
+            +e.reviews-title
+              h2 Отзывы посетителей номера
+              +e.number-reviews 2 отзыва
+
+            +e.container-reviews
+              +reviews(
+                'assets/img/user-img1.jpg',
+                'Мурад Сарафанов',
+                '5 дней назад',
+                'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                12,
+                'checked'
+                )
+
+            +e.container-reviews
+              +reviews(
+                'assets/img/user-img2.jpg',
+                'Патрисия Стёклышкова',
+                'Неделю назад',
+                'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+                2
+                )
+
+          +e.rules
+            +e.rules-title
+              H2 Правила
+
+            +bullet-list()
+
+          +e.cancel
+            +e.cancel-title
+              H2 Отмена
+
+            +b.cancel
+              +e.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      +e.payment
+        +payment()
 
 
 
