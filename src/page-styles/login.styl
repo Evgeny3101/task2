@@ -1,9 +1,38 @@
 @require "../layout/main"
 
+//- modules
+@require "../modules/login-card/login-card"
+
+.login-main
+  height      684px
+  width       100%
+
+  &__background
+    width       1440px
+    margin      0 auto
+    position    relative
+
+  &__img
+    width        100%
+    z-index      -1
+    top          -70px
+    position     absolute
+
+  &__wrapper
+    height       100%
+    container(space-around)
 
 
+.login
+  width          380px
+  height         359px
+  background     default-color
+  border         1px solid rgba(0, 0, 0, 0.12)
+  box-shadow     0px 0px 25px rgba(0, 0, 0, 0.2)
+  border-radius  4px
 
-
+  &__wrapper
+    padding    40px 30px
 
 
 

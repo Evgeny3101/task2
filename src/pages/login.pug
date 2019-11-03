@@ -1,6 +1,7 @@
 extends ../layout/main
 
 //- modules
+include ../modules/login-card/login-card
 
 block head
   +head({
@@ -8,8 +9,12 @@ block head
   })
 
 block content
-  +b.MAIN.login-main.wrapper
+  +b.MAIN.login-main
+    +e.background
+      +e.IMG(src='assets/img/bg-slade4.jpg').img
 
+    +e.wrapper.wrapper
+      +login-card()
 
 
 
