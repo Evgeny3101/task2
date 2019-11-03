@@ -1,6 +1,7 @@
 extends ../layout/main
 
 //- modules
+include ../modules/sign-up/sign-up
 
 block head
   +head({
@@ -8,11 +9,12 @@ block head
   })
 
 block content
-  +b.MAIN.sign-up.wrapper
+  +b.MAIN.sign-up-main
+    +e.background
+      +e.IMG(src='assets/img/bg-slade4.jpg').img
 
-
-
-
+    +e.wrapper.wrapper
+      +sign-up()
 
 
 
