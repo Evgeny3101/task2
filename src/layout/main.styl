@@ -4,17 +4,22 @@
 @require "../assets/stylus/utils/vars.styl"
 @require "../assets/stylus/utils/mixins.styl"
 
+@require "../modules/header/header"
+@require "../modules/footer/footer"
 
 
 
 //  Common styles
-html
-  background #e1e1e1
+body
+  font-family: mainFont
+  font-size: 14px
+  color fade-out()
+  background default-color
 
 // Page sizes
 .page
   min-width: 320px
-  width: 1440px
+  width: 100%
   min-height: 100vh
   margin: 0 auto
 
@@ -23,11 +28,6 @@ html
   margin: 0 auto
   max-width: 1160px
 
-//
-body
-  font-family: mainFont
-  font-size: 14px
-  color fade-out()
 
 
 

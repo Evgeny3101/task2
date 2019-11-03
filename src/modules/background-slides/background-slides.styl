@@ -1,0 +1,25 @@
+.background-slides
+  margin: 0 auto
+  &__img
+    z-index: 0
+    position: absolute
+    width: auto
+    height 830px
+    // overflow: hidden
+    opacity 0
+    animation anim_slides 18s linear infinite 0s
+
+    &_2
+      animation-delay: 6.0s
+
+    &_3
+      animation-delay: 12.0s
+
+
+  @keyframes anim_slides {
+  0% {opacity:0;}
+  6% {opacity:1;}
+  28% {opacity:1;}
+  36% {opacity:0;}
+  100% {opacity:0;}
+  }

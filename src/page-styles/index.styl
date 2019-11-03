@@ -1,8 +1,38 @@
 @require "../layout/main"
 
+//- modules
+@require "../modules/search-hotel/search-hotel"
+@require "../modules/background-slides/background-slides"
 
 
+.landing-main
+  height 830px
 
+  & .background-slides
+    max-width 1440px
+    margin 0 auto
+
+  &__wrapper
+    position relative
+
+  &__container-offer
+    position absolute
+    top:  761px
+    right:  -6px
+
+  &__container-search-hotel
+    position absolute
+    top:  70px
+    left:  0
+//
+//
+.offer
+  height: 48px
+  width: 265px
+  text-align: right
+  font-size: 14px
+  line-height: 24px
+  color fade-out()
 
 
 

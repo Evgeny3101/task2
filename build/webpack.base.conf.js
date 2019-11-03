@@ -24,11 +24,11 @@ module.exports = {
   },
 
   entry: {
-    // app: `${PATHS.src}/js/index.js`,
-    // login: `${PATHS.src}/js/login.js`,
-    // signUp: `${PATHS.src}/js/sign-up.js`,
-    // searchRoom: `${PATHS.src}/js/search-room.js`,
-    // roomDetails: `${PATHS.src}/js/room-details.js`,
+    app: `${PATHS.src}/js/index.js`,
+    login: `${PATHS.src}/js/login.js`,
+    signUp: `${PATHS.src}/js/sign-up.js`,
+    searchRoom: `${PATHS.src}/js/search-room.js`,
+    roomDetails: `${PATHS.src}/js/room-details.js`,
     uiKit: `${PATHS.src}/js/ui-kit.js`
   },
 
