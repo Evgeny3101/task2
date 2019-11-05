@@ -6,7 +6,11 @@ mixin header(login, register, data, user)
       +b.logo
         +logo()
 
-      +e.container
+      +e.header-menu
+
+        +b.INPUT(type="checkbox" id="check-menu")
+        +b.LABEL(for="check-menu").header-menu-dropdown
+          +e.I.icon.material-icons keyboard_arrow_down
         +b.NAV.header-menu
           each item in data.link
             +e.A.link(href=item.href class=item.mod)= item.text

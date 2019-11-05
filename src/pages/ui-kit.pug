@@ -6,7 +6,8 @@ extends ../layout/supporting.pug
 //- local mixins
 mixin label-icon()
   +b.label-icon
-    +e.IMG.img(src='assets/img/ui-kit-icon.svg')
+    a(href="index.html")
+      +e.IMG.img(src='assets/img/ui-kit-icon.svg')
 
 
 mixin color-demo(title, hex, mod)
@@ -357,13 +358,23 @@ block content
         +e.column
           +calendar()
 
-          +hotel-item(
-            "assets/img/image1.jpg",
-            888, "9 990₽", 5, 145, "_visible","!")
+          +hotel-item({
+            "src"     :"assets/img/hotel-item1.jpg",
+            "number"  : 888,
+            "price"   : "9 990₽",
+            "stars"   : 5,
+            "rating"  : 145,
+            "lux"     : "_visible",
+            "slader"  : "!"
+          })
 
-          +hotel-item(
-            "assets/img/image2.jpg",
-            840, "9 900₽", 4, 65)
+          +hotel-item({
+            "src"     :"assets/img/hotel-item2.jpg",
+            "number"  : 840,
+            "price"   : "9 900₽",
+            "stars"   : 4,
+            "rating"  : 65
+          })
 
     +e.page_bg-gray
       +label-icon()
@@ -505,9 +516,4 @@ block content
           })
 
         +e.container
-          +b.FOOTER.footer2
-            +e.container
-              +e.logo
-                +logo()
-              +e.text Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-              +social-link()
+          +footerM("Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.")

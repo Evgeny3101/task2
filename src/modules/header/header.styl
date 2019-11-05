@@ -9,53 +9,111 @@
   background default-color
   box-shadow:  0px 10px 20px fade-out(0.05)
 
-  &__container, &-menu, &-auth
+  &__container, &-menu, &-auth, &__header-menu
     container()
 
   & .header-menu__link, & .auth__button-login, & .auth__button-sign-up
     margin-left: 20px
 
+  & .header-menu__link
+    @media screen and (max-width: smDesktopWidth)
+      margin-left: 0
+
   & .user
     margin-left: 24px
 
 
-  &-menu
-    color: fade-out(0.5)
 
-    &__link
-      display flex
-      align-items: center
+#check-menu
+  display none
 
-      &_mr10
-        margin-right 8.5px
+#check-menu:checked ~ .header-menu
+  max-height: 250px
+  font-size: 14px
+  &__icon
+    font-size   24px
 
-      &_mr1
-        margin-right 1px
+.header-menu-dropdown
+  cursor pointer
+  height 40px
+  display none
+  @media screen and (max-width: smDesktopWidth)
+    display block
 
-      &_bold
-        color fade-out()
-        font-weight bold
+  &__icon
+    vertical-align  middle
+    font-size       36px
+    color fade-out()
 
-    &__icon
-      font-size: 24px
-      margin-top: 4px
+
+
+.header-menu
+  color: fade-out(0.5)
+  @media screen and (max-width: smDesktopWidth)
+    display: flex
+    flex-direction: column
+    justify-content flex-start
+    align-items flex-start
+    position absolute
+    top 60px
+    right 25px
+    z-index 1
+    background: default-color
+    max-height: 0
+    font-size: 0
+    overflow hidden
+    transition: 0.15s all
+
+  &__link
+    display flex
+    align-items: center
+    background: default-color
+    @media screen and (max-width: smDesktopWidth)
+      width 140px
+      padding-left 10px
+      border  1px solid fade-out(0.2)
+      border-radius: 2px
+      margin-bottom: -1px
+
+  :last-child
+    margin-bottom: 0
+
+    &_mr10
+      margin-right 8.5px
+    &_mr1
+      padding-right 1px
+    &_bold
+      color fade-out()
+      font-weight bold
+
+  &__icon
+    font-size       24px
+    margin-top      4px
+    @media screen and (max-width: smDesktopWidth)
+      margin-left   auto
+      margin-right  5px
+
+
 
 .auth
-  margin-bottom: 1px
+  margin-bottom  1px
 
   &__button-login
-    height 34px
-    width 87px
+    height    34px
+    width     87px
 
   &__button-sign-up
-    height 34px
-    width 196px
+    height    34px
+    width     196px
+    @media screen and (max-width: smDesktopWidth)
+      display: none
+
 
 
 .user
-  line-height 30px
-  border-left: 1px solid fade-out(0.1)
+  line-height   30px
+  border-left   1px solid fade-out(0.1)
 
   &__item-container
-    margin-left: 30px
+    margin-left   30px
 
