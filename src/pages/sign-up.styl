@@ -3,26 +3,47 @@
 @require "../modules/sign-up/sign-up.styl"
 
 .sign-up-main
-  height      702px
-  width       100%
+  position        relative
+  height          702px
+  max-width       1440px
+  margin          0 auto
+  overflow        hidden
 
-  &__background
-    width       1440px
-    margin      0 auto
-    position    relative
+  &__wrapper
+    &.wrapper
+      @media    (max-width: phoneWidth)
+        padding: 0
 
-  &__img
-    width: 100%
-    z-index: -1
-    position absolute
-    top -70px
+  @media  (max-width: phoneWidth)
+    height       660px
 
+
+  // background
+  &__bg-img
+    width        100%
+    z-index      -1
+    top          -70px
+    position     absolute
+
+    @media  (max-width: 1310px)
+      top           0
+      width         1310px
+    @media  (max-width: phoneWidth)
+      display       none
+
+
+  // content main
   &__wrapper
     padding-top  4px
     height 100%
     container(space-around)
 
+    @media  (max-width: phoneWidth)
+      align-items     flex-start
 
+  .sign-up
+    @media  (max-width: phoneWidth)
+      width        100%
 
 
 
