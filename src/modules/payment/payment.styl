@@ -58,12 +58,15 @@
     height: 44px
 //
 .price-list
-  display: flex
-  flex-direction: column
+  display         flex
+  flex-direction  column
+  &_nowrap
+    white-space   nowrap
+
 
   &__item
     display: grid
-    grid-template-columns: 219px 20px 80px
+    grid-template-columns: auto 20px 80px
     padding-bottom: 15px
 
   &__info
