@@ -12,58 +12,65 @@
   margin        0 auto
   overflow      hidden
 
-  @media screen and (max-width: lDesktopWidth) and (min-width  desktopWidth)
-    height        730px
-  @media screen and (max-width: desktopWidth)
-    height        600px
-  @media screen and (max-width: 850px)
-    height        520px
-  @media screen and (max-width: tableWidth)
-    height        400px
+  @media  (max-width: lDesktopWidth)
+    height          0px
+    padding         0 0 47.5%
+    margin-bottom   30px
+  @media  (max-width: smDesktopWidth)
+    min-height          500px
+  @media  (max-width: tableWidth)
+    height          400px
 
 
 
+  // background-slides
   & .background-slides
-    @media screen and (max-width: tableWidth)
-      display     none
+      &__img
+        @media  (max-width: 868px)
+          width         868px
+        @media  (max-width: tableWidth)
+          display     none
 
 
 
+  // search-hotel
   &__container-search-hotel
     width 100%
     position      absolute
     top           70px
     left          140px
-    @media screen and (max-width: smDesktopWidth)
+    @media  (max-width: smDesktopWidth)
       top           50px
       left          50px
-    @media screen and (max-width: tableWidth)
+    @media  (max-width: tableWidth)
       top           0
       left          0
 
-
   & .search-hotel
-    @media screen and (max-width: tableWidth)
-      width 100%
+    @media  (min-width: phoneWidth + 1px) and (max-width: tableWidth)
+      width       100%
+      padding     0 30px
+    @media  (max-width: phoneWidth)
+      width       100%
+      padding     0px
 
   & .date-dropdown
-    @media screen and (max-width: tableWidth)
-      width 100%
+    @media  (max-width: tableWidth)
+      width       100%
       grid-template-columns: auto auto
 
 
 
+  // offer
   &__container-offer
     position      absolute
     bottom        20px
     right         134px
 
-    @media screen and (max-width: smDesktopWidth)
-      top         420px
-      right       90px
-    @media screen and (max-width: 850px)
-      top           50px
+    @media  (max-width: smDesktopWidth)
       right         50px
+    @media  (max-width: tableWidth)
+      display     none
 
   & .offer
     height        48px

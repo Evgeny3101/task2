@@ -4,35 +4,56 @@
 @require "../modules/login-card/login-card"
 
 .login-main
-  height      684px
-  width       100%
+  position        relative
+  height          684px
+  max-width       1440px
+  margin          0 auto
+  overflow        hidden
 
-  &__background
-    width       1440px
-    margin      0 auto
-    position    relative
+  &__wrapper
+    &.wrapper
+      @media    (max-width: phoneWidth)
+        padding: 0
 
-  &__img
+  @media  (max-width: lDesktopWidth)
+    height          0px
+    padding         23.5% 0 24%
+  @media  (min-width: tableWidth + 1px) and (max-width: smDesktopWidth)
+    min-height      440px
+  @media  (max-width: tableWidth)
+    height          380px
+    padding         0
+
+
+  // background
+  &__bg-img
     width        100%
     z-index      -1
     top          -70px
     position     absolute
 
+    @media  (max-width: smDesktopWidth)
+      top           0
+    @media  (max-width: 820px)
+      width         820px
+    @media  (max-width: phoneWidth)
+      display       none
+
+
+
+  // content main
   &__wrapper
-    height       100%
-    container(space-around)
+    height          100%
+    display         flex
+    align-items     center
+    justify-content space-around
+    @media  (max-width: phoneWidth)
+      align-items     flex-start
 
 
-.login
-  width          380px
-  height         359px
-  background     default-color
-  border         1px solid rgba(0, 0, 0, 0.12)
-  box-shadow     0px 0px 25px rgba(0, 0, 0, 0.2)
-  border-radius  4px
-
-  &__wrapper
-    padding    40px 30px
+  .login-card
+    @media  (max-width: phoneWidth)
+      width        100%
 
 
 
