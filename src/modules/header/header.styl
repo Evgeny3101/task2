@@ -9,36 +9,40 @@
   background default-color
   box-shadow:  0px 10px 20px fade-out(0.05)
 
-  &__container, &-menu, &-auth, &__header-menu
+
+  &__container,
+  &__menu,
+  & .auth-btn,
+  & .header-menu
     container()
 
-  & .header-menu__link, & .auth__button-login, & .auth__button-sign-up
+
+
+  & .header-menu__item,
+  &__auth-btn,
+  & .auth-btn__button-sign-up
     margin-left: 20px
 
-  & .header-menu__link
-    @media    (max-width: smDesktopWidth)
-      margin-left: 0
-
-  & .user
+  &__user
     margin-left: 24px
-
 
 
 #check-menu
   display none
 
+
 #check-menu:checked ~ .header-menu
   max-height: 250px
   font-size: 14px
+
   &__icon
     font-size   24px
+
 
 .header-menu-dropdown
   cursor pointer
   height 40px
   display none
-  @media    (max-width: smDesktopWidth)
-    display block
 
   &__icon
     vertical-align  middle
@@ -46,37 +50,14 @@
     color fade-out()
 
 
-
 .header-menu
   color: fade-out(0.5)
-  @media    (max-width: smDesktopWidth)
-    display: flex
-    flex-direction: column
-    justify-content flex-start
-    align-items flex-start
-    position absolute
-    top 60px
-    right 25px
-    z-index 1
-    background: default-color
-    max-height: 0
-    font-size: 0
-    overflow hidden
-    transition: 0.15s all
 
   &__link
     display flex
     align-items: center
     background: default-color
-    @media    (max-width: smDesktopWidth)
-      width 140px
-      padding-left 10px
-      border  1px solid fade-out(0.2)
-      border-radius: 2px
-      margin-bottom: -1px
 
-  :last-child
-    margin-bottom: 0
 
     &_mr10
       margin-right 8.5px
@@ -89,15 +70,10 @@
   &__icon
     font-size       24px
     margin-top      4px
-    @media    (max-width: smDesktopWidth)
-      margin-left   auto
-      margin-right  5px
 
 
-
-.auth
+.auth-btn
   margin-bottom  1px
-
   &__button-login
     height    34px
     width     87px
@@ -105,15 +81,60 @@
   &__button-sign-up
     height    34px
     width     196px
-    @media    (max-width: smDesktopWidth)
-      display: none
-
 
 
 .user
   line-height   30px
   border-left   1px solid fade-out(0.1)
 
-  &__item-container
+  &__btn-container
     margin-left   30px
+
+
+// media
+
+
+.header-menu
+  @media    (max-width: smDesktopWidth)
+    display         flex
+    flex-direction  column
+    justify-content flex-start
+    align-items     flex-start
+    position        absolute
+    top             60px
+    right           25px
+    z-index         1
+    max-height      0
+    font-size       0
+    overflow        hidden
+    transition      0.15s all
+
+  &__item
+    @media    (max-width: smDesktopWidth)
+      border          1px solid fade-out(0.2)
+      border-radius   2px
+      margin-bottom   -1px
+
+  :last-child
+    margin-bottom: 0
+
+  &__link
+    @media    (max-width: smDesktopWidth)
+      width           140px
+      padding-left    10px
+
+  &__icon
+    @media    (max-width: smDesktopWidth)
+      margin-left   auto
+      margin-right  5px
+
+
+.header-menu-dropdown
+  @media    (max-width: smDesktopWidth)
+    display   block
+
+
+.auth-btn__button-sign-up
+  @media    (max-width: smDesktopWidth)
+    display   none
 

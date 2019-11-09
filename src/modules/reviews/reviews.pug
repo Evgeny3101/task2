@@ -7,10 +7,11 @@ mixin reviews(img, name, date, text, number, checked)
     +e.img-container
       +e.IMG(src=img).img
 
-    +e.name= name
-      +e.date= date
+    div
+      +e.P.name= name
+      +e.P.date= date
 
     +e.like-button
       +like-button(number, checked)
 
-    +e.text= text
+    +e.P.text= text

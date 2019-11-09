@@ -9,14 +9,6 @@
   margin          0 auto
   overflow        hidden
 
-  &__wrapper
-    &.wrapper
-      @media    (max-width: phoneWidth)
-        padding: 0
-
-  @media  (max-width: phoneWidth)
-    height       660px
-
 
   // background
   &__bg-img
@@ -25,6 +17,29 @@
     top          -70px
     position     absolute
 
+
+  // content main
+  &__wrapper
+    padding-top  4px
+    height 100%
+    container(space-around)
+
+
+
+// media //
+
+
+.sign-up-main
+  &__wrapper
+    @media  (max-width: phoneWidth)
+      height       660px
+
+      &.wrapper
+        padding: 0
+
+
+  // background
+  &__bg-img
     @media  (max-width: 1310px)
       top           0
       width         1310px
@@ -34,23 +49,13 @@
 
   // content main
   &__wrapper
-    padding-top  4px
-    height 100%
-    container(space-around)
-
     @media  (max-width: phoneWidth)
       align-items     flex-start
+
 
   .sign-up
     @media  (max-width: phoneWidth)
       width        100%
-
-
-
-
-
-
-
 
 
 

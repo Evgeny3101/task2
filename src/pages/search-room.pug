@@ -19,7 +19,7 @@ block head
 block content
   +b.MAIN.room-search
     +e.wrapper.wrapper
-      +b.room-filter
+      +b.ACIDE.room-filter
         div
           +e.H3.title даты пребывания в отеле
           +dropdown({
@@ -41,17 +41,17 @@ block content
 
         div
           +e.H3.title Checkbox Buttons
-
           +e.checkbox-item
             +checkbox-item('Можно курить')
+
           +e.checkbox-item
             +checkbox-item('Можно с питомцами')(checked)
+
           +e.checkbox-item
             +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
 
         div
           +e.H3.title Доступность
-
           +e.rich-checkbox-item._w230
             +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
 
@@ -68,11 +68,11 @@ block content
 
         +checkbox-list("дополнительные удобства")
 
-      div
-        +b.H1.title Номера, которые мы для вас подобрали
+      section
+        h1 Номера, которые мы для вас подобрали
 
-        +b.hotel-list
-          +e.item
+        +b.UL.hotel-list
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item1.jpg",
               "number"  : 888,
@@ -83,7 +83,7 @@ block content
               "slader"  : "!"
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item2.jpg",
               "number"  : 840,
@@ -92,7 +92,7 @@ block content
               "rating"  : 65
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item3.jpg",
               "number"  : 980,
@@ -102,7 +102,7 @@ block content
               "lux"     : "_visible"
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item4.jpg",
               "number"  : 856,
@@ -111,7 +111,7 @@ block content
               "rating"  : 19
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item5.jpg",
               "number"  : 740,
@@ -120,7 +120,7 @@ block content
               "rating"  : 44
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item6.jpg",
               "number"  : 982,
@@ -129,7 +129,7 @@ block content
               "rating"  : 56
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item7.jpg",
               "number"  : 678,
@@ -138,7 +138,7 @@ block content
               "rating"  : 45
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item8.jpg",
               "number"  : 450,
@@ -147,7 +147,7 @@ block content
               "rating"  : 39
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item9.jpg",
               "number"  : 350,
@@ -156,7 +156,7 @@ block content
               "rating"  : 77
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item10.jpg",
               "number"  : 666,
@@ -165,7 +165,7 @@ block content
               "rating"  : 25
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item11.jpg",
               "number"  : 444,
@@ -174,7 +174,7 @@ block content
               "rating"  : 15
             })
 
-          +e.item
+          +e.LI.item
             +hotel-item({
               "src"     :"assets/img/hotel-item12.jpg",
               "number"  : 352,

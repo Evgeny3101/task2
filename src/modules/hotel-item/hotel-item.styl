@@ -1,3 +1,6 @@
+@require "../rate-button/rate-button"
+
+
 .hotel-item
   background: default-color
   display: flex
@@ -20,56 +23,57 @@
     border-bottom: 1px solid fade-out(0.1)
     width: 230px
     margin-left: 20px
-//
-.room-price, .review
-  width: 100%
-  container()
-//
-.room-price
-  font-weight: bold
-  color fade-out(0.5)
 
-  &__icon
-    color primary-color
-    font-size: 14px
-    padding-right: 5px
 
-  &__number
-    color primary-color
-    font-size: 17px
-    padding-right: 5px
+  .room-price, .review
+    width: 100%
+    container()
 
-  &__room-class
-    display none
-    color regular-color
+
+  .room-price
     font-weight: bold
-    font-size: 12px
-    text-transform: uppercase
-    &_visible
-      display inline
+    color fade-out(0.5)
 
-  &__price
-    display inline-block
-    margin-top: 2px
-    font-size: 14px
-    padding-right: 4px
+    &__icon
+      color primary-color
+      font-size: 14px
+      padding-right: 5px
 
-  &__text-price
-    font-weight: normal
-    padding-left: 1px
-    font-size: 12px
-//
-.review
-  &__stars
-    color: regular-color
+    &__number
+      color primary-color
+      font-size: 17px
+      padding-right: 5px
 
-  &__text
-    padding-bottom: 3px
+    &__room-class
+      display none
+      color regular-color
+      font-weight: bold
+      font-size: 12px
+      text-transform: uppercase
+      &_visible
+        display inline
 
-  &__text-rating
-    font-weight: normal
-    padding-left: 4px
+    &__price
+      display inline-block
+      margin-top: 2px
+      font-size: 14px
+      padding-right: 4px
 
+    &__text-price
+      font-weight: normal
+      padding-left: 1px
+      font-size: 12px
+
+  .review
+    &__text
+      padding-bottom: 3px
+
+    &__text-rating
+      font-weight: normal
+      padding-left: 4px
+
+
+//  slader
 .gallery-slader
   position: relative
   height: 100%

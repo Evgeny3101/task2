@@ -14,7 +14,7 @@ block head
 
 block content
   +b.MAIN.room-details
-    +b.room-details-gallery
+    +b.SECTION.room-details-gallery
       +e.column1
         +e.IMG.img1(src='assets/img/room-details1.jpg')
       +e.column2
@@ -23,17 +23,15 @@ block content
 
     +e.wrapper.wrapper
       +e.details
-
         +b.details
-
-          +e.info
+          +e.SECTION.info
             +e.info-title
               h2 Сведения о номере
             +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
             +item-info("location_city", "Удобство", "Окно в каждой из спален")
             +item-info("whatshot", "Уют", "Номер оснащён камином")
 
-          +e.impression
+          +e.SECTION.impression
             +e.impression-title
               h2 Впечатления от номера
 
@@ -49,21 +47,21 @@ block content
               +e.chart-values
                 +b.chart-values
                   +e.circle
-                  +e.text Великолепно
+                  +e.P.text Великолепно
 
                   +e.circle._2
-                  +e.text Хорошо
+                  +e.P.text Хорошо
 
                   +e.circle._3
-                  +e.text Удовлетворительно
+                  +e.P.text Удовлетворительно
 
                   +e.circle._4
-                  +e.text Разочарован
+                  +e.P.text Разочарован
 
-          +e.reviews
+          +e.SECTION.reviews
             +e.reviews-title
               h2 Отзывы посетителей номера
-              +e.number-reviews 2 отзыва
+              +e.P.number-reviews 2 отзыва
 
             +e.container-reviews
               +reviews(
@@ -84,20 +82,20 @@ block content
                 2
                 )
 
-          +e.rules
+          +e.SECTION.rules
             +e.rules-title
               H2 Правила
 
             +bullet-list()
 
-          +e.cancel
+          +e.SECTION.cancel
             +e.cancel-title
               H2 Отмена
 
             +b.cancel
-              +e.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+              +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-      +e.payment
+      +e.ASIDE.payment
         +payment()
 
 

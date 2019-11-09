@@ -10,10 +10,10 @@ mixin payment()
         div
           +e.SPAN.icon №
           +e.SPAN.number 888
-          +e.SPAN.room-class люкс
+          +e.STRONG.room-class люкс
 
         div
-          +e.SPAN.price 9 990₽
+          +e.STRONG.price 9 990₽
           +e.SPAN.text-price в сутки
 
       +date-dropdown({
@@ -40,21 +40,23 @@ mixin payment()
       +e.price-list
         +b.price-list
           +e.item
-            span 9 990₽ х 4 суток
-            span
-            +e.sum 39 960₽
+            +e.P.count 9 990₽ х 4 суток
+            +e.P.sum 39 960₽
+
           +e.item
-            span Сбор за услуги: <span class="price-list_nowrap">скидка 2 179₽</span>
+            p Сбор за услуги: <span class="price-list_nowrap">скидка 2 179₽</span>
             +e.info i
-            +e.sum 0₽
+            +e.P.sum 0₽
+
           +e.item
-            span Сбор за дополнительные услуги
+            p Сбор за дополнительные услуги
             +e.info i
-            +e.sum 300₽
+            +e.P.sum 300₽
+
           +e.total
-            span Итого
+            p Итого
             +e.line
-            +e.total-number 38 081₽
+            +e.STRONG.total-number 38 081₽
 
       +e.button
         +b.BUTTON.button._regular._rel забронировать

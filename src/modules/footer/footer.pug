@@ -10,34 +10,39 @@ mixin footer(data)
         +e.container-logo
           +e.logo
             +logo()
-          +e.text= data.text
+          +e.P.text= data.text
 
         +b.NAV.footer-menu
-          +e.container
+          +e.SECTION.container
             each item in data.menu1
-              if (item.title)
-                +e.H3.title-menu= item.title
+              if(item.title)
+                +e.title
+                  h3= item.title
               else
-                +e.A.link(href=item.href)= item.text
+                +e.LI.link
+                  a(href=item.href)= item.text
 
-          +e.container
+          +e.SECTION.container
             each item in data.menu2
-              if (item.title)
-                +e.H3.title-menu= item.title
+              if(item.title)
+                +e.title
+                  h3= item.title
               else
-                +e.A.link(href=item.href)= item.text
+                +e.LI.link
+                  a(href=item.href)= item.text
 
-          +e.container
+          +e.SECTION.container
             each item in data.menu3
-              if (item.title)
-                +e.H3.title-menu= item.title
+              if(item.title)
+                +e.title
+                  h3= item.title
               else
-                +e.A.link(href=item.href)= item.text
+                +e.LI.link
+                  a(href=item.href)= item.text
 
-
-          +e.container._w260
+          +e.SECTION.container._w260
             +e.H3.title-sub= data.subTitle
-            +e.text= data.subText
+            +e.P.text= data.subText
 
             +e.subscription
               +subscription({
@@ -49,6 +54,6 @@ mixin footer(data)
     +e.bottom-area
       +e.container.wrapper
         +e.container-bottom
-          +e.text= data.bottomText
+          +e.SMALL.text= data.bottomText
           +social-link()
 

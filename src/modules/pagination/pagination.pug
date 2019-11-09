@@ -1,13 +1,19 @@
 mixin pagination()
 
   +b.NAV.pagination
-    +e.list
-      +b.A(href="#").pagination-number._blue 1
-      +b.A(href="#").pagination-number 2
-      +b.A(href="#").pagination-number 3
-      +b.A(href="#").pagination-number ...
-      +b.A(href="#").pagination-number 15
-      +b.A(href="#").pagination-number._gradient
-        +e.I.icon.material-icons arrow_forward
+    +e.UL.list
+      li
+        +b.A(href="#").pagination-number._blue 1
+      li
+        +b.A(href="#").pagination-number 2
+      li
+        +b.A(href="#").pagination-number 3
+      li
+        +b.A(href="#").pagination-number ...
+      li
+        +b.A(href="#").pagination-number 15
+      li
+        +b.A(href="#").pagination-number._gradient
+          +e.I.icon.material-icons arrow_forward
 
-    +e.text 1 – 12 из 100+ вариантов аренды
+    +e.P.text 1 – 12 из 100+ вариантов аренды

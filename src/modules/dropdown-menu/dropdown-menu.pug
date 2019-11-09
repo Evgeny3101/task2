@@ -3,11 +3,11 @@ include ../dropdown/dropdown
 //-  local mixin
 mixin item-count(mod, title, result, deactive)
   +b.item-count(class=mod)
-    +e.title= title
+    +e.H3.title= title
     +e.container-btn
-      +e.minus-btn(class=deactive) -
+      +e.BUTTON.minus-btn(class=deactive) -
       +e.result= result
-      +e.plus-btn +
+      +e.BUTTON.plus-btn +
 
 
 mixin dropdown-menu(place, data)
@@ -31,6 +31,6 @@ mixin dropdown-menu(place, data)
 
         +e.container-btn
           div
-            +b.button._fade05.clear очистить
+            +b.BUTTON.button._fade05.clear очистить
           div
-            +b.button._blue.apply применить
+            +b.BUTTON.button._blue.apply применить

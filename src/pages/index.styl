@@ -12,26 +12,6 @@
   margin        0 auto
   overflow      hidden
 
-  @media  (max-width: lDesktopWidth)
-    height          0px
-    padding         0 0 47.5%
-    margin-bottom   30px
-  @media  (max-width: smDesktopWidth)
-    min-height          500px
-  @media  (max-width: tableWidth)
-    height          400px
-
-
-
-  // background-slides
-  & .background-slides
-      &__img
-        @media  (max-width: 868px)
-          width         868px
-        @media  (max-width: tableWidth)
-          display     none
-
-
 
   // search-hotel
   &__container-search-hotel
@@ -39,12 +19,52 @@
     position      absolute
     top           70px
     left          140px
+
+
+  // offer
+  &__container-offer
+    position      absolute
+    bottom        20px
+    right         134px
+
+
+  & .offer
+    height        48px
+    width         265px
+    text-align    right
+    line-height   24px
+    color         fade-out()
+
+
+// media //
+
+
+.landing-main
+  @media  (max-width: lDesktopWidth)
+    height          0px
+    padding         0 0 47.5%
+    margin-bottom   30px
+  @media  (max-width: smDesktopWidth)
+    min-height      500px
+  @media  (max-width: tableWidth)
+    height          400px
+
+
+  & .background-slides__img
+    @media  (max-width: 868px)
+      width      868px
+    @media  (max-width: tableWidth)
+      display     none
+
+
+  &__container-search-hotel
     @media  (max-width: smDesktopWidth)
       top           50px
       left          50px
     @media  (max-width: tableWidth)
       top           0
       left          0
+
 
   & .search-hotel
     @media  (min-width: phoneWidth + 1px) and (max-width: tableWidth)
@@ -54,30 +74,20 @@
       width       100%
       padding     0px
 
+
   & .date-dropdown
     @media  (max-width: tableWidth)
       width       100%
       grid-template-columns: auto auto
 
 
-
-  // offer
   &__container-offer
-    position      absolute
-    bottom        20px
-    right         134px
-
     @media  (max-width: smDesktopWidth)
       right         50px
     @media  (max-width: tableWidth)
       display     none
 
-  & .offer
-    height        48px
-    width         265px
-    text-align    right
-    line-height   24px
-    color         fade-out()
+
 
 
 
