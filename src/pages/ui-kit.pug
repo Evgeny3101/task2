@@ -151,7 +151,12 @@ block content
               +e.container-pb5
                 +module-title("dropdown", "expanded")
 
-              +dropdown-menu("2 спальни, 2 кровати...", {
+              +dropdown-menu(
+                /*  placeholder  */
+                "2 спальни, 2 кровати...",
+
+                /*  menu count  */
+                {
                 "count1": {
                     "mod": "item1",
                     "title": "спальни",

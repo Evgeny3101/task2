@@ -53,10 +53,18 @@ block content
         div
           +e.H3.title Доступность
           +e.rich-checkbox-item._w230
-            +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+            +rich-checkbox-item(
+              /*  title  */
+              "Широкий коридор",
+              /*  text  */
+              "Ширина коридоров в номере не менее 91 см.")
 
           +e.rich-checkbox-item._w260
-            +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+            +rich-checkbox-item(
+              /*  title  */
+              "Помощник для инвалидов",
+              /*  text  */
+              "На 1 этаже вас встретит специалист и проводит до номера.")
 
         div
           +e.H3.title удобства номера
@@ -66,7 +74,38 @@ block content
               "value": "2 спальни, 2 кровати..."
             })
 
-        +checkbox-list("дополнительные удобства")
+
+        +checkbox-list(
+          /* title */
+          'дополнительные удобства'
+          /* items */
+          ,{
+          name    : 'Завтрак',
+          active  : false
+          },{
+          name    : 'Письменный стол',
+          active  : true
+          },{
+          name    : 'Стул для кормления',
+          active  : true
+          },{
+          name    : 'Кроватка',
+          active  : true
+          },{
+          name    : 'Телевизор',
+          active  : false
+          },{
+          name    : 'Шампунь',
+          active  : false
+          },{
+          name    : 'Телевизор',
+          active  : false
+          },{
+          name    : 'Шампунь',
+          active  : false
+          }
+        )
+
 
       section
         h1 Номера, которые мы для вас подобрали
@@ -185,16 +224,4 @@ block content
 
         +e.pagination
           +pagination()
-
-
-
-
-
-
-
-
-
-
-
-
 

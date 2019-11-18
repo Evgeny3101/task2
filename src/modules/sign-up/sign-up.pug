@@ -12,25 +12,46 @@ mixin sign-up()
 
       +e.container._pb9
         +e.container
-          +text-field("text", "Имя")
+          +text-field(
+            /*  type  */  "text",
+            /*  place */  "Имя"
+            )
+
         +e.container
-          +text-field("text", "Фамилия")
+          +text-field(
+            /*  type  */  "text",
+            /*  place */  "Фамилия"
+            )
+
         +e.container
           +radio-buttons()
 
       +e.container
         +e.H3.title-block дата рождения
         +e.container
-          +text-field("text", "ДД.ММ.ГГГГ")
+          +text-field(
+            /*  type  */  "text",
+            /*  place */  "ДД.ММ.ГГГГ"
+            )
 
       +e.container
         +e.H3.title-block данные для входа в сервис
         +e.container
-          +text-field("email", "Email")
+          +text-field(
+            /*  type  */  "email",
+            /*  place */  "Email"
+            )
+
         +e.container
-          +text-field("password", "Пароль")
+          +text-field(
+            /*  type  */  "password",
+            /*  place */  "Пароль"
+            )
+
         +e.container
-          +toggle("Получать спецпредложения")
+          +toggle(
+            /*  text  */  "Получать спецпредложения"
+            )
 
       +e.button-payment
         +b.BUTTON.button._regular._rel перейти к оплате

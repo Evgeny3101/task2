@@ -1,47 +1,52 @@
 .button
-  cursor: pointer
-  height 100%
-  width 100%
+  height          100%
+  width           100%
+  line-height     30px
+  cursor          pointer
+  text-transform  uppercase
+  font-size       12px
+  font-weight     bold
+  border-radius   22px
   container(space-around)
-  border-radius: 22px
-  line-height: 30px
-  font-size: 12px
-  text-transform: uppercase
-  font-weight: bold
+
+  &__icon
+    position      absolute
+    right         5px
+    width         34px
+    line-height   44px
+
+
+  &_default
+    font-size       14px
+    color           fade-out(0.5)
+    font-weight     normal
+    text-transform  none
+
 
   &_transparent
-    color: regular-color
-    border: 2px solid regular-color
+    color           regular-color
+    border          2px solid regular-color
+
 
   &_regular
-    padding-right: 4px
-    color: default-color
-    background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+    padding-right   4px
+    color           default-color
+    background      linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+
 
   &_transparent,
   &_regular
     &.active
-      opacity: 0.5
+      opacity       0.5
+
 
   &_fade05
-    color fade-out(0.5)
+    color           fade-out(0.5)
+
 
   &_blue
-    color regular-color
+    color           regular-color
 
 
   &_rel
-    position relative
-
-  &__icon
-    position absolute
-    right 5px
-    width: 34px
-    line-height: 44px
-
-
-  &_default
-    font-size: 14px
-    color fade-out(0.5)
-    text-transform: none
-    font-weight: normal
+    position        relative

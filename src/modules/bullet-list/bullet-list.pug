@@ -1,14 +1,41 @@
-mixin bullet-list()
-
+mixin bullet-list(...items)
   +b.UL.bullet-list
-    +e.LI.item
-      +e.circle
-      +e.P.text Нельзя с питомцами
+    each elem in items
+      +e.LI.item
+        +e.circle
+        +e.P.text= elem
 
-    +e.LI.item
-      +e.circle
-      +e.P.text Без вечеринок и мероприятий
 
-    +e.LI.item
-      +e.circle
-      +e.P.text Время прибытия — после 13:00, а выезд до 12:00
+
+    //-   Нельзя с питомцами
+
+    //- +e.LI.item
+    //-   +e.circle
+    //-   +e.P.text Без вечеринок и мероприятий
+
+    //- +e.LI.item
+    //-   +e.circle
+    //-   +e.P.text Время прибытия — после 13:00, а выезд до 12:00
+
+
+
+
+
+
+
+
+
+
+//- mixin bullet-list()
+//-   +b.UL.bullet-list
+//-     +e.LI.item
+//-       +e.circle
+//-       +e.P.text Нельзя с питомцами
+
+//-     +e.LI.item
+//-       +e.circle
+//-       +e.P.text Без вечеринок и мероприятий
+
+//-     +e.LI.item
+//-       +e.circle
+//-       +e.P.text Время прибытия — после 13:00, а выезд до 12:00

@@ -10,11 +10,12 @@ mixin header(login, register, data, user)
         +b.INPUT(type="checkbox" id="check-menu")
         +b.LABEL(for="check-menu").header-menu-dropdown
           +e.I.icon.material-icons keyboard_arrow_down
+
         +b.UL.header-menu
           each item in data.link
             +e.LI.item
               +e.A.link(href=item.href class=item.mod)= item.text
-                if (item.icon)
+                if (item.icon === true)
                   +e.I.icon.material-icons keyboard_arrow_down
 
         if (user)

@@ -9,9 +9,16 @@ mixin login-card()
         +b.H1.title Войти
 
       +e.container
-        +text-field("email", "Email")
+        +text-field(
+          /*  type  */  "email",
+          /*  place */  "Email"
+          )
+
       +e.container
-        +text-field("password", "Пароль")
+        +text-field(
+          /*  type  */  "password",
+          /*  place */  "Пароль"
+          )
 
       +e.login-button
         +b.BUTTON.button._regular._rel войти

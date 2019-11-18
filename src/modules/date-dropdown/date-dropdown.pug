@@ -4,20 +4,20 @@ include ../dropdown/dropdown
 mixin date-dropdown(data)
 
   +b.date-dropdown
-    div(class=data.input1.ident)
+    div
       +e.H3.title прибытие
 
       +dropdown({
-        "type" : "text",
+        "type" : "data",
         "place": data.input1.place,
         "value": data.input1.value
-        })
+      })(class=data.input1.ident)
 
     div
       +e.H3.title выезд
 
       +dropdown({
-        "type" : "text",
+        "type" : "data",
         "place": data.input2.place,
         "value": data.input2.value
       })(class=data.input2.ident)

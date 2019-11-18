@@ -1,6 +1,6 @@
 include ../checkbox-item/checkbox-item
 
-mixin checkbox-list(title)
+mixin checkbox-list(title, ...items)
   +b.checkbox-list
     +e.BUTTON.btn
       +e.H3.title= title
@@ -8,19 +8,23 @@ mixin checkbox-list(title)
       +e.I.icon-down.material-icons keyboard_arrow_down
 
     +e.UL.menu
-      +e.LI.checkbox-item
-        +checkbox-item("Завтрак")
-      +e.LI.checkbox-item
-        +checkbox-item("Письменный стол")(checked)
-      +e.LI.checkbox-item
-        +checkbox-item("Стул для кормления")(checked)
-      +e.LI.checkbox-item
-        +checkbox-item("Кроватка")(checked)
-      +e.LI.checkbox-item
-        +checkbox-item("Телевизор")
-      +e.LI.checkbox-item
-        +checkbox-item("Шампунь")
-      +e.LI.checkbox-item
-        +checkbox-item("Телевизор")
-      +e.LI.checkbox-item
-        +checkbox-item("Шампунь")
+      each item in items
+        +e.LI.checkbox-item
+          +checkbox-item(item.name)(checked=item.active)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

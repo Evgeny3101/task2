@@ -16,32 +16,37 @@ head
 body.page
 
   block header
-    +header("войти", "зарегистрироваться", { "link" : [
-        {
-        "href"  : "ui-kit.html",
-        "text"  : "О нас",
-        "mod"   : "_mr1"
-      },
-        {
-        "href"  : "search-room.html",
-        "text"  : "Услуги",
-        "icon"  : "!",
-        "mod"   : "_mr1"
-      },
-        {
-        "href"  : "room-details.html",
-        "text"  : "Вакансии"
-      },
-        {
-        "href"  : "login.html",
-        "text"  : "Новости",
-        "mod"   : "_mr1"
-      },
-        {
-        "href"  : "sign-up.html",
-        "text"  : "Соглашения",
-        "icon"  : "!"
-      }
+    +header(
+      /*  buttons  */
+      "войти", "зарегистрироваться",
+
+      /*  menu items */
+      { "link" : [
+          {
+          "href"  : "ui-kit.html",
+          "text"  : "О нас",
+          "mod"   : "_mr1"
+        },
+          {
+          "href"  : "search-room.html",
+          "text"  : "Услуги",
+          "icon"  : true,
+          "mod"   : "_mr1"
+        },
+          {
+          "href"  : "room-details.html",
+          "text"  : "Вакансии"
+        },
+          {
+          "href"  : "login.html",
+          "text"  : "Новости",
+          "mod"   : "_mr1"
+        },
+          {
+          "href"  : "sign-up.html",
+          "text"  : "Соглашения",
+          "icon"  : true
+        }
       ]}
     )
 

@@ -1,17 +1,20 @@
 include ../like-button/like-button
 
 
-mixin reviews(img, name, date, text, number, checked)
+mixin reviews(data)
 
   +b.reviews
     +e.img-container
-      +e.IMG(src=img).img
+      +e.IMG(src= data.img).img
 
     div
-      +e.P.name= name
-      +e.P.date= date
+      +e.P.name= data.name
+      +e.P.date= data.date
 
     +e.like-button
-      +like-button(number, checked)
+      if(data.active === true)
+        +like-button(data.like).checked
+      else
+        +like-button(data.like)
 
-    +e.P.text= text
+    +e.P.text= data.text
