@@ -8,7 +8,7 @@ include ../modules/rich-checkbox-item/rich-checkbox-item
 include ../modules/checkbox-list/checkbox-list
 include ../modules/hotel-item/hotel-item
 include ../modules/pagination/pagination
-
+include ../modules/dropdown-menu/dropdown-menu
 
 
 block head
@@ -30,11 +30,27 @@ block content
 
         div
           +e.H3.title гости
-          +dropdown({
-              "type" : "text",
-              "place": "Сколько гостей",
-              "value": "3 гостя, 1 младенец"
+          +dropdown-menu(
+            /*  placeholder  */
+            "Сколько гостей",
+
+            /*  menu count  */
+            {
+              "count1": {
+                "title"     : "гости",
+                "result"    : 3
+              },
+              "count2": {
+                "title"     : "дети",
+                "result"    : 0
+              },
+              "count3": {
+                "title"     : "младенцы",
+                "result"    : 1
+              }
             })
+
+
 
         div
           +range-slider("диапазон цены", "5 000₽ - 10 000₽", "Стоимость за сутки пребывания в номере")
@@ -66,18 +82,37 @@ block content
               /*  text  */
               "На 1 этаже вас встретит специалист и проводит до номера.")
 
-        div
+        +e.dropdown-menu
           +e.H3.title удобства номера
-          +dropdown({
-              "type" : "text",
-              "place": "Удобства",
-              "value": "2 спальни, 2 кровати..."
+          +dropdown-menu(
+            /*  placeholder  */
+            "Удобства",
+
+            /*  menu count  */
+            {
+              "count1": {
+                "title"     : "спальни",
+                "result"    : 2
+              },
+              "count2": {
+                "title"     : "кровати",
+                "result"    : 2
+              },
+              "count3": {
+                "title"     : "ванные комнаты",
+                "result"    : 0
+              }
             })
+
+
+
+
 
 
         +checkbox-list(
           /* title */
           'дополнительные удобства'
+
           /* items */
           ,{
           name    : 'Завтрак',

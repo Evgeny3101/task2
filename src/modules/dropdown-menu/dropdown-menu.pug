@@ -1,36 +1,36 @@
 include ../dropdown/dropdown
 
 //-  local mixin
-mixin item-count(mod, title, result, deactive)
-  +b.item-count(class=mod)
+mixin item-count(title, result)
+  +b.item-count
     +e.H3.title= title
     +e.container-btn
-      +e.BUTTON.minus-btn(class=deactive) -
+      +e.INPUT(type='button' value='-').minus-btn
       +e.result= result
-      +e.BUTTON.plus-btn +
+      +e.INPUT(type='button' value='+').plus-btn
 
 
-mixin dropdown-menu(place, data)
+mixin dropdown-menu(value, data)
   +b.dropdown-menu&attributes(attributes)
     +dropdown({
-      "type" : "text",
-      "place": place
+      "type" : "button",
+      "value": value
     })
 
     +b.dropdown-menu-count
       +e.wrapper
         +e.container
-          +item-count(data.count1.mod, data.count1.title, data.count1.result, data.count1.deactive)
+          +item-count(data.count1.title, data.count1.result)
 
         +e.container
-          +item-count(data.count2.mod, data.count2.title, data.count2.result, data.count2.deactive)
+          +item-count(data.count2.title, data.count2.result)
 
         +e.container
-          +item-count(data.count3.mod, data.count3.title, data.count3.result, data.count3.deactive)
+          +item-count(data.count3.title, data.count3.result)
 
 
         +e.container-btn
           div
-            +b.BUTTON.button._fade05.clear очистить
+            +b.INPUT(type='button' value='очистить').button._fade05.js-clear
           div
-            +b.BUTTON.button._blue.apply применить
+            +b.INPUT(type='button' value='применить').button._blue.js-apply

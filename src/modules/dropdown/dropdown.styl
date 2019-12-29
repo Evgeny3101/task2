@@ -1,21 +1,22 @@
 @require "../text-field/text-field.styl"
 
 .dropdown
-  width 100%
-  position relative
+  width           100%
+  position        relative
 
   &__icon
-    width 44px
-    height 44px
     container(space-around)
-    padding-top  2px
-    position  absolute
-    top 0px
-    right 0px
-    z-index  0
-    color fade-out( 0.5)
-    cursor pointer
+    width         44px
+    height        44px
+    padding-top   2px
+    position      absolute
+    top           0px
+    right         0px
+    z-index       0
+    color         fade-out( 0.5)
+    cursor        pointer
 
   .text-field
-  ::placeholder
-    color fade-out()
+    color         fade-out()
+    background    #fff
+    container()

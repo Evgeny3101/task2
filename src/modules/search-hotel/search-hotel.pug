@@ -1,4 +1,4 @@
-include ../dropdown/dropdown
+include ../dropdown-menu/dropdown-menu
 include ../date-dropdown/date-dropdown
 
 
@@ -24,11 +24,25 @@ mixin search-hotel()
       div
         +e.H3.title-guest гости
 
-        +dropdown({
-          "type" : "text",
-          "place": "Сколько гостей",
-          "icon" : "keyboard_arrow_down"
-        })
+        +dropdown-menu(
+          /*  placeholder  */
+          "Сколько гостей",
+
+          /*  menu count  */
+          {
+          "count1": {
+              "title": "спальни",
+              "result": 2
+            },
+          "count2": {
+              "title": "кровати",
+              "result": 2
+            },
+          "count3": {
+              "title"    : "ванные комнаты",
+              "result"   : 0
+            }
+          })
 
       +e.button
         +b.BUTTON.button._regular._rel Подобрать номер

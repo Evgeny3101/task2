@@ -1,0 +1,76 @@
+include ../assets/pug/bemto/bemto
+
+include ../modules/dropdown-menu/dropdown-menu
+
+
+div.container-nav-box
+  ul
+    li
+      a(href="ui-kit.html")         ui-kit
+
+    li
+      a(href="index.html")          index
+
+    li
+      a(href="search-room.html")    search-room
+
+    li
+      a(href="room-details.html")   room-details
+
+    li
+      a(href="login.html")          login
+
+    li
+      a(href="sign-up.html")        sign-up
+
+
+div.module-test
+
+  +dropdown-menu(
+    /*  placeholder  */
+    "Сколько гостей",
+
+    /*  menu count  */
+    {
+    "count1": {
+        "mod": "item1",
+        "title": "спальни",
+        "result": 2
+      },
+    "count2": {
+        "mod": "item2",
+        "title": "кровати",
+        "result": 2
+      },
+    "count3": {
+        "mod"      : "item3",
+        "title"    : "ванные комнаты",
+        "result"   : 0,
+        "deactive" : "btn-deactive"
+      }
+    }).menu1
+
+div.module-test
+  +dropdown-menu(
+    /*  placeholder  */
+    "Сколько мест",
+
+    /*  menu count  */
+    {
+    "count1": {
+        "mod": "item4",
+        "title": "гостей",
+        "result": 2
+      },
+    "count2": {
+        "mod": "item5",
+        "title": "кровати",
+        "result": 2
+      },
+    "count3": {
+        "mod"      : "item6",
+        "title"    : "младенцев",
+        "result"   : 1,
+        "deactive" : "btn-deactive"
+      }
+    }).menu2
