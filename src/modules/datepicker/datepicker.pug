@@ -1,0 +1,20 @@
+include ../dropdown/dropdown
+
+
+mixin datepicker()
+  +b.datepicker-container
+    div
+      +e.H3.title прибытие
+
+      +dropdown({
+        "type"  : "data",
+        "place" : "ДД.ММ.ГГГГ"
+      })(readonly="true").js-datepicker-here
+
+    div
+      +e.H3.title выезд
+
+      +dropdown({
+        "type"  : "data",
+        "place" : "ДД.ММ.ГГГГ"
+      })(readonly="true").js-altField

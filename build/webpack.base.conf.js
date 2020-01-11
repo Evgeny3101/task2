@@ -4,8 +4,6 @@ const webpack = require('webpack')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const moment = require('moment')
-const MomentLocalesPlugin = require('moment-locales-webpack-plugin')
 
 const PATHS = {
   src: path.join(__dirname, '../src'),
@@ -27,10 +25,10 @@ module.exports = {
     // landing: `${PATHS.src}/js/index.js`,
     // login: `${PATHS.src}/js/login.js`,
     // signUp: `${PATHS.src}/js/sign-up.js`,
-    // searchRoom: `${PATHS.src}/js/search-room.js`,
+    searchRoom: `${PATHS.src}/js/search-room.js`,
     // roomDetails: `${PATHS.src}/js/room-details.js`,
     // uiKit: `${PATHS.src}/js/ui-kit.js`,
-    nav: `${PATHS.src}/js/nav.js`
+    // nav: `${PATHS.src}/js/nav.js`
   },
 
   output: {
@@ -120,10 +118,6 @@ module.exports = {
 
   plugins: [
 
-    new MomentLocalesPlugin({
-      localesToKeep: ['es-us', 'ru'],
-    }),
-
     new MiniCssExtractPlugin({
       // filename: `${PATHS.assets}css/[name].[hash].css`,
       filename: `${PATHS.assets}css/[name].css`,
@@ -152,8 +146,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      moment : 'moment'
+      'window.jQuery': 'jquery'
     })
 
   ],

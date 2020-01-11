@@ -15,7 +15,7 @@ mixin dropdown-menu(value, data)
     +dropdown({
       "type" : "button",
       "value": value
-    })
+    })(readonly="true")
 
     +b.dropdown-menu-count
       +e.wrapper

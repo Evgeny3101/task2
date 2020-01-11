@@ -1,5 +1,5 @@
 include ../dropdown-menu/dropdown-menu
-include ../date-dropdown/date-dropdown
+include ../datepicker/datepicker
 
 
 mixin search-hotel()
@@ -9,17 +9,7 @@ mixin search-hotel()
       +e.title
         +b.H1.title Найдём номера под ваши пожелания
 
-      +date-dropdown({
-        "input1": {
-            "place": "ДД.ММ.ГГГГ",
-            "ident": "item1"
-          },
-
-        "input2": {
-            "place"  : "ДД.ММ.ГГГГ",
-            "ident"  : "item2"
-          }
-        })
+      +datepicker()
 
       div
         +e.H3.title-guest гости
