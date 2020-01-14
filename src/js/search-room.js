@@ -1,15 +1,14 @@
 // Stylus
-import "../pages/search-room.styl"
+import "../pages/search-room.styl";
 
 
-import "../modules/checkbox-list/checkbox-list.js"
-import "../modules/dropdown-menu/dropdown-menu.js"
+import "../modules/checkbox-list/checkbox-list.js";
+import "../modules/dropdown-menu/dropdown-menu.js";
 
 
 
-import DatePicker from "../modules/datepicker/datepicker.js"
+import DatePicker from "../modules/datepicker/datepicker.js";
 new DatePicker('.js-datepicker-here');
-
 
 $('.js-datepicker-here').datepicker({
   dateFormat: 'dd M',
@@ -18,3 +17,6 @@ $('.js-datepicker-here').datepicker({
 
 
 
+import setImagesSlider from "../modules/hotel-item/images-slider.js";
+
+  setImagesSlider('.js-images-slider');

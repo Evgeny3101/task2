@@ -57,19 +57,21 @@ export default class {
 
     }, false);
 
+
     //  открывать при нажатии на 2й инпут
-    // if(secondElement) {
-    //   this.secondField = document.querySelector(secondElement)
-    //   this.secondField.addEventListener('click',  () => {
-    //     $(mainElement).datepicker().data('datepicker').show();
 
-    //     const dateArray = $(mainElement).val().split(",");
-    //     if (dateArray.length > 1) {
-    //       $(mainElement).val(dateArray[0]);
-    //     }
+    if(secondElement) {
+      this.secondField = document.querySelector(secondElement)
+      this.secondField.addEventListener('click',  () => {
+        $(mainElement).datepicker().data('datepicker').show();
 
-    //   }, false);
-    // }
+        const dateArray = $(mainElement).val().split(",");
+        if (dateArray.length > 1) {
+          $(mainElement).val(dateArray[0]);
+        }
+
+      }, false);
+    }
 
   }
 };

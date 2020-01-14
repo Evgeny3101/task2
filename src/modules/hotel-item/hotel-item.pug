@@ -3,23 +3,26 @@ include ../rate-button/rate-button
 mixin hotel-item(data)
 
   +b.hotel-item
-    +b.gallery-slader
-      if (data.slader)
-        +e.control-deactive
-          +b.slader-prev
-            a(href="#")
-              +e.I.icon.material-icons expand_more
-          +b.slader-next
-            a(href="#")
-              +e.I.icon.material-icons expand_more
+    +b.images-slider.js-images-slider
+      +e.control-deactive
+        +b.slider-prev
+          a(href="#")
+            +e.I.icon.material-icons expand_more
+        +b.slider-next
+          a(href="#")
+            +e.I.icon.material-icons expand_more
 
-      +e.IMG(src=data.src).img.curry
+      +e.images-container
+        +e.IMG(src=data.src).img.img-current
+        +e.IMG(src=data.src2).img
+        +e.IMG(src=data.src3).img
+        +e.IMG(src=data.src4).img
 
       +b.control
-        +e.A(href="#").circle.circle-curry
-        +e.A(href="#").circle.
-        +e.A(href="#").circle.
-        +e.A(href="#").circle.
+        +e.A(href="#").btn.circle-current
+        +e.A(href="#").btn
+        +e.A(href="#").btn
+        +e.A(href="#").btn
 
     +b.room-price.hotel-item-room-price
       div
