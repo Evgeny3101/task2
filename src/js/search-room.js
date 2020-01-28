@@ -18,5 +18,4 @@ $('.js-datepicker-here').datepicker({
 
 
 import setImagesSlider from "../modules/hotel-item/images-slider.js";
-
-  setImagesSlider('.js-images-slider');
+setImagesSlider('.js-images-slider');

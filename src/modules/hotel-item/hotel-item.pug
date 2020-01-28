@@ -6,10 +6,10 @@ mixin hotel-item(data)
     +b.images-slider.js-images-slider
       +e.control-deactive
         +b.slider-prev
-          a(href="#")
+          button
             +e.I.icon.material-icons expand_more
         +b.slider-next
-          a(href="#")
+          button
             +e.I.icon.material-icons expand_more
 
       +e.images-container
@@ -19,10 +19,10 @@ mixin hotel-item(data)
         +e.IMG(src=data.src4).img
 
       +b.control
-        +e.A(href="#").btn.circle-current
-        +e.A(href="#").btn
-        +e.A(href="#").btn
-        +e.A(href="#").btn
+        +e.BUTTON.btn.circle-current
+        +e.BUTTON.btn
+        +e.BUTTON.btn
+        +e.BUTTON.btn
 
     +b.room-price.hotel-item-room-price
       div

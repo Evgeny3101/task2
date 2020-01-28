@@ -1,9 +1,4 @@
-
-
 export default  function(id) {
-
-  const sliderArray   = document.querySelectorAll(id);
-
 
   class HotelCard  {
     constructor(elemDOM) {
@@ -36,6 +31,14 @@ export default  function(id) {
         this.showSelectedImg();
       }, false);
 
+      // кнопки контроля
+      for(let i = 0; i < this.imgsDOM.length; i++ ) {
+        this.controlBtnsDOM[i].addEventListener('click',  () => {
+          currentItem = i;
+          this.showSelectedImg();
+        }, false);
+      };
+
       // показать стрелки
       elemDOM.addEventListener('mouseover',  () => {
         this.nextBtnDOM.style.zIndex = 1;
@@ -48,15 +51,11 @@ export default  function(id) {
         this.prevBtnDOM.style.zIndex = 0;
       }, false);
 
-      // кнопки контроля
-      for(let i = 0; i < this.imgsDOM.length; i++ ) {
-        this.controlBtnsDOM[i].addEventListener('click',  () => {
-          currentItem = i;
-          this.showSelectedImg();
-        }, false);
-      }
     } // конструктор
   } // класс
+
+  //  установка на все элементы
+  const sliderArray   = document.querySelectorAll(id);
 
   for(let i = 0; i < sliderArray.length; i++) {
     new HotelCard(sliderArray[i]);

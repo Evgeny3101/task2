@@ -51,13 +51,11 @@ block content
               h2 Впечатления от номера
 
             +b.impression
-              +e.diagram
-                +b.diagram
-                  +e.IMG.img1(src='assets/img/ellipse1.svg')
-                  +e.IMG.img2(src='assets/img/ellipse2.svg')
-                  +e.IMG.img3(src='assets/img/ellipse3.svg')
+              +e.chart
+                canvas(id="js-chart" width="120" height="120")
+                +b.chart
+                  +e.number
                   +e.text голосов
-                    +e.number 260
 
               +e.chart-values
                 +b.chart-values
