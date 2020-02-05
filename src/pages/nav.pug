@@ -1,7 +1,6 @@
 include ../assets/pug/bemto/bemto
 
 
-include ../modules/dropdown-menu/dropdown-menu
 
 
 div.container-nav-box
@@ -27,55 +26,3 @@ div.container-nav-box
 
 
 
-
-
-div.module-test
-
-  +dropdown-menu(
-    /*  placeholder  */
-    "Сколько гостей",
-
-    /*  menu count  */
-    {
-    "count1": {
-        "mod": "item1",
-        "title": "спальни",
-        "result": 2
-      },
-    "count2": {
-        "mod": "item2",
-        "title": "кровати",
-        "result": 2
-      },
-    "count3": {
-        "mod"      : "item3",
-        "title"    : "ванные комнаты",
-        "result"   : 0,
-        "deactive" : "btn-deactive"
-      }
-    }).menu1
-
-div.module-test
-  +dropdown-menu(
-    /*  placeholder  */
-    "Сколько мест",
-
-    /*  menu count  */
-    {
-    "count1": {
-        "mod": "item4",
-        "title": "гостей",
-        "result": 2
-      },
-    "count2": {
-        "mod": "item5",
-        "title": "кровати",
-        "result": 2
-      },
-    "count3": {
-        "mod"      : "item6",
-        "title"    : "младенцев",
-        "result"   : 1,
-        "deactive" : "btn-deactive"
-      }
-    }).menu2
