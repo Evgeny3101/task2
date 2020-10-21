@@ -1,9 +1,12 @@
 // Stylus
-import "../pages/search-room.styl";
+import "./search-room.styl";
 
 
+// вырадающие меню
 import "../modules/checkbox-list/checkbox-list.js";
 
+
+// меню подсчета
 import MenuForCount from '../modules/menuForCount/menuForCount.js';
 const menuForCountGuests = new MenuForCount('.js-menuForCountGuest', {
   itemsCount: [
@@ -50,7 +53,6 @@ const menuForCountGuests = new MenuForCount('.js-menuForCountGuest', {
   placeholder : 'Cколько гостей',
   btnsControl : true,
 });
-
 
 const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
   itemsCount: [
@@ -112,6 +114,7 @@ const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
 });
 
 
+// календарь
 import DatePicker from "../modules/datepicker/datepicker.js";
 new DatePicker('.js-datepicker-here');
 $('.js-datepicker-here').datepicker({
@@ -120,6 +123,14 @@ $('.js-datepicker-here').datepicker({
 });
 
 
-
+// слайдер изображений
 import setImagesSlider from "../modules/hotel-item/images-slider.js";
 setImagesSlider('.js-images-slider');
+
+
+// регулятор диапазона
+import rangeSlider from "../modules/range-slider/range-slider.js";
+const priceRange = rangeSlider("lkj")
+console.log(rangeSlider)
+console.log(priceRange)
+

@@ -206,3 +206,66 @@ export default class {
 
 }
 
+
+function moveWidget2(evt) {
+  let baseShift      =    evt.pageX
+  // let rangeSlider    =    rangeSliderDOM.offsetWidth
+  // let range          =    rangeDOM.offsetWidth
+  let widget1        =    widget1DOM.offsetLeft
+  let widget2        =    widget2DOM.offsetLeft
+
+  document.onmousemove = (event) => {
+    let widgetPos   =   widget2 - (baseShift - event.pageX);
+    let width       =   widgetPos - widget1
+    let leftWidget  =   widgetPos - width;
+
+    if (widgetPos < 0)  widgetPos = 0;
+
+    widget1DOM.style.left       =  leftWidget;
+    widget2DOM.style.left       =  widgetPos;
+    rangeDOM.style.left         =  leftWidget;
+
+    if(widgetPos <= widget1) {
+      rangeDOM.style.left         =  widgetPos;
+      width = widget1 - widgetPos;
+      console.log(width)
+    }
+    rangeDOM.style.width        =  width;
+  }
+
+  document.onmouseup = function() {
+    document.onmousemove = null;
+  };
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

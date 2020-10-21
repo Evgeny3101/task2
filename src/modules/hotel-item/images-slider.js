@@ -2,11 +2,11 @@ export default  function(id) {
 
   class HotelCard  {
     constructor(elemDOM) {
-        this.imgsDOM = elemDOM.querySelectorAll('.images-slider__img');
-        this.controlBtnsDOM = elemDOM.querySelectorAll('.control__btn');
-        this.prevBtnDOM = elemDOM.querySelector('.slider-prev');
-        this.nextBtnDOM = elemDOM.querySelector('.slider-next');
-        let currentItem = 0;
+      this.imgsDOM = elemDOM.querySelectorAll('.images-slider__img');
+      this.controlBtnsDOM = elemDOM.querySelectorAll('.control__btn');
+      this.prevBtnDOM = elemDOM.querySelector('.slider-prev');
+      this.nextBtnDOM = elemDOM.querySelector('.slider-next');
+      let currentItem = 0;
 
       // показать выбранное изображение
       this.showSelectedImg = () => {

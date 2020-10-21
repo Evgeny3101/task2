@@ -1,64 +1,67 @@
-.range-slider
-  font-size  12px
+.range-slider-container
+  font-size           12px
+  width               266px
 
-  &__container
-    display          flex
-    align-items      flex-start
-    font-size        12px
-    text-transform   uppercase
-    margin           1px 0 18px
+  &__title
+    display           flex
+    align-items       flex-start
+    font-size         12px
+    text-transform    uppercase
+    margin            1px 0 18px
 
   &__label
-    width 130px
-    font-weight  bold
-    margin-bottom  5.4px
-    color primary-color
+    width             130px
+    font-weight       bold
+    margin-bottom     5.4px
+    color             primary-color
 
-  &__price
-    width 136px
-    text-align  right
-    font-weight  normal
-    color fade-out(0.25)
-    letter-spacing 0.07em
+  &__value
+    width             136px
+    text-align        right
+    font-weight       normal
+    color             fade-out(0.25)
+    letter-spacing    0.07em
 
   &__text
-    margin-top  13.5px
-    color fade-out(0.5)
-
-  &__range
-    margin-left  73px
-    position relative
-    height 6px
-    width 101px
-    background  linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-    border-radius  3px
-    cursor pointer
-
-    & after,
-    & before
-      content  ''
-      position absolute
-      top -5px
-      width  16px
-      height 16px
-
-      border-radius  100%
-      background  linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-      border  2px solid default-color
-
-    & after
-      left 0
-
-    & before
-      right 0
+    margin-top        13.5px
+    color             fade-out(0.5)
 
 
-#range-slider
-  height 6px
-  border  1px solid fade-out(0.25)
-  border-radius  25px
-  background default-color
-  display flex
-  align-items center
+.range-slider
+  position            relative
+  height              16px
+
+  display             flex
+  align-items         center
+
+  border              1px solid fade-out(0.25)
+  border-radius       25px
 
 
+  .range-between
+    position          absolute
+    margin            0 10px
+
+    width             100px
+    height            16px
+
+    background        linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+    border-radius     3px
+
+  .widget1,
+  .widget2
+    position          absolute
+
+    width             20px
+    height            20px
+    z-index           1
+
+    border            2px solid default-color
+    border-radius     100%
+    background        linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+
+    cursor            pointer
+
+
+  .widget2
+    left  100px

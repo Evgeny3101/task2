@@ -1,15 +1,10 @@
 // Stylus
-import "../pages/room-details.styl"
-
+import "./index.styl"
 
 import DatePicker from "../modules/datepicker/datepicker.js"
 new DatePicker('.js-datepicker-here', '.js-altField');
 
-import '../js/chart/chart.js';
-
-
 import menuForCount from '../modules/menuForCount/menuForCount.js';
-
 const menuForCountGuests = new menuForCount('.js-menuForCount', {
   itemsCount: [
     {

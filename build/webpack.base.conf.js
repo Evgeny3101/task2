@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
@@ -13,7 +14,7 @@ const PATHS = {
 
 const PAGES_DIR = `${PATHS.src}/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-
+const CHUNKS = ['landing', 'login', 'nav', 'roomDetails', 'searchRoom', 'signUp', 'uiKit']
 
 module.exports = {
 
@@ -23,20 +24,20 @@ module.exports = {
   },
 
   entry: {
-    // landing: `${PATHS.src}/js/index.js`,
-    // login: `${PATHS.src}/js/login.js`,
-    // signUp: `${PATHS.src}/js/sign-up.js`,
-    searchRoom: `${PATHS.src}/js/search-room.js`,
-    // roomDetails: `${PATHS.src}/js/room-details.js`,
-    // uiKit: `${PATHS.src}/js/ui-kit.js`,
-    // nav: `${PATHS.src}/js/nav.js`
+    landing: `${PAGES_DIR}index.js`,
+    login: `${PAGES_DIR}login.js`,
+    signUp: `${PAGES_DIR}sign-up.js`,
+    searchRoom: `${PAGES_DIR}search-room.js`,
+    roomDetails: `${PAGES_DIR}room-details.js`,
+    uiKit: `${PAGES_DIR}ui-kit.js`,
+    nav: `${PAGES_DIR}nav.js`
   },
 
   output: {
     // filename: `${PATHS.assets}js/[name].[hash].js`,
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
-    publicPath: '/'
+    publicPath: ''
   },
 
   optimization: {
@@ -139,9 +140,10 @@ module.exports = {
       },
     ]),
 
-    ...PAGES.map(page => new HtmlWebpackPlugin({
+    ...PAGES.map((page, index) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
-      filename: `./${page.replace(/\.pug/,'.html')}`
+      filename: `./${page.replace(/\.pug/,'.html')}`,
+      chunks: [`${CHUNKS[index]}`, 'vendors'],
     })),
 
     new webpack.ProvidePlugin({
