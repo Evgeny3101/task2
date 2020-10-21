@@ -1,77 +1,68 @@
 import 'air-datepicker/dist/js/datepicker.min.js'
 
-export default class {
-  constructor(mainElement, secondElement) {
+function createDatePicker(config, mainField, secondField) {
+  const datepicker = $(mainField).datepicker(config).data('datepicker');
+  const clearButtonDOM = document.querySelector('span.datepicker--button[data-action="clear"]')
 
-    //  кнопка принять
-    this.applyButton = document.createElement('span');
-    this.applyButton.classList.add('datepicker--button','apply');
-    this.applyButton.innerText = 'Применить';
+  function onSelect (date) {
+    // показать/спрятать кнопку очистить
+    if(date) {
+      clearButtonDOM.classList.remove('datepicker--button_hide')
+    } else {
+      clearButtonDOM.classList.add('datepicker--button_hide')
+    }
 
-    $(mainElement).datepicker({
-      range: true,
-      multipleDates: true,
-      offset: 5,
-
-      Date: new Date(),
-      toggleSelected: false,
-
-      showButtonPanel: true,
-      clearButton: true,
-
-      prevHtml: '<i class="month-selection__icon material-icons">arrow_back</i>',
-      nextHtml: '<i class="month-selection__icon material-icons">arrow_forward</i>',
-
-      navTitles: {
-        days: 'MM yyyy',
-      },
-
-      onSelect: (date) => {
+    if(secondField) {
+      // выставлять значения во 2й инпут
         const dateArray = date.split(",");
 
         if (dateArray.length > 1) {
-          $(mainElement).val(dateArray[0]);
-          $(secondElement).val(dateArray[1]);
+          $(mainField).val(dateArray[0]);
+          $(secondField).val(dateArray[1]);
         }
 
         else {
-          $(secondElement).val("");
+          $(secondField).val("");
         }
-      },
+      }
+  }
 
+  datepicker.update('onSelect', onSelect)
 
-    });
+  // кнопка принять
+  $('.datepicker--buttons').append('<span class="datepicker--button apply">Применить</span>')
+  const applyButtonDOM = document.querySelector('span.datepicker--button.apply')
 
+  applyButtonDOM.addEventListener('click',  () => {
+    $(mainField).datepicker().data('datepicker').hide();
 
-    //  кнопка принять
-    $('.datepicker--buttons').append(this.applyButton);
-
-    this.applyButton.addEventListener('click',  () => {
-
-      $(mainElement).datepicker().data('datepicker').hide();
-
-      const dateArray = $(mainElement).val().split(",");
+    // если есть 2й инпут выставит одно значение
+    if(secondField) {
+      const dateArray = $(mainField).val().split(",");
       if (dateArray.length > 1) {
-        $(mainElement).val(dateArray[0]);
+        $(mainField).val(dateArray[0]);
+      }
+    }
+  }, false);
+
+
+  if(secondField) {
+    //  открыть при нажатии на 2й инпут
+    const secondFieldDOM = document.querySelector(secondField)
+
+    secondFieldDOM.addEventListener('click',  () => {
+      $(mainField).datepicker().data('datepicker').show();
+
+      const dateArray = $(mainField).val().split(",");
+      if (dateArray.length > 1) {
+        $(mainField).val(dateArray[0]);
       }
 
     }, false);
-
-
-    //  открывать при нажатии на 2й инпут
-
-    if(secondElement) {
-      this.secondField = document.querySelector(secondElement)
-      this.secondField.addEventListener('click',  () => {
-        $(mainElement).datepicker().data('datepicker').show();
-
-        const dateArray = $(mainElement).val().split(",");
-        if (dateArray.length > 1) {
-          $(mainElement).val(dateArray[0]);
-        }
-
-      }, false);
-    }
-
   }
-};
+
+  return datepicker;
+}
+
+
+export default createDatePicker;

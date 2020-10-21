@@ -1,8 +1,8 @@
 // Stylus
 import "./search-room.styl";
+import createDatePicker from "../modules/datepicker/datepicker.js"
 
-
-// вырадающие меню
+// выпадающие меню
 import "../modules/checkbox-list/checkbox-list.js";
 
 
@@ -115,12 +115,28 @@ const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
 
 
 // календарь
-import DatePicker from "../modules/datepicker/datepicker.js";
-new DatePicker('.js-datepicker-here');
-$('.js-datepicker-here').datepicker({
+const datepicker = createDatePicker( {
   dateFormat: 'dd M',
   multipleDatesSeparator: ' - ',
-});
+
+  range: true,
+  multipleDates: true,
+  offset: 5,
+
+  toggleSelected: true,
+
+  showButtonPanel: true,
+  clearButton: true,
+
+  prevHtml: '<i class="month-selection__icon material-icons">arrow_back</i>',
+  nextHtml: '<i class="month-selection__icon material-icons">arrow_forward</i>',
+
+  navTitles: {
+    days: 'MM yyyy',
+  },
+
+}, '.js-datepicker-main-field');
+datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 
 
 // слайдер изображений
@@ -130,6 +146,7 @@ setImagesSlider('.js-images-slider');
 
 // регулятор диапазона
 import rangeSlider from "../modules/range-slider/range-slider.js";
+import { data } from "autoprefixer";
 const priceRange = rangeSlider("lkj")
 console.log(rangeSlider)
 console.log(priceRange)

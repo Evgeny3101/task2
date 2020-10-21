@@ -1,9 +1,27 @@
 // Stylus
 import "./room-details.styl"
+import createDatePicker from "../modules/datepicker/datepicker.js"
 
 
-import DatePicker from "../modules/datepicker/datepicker.js"
-new DatePicker('.js-datepicker-here', '.js-altField');
+const datepicker = createDatePicker({
+  range: true,
+  multipleDates: true,
+  offset: 5,
+
+  toggleSelected: true,
+
+  showButtonPanel: true,
+  clearButton: true,
+
+  prevHtml: '<i class="month-selection__icon material-icons">arrow_back</i>',
+  nextHtml: '<i class="month-selection__icon material-icons">arrow_forward</i>',
+
+  navTitles: {
+    days: 'MM yyyy',
+  },
+
+}, '.js-datepicker-main-field', '.js-datepicker-second-field');
+datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 
 import '../js/chart/chart.js';
 

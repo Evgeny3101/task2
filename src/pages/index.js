@@ -1,10 +1,29 @@
 // Stylus
 import "./index.styl"
-
-import DatePicker from "../modules/datepicker/datepicker.js"
-new DatePicker('.js-datepicker-here', '.js-altField');
-
+import createDatePicker from "../modules/datepicker/datepicker.js"
 import menuForCount from '../modules/menuForCount/menuForCount.js';
+
+
+createDatePicker( {
+  range: true,
+  multipleDates: true,
+  offset: 5,
+
+  toggleSelected: true,
+
+  showButtonPanel: true,
+  clearButton: true,
+
+  prevHtml: '<i class="month-selection__icon material-icons">arrow_back</i>',
+  nextHtml: '<i class="month-selection__icon material-icons">arrow_forward</i>',
+
+  navTitles: {
+    days: 'MM yyyy',
+  },
+
+}, '.js-datepicker-main-field', '.js-datepicker-second-field');
+
+
 const menuForCountGuests = new menuForCount('.js-menuForCount', {
   itemsCount: [
     {
@@ -50,3 +69,5 @@ const menuForCountGuests = new menuForCount('.js-menuForCount', {
   placeholder : 'Cколько гостей',
   btnsControl : true
 });
+
+
