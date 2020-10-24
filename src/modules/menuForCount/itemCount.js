@@ -10,6 +10,7 @@ class ItemsCount {
 
   createHTML() {
     const item = document.createElement('div');
+    const {title, value} = this;
     item.classList.add('item-count');
 
     item.innerHTML = `
@@ -24,8 +25,8 @@ class ItemsCount {
     this.plusBtnDOM = item.querySelector('.item-count__plus-btn');
     this.resultDOM = item.querySelector('.item-count__result');
 
-    const isMinValue = this.value == this.minValue
-    if(isMinValue) {
+    this.isMinValue = this.value == this.minValue
+    if(this.isMinValue) {
       // добавит стиль btn-deactive
       this.minusBtnDOM.classList.add('btn-deactive');
     }
@@ -35,6 +36,7 @@ class ItemsCount {
 
   plusOne() {
     this.value += 1;
+    this.isMinValue = false
     this.resultDOM.innerText = this.value;
 
     // уберет класс если значение больше(на 1) минимального
@@ -43,15 +45,16 @@ class ItemsCount {
 
   minusOne() {
     if(this.value >= 1 + this.minValue) this.value -= 1;
+    if(this.value == this.minValue) this.isMinValue = true
 
     this.resultDOM.innerText = this.value;
 
     // добавит класс если значение равно минимальному
-    if(this.value == 0 + this.minValue) this.minusBtnDOM.classList.add('btn-deactive');
+    if(this.value == this.minValue) this.minusBtnDOM.classList.add('btn-deactive');
   }
 
   clearResult() {
-    this.value = 0 + this.minValue;
+    this.value = this.minValue;
     this.resultDOM.innerText = this.value;
     this.minusBtnDOM.classList.add('btn-deactive');
   }

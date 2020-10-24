@@ -29,7 +29,7 @@ block content
 
         div
           +e.H3.title гости
-          div.menuForCount.js-menuForCountGuest
+          +b.menuForCount.js-menuForCountGuest
             +dropdown({
               "type" : "button",
             })(readonly="true")
@@ -66,11 +66,11 @@ block content
 
         +e.dropdown-menu
           +e.H3.title удобства номера
-          div.menuForCount.js-menuForCount
+          +b.menuForCount.js-menuForCount
             +dropdown({
-              "type" : "button",
+              "type" : "text",
             })(readonly="true")
-
+            // type = text, чтобы работало троеточие
 
 
         +checkbox-list(
