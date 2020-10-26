@@ -83,9 +83,4 @@ setImagesSlider('.js-images-slider');
 
 
 // регулятор диапазона
-// import rangeSlider from "../modules/range-slider/range-slider.js";
-// import { data } from "autoprefixer";
-// const priceRange = rangeSlider("lkj")
-// console.log(rangeSlider)
-// console.log(priceRange)
-
+import "../modules/range-slider/range-slider.js";

@@ -1,14 +1,15 @@
-mixin range-slider(label, price, text)
+mixin range-slider(label, text)
 
-  +b.range-slider-container
-    +e.title
-      +e.LABEL.label(for="amount")= label
-      +e.INPUT.value(type="text" id="amount" readonly value=price)
+  +b.range-slider
+    +e.header
+      +e.LABEL.label= label
 
-    +b.range-slider
-      +b.widget1
-      +b.range
-      +b.widget2
+      +b.prise-range
+        +e.SPAN.value
+        +e.SPAN.field1
+        +e.SPAN.field2
+
+    +e.container
 
     if (text)
       +e.text= text

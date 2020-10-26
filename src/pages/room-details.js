@@ -23,8 +23,8 @@ const datepicker = createDatePicker({
 }, '.js-datepicker-main-field', '.js-datepicker-second-field');
 datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 
-import '../assets/js/chart/chart.js';
 
+import '../modules/chart/chart.js';
 
 
 // меню подсчета

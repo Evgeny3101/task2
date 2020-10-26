@@ -1,99 +1,50 @@
-export default function(id, data) {
+import "./rangeSlider";
 
-  const elemDOM             =   document.querySelector(id);
-  elemDOM.insertAdjacentHTML('beforeend', '<div class="range-slider"><div class="widget1"></div><div class="range-between"></div><div class="widget2"></div></div>');
-  const rangeSliderDOM      =   elemDOM.querySelector('.range-slider');
-  const rangeDOM            =   elemDOM.querySelector('.range-between');
-  const widget1DOM          =   elemDOM.querySelector('.widget1');
-  const widget2DOM          =   elemDOM.querySelector('.widget2');
+const fields = ['.prise-range__field1','.prise-range__field2'],
+valueDOM = document.querySelector('.prise-range__value'),
+fieldDOM = [],
+values = []
 
-  widget1DOM.addEventListener('mousedown', moveWidget1)
-  widget2DOM.addEventListener('mousedown', moveWidget2)
+fieldDOM[0] = document.querySelector(fields[0])
+fieldDOM[1] = document.querySelector(fields[1])
 
 
-  function moveWidget1(evt) {
-    const baseShift       =   evt.pageX;
-    const rangeSlider     =   rangeSliderDOM.offsetWidth - widget1DOM.offsetWidth;
-    const widget1         =   widget1DOM.offsetLeft;
-    const widget2         =   widget2DOM.offsetLeft;
+$('.range-slider__container').rangeSlider({
+  sliderValues: [5000, 10000],
+  sliderType: 'range',
+  maxValue: 15000,
+  step: 100,
+  textField: fields
+})
 
-    document.onmousemove  = (event) => {
-      // опредиление позиции курсора
-      let widgetPos       =   widget1 - (baseShift - event.pageX);
+// установка значений при создании
+  fieldDOM.forEach((item, i) => {
+    item.style.display = 'none'
+    values[i] = Number(item.innerText).toLocaleString()
+  });
 
-      // ограничение перемещения
-      if (widgetPos < 0)
-          widgetPos       =   0;
+  valueDOM.innerText = `${values[0]}₽ - ${values[1]}₽`
 
-      if (widgetPos > rangeSlider)
-          widgetPos       =   rangeSlider;
+// событие на обновление значений страницы
+const observer = new MutationObserver(mutations => handleFieldMutation(mutations));
 
-      // ширина между виджетов
-      let width           =   widget2 - widgetPos;
+// настраиваем наблюдатель
+var config = {
+  attributes: false,
+  childList: true,
+  characterData: true,
+  subtree: false,
+}
 
-      // позиционирование элементов
-      widget1DOM.style.left     =  widgetPos;
-      widget2DOM.style.left     =  widgetPos + width;
+// установка событий
+observer.observe(fieldDOM[0], config);
+observer.observe(fieldDOM[1], config);
 
-      if(widgetPos <= widget2) {
-        rangeDOM.style.left     =  widgetPos;
+// обработчик
+function handleFieldMutation(mutation) {
+  mutation.forEach((item, i) => {
+    values[i] = Number(item.target.innerText).toLocaleString()
+  });
 
-      } else {
-        width                   =  Math.abs(width)
-        rangeDOM.style.left     =  widget2;
-      }
-
-      rangeDOM.style.width      =  width;
-    }
-
-    document.onmouseup = function() {
-      document.onmousemove = null;
-    };
-
-  }
-
-  function moveWidget2(evt) {
-    const baseShift       =   evt.pageX
-    const rangeSlider     =   rangeSliderDOM.offsetWidth - widget1DOM.offsetWidth;
-    const widget1         =   widget1DOM.offsetLeft
-    const widget2         =   widget2DOM.offsetLeft
-
-    document.onmousemove  = (event) => {
-      // опредиление позиции курсора
-      let widgetPos       =   widget2 - (baseShift - event.pageX);
-
-      // ограничение перемещения
-      if (widgetPos < 0)
-          widgetPos       =   0;
-
-      if (widgetPos > rangeSlider)
-          widgetPos       =   rangeSlider ;
-
-      // ширина между виджетов
-      let width           =   widgetPos - widget1
-
-
-      // позиционирование элементов
-      widget1DOM.style.left   =  widget1;
-      widget2DOM.style.left   =  widgetPos;
-      rangeDOM.style.left     =  widget1;
-
-      if(widgetPos <= widget1) {
-        rangeDOM.style.left   =  widgetPos;
-        width                 =  widget1 - widgetPos;
-      }
-
-      rangeDOM.style.width    =  width;
-
-    }
-
-    document.onmouseup = function() {
-      document.onmousemove = null;
-    };
-
-  }
-
-} // функция
-
-
-
+  valueDOM.innerText = `${values[0]}₽ - ${values[1]}₽`
+}
