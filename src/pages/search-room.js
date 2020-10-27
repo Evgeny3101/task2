@@ -1,13 +1,14 @@
 // Stylus
 import "./search-room.styl";
+
+// JS
+import MenuForCount from '../modules/menuForCount/menuForCount.js';
+import ImagesSlider from "../modules/hotel-item/images-slider.js";
 import createDatePicker from "../modules/datepicker/datepicker.js"
-
-// выпадающие меню
 import "../modules/checkbox-list/checkbox-list.js";
-
+import "../modules/range-slider/range-slider.js";
 
 // меню подсчета
-import MenuForCount from '../modules/menuForCount/menuForCount.js';
 const menuForCountGuests = new MenuForCount('.js-menuForCountGuest', {
   itemsCount: [
         {
@@ -78,9 +79,5 @@ datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 
 
 // слайдер изображений
-import setImagesSlider from "../modules/hotel-item/images-slider.js";
-setImagesSlider('.js-images-slider');
-
-
-// регулятор диапазона
-import "../modules/range-slider/range-slider.js";
+const cardsDOM = document.querySelectorAll('.js-images-slider')
+cardsDOM.forEach(card => new ImagesSlider(card))

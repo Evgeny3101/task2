@@ -1,67 +1,78 @@
-export default  function(id) {
+class ImagesSlider  {
+  constructor(mainDOM) {
+    this.mainDOM = mainDOM;
+    this.imgsDOM = mainDOM.querySelectorAll('.images-slider__img');
+    this.controlBtnsDOM = mainDOM.querySelectorAll('.control__button');
+    this.prevBtnDOM = mainDOM.querySelector('.button-prev');
+    this.nextBtnDOM = mainDOM.querySelector('.button-next');
+    this.currentItem = 0;
 
-  class HotelCard  {
-    constructor(elemDOM) {
-      this.imgsDOM = elemDOM.querySelectorAll('.images-slider__img');
-      this.controlBtnsDOM = elemDOM.querySelectorAll('.control__btn');
-      this.prevBtnDOM = elemDOM.querySelector('.slider-prev');
-      this.nextBtnDOM = elemDOM.querySelector('.slider-next');
-      let currentItem = 0;
+    this.setListeners();
+  } // конструктор
 
-      // показать выбранное изображение
-      this.showSelectedImg = () => {
-        elemDOM.querySelector(".circle-current").classList.remove('circle-current');
-        elemDOM.querySelector(".img-current").classList.remove('img-current');
-        this.imgsDOM[currentItem].classList.add('img-current');
-        this.controlBtnsDOM[currentItem].classList.add('circle-current');
-      }
+  setListeners() {
+    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
+    this.handleButtonPrevClick = this.toPrevImage.bind(this);
+    this.handleButtonNextClick = this.toNextImage.bind(this);
+    this.handleImagesSliderMouseover = this.showArrows.bind(this);
+    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
 
-      // события для кнопок
-      // следующий
-      this.nextBtnDOM.addEventListener('click',  () => {
-        currentItem++;
-        if(currentItem == this.imgsDOM.length)  currentItem = 0;
-        this.showSelectedImg()
-      }, false);
-
-      // предыдущий
-      this.prevBtnDOM.addEventListener('click',  () => {
-        if(currentItem == 0)  currentItem = this.imgsDOM.length;
-        currentItem--;
-        this.showSelectedImg();
-      }, false);
-
-      // кнопки контроля
-      for(let i = 0; i < this.imgsDOM.length; i++ ) {
-        this.controlBtnsDOM[i].addEventListener('click',  () => {
-          currentItem = i;
-          this.showSelectedImg();
-        }, false);
-      };
-
-      // показать стрелки
-      elemDOM.addEventListener('mouseover',  () => {
-        this.nextBtnDOM.style.zIndex = 1;
-        this.prevBtnDOM.style.zIndex = 1;
-      }, false);
-
-      // убрать стрелки
-      elemDOM.addEventListener('mouseleave',  () => {
-        this.nextBtnDOM.style.zIndex = 0;
-        this.prevBtnDOM.style.zIndex = 0;
-      }, false);
-
-    } // конструктор
-  } // класс
-
-  //  установка на все элементы
-  const sliderArray   = document.querySelectorAll(id);
-
-  for(let i = 0; i < sliderArray.length; i++) {
-    new HotelCard(sliderArray[i]);
+    this.controlBtnsDOM.forEach((item, i) => item.addEventListener('click', this.handleControlButtonClick(i)))
+    this.prevBtnDOM.addEventListener('click', this.handleButtonPrevClick);
+    this.nextBtnDOM.addEventListener('click', this.handleButtonNextClick);
+    this.mainDOM.addEventListener('mouseover', this.handleImagesSliderMouseover);
+    this.mainDOM.addEventListener('mouseleave', this.handleImagesSliderMouseleave);
   }
 
-} // функция
+  toPrevImage() {
+    if(this.currentItem == 0) this.currentItem = this.imgsDOM.length;
+    this.currentItem -= 1;
+
+    this.showSelectedImage();
+  }
+
+  toNextImage() {
+    this.currentItem += 1;
+    if(this.currentItem == this.imgsDOM.length) this.currentItem = 0;
+
+    this.showSelectedImage()
+  }
+
+  goToImage(index) {
+    this.currentItem = index;
+
+    this.showSelectedImage();
+  }
+
+
+  // показать стрелки
+  showArrows() {
+    this.nextBtnDOM.style.zIndex = 1;
+    this.prevBtnDOM.style.zIndex = 1;
+  }
+
+  // убрать стрелки
+  hideArrows() {
+    this.nextBtnDOM.style.zIndex = 0;
+    this.prevBtnDOM.style.zIndex = 0;
+  }
+
+  // показать выбранное изображение
+  showSelectedImage () {
+    const { currentItem } = this;
+
+    this.mainDOM.querySelector(".circle-current").classList.remove('circle-current');
+    this.mainDOM.querySelector(".img-current").classList.remove('img-current');
+
+    this.imgsDOM[currentItem].classList.add('img-current');
+    this.controlBtnsDOM[currentItem].classList.add('circle-current');
+  }
+
+} // класс
+
+
+export default ImagesSlider;
+
 
 
 

@@ -5,8 +5,9 @@ valueDOM = document.querySelector('.prise-range__value'),
 fieldDOM = [],
 values = []
 
-fieldDOM[0] = document.querySelector(fields[0])
-fieldDOM[1] = document.querySelector(fields[1])
+fields.forEach((field, i) => {
+  fieldDOM[i] = document.querySelector(field)
+})
 
 
 $('.range-slider__container').rangeSlider({
@@ -17,7 +18,7 @@ $('.range-slider__container').rangeSlider({
   textField: fields
 })
 
-// установка значений при создании
+// редактирование значений при создании
   fieldDOM.forEach((item, i) => {
     item.style.display = 'none'
     values[i] = Number(item.innerText).toLocaleString()
