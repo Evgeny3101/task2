@@ -1,9 +1,9 @@
 include ../like-button/like-button
 
 
-mixin reviews(data)
+mixin review(data)
 
-  +b.reviews
+  +b.review
     +e.img-container
       +e.IMG(src= data.img).img
 
@@ -13,7 +13,7 @@ mixin reviews(data)
 
     +e.like-button
       if(data.active === true)
-        +like-button(data.like).checked
+        +like-button(data.like).like-button_checked
       else
         +like-button(data.like)
 

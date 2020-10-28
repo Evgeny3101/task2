@@ -9,9 +9,7 @@
 @require "../modules/hotel-item/hotel-item"
 @require "../modules/pagination/pagination"
 @require "../modules/datepicker/datepicker"
-@require "../menuForCount/menuForCount"
-
-
+@require "../modules/menuForCount/menuForCount"
 
 
 .room-search
@@ -19,63 +17,67 @@
   border-bottom   1px solid fade-out(0.25)
 
   &__wrapper
-    padding-top       30px
-    display           grid
-    grid-gap          60px
-    grid-template-columns     266px auto
-
+    padding-top             30px
+    display                 grid
+    grid-gap                60px
+    grid-template-columns   266px auto
 
   .room-filter
-    width       266px
-    display     grid
-    grid-gap    20px
+    width               266px
+    display             grid
+    grid-gap            20px
     grid-template-rows  64px 74px 82px 140px 155px 73px 273px
 
     &__title
       padding-bottom  5px
 
-    &__checkbox-item
-      width           240px
-      padding-top     10.4px
+    .js-datepicker-main-field
+      text-transform: lowercase
 
-    &__rich-checkbox-item
-      padding-top     10.5px
-      &_w230
-        width   230px
-      &_w260
-        width   260px
+    .checkbox-items
+      &__title
+        padding-bottom  5px
 
-    .dropdown-menu
-      width 266px
+      &__checkbox-item
+        width           240px
+        padding-top     10.4px
 
 
-  .hotel-list
-    display       grid
-    grid-gap      21px 12px
-    margin-top    20px
-    justify-content space-between
-    grid-template-columns 1fr 1fr 1fr
-
-    &__item
-      box-shadow     0px 10px 20px fade-out(0.05)
-      border-radius  4px
-
-
-  &__pagination
-    width           100%
-    margin          0 auto
-    display         flex
-    justify-content space-around
-    padding         41px 14px 40px 0
-
-  .menuForCount
-    .dropdown input
-      padding-right: 88px
+    .rich-checkbox-items
+      &__title
+        padding-bottom  5px
+      &__container
+        padding-top     10.5px
+        &_w230
+          width   230px
+        &_w260
+          width   260px
 
 
+  .search-result
+    &__pagination
+      width           100%
+      margin          0 auto
+      display         flex
+      justify-content space-around
+      padding         41px 14px 40px 0
+
+    .hotel-list
+      display       grid
+      grid-gap      21px 12px
+      margin-top    20px
+      justify-content space-between
+      grid-template-columns 1fr 1fr 1fr
+
+      &__item
+        box-shadow     0px 10px 20px fade-out(0.05)
+        border-radius  4px
+
+
+
+
+//
 // media //
-
-
 .room-search
   &__wrapper
     @media  (max-width  625px)

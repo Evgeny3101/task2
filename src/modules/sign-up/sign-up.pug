@@ -40,13 +40,13 @@ mixin sign-up()
           +text-field(
             /*  type  */  "email",
             /*  place */  "Email"
-            )
+            )(autocomplete="username")
 
         +e.container
           +text-field(
             /*  type  */  "password",
             /*  place */  "Пароль"
-            )
+            )(autocomplete="new-password")
 
         +e.container
           +toggle(
@@ -60,7 +60,7 @@ mixin sign-up()
       +e.container-create
           +e.text Уже есть аккаунт на Toxin
           +e.button-create
-            +b.A.button._transparent(href="login.html") войти
+            +b.A.button._transparent(href="sign-in.html") войти
 
 
 

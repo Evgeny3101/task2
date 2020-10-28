@@ -14,7 +14,7 @@ const PATHS = {
 
 const PAGES_DIR = `${PATHS.src}/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-const CHUNKS = ['landing', 'login', 'nav', 'roomDetails', 'searchRoom', 'signUp', 'uiKit']
+const CHUNKS = ['landing', 'nav', 'roomDetails', 'searchRoom', 'signIn','signUp', 'uiKit']
 
 module.exports = {
 
@@ -25,12 +25,12 @@ module.exports = {
 
   entry: {
     landing: `${PAGES_DIR}index.js`,
-    login: `${PAGES_DIR}login.js`,
-    signUp: `${PAGES_DIR}sign-up.js`,
-    searchRoom: `${PAGES_DIR}search-room.js`,
+    nav: `${PAGES_DIR}nav.js`,
     roomDetails: `${PAGES_DIR}room-details.js`,
-    uiKit: `${PAGES_DIR}ui-kit.js`,
-    nav: `${PAGES_DIR}nav.js`
+    searchRoom: `${PAGES_DIR}search-room.js`,
+    signIn: `${PAGES_DIR}sign-in.js`,
+    signUp: `${PAGES_DIR}sign-up.js`,
+    uiKit: `${PAGES_DIR}ui-kit.js`
   },
 
   output: {

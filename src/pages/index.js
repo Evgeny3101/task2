@@ -1,5 +1,7 @@
 // Stylus
 import "./index.styl"
+
+// JS
 import createDatePicker from "../modules/datepicker/datepicker.js"
 import MenuForCount from '../modules/menuForCount/menuForCount.js';
 

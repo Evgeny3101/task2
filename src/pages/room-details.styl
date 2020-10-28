@@ -3,7 +3,7 @@
 //- modules
 @require "../modules/item-info/item-info"
 @require "../modules/bullet-list/bullet-list"
-@require "../modules/reviews/reviews"
+@require "../modules/review/review"
 @require "../modules/payment/payment"
 
 
@@ -21,7 +21,7 @@
     display       flex
 
     &__column1
-      width     68.125%
+      width       68.125%
 
     &__column2
       width       31.875%
@@ -43,58 +43,45 @@
   &__payment
     padding-top   1px
 
-
   .details
-    display     grid
-    grid-gap    10px 81px
-    grid-template-columns  280px auto
-    grid-template-rows     293px 325px auto
-
-    &__impression-title
-      margin-bottom   21px
+    display                 grid
+    grid-gap                10px 81px
+    grid-template-columns   280px auto
+    grid-template-rows      293px 325px auto
 
 
-    // reviews
-    &__reviews
-      grid-column     1/3
+    &__user-reviews
+      grid-column           1/3
+    //
+  //impression
+  .impression
+    &__title
+      margin-bottom       21px
 
-    &__reviews-title
-      container()
-      margin-bottom   20px
-
-    &__number-reviews
-      white-space     nowrap
-      padding-top     3px
-      color           fade-out(0.5)
-
-    &__container-reviews
-      margin-bottom   22px
-
-
-    // rules
-    &__rules-title,
-    &__cancel-title
-      margin-bottom   18px
-
-    &__rules-title
-      margin-left     20px
-
-
-    // impression
-    .impression
+    &__container
       max-width       320px
       display         flex
 
-      &__chart
-        width         124px
-        height        124px
-        margin-right  30px
+    &__bullet-list
+      display       flex
+      align-items   flex-end
 
-      &__chart-values
-        display       flex
-        align-items   flex-end
+      .bullet-list__item:first-child .bullet-list__circle
+        background   linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+      .bullet-list__item:nth-child(2) .bullet-list__circle
+        background linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+      .bullet-list__item:nth-child(3) .bullet-list__circle
+        background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+      .bullet-list__item:nth-child(4) .bullet-list__circle
+        background linear-gradient(180deg, #919191 0%, #3D4975 100%)
 
-    .chart
+    &__chart
+      width         124px
+      height        124px
+      margin-right  30px
+
+  .chart
+    &__container
       position          relative
       display           flex
       justify-content   center
@@ -103,53 +90,47 @@
       text-transform    uppercase
       font-weight       bold
 
-      &__number
-        position:       absolute
-        top:            -80px
-        font-size       22px
-        letter-spacing  -0.8px
+    &__number
+      position:       absolute
+      top:            -80px
+      font-size       22px
+      letter-spacing  -0.8px
 
-      &__text
-        position:       absolute
-        top:            -55px
-        font-size       12px
-
-
-    // chart values
-    .chart-values
-      display      grid
-      grid-gap     2px 5px
-      align-items  center
-      grid-template-columns 10px 150px
-
-      &__circle
-        width         10px
-        height        10px
-        border-radius 25px
-
-        background   linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-        &_2
-          background linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-        &_3
-          background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-        &_4
-          background linear-gradient(180deg, #919191 0%, #3D4975 100%)
-
-      &__text
-        line-height  22px
-
+    &__text
+      position:       absolute
+      top:            -55px
+      font-size       12px
   //
-  .cancel__text
-    max-width      340px
-    line-height    24px
+  // user-reviews
+  .user-reviews
+    &__title-container
+      container()
+      margin-bottom         20px
 
+    &__number-reviews
+      white-space           nowrap
+      padding-top           3px
+      color                 fade-out(0.5)
 
+    &__review
+      margin-bottom         22px
+  //
+  // rules && text-block
+  .rules,
+  .text-block
+    &__container
+      margin-top   18px
 
-// media //
+  .rules
+    &__title
+      margin-left     20px
 
+  .text-block
+    &__text
+      max-width      340px
+      line-height    24px
 
-.room-details
-
+  // media //
   // gallery
   &-gallery
     @media  (min-width  tableWidth + 1px) and (max-width  lDesktopWidth)
@@ -163,82 +144,71 @@
 
     &__column1
       @media  (max-width  tableWidth)
-        width   100%
+        width         100%
 
     &__column2
       @media  (max-width  tableWidth)
-        width     100%
+        width         100%
 
 
     &__img1
       @media  (max-width  lDesktopWidth)
-        height       auto
-        width        100%
+        height        auto
+        width         100%
 
     &__img2,
     &__img3
       @media  (min-width  tableWidth + 1px) and (max-width  lDesktopWidth)
-        height       auto
-        width        100%
+        height        auto
+        width         100%
       @media  (max-width  tableWidth)
-        width        50%
+        width         50%
 
 
   //  deitails
   &__wrapper
     @media  (max-width  1200px)
-      grid-template-columns auto
-      grid-gap  20px
+      grid-template-columns   auto
+      grid-gap                20px
 
 
   .details
     @media (min-width  tableWidth + 1px) and (max-width  1200px)
-      grid-template-columns  auto auto
-      grid-gap  20px
+      grid-template-columns   auto auto
+      grid-gap                20px
     @media  (max-width  tableWidth)
       grid-template-columns   auto
       grid-template-rows      auto
-      grid-gap  40px
+      grid-gap                40px
 
 
     // reviews
-    &__reviews
+    &__user-reviews
       @media  (max-width  tableWidth)
-        grid-column     1/2
-
-
-    // impression
-    .impression__diagram
-      @media  (max-width  phoneWidth)
-        margin-right  10px
+        grid-column           1/2
 
 
   //  payment
   &__payment
     @media  (max-width  1200px)
-      margin 0 auto
-      margin-bottom  20px
+      margin                  0 auto
+      margin-bottom           20px
 
-    & .payment
+    .payment
       @media  (max-width  phoneWidth)
-        width       100%
-        border      none
-        box-shadow  none
+        width                 100%
+        border                none
+        box-shadow            none
 
-        & .date-dropdown
-          grid-template-columns  48% 48%
-          grid-gap  4%
+        .date-dropdown
+          grid-template-columns   48% 48%
+          grid-gap                4%
 
         &__wrapper
           @media  (max-width  phoneWidth)
-            padding         20px 20px 0 0
+            padding               20px 20px 0 0
 
 
 
 
-
-
-
-#js-chart
-  z-index: 10
 

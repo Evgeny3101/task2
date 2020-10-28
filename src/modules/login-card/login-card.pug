@@ -12,13 +12,13 @@ mixin login-card()
         +text-field(
           /*  type  */  "email",
           /*  place */  "Email"
-          )
+          )(autocomplete="username")
 
       +e.container
         +text-field(
           /*  type  */  "password",
           /*  place */  "Пароль"
-          )
+          )(autocomplete="current-password")
 
       +e.login-button
         +b.BUTTON.button._regular._rel войти

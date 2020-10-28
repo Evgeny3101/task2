@@ -18,96 +18,99 @@ block head
 block content
   +b.MAIN.room-search
     +e.wrapper.wrapper
-      +b.ACIDE.room-filter
-        div
+      +b.ASIDE.room-filter
+
+        +e.date-picker-field
           +e.H3.title даты пребывания в отеле
           +dropdown({
-              "type" : "text",
-              "place": "ДД.ММ - ДД.ММ",
-              "value": "19 авг - 23 авг"
-            })(readonly="true").js-datepicker-main-field
+            "type" : "text",
+            "place": "ДД.ММ - ДД.ММ",
+            "value": "19 авг - 23 авг"
+          })(readonly="true").js-datepicker-main-field
 
-        div
+        +e.menu-for-count
           +e.H3.title гости
-          +b.menuForCount.js-menuForCountGuest
+          +b.menu-for-count.js-menuForCountGuest
             +dropdown({
               "type" : "button",
             })(readonly="true")
 
-        div
+        +e.range-slider
           +range-slider("диапазон цены", "Стоимость за сутки пребывания в номере")
 
-        div
-          +e.H3.title правила дома
-          +e.checkbox-item
-            +checkbox-item('Можно курить')
+        +e.checkbox-items
+          +b.checkbox-items
+            +e.H3.title правила дома
+            +e.checkbox-item
+              +checkbox-item('Можно курить')
 
-          +e.checkbox-item
-            +checkbox-item('Можно с питомцами')(checked)
+            +e.checkbox-item
+              +checkbox-item('Можно с питомцами')(checked)
 
-          +e.checkbox-item
-            +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
+            +e.checkbox-item
+              +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
 
-        div
-          +e.H3.title Доступность
-          +e.rich-checkbox-item._w230
-            +rich-checkbox-item(
-              /*  title  */
-              "Широкий коридор",
-              /*  text  */
-              "Ширина коридоров в номере не менее 91 см.")
+        +e.rich-checkbox-items
+          +b.rich-checkbox-items
+            +e.H3.title Доступность
+            +e.container._w230
+              +rich-checkbox-item(
+                /*  title  */
+                "Широкий коридор",
+                /*  text  */
+                "Ширина коридоров в номере не менее 91 см.")
 
-          +e.rich-checkbox-item._w260
-            +rich-checkbox-item(
-              /*  title  */
-              "Помощник для инвалидов",
-              /*  text  */
-              "На 1 этаже вас встретит специалист и проводит до номера.")
+            +e.rich-checkbox-item._w260
+              +rich-checkbox-item(
+                /*  title  */
+                "Помощник для инвалидов",
+                /*  text  */
+                "На 1 этаже вас встретит специалист и проводит до номера.")
 
-        +e.dropdown-menu
+        +e.menu-for-count
           +e.H3.title удобства номера
-          +b.menuForCount.js-menuForCount
+          +b.menu-for-count.js-menuForCount
             +dropdown({
               "type" : "text",
             })(readonly="true")
             // type = text, чтобы работало троеточие
 
+        +e.checkbox-list
+          +checkbox-list(
+            /* title */
+            'дополнительные удобства'
 
-        +checkbox-list(
-          /* title */
-          'дополнительные удобства'
-
-          /* items */
-          ,{
-          name    : 'Завтрак',
-          active  : false
-          },{
-          name    : 'Письменный стол',
-          active  : true
-          },{
-          name    : 'Стул для кормления',
-          active  : true
-          },{
-          name    : 'Кроватка',
-          active  : true
-          },{
-          name    : 'Телевизор',
-          active  : false
-          },{
-          name    : 'Шампунь',
-          active  : false
-          },{
-          name    : 'Телевизор',
-          active  : false
-          },{
-          name    : 'Шампунь',
-          active  : false
-          }
-        )
+            /* items */
+            ,{
+            name    : 'Завтрак',
+            active  : false
+            },{
+            name    : 'Письменный стол',
+            active  : true
+            },{
+            name    : 'Стул для кормления',
+            active  : true
+            },{
+            name    : 'Кроватка',
+            active  : true
+            },{
+            name    : 'Телевизор',
+            active  : false
+            },{
+            name    : 'Шампунь',
+            active  : false
+            },{
+            name    : 'Телевизор',
+            active  : false
+            },{
+            name    : 'Шампунь',
+            active  : false
+            }
+          )
 
 
-      section
-        h1 Номера, которые мы для вас подобрали
+      +b.SECTION.search-result
+        +e.H1.title Номера, которые мы для вас подобрали
 
         +b.UL.hotel-list
           +e.LI.item
