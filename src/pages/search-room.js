@@ -2,7 +2,7 @@
 import "./search-room.styl";
 
 // JS
-import MenuForCount from '../modules/menuForCount/menuForCount.js';
+import MenuForCount from '../modules/menu-for-count/menu-for-count.js';
 import ImagesSlider from "../modules/hotel-item/images-slider.js";
 import createDatePicker from "../modules/datepicker/datepicker.js"
 import "../modules/checkbox-list/checkbox-list.js";
@@ -11,14 +11,14 @@ import "../modules/range-slider/range-slider.js";
 // меню подсчета
 const menuForCountGuests = new MenuForCount('.js-menuForCountGuest', {
   itemsCount: [
-        {
-          title          : 'взрослые',
-        },  {
-          title          : 'дети',
-        }, {
-          title          : 'младенцы',
-          index          : 1,
-        }
+    {
+      title          : 'взрослые',
+    },  {
+      title          : 'дети',
+    }, {
+      title          : 'младенцы',
+      index          : 1,
+    }
   ],
 
   descriptionTypes: [
@@ -49,7 +49,6 @@ const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
     ['кровать', 'кровати', 'кроватей'],
     ['ванная комната', 'ванные комнаты', 'ванных комнаты'],
   ],
-
 });
 
 

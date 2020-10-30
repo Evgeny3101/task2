@@ -1,5 +1,5 @@
 include ../text-field/text-field
-include ../radio-buttons/radio-buttons
+include ../radio-button/radio-button
 include ../toggle/toggle
 
 
@@ -7,60 +7,68 @@ mixin sign-up()
 
   +b.FORM.sign-up
     +e.wrapper
-      +e.container-title
+      +e.title
         +b.H1.title Регистрация аккаунта
 
-      +e.container._pb9
-        +e.container
-          +text-field(
-            /*  type  */  "text",
-            /*  place */  "Имя"
-            )
-
-        +e.container
-          +text-field(
-            /*  type  */  "text",
-            /*  place */  "Фамилия"
-            )
-
-        +e.container
-          +radio-buttons()
+      +e.container
+        +text-field(
+          /*  type  */  "text",
+          /*  place */  "Имя"
+        )
 
       +e.container
-        +e.H3.title-block дата рождения
-        +e.container
-          +text-field(
-            /*  type  */  "text",
-            /*  place */  "ДД.ММ.ГГГГ"
-            )
+        +text-field(
+          /*  type  */  "text",
+          /*  place */  "Фамилия"
+        )
+
+      +e.radio-buttons
+        +radio-button({
+          name: 'gender',
+          id: 'male',
+          text: 'Мужчина',
+          checked: true
+        })
+
+        +radio-button({
+          name: 'gender',
+          id: 'female',
+          text: 'Женщина',
+        })
+
+      +b.H3.title дата рождения
+      +e.container
+        +text-field(
+          /*  type  */  "text",
+          /*  place */  "ДД.ММ.ГГГГ"
+          )
+
+      +b.H3.title данные для входа в сервис
+      +e.container
+        +text-field(
+          /*  type  */  "email",
+          /*  place */  "Email"
+          )(autocomplete="username")
 
       +e.container
-        +e.H3.title-block данные для входа в сервис
-        +e.container
-          +text-field(
-            /*  type  */  "email",
-            /*  place */  "Email"
-            )(autocomplete="username")
+        +text-field(
+          /*  type  */  "password",
+          /*  place */  "Пароль"
+          )(autocomplete="new-password")
 
-        +e.container
-          +text-field(
-            /*  type  */  "password",
-            /*  place */  "Пароль"
-            )(autocomplete="new-password")
-
-        +e.container
-          +toggle(
-            /*  text  */  "Получать спецпредложения"
-            )
+      +e.container
+        +toggle(
+          /*  text  */  "Получать спецпредложения"
+          )
 
       +e.button-payment
         +b.BUTTON.button._regular._rel перейти к оплате
           +e.I.icon.material-icons arrow_forward
 
       +e.container-create
-          +e.text Уже есть аккаунт на Toxin
-          +e.button-create
-            +b.A.button._transparent(href="sign-in.html") войти
+        +e.text Уже есть аккаунт на Toxin
+        +e.button-create
+          +b.A.button._transparent(href="sign-in.html") войти
 
 
 

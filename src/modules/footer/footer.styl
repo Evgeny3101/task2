@@ -8,23 +8,24 @@
   font-size  14px
   color fade-out()
 
-  &__container-top
-    container(, flex-start)
-
   &__top-area
     height      372px
     padding-top 100px
     box-shadow  0px 1px 0px fade-out(0.1)
 
-  &__container-logo
+  .top-area
+    container(, flex-start)
+
+
+  .represent
     width           260px
     margin-right   40px
 
-  &__logo
-    padding-bottom  17px
+    &__logo
+      padding-bottom  17px
 
-  &__text
-    line-height  24px
+    &__text
+      line-height  24px
 
 
   .footer-menu
@@ -63,18 +64,15 @@
     border-top  1px solid #E5E5E5
     height      70px
 
-  &__container-bottom
+  .bottom-area
     container()
     width         100%
     height        70px
 
 
 
-// media //
-
-
-.footer
-  &__container-top
+  // media //
+  .top-area
     @media    (max-width  smDesktopWidth + 50px)
       flex-direction  column
 
@@ -85,7 +83,7 @@
       height  auto
 
 
-  &__container-logo
+  .represent
     @media    (max-width  smDesktopWidth + 50px)
       width 100%
       padding-right 0
@@ -94,10 +92,10 @@
       padding-bottom   40px
 
 
-  &__text
-    @media    (max-width  smDesktopWidth + 50px)
-      max-width 500px
-      text-align  center
+    &__text
+      @media    (max-width  smDesktopWidth + 50px)
+        max-width 500px
+        text-align  center
 
 
   .footer-menu
@@ -121,8 +119,7 @@
     @media    (max-width  549px)
       height      100px
 
-
-  &__container-bottom
+  .bottom-area
     @media    (max-width  549px)
       flex-direction    column
       justify-content   space-around

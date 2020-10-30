@@ -5,16 +5,16 @@ mixin login-card()
 
   +b.FORM.login-card
     +e.wrapper
-      +e.container-title
+      +e.title
         +b.H1.title Войти
 
-      +e.container
+      +e.text-field
         +text-field(
           /*  type  */  "email",
           /*  place */  "Email"
           )(autocomplete="username")
 
-      +e.container
+      +e.text-field
         +text-field(
           /*  type  */  "password",
           /*  place */  "Пароль"
@@ -24,7 +24,8 @@ mixin login-card()
         +b.BUTTON.button._regular._rel войти
           +e.I.icon.material-icons arrow_forward
 
-      +e.container-create
-        +e.text Нет аккаунта на Toxin?
-        +e.button-create
-          +b.A.button._transparent(href="sign-up.html") создать
+      +e.create-account
+        +b.create-account
+          +e.text Нет аккаунта на Toxin?
+          +e.button-create
+            +b.A.button._transparent(href="sign-up.html") создать

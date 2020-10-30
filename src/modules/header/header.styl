@@ -11,9 +11,8 @@
 
 
   &__container,
-  &__menu,
-  & .auth-btn,
-  & .header-menu
+  .auth-btn,
+  .header-menu
     container()
 
 
@@ -58,7 +57,6 @@
     align-items  center
     background  default-color
 
-
     &_mr10
       margin-right 8.5px
     &_mr1
@@ -74,7 +72,7 @@
 
 .auth-btn
   margin-bottom  1px
-  &__button-login
+  &__button-sign-in
     height    34px
     width     87px
 
@@ -87,7 +85,7 @@
   line-height   30px
   border-left   1px solid fade-out(0.1)
 
-  &__btn-container
+  &__containerbtn-btn
     margin-left   30px
 
 
@@ -114,9 +112,6 @@
       border          1px solid fade-out(0.2)
       border-radius   2px
       margin-bottom   -1px
-
-   last-child
-    margin-bottom  0
 
   &__link
     @media    (max-width  smDesktopWidth)

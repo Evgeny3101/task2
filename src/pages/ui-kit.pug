@@ -151,29 +151,10 @@ block content
               +e.container-pb5
                 +module-title("dropdown", "expanded")
 
-              +dropdown-menu(
-                /*  placeholder  */
-                "2 спальни, 2 кровати...",
-
-                /*  menu count  */
-                {
-                "count1": {
-                    "mod": "item1",
-                    "title": "спальни",
-                    "result": 2
-                  },
-                "count2": {
-                    "mod": "item2",
-                    "title": "кровати",
-                    "result": 2
-                  },
-                "count3": {
-                    "mod"      : "item3",
-                    "title"    : "ванные комнаты",
-                    "result"   : 0,
-                    "deactive" : "btn-deactive"
-                  }
-                }).count-active
+              +b.menu-for-count.js-menuForCount
+                +dropdown({
+                  "type" : "text",
+                })(readonly="true")
 
             +e.container-pb48
               +b.checkbox-list1
@@ -209,7 +190,12 @@ block content
             +e.container-pb17
               +module-title("Radio Buttons")
             +e.container-pb35
-              +radio-buttons()
+              //- +radio-button({
+              //-   name: 'gender',
+              //-   id: 'male',
+              //-   text: 'Мужчина',
+              //-   checked: true
+              //- })()
 
             //-  Toggle
             +e.container-pb17
@@ -277,26 +263,10 @@ block content
             +e.container-pb256
               +module-title("dropdown")
               +e.block-wrapper
-                +dropdown-menu("Сколько гостей", {
-                    "count1": {
-                        "mod"      : "guest1",
-                        "title"    : "взрослые",
-                        "result"   : 0,
-                        "deactive" : "btn-deactive"
-                      },
-                    "count2": {
-                        "mod"      : "guest2",
-                        "title"    : "дети",
-                        "result"   : 0,
-                        "deactive" : "btn-deactive"
-                      },
-                    "count3": {
-                        "mod"      : "guest3",
-                        "title"    : "младенцы",
-                        "result"   : 0,
-                        "deactive" : "btn-deactive"
-                      }
-                    }).count-active
+                +b.menu-for-count.js-menuForCount
+                  +dropdown({
+                    "type" : "text",
+                  })(readonly="true")
 
             //-  Rich Checkbox Buttons
             +e.container-pb17
@@ -314,24 +284,10 @@ block content
             +e.container-pb256
               +module-title("dropdown")
               +e.block-wrapper
-                +dropdown-menu("3 гостя", {
-                    "count1": {
-                        "mod"      : "guest1",
-                        "title"    : "взрослые",
-                        "result"   : 2
-                      },
-                    "count2": {
-                        "mod"      : "guest2",
-                        "title"    : "дети",
-                        "result"   : 1
-                      },
-                    "count3": {
-                        "mod"      : "guest3",
-                        "title"    : "младенцы",
-                        "result"   : 0,
-                        "deactive" : "btn-deactive"
-                      }
-                    }).count-active
+                +b.menu-for-count.js-menuForCount
+                  +dropdown({
+                    "type" : "text",
+                  })(readonly="true")
 
             //-  Bullet list
             +e.container-pb13
@@ -340,8 +296,8 @@ block content
             +bullet-list()
 
 
-          +e.container-reviews
-            +review(
+          +e.user-comment
+            +user-comment(
               'assets/img/user-img1.jpg',
               'Мурад Сарафанов',
               '5 дней назад',

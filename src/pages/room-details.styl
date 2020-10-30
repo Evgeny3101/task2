@@ -3,7 +3,7 @@
 //- modules
 @require "../modules/item-info/item-info"
 @require "../modules/bullet-list/bullet-list"
-@require "../modules/review/review"
+@require "../modules/user-comment/user-comment"
 @require "../modules/payment/payment"
 
 
@@ -49,8 +49,7 @@
     grid-template-columns   280px auto
     grid-template-rows      293px 325px auto
 
-
-    &__user-reviews
+    &__user-comments
       grid-column           1/3
     //
   //impression
@@ -101,18 +100,18 @@
       top:            -55px
       font-size       12px
   //
-  // user-reviews
-  .user-reviews
-    &__title-container
+  // user-comments
+  .user-comments
+    &__header
       container()
       margin-bottom         20px
 
-    &__number-reviews
+    &__number
       white-space           nowrap
       padding-top           3px
       color                 fade-out(0.5)
 
-    &__review
+    &__user-comment
       margin-bottom         22px
   //
   // rules && text-block
@@ -199,10 +198,6 @@
         width                 100%
         border                none
         box-shadow            none
-
-        .date-dropdown
-          grid-template-columns   48% 48%
-          grid-gap                4%
 
         &__wrapper
           @media  (max-width  phoneWidth)

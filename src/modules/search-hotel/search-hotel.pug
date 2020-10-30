@@ -3,7 +3,6 @@ include ../datepicker/datepicker
 
 
 mixin search-hotel()
-
   +b.FORM.search-hotel
     +e.wrapper
       +e.title
@@ -11,12 +10,14 @@ mixin search-hotel()
 
       +datepicker()
 
-      div
-        +e.H3.title-guest гости
+      +e.title-menu
+        +b.H3.title гости
 
-        div.menuForCount.js-menuForCount
+      +e.menu-for-count
+        +b.menu-for-count.js-menuForCount
           +dropdown({
-            "type" : "button",
+            "type" : "text",
+            "place" : 'Сколько гостей'
           })(readonly="true")
 
       +e.button

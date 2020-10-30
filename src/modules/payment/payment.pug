@@ -1,50 +1,50 @@
 include ../dropdown/dropdown
 include ../datepicker/datepicker
+include ../hotel-item-price/hotel-item-price
 
 
 mixin payment()
 
   +b.FORM.payment
     +e.wrapper
-      +e.room-price
-        div
-          +e.SPAN.icon №
-          +e.SPAN.number 888
-          +e.STRONG.room-class люкс
-
-        div
-          +e.STRONG.price 9 990₽
-          +e.SPAN.text-price в сутки
+      +e.hotel-item-price
+        +hotel-item-price({
+          number: 888,
+          lux: true,
+          price: '9 990'
+        })
 
       +datepicker()
 
-      +e.H3.title гости
+      +e.title
+        +b.H3.title гости
 
-      div.menuForCount.js-menuForCount
+      +b.menuForCount.js-menuForCount
         +dropdown({
-          "type" : "button",
+          "type" : "text",
+          "place" : 'Сколько гостей'
         })(readonly="true")
 
       +e.price-list
-        +b.price-list
-          +e.item
-            +e.P.count 9 990₽ х 4 суток
+        +b.UL.price-list
+          +b.LI.item
+            +e.P.text._without-info 9 990₽ х 4 суток
             +e.P.sum 39 960₽
 
-          +e.item
-            p Сбор за услуги: <span class="price-list_nowrap">скидка 2 179₽</span>
-            +e.info i
+          +b.LI.item
+            +e.P.text Сбор за услуги: скидка 2 179₽
+            +e.P.info i
             +e.P.sum 0₽
 
-          +e.item
-            p Сбор за дополнительные услуги
+          +b.LI.item
+            +e.P.text Сбор за дополнительные услуги
             +e.info i
             +e.P.sum 300₽
 
-          +e.total
-            p Итого
+          +b.LI.total
+            +e.P.text Итого
             +e.line
-            +e.STRONG.total-number 38 081₽
+            +e.STRONG.number 38 081₽
 
       +e.button
         +b.BUTTON.button._regular._rel забронировать

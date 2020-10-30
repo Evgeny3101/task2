@@ -1,0 +1,31 @@
+include ../like-button/like-button
+
+//- use
+//- +user-comment({
+//-   image : 'assets/img/user-img1.jpg',
+//-   name  : 'Мурад Сарафанов',
+//-   date  : '5 дней назад',
+//-   text  : 'Великолепный матрас н...',
+//-   likes : 12,
+//-   active: true
+//- })
+
+
+mixin user-comment(data)
+  - const {name, date, active, image, likes} = data;
+
+  +b.user-comment
+    +e.image
+      +b.IMG(src= image).image
+
+    +e.header
+      +e.P.name= name
+      +e.P.date= date
+
+    +e.like-button
+      if(active === true)
+        +like-button(likes).like-button_checked
+      else
+        +like-button(likes)
+
+    +e.P.text= data.text

@@ -3,7 +3,7 @@ include ../dropdown/dropdown
 
 mixin datepicker()
   +b.datepicker-container
-    div
+    +e.main-field
       +e.H3.title прибытие
 
       +dropdown({
@@ -11,7 +11,7 @@ mixin datepicker()
         "place" : "ДД.ММ.ГГГГ"
       })(readonly="true").js-datepicker-main-field
 
-    div
+    +e.second-field
       +e.H3.title выезд
 
       +dropdown({

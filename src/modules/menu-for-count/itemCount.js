@@ -5,12 +5,14 @@ class ItemsCount {
     this.value = config.value || this.minValue;
     this.descIndex = config.index || 0;
 
+    this.handleMinusBtnClick = this.minusOne.bind(this);
+    this.handlePlusBtnClick = this.plusOne.bind(this);
+
     elem.append(this.createHTML());
   }
 
   createHTML() {
     const item = document.createElement('div');
-    const {title, value} = this;
     item.classList.add('item-count');
 
     item.innerHTML = `

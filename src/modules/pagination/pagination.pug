@@ -2,17 +2,17 @@ mixin pagination()
 
   +b.NAV.pagination
     +e.UL.list
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number._blue 1
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number 2
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number 3
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number ...
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number 15
-      li
+      +e.pagination-number
         +b.A(href="#").pagination-number._gradient
           +e.I.icon.material-icons arrow_forward
 

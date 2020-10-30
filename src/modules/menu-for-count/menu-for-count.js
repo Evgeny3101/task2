@@ -3,7 +3,8 @@ import ItemsCount from './itemCount';
 
 class MenuForCount {
   constructor(elem, config) {
-    this.mainDOM = document.querySelector(elem);
+    if(typeof elem === 'string') this.mainDOM = document.querySelector(elem);
+    else this.mainDOM = elem;
     this.textFieldDOM = this.mainDOM.querySelector('input')
     this.items = [];
     this.config = this.setConfig(config);
@@ -118,8 +119,8 @@ class MenuForCount {
 
     // кнопки + и -
     this.items.forEach((item, i) => {
-      item.plusBtnDOM.addEventListener('click', item.plusOne.bind(item));
-      item.minusBtnDOM.addEventListener('click', item.minusOne.bind(item));
+      item.plusBtnDOM.addEventListener('click', item.handlePlusBtnClick);
+      item.minusBtnDOM.addEventListener('click', item.handleMinusBtnClick);
       item.plusBtnDOM.addEventListener('click', this.handlePlusBtnClick);
       item.minusBtnDOM.addEventListener('click', this.handleMinusBtnClick);
     })
@@ -128,6 +129,28 @@ class MenuForCount {
     if(areControlButtons) {
       this.applyBtn.addEventListener('click', this.handleButtonApplyClick);
       this.clearBtn.addEventListener('click', this.handleButtonClearClick);
+    }
+  }
+
+  removeListeners() {
+    const { areControlButtons } = this.config;
+
+    // открыть/закрыть меню
+    this.mainDOM.removeEventListener('mouseleave', this.handleDropdownMenuMouseleave);
+    this.textFieldDOM.removeEventListener('click', this.handleDropdownMenuClick);
+
+    // кнопки + и -
+    this.items.forEach((item, i) => {
+      item.plusBtnDOM.removeEventListener('click', item.handlePlusBtnClick);
+      item.minusBtnDOM.removeEventListener('click', item.handleMinusBtnClick);
+      item.plusBtnDOM.removeEventListener('click', this.handlePlusBtnClick);
+      item.minusBtnDOM.removeEventListener('click', this.handleMinusBtnClick);
+    })
+
+    // кнопки контроля
+    if(areControlButtons) {
+      this.applyBtn.removeEventListener('click', this.handleButtonApplyClick);
+      this.clearBtn.removeEventListener('click', this.handleButtonClearClick);
     }
   }
 

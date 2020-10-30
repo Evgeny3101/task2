@@ -6,8 +6,8 @@ include ../subscription/subscription
 mixin footer(data)
   +b.FOOTER.footer
     +e.top-area
-      +e.container-top.wrapper
-        +e.container-logo
+      +b.top-area.wrapper
+        +b.represent
           +e.logo
             +logo()
           +e.P.text= data.text
@@ -52,8 +52,8 @@ mixin footer(data)
               })
 
     +e.bottom-area
-      +e.container.wrapper
-        +e.container-bottom
+      +e.container
+        +b.bottom-area.wrapper
           +e.SMALL.text= data.bottomText
           +social-link()
 

@@ -1,0 +1,5 @@
+mixin radio-button(data)
+  +b.LABEL.radio-button
+    +e.INPUT.input(type='radio' name= data.name id= data.id checked= data.checked)
+    +e.box
+    +e.P.text= data.text

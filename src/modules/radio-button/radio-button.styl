@@ -1,22 +1,20 @@
-.radio-buttons
-  display   flex
-
-  &__input-wrapper
-    cursor          pointer
-    margin-right    20px
-    padding-bottom  5px
-
+.radio-button
+  display         flex
+  width           100%
+  margin-right    20px
+  padding-bottom  5px
+  cursor          pointer
 
   &__input
     display   none
 
-    &:checked ~ .radio-buttons__box
+    &:checked ~ .radio-button__box
       border  1px solid regular-color
 
       &:after
         background-color regular-color
 
-    &:checked ~ .radio-buttons__text
+    &:checked ~ .radio-button__text
       color fade-out()
 
 

@@ -1,22 +1,23 @@
 class ImagesSlider  {
   constructor(mainDOM) {
     this.mainDOM = mainDOM;
-    this.imgsDOM = mainDOM.querySelectorAll('.images-slider__img');
+    this.imgsDOM = mainDOM.querySelectorAll('.container-images__image');
     this.controlBtnsDOM = mainDOM.querySelectorAll('.control__button');
-    this.prevBtnDOM = mainDOM.querySelector('.button-prev');
-    this.nextBtnDOM = mainDOM.querySelector('.button-next');
+    this.prevBtnDOM = mainDOM.querySelector('.switch-arrows__prev');
+    this.nextBtnDOM = mainDOM.querySelector('.switch-arrows__next');
     this.currentItem = 0;
 
-    this.setListeners();
-  } // конструктор
-
-  setListeners() {
+    // обработчики
     this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
     this.handleButtonPrevClick = this.toPrevImage.bind(this);
     this.handleButtonNextClick = this.toNextImage.bind(this);
     this.handleImagesSliderMouseover = this.showArrows.bind(this);
     this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
 
+    this.setListeners();
+  } // конструктор
+
+  setListeners() {
     this.controlBtnsDOM.forEach((item, i) => item.addEventListener('click', this.handleControlButtonClick(i)))
     this.prevBtnDOM.addEventListener('click', this.handleButtonPrevClick);
     this.nextBtnDOM.addEventListener('click', this.handleButtonNextClick);
@@ -62,9 +63,9 @@ class ImagesSlider  {
     const { currentItem } = this;
 
     this.mainDOM.querySelector(".circle-current").classList.remove('circle-current');
-    this.mainDOM.querySelector(".img-current").classList.remove('img-current');
+    this.mainDOM.querySelector(".image-current").classList.remove('image-current');
 
-    this.imgsDOM[currentItem].classList.add('img-current');
+    this.imgsDOM[currentItem].classList.add('image-current');
     this.controlBtnsDOM[currentItem].classList.add('circle-current');
   }
 

@@ -2,7 +2,7 @@
 import "./room-details.styl"
 
 // JS
-import MenuForCount from '../modules/menuForCount/menuForCount.js';
+import MenuForCount from '../modules/menu-for-count/menu-for-count.js';
 import createDatePicker from "../modules/datepicker/datepicker.js"
 import '../modules/chart/chart.js';
 import '../modules/like-button/like-button.js'

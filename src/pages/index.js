@@ -3,7 +3,7 @@ import "./index.styl"
 
 // JS
 import createDatePicker from "../modules/datepicker/datepicker.js"
-import MenuForCount from '../modules/menuForCount/menuForCount.js';
+import MenuForCount from '../modules/menu-for-count/menu-for-count.js'
 
 
 const datePicker = createDatePicker({

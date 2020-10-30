@@ -5,8 +5,8 @@ mixin header(login, register, data, user)
     +e.container.wrapper
       +logo()
 
-      +e.NAV.menu
-
+      +e.NAV.container
+        // dropdown неготов
         +b.INPUT(type="checkbox" id="check-menu")
         +b.LABEL(for="check-menu").header-menu-dropdown
           +e.I.icon.material-icons keyboard_arrow_down
@@ -21,13 +21,13 @@ mixin header(login, register, data, user)
         if (user)
           +e.user
             +b.user
-              +e.btn-container
+              +e.container-btn
                 +b.A.button._default= user
 
         else
           +e.auth-btn
             +b.auth-btn
-              +e.button-login
+              +e.button-sign-in
                 +b.A(href="sign-in.html").button._transparent= login
 
               +e.button-sign-up
