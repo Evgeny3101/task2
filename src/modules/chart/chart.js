@@ -70,7 +70,7 @@ function mouseHover(evt) {
     const color = chartData.datasets[0].text[idx];
 
     document.querySelector('.chart__number').textContent = value;
-    document.querySelector('.chart').style.color = color
+    document.querySelector('.chart__container').style.color = color
   }
 }
 
@@ -81,7 +81,7 @@ for(let i = 0; i < firstValue.data.length; i++ ) {
     const color = firstValue.text[i];
 
     document.querySelector('.chart__number').textContent = value;
-    document.querySelector('.chart').style.color = color
+    document.querySelector('.chart__container').style.color = color
 
     break
   }

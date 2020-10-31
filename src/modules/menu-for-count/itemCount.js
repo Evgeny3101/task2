@@ -1,4 +1,4 @@
-class ItemsCount {
+class ItemCount {
   constructor(elem, config) {
     this.title = config.title || '';
     this.minValue = config.minValue || 0;
@@ -12,7 +12,7 @@ class ItemsCount {
   }
 
   createHTML() {
-    const item = document.createElement('div');
+    const item = document.createElement('li');
     item.classList.add('item-count');
 
     item.innerHTML = `
@@ -63,4 +63,4 @@ class ItemsCount {
 }
 
 
-export default ItemsCount;
+export default ItemCount;

@@ -1,5 +1,5 @@
 import { declOfNum } from '../../assets/js/mixins';
-import ItemsCount from './itemCount';
+import ItemCount from './itemCount';
 
 class MenuForCount {
   constructor(elem, config) {
@@ -42,18 +42,21 @@ class MenuForCount {
     this.menuDOM = document.createElement('div');
     this.menuDOM.classList.add('dropdown-menu-count');
 
-    const wrapper = document.createElement('div');
+    const wrapper = document.createElement('div'),
+    container = document.createElement('ul');
     wrapper.classList.add('dropdown-menu-count__wrapper');
+    container.classList.add('dropdown-menu-count__items-count');
+    wrapper.append(container)
     this.menuDOM.append(wrapper)
 
 
     itemsCount.forEach((itemConfig, i) => {
-      items[i] = new ItemsCount(wrapper, itemConfig)
+      items[i] = new ItemCount(container, itemConfig)
     })
 
     // кнопки контроля
     if(areControlButtons) {
-      wrapper.insertAdjacentHTML('beforeend', `
+      container.insertAdjacentHTML('beforeend', `
       <div class="dropdown-menu-count__container-btn">
         <div>
            <input class="button button_fade05 js-clear" type="button" value="очистить">

@@ -25,11 +25,11 @@ const datePicker = createDatePicker({
 
 }, '.js-datepicker-main-field', '.js-datepicker-second-field');
 
-const menuForCountGuests = new MenuForCount('.js-menuForCount', {
+const menuForCount = new MenuForCount('.js-menuForCount', {
   itemsCount: [
     {
       title             : 'взрослые',
-    },  {
+    }, {
       title             : 'дети',
     }, {
       title             : 'младенцы',
