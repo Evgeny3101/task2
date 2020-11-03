@@ -1,7 +1,7 @@
 include ../text-field/text-field
 
 mixin subscription(data)
-  +b.subscription
-    +text-field(data.type, data.place, data.value)&attributes(attributes)
-    if (data.icon)
+  +b.FORM.subscription
+    +e.BUTTON(type="button").button
       +e.I.icon.material-icons arrow_forward
+    +text-field(data.type, data.place, data.value)&attributes(attributes)

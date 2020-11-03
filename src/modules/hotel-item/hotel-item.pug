@@ -1,7 +1,7 @@
 include ../rate-button/rate-button
 include ../hotel-item-price/hotel-item-price
 
-mixin hotel-item(data)
+mixin hotel-item(config)
 
   +b.hotel-item
     +b.images-slider.js-images-slider
@@ -12,30 +12,32 @@ mixin hotel-item(data)
           +e.I.icon.material-icons expand_more
 
       +b.container-images
-        +e.IMG(src=data.src).image.image-current
-        +e.IMG(src=data.src2).image
-        +e.IMG(src=data.src3).image
-        +e.IMG(src=data.src4).image
+        each path in config.srcArr
+          - if(path == config.srcArr[0])
+            +e.IMG(src=path alt="фото номера").image.image-current
+          - else
+            +e.IMG(src=path alt="фото номера").image
 
       +b.control
-        +e.BUTTON.button.circle-current
-        +e.BUTTON.button
-        +e.BUTTON.button
-        +e.BUTTON.button
+        - for(i = 0; i < config.srcArr.length; i++)
+          - if(i == 0)
+            +e.BUTTON.button.circle-current
+          - else
+            +e.BUTTON.button
 
     +e.price
       +hotel-item-price({
-        number: data.number,
-        lux: data.lux,
-        price: data.price
+        number: config.number,
+        lux: config.lux,
+        price: config.price
       })
 
     +e.line
 
     +e.review
       +b.hotel-item-review
-        +rate-button(data.stars)
+        +rate-button(config.stars)
 
-        +e.text
-          span= data.rating
-          +e.SPAN.text-rating Отзывов
+        +e.comments
+          +e.SPAN.number-comments= config.reviews
+          +e.SPAN.text Отзывов

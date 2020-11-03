@@ -135,8 +135,8 @@ module.exports = {
         to: `${PATHS.assets}fonts`
       },
 
-      { from: `${PATHS.src}/static`,
-        to: ''
+      { from: `${PATHS.src}/${PATHS.assets}favicons`,
+       to: `${PATHS.assets}favicons`
       },
     ]),
 

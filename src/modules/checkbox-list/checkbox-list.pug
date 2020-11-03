@@ -3,7 +3,8 @@ include ../checkbox-item/checkbox-item
 mixin checkbox-list(title, ...items)
   +b.checkbox-list
     +e.BUTTON.btn
-      +e.H3.title= title
+      +e.title
+        +b.H3.title= title
       +e.I.icon-up.material-icons keyboard_arrow_up
       +e.I.icon-down.material-icons keyboard_arrow_down
 

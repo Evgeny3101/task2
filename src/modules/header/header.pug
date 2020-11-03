@@ -14,7 +14,7 @@ mixin header(login, register, data, user)
         +b.UL.header-menu
           each item in data.link
             +e.LI.item
-              +e.A.link(href=item.href class=item.mod)= item.text
+              +e.A.link(href=item.href class=item.mod onclick="return false;")= item.text
                 if (item.icon === true)
                   +e.I.icon.material-icons keyboard_arrow_down
 

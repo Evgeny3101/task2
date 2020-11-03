@@ -3,8 +3,10 @@
 .subscription
   width 100%
   position relative
-  & .text-field
-    text-overflow: ellipsis
+
+  &__button:hover + .text-field,
+  &__button:focus + .text-field
+    border 1px solid fade-out(0.5)
 
   &__icon
     width 44px
@@ -15,6 +17,6 @@
     top 0px
     right 0px
 
-    z-index  1
+    z-index 1
     color regular-color
     cursor pointer

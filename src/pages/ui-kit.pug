@@ -6,8 +6,8 @@ extends ../layout/supporting.pug
 //- local mixins
 mixin label-icon()
   +b.label-icon
-    a(href="nav.html")
-      +e.IMG.img(src='assets/img/ui-kit-icon.svg')
+    +e.A(href="nav.html").link
+      +e.IMG.img(src='assets/img/ui-kit-icon.svg' alt="иконка сайта")
 
 
 mixin color-demo(title, hex, mod)
@@ -236,16 +236,16 @@ block content
               +b.button-ui-kit
                   +e.container
                     +e.wrapper
-                      +b.A(href="#").button._transparent CLICK ME
+                      +b.A(href="mock-address").button._transparent CLICK ME
                     +e.wrapper
-                      +b.A(href="#").button._transparent.active CLICK ME
+                      +b.A(href="mock-address").button._transparent.active CLICK ME
                     +e.wrapper
-                      +b.A(href="#").button._regular CLICK ME
+                      +b.A(href="mock-address").button._regular CLICK ME
                     +e.wrapper
-                      +b.A(href="#").button._regular.active CLICK ME
+                      +b.A(href="mock-address").button._regular.active CLICK ME
                   +e.wrapper-two-item
-                    +b.A(href="#").button._fade05 CLICK ME
-                    +b.A(href="#").button._blue CLICK ME
+                    +b.A(href="mock-address").button._fade05 CLICK ME
+                    +b.A(href="mock-address").button._blue CLICK ME
                   +e.wrapper-to-pay
                     +b.BUTTON.button._regular._rel перейти к оплате
                       +e.I.icon.material-icons arrow_forward
@@ -320,20 +320,30 @@ block content
           +calendar()
 
           +hotel-item({
-            "src"     :"assets/img/hotel-item1.jpg",
+            "srcArr"  : [
+              "assets/img/hotel-item1.jpg",
+              "assets/img/hotel-item2.jpg",
+              "assets/img/hotel-item3.jpg",
+              "assets/img/hotel-item4.jpg",
+            ],
             "number"  : 888,
             "price"   : "9 990₽",
             "stars"   : 5,
-            "rating"  : 145,
-            "lux"     : "_visible",
+            "reviews" : 145,
+            "lux"     : true,
           })
 
           +hotel-item({
-            "src"     :"assets/img/hotel-item2.jpg",
+            "srcArr"  : [
+              "assets/img/hotel-item2.jpg",
+              "assets/img/hotel-item3.jpg",
+              "assets/img/hotel-item4.jpg",
+              "assets/img/hotel-item5.jpg",
+            ],
             "number"  : 840,
             "price"   : "9 900₽",
             "stars"   : 4,
-            "rating"  : 65
+            "reviews" : 65
           })
 
     +e.page_bg-gray
@@ -343,33 +353,33 @@ block content
         +e.container
           +header("login", "register", { "link" : [
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Home",
               "mod"   : "_bold _mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "About Us",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Services",
               "icon"  : "!",
               "mod"   : "_bo"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Careers",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "News",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Documentation",
               "mod"   : "_mr10"
             }]}
@@ -378,33 +388,33 @@ block content
         +e.container
           +header("login", "register", { "link" : [
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Home",
               "mod"   : "_bold _mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "About Us",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Services",
               "icon"  : "!",
               "mod"   : "_bo"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Careers",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "News",
               "mod"   : "_mr10"
             },
               {
-              "href"  : "#",
+              "href"  : "mock-address",
               "text"  : "Documentation",
               "mod"   : "_mr10"
             }]}, "Cosmin Negoita"
@@ -428,16 +438,16 @@ block content
                 "title": "Navigation"
               },{
                 "text": "About Us",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "News",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Support",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Products",
-                "href": "#"
+                "href": "mock-address"
               }
             ],
 
@@ -446,16 +456,16 @@ block content
                 "title": "ABOUT US"
               },{
                 "text": "Who we are",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Our team",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Careers",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Investors",
-                "href": "#"
+                "href": "mock-address"
               }
             ],
 
@@ -464,13 +474,13 @@ block content
                 "title": "Support"
               },{
                 "text": "Documentation",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Community",
-                "href": "#"
+                "href": "mock-address"
               },{
                 "text": "Get in Touch",
-                "href": "#"
+                "href": "mock-address"
               }
             ]
           })

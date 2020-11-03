@@ -1,4 +1,5 @@
 mixin like-button(number)
-  +b.BUTTON.like-button.js-like-button&attributes(attributes)
-    +e.I.icon.material-icons favorite_border
-    span= number
+  +b.FORM.like-button
+    +e.BUTTON(type="button").button.js-like-button&attributes(attributes)
+      +e.I.icon.material-icons favorite_border
+      +e.SPAN.number= number

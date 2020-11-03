@@ -26,25 +26,27 @@ mixin payment()
         })(readonly="true")
 
       +e.price-list
-        +b.UL.price-list
-          +b.LI.item
-            +e.P.text._without-info 9 990₽ х 4 суток
-            +e.P.sum 39 960₽
+        +b.price-list
+          +e.UL.items
+            +b.LI.item
+              +e.P.text._without-info 9 990₽ х 4 суток
+              +e.P.sum 39 960₽
 
-          +b.LI.item
-            +e.P.text Сбор за услуги: скидка 2 179₽
-            +e.P.info i
-            +e.P.sum 0₽
+            +b.LI.item
+              +e.P.text Сбор за услуги: скидка 2 179₽
+              +e.P.info i
+              +e.P.sum 0₽
 
-          +b.LI.item
-            +e.P.text Сбор за дополнительные услуги
-            +e.info i
-            +e.P.sum 300₽
+            +b.LI.item
+              +e.P.text Сбор за дополнительные услуги
+              +e.info i
+              +e.P.sum 300₽
 
-          +b.LI.total
-            +e.P.text Итого
-            +e.line
-            +e.STRONG.number 38 081₽
+          +e.total
+            +b.total
+              +e.P.text Итого
+              +e.line
+              +e.STRONG.number 38 081₽
 
       +e.button
         +b.BUTTON.button._regular._rel забронировать

@@ -24,9 +24,8 @@
 
   .room-filter
     width               266px
-    display             grid
-    grid-gap            20px
-    grid-template-rows  64px 74px 82px 140px 155px 73px 273px
+    display             flex
+    flex-direction      column
 
     &__title
       padding-bottom  5px
@@ -46,7 +45,7 @@
     .rich-checkbox-items
       &__title
         padding-bottom  5px
-      &__container
+      &__rich-checkbox-item
         padding-top     10.5px
         &_w230
           width   230px
@@ -84,12 +83,12 @@
       grid-template-columns   266px
       justify-content         space-around
 
-
-  .hotel-list
-    @media (min-width  920px) and (max-width  lDesktopWidth)
-      grid-template-columns     270px 270px
-    @media  (max-width  919px)
-      grid-template-columns     270px
+  .search-result
+    .hotel-list
+      @media (min-width  920px) and (max-width  lDesktopWidth)
+        grid-template-columns     270px 270px
+      @media  (max-width  919px)
+        grid-template-columns     270px
 
 
 
