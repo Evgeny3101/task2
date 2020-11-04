@@ -1,23 +1,25 @@
 extends ../layout/main
 
 //- modules
-include ../modules/sign-up/sign-up
+include ../modules/sign-up-menu/sign-up-menu
+include ../modules/background-slides/background-slides
 
 block head
   +head({
     "title": "Toxin - Sing Up"
   })
 
+
 block content
-  +b.MAIN.sign-up-main
-    +e.IMG(src='assets/img/bg-slide4.jpg' alt="фоновая картинка").bg-img
+  +b.MAIN.sign-up-page
+    +e.background-slides
+      +background-slides([
+        'assets/img/bg-slide3.1.jpg',
+        'assets/img/bg-slide4.jpg',
+      ])
 
-    +e.wrapper.wrapper
-      +sign-up()
-
-
-
-
+    +e.sign-up-menu
+      +sign-up-menu()
 
 
 

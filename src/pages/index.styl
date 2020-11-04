@@ -1,6 +1,5 @@
 @require "../layout/main"
 
-//- modules
 @require "../modules/search-hotel/search-hotel"
 @require "../modules/background-slides/background-slides"
 
@@ -11,6 +10,21 @@
   max-width     1440px
   margin        0 auto
   overflow      hidden
+
+  .background-slides
+    &__img
+      animation-duration: 18s;
+
+    :nth-child(3)
+      animation-delay  12.0s
+
+    @keyframes anim_slides {
+      0% {opacity: 0;}
+      4% {opacity: 1;}
+      28% {opacity: 1;}
+      32% {opacity: 0;}
+      100% {opacity: 0;}
+    }
 
 
   // search-hotel

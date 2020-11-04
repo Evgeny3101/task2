@@ -1,5 +1,4 @@
-mixin background-slides()
+mixin background-slides(srcArr=[])
   +b.background-slides
-    +e.IMG(src='assets/img/bg-slide1.jpg' alt="фоновая картинка").img
-    +e.IMG(src='assets/img/bg-slide2.jpg' alt="фоновая картинка").img
-    +e.IMG(src='assets/img/bg-slide3.jpg' alt="фоновая картинка").img
+    each path in srcArr
+      +e.IMG(src=path alt="фоновая картинка").img

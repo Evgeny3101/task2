@@ -3,60 +3,66 @@ include ../radio-button/radio-button
 include ../toggle/toggle
 
 
-mixin sign-up()
+mixin sign-up-menu()
 
-  +b.FORM.sign-up
+  +b.FORM.sign-up-menu
     +e.wrapper
-      +e.title
+      +e.title-main
         +b.H1.title Регистрация аккаунта
 
-      +e.container
+      +e.text-field
         +text-field(
           /*  type  */  "text",
           /*  place */  "Имя"
         )
 
-      +e.container
+      +e.text-field
         +text-field(
           /*  type  */  "text",
           /*  place */  "Фамилия"
         )
 
-      +e.radio-buttons
-        +radio-button({
-          name: 'gender',
-          id: 'male',
-          text: 'Мужчина',
-          checked: true
-        })
+      +e.radio-buttons-container
+        +e.radio-button
+          +radio-button({
+            name: 'gender',
+            id: 'male',
+            text: 'Мужчина',
+            checked: true
+          })
 
-        +radio-button({
-          name: 'gender',
-          id: 'female',
-          text: 'Женщина',
-        })
+        +e.radio-button
+          +radio-button({
+            name: 'gender',
+            id: 'female',
+            text: 'Женщина',
+          })
 
-      +b.H3.title дата рождения
-      +e.container
+      +e.title
+        +b.H3.title дата рождения
+
+      +e.date-birth
         +text-field(
           /*  type  */  "text",
           /*  place */  "ДД.ММ.ГГГГ"
           )
 
-      +b.H3.title данные для входа в сервис
-      +e.container
+      +e.title
+        +b.H3.title данные для входа в сервис
+
+      +e.text-field
         +text-field(
           /*  type  */  "email",
           /*  place */  "Email"
           )(autocomplete="username")
 
-      +e.container
+      +e.text-field
         +text-field(
           /*  type  */  "password",
           /*  place */  "Пароль"
           )(autocomplete="new-password")
 
-      +e.container
+      +e.toggle
         +toggle(
           /*  text  */  "Получать спецпредложения"
           )
@@ -65,15 +71,9 @@ mixin sign-up()
         +b.BUTTON.button._regular._rel перейти к оплате
           +e.I.icon.material-icons arrow_forward
 
-      +e.container-create
+      +e.footer
         +e.text Уже есть аккаунт на Toxin
-        +e.button-create
-          +b.A.button._transparent(href="sign-in.html") войти
-
-
-
-
-
-
-
+        +e.button-sign-in
+          +b.BUTTON.button._transparent
+            +e.A(href="sign-in.html").link войти
 

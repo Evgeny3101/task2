@@ -12,7 +12,12 @@ block head
 
 block content
   +b.MAIN.landing-page
-    +background-slides()
+    +e.background-slides
+      +background-slides([
+        'assets/img/bg-slide1.jpg',
+        'assets/img/bg-slide2.jpg',
+        'assets/img/bg-slide3.jpg',
+      ])
 
     +e.ASIDE.welcome-text
       +b.P.welcome-text Лучшие номера для вашей работы, отдыха и просто вдохновения

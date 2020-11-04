@@ -1,65 +1,43 @@
 @require "../layout/main"
 
-@require "../modules/sign-up/sign-up.styl"
+@require "../modules/sign-up-menu/sign-up-menu.styl"
+@require "../modules/background-slides/background-slides"
 
-.sign-up-main
-  position        relative
-  height          702px
-  max-width       1440px
-  margin          0 auto
-  overflow        hidden
+.sign-up-page
+  position          relative
+  max-width         1440px
+  margin            0 auto
+  overflow          hidden
 
+  &__background-slides
+    position        absolute
+    top             -70px
 
-  // background
-  &__bg-img
-    width        100%
-    z-index      -1
-    top          -70px
-    position     absolute
+    width           1440px
+    height          100%
+    z-index         -1
 
-
-  // content main
-  &__wrapper
-    padding-top  4px
-    height 100%
+  &__sign-up-menu
+    padding 19px 0 18px 6px
+    // padding-top     19px
+    // padding-bottom  18px
+    // padding-left    6px
     container(space-around)
 
 
 
 // media //
-
-
-.sign-up-main
-  &__wrapper
-    @media  (max-width  phoneWidth)
-      height       660px
-
-      &.wrapper
-        padding  0
-
-
-  // background
-  &__bg-img
-    @media  (max-width  1310px)
-      top           0
-      width         1310px
+.sign-up-page
+  &__background-slides
     @media  (max-width  phoneWidth)
       display       none
 
-
-  // content main
-  &__wrapper
+  &__sign-up-menu
     @media  (max-width  phoneWidth)
-      align-items     flex-start
-
-
-  .sign-up
-    @media  (max-width  phoneWidth)
-      width        100%
-
-
-
-
-
+      align-items    flex-start
+      padding    0
+      // padding-top    0
+      // padding-bottom 0
+      // padding-left   0
 
 

@@ -17,28 +17,28 @@ mixin footer(data)
             each item in data.menu1
               if(item.title)
                 +e.title
-                  h3= item.title
+                  +b.H3.title= item.title
               else
                 +e.LI.link
-                  a(href=item.href)= item.text
+                  +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container
             each item in data.menu2
               if(item.title)
                 +e.title
-                  h3= item.title
+                  +b.H3.title= item.title
               else
                 +e.LI.link
-                  a(href=item.href)= item.text
+                  +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container
             each item in data.menu3
               if(item.title)
                 +e.title
-                  h3= item.title
+                  +b.H3.title= item.title
               else
                 +e.LI.link
-                  a(href=item.href)= item.text
+                  +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container._w260
             +e.H3.title-sub= data.subTitle
