@@ -1,66 +1,39 @@
 @require "../layout/main"
 
 //- modules
-@require "../modules/login-card/login-card"
+@require "../modules/sign-in-menu/sign-in-menu"
+@require "../modules/background-slides/background-slides"
 
-.sign-in
+.sign-in-page
+  height            702px
   position          relative
-  height            684px
   max-width         1440px
   margin            0 auto
   overflow          hidden
 
-  &__background-image
-    width           100%
-    z-index         -1
-    top             -70px
+  &__background-slides
     position        absolute
+    top             -70px
 
-  &__login-card
+    width           1440px
     height          100%
-    display         flex
-    align-items     center
-    justify-content space-around
+    z-index         -1
+
+  &__sign-in-menu
+    height          100%
+    container(space-around)
 
 
 // media //
+.sign-in-page
+  @media (min-width phoneWidth + 1px) and (max-width lDesktopWidth)
+    height          600px
+    &__background-slides
+      top          -200px
 
-.sign-in
-  @media  (max-width lDesktopWidth)
-    height          0px
-    padding         23.5% 0 24%
-  @media  (min-width tableWidth + 1px) and (max-width  smDesktopWidth)
-    min-height      440px
-  @media  (max-width tableWidth)
-    height          380px
-    padding         0
+  @media  (max-width phoneWidth)
+    height          auto
 
-  &__login-card
-    @media  (max-width phoneWidth)
-      align-items   flex-start
-
-  &__background-image
-    @media  (max-width smDesktopWidth)
-      top           0
-    @media  (max-width 820px)
-      width         820px
-    @media  (max-width phoneWidth)
+    &__background-slides
       display       none
-
-
-  .login-card
-    @media  (max-width phoneWidth)
-      width        100%
-
-
-
-
-
-
-
-
-
-
-
-
 
