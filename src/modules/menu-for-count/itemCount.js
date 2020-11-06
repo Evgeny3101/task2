@@ -12,12 +12,14 @@ class ItemCount {
   }
 
   createHTML() {
-    const item = document.createElement('li');
+    const item = document.createElement('div');
     item.classList.add('item-count');
 
     item.innerHTML = `
-    <h3 class="item-count__title">${this.title}</h3>
-    <div class="item-count__container-btn">
+    <div class="item-count__title">
+      <h3 class="title">${this.title}</h3>
+    </div>
+    <div class="item-count__container-button">
       <input class="item-count__minus-btn" type="button" value="-"></input>
       <div class="item-count__result">${this.value}</div>
       <input class="item-count__plus-btn" type="button" value="+"></input>

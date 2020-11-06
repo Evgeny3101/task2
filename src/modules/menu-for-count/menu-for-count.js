@@ -45,19 +45,22 @@ class MenuForCount {
     const wrapper = document.createElement('div'),
     container = document.createElement('ul');
     wrapper.classList.add('dropdown-menu-count__wrapper');
-    container.classList.add('dropdown-menu-count__items-count');
+    container.classList.add('dropdown-menu-count__items-container');
     wrapper.append(container)
     this.menuDOM.append(wrapper)
 
 
     itemsCount.forEach((itemConfig, i) => {
-      items[i] = new ItemCount(container, itemConfig)
+      const item = document.createElement('li')
+      item.classList.add('dropdown-menu-count__item');
+      items[i] = new ItemCount(item, itemConfig)
+      container.append(item)
     })
 
     // кнопки контроля
     if(areControlButtons) {
-      container.insertAdjacentHTML('beforeend', `
-      <div class="dropdown-menu-count__container-btn">
+      wrapper.insertAdjacentHTML('beforeend', `
+      <div class="dropdown-menu-count__control-buttons">
         <div>
            <input class="button button_fade05 js-clear" type="button" value="очистить">
         </div>

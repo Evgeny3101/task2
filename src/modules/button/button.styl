@@ -1,7 +1,7 @@
 .button
   height          100%
   width           100%
-  line-height     30px
+  line-height     24px
   cursor          pointer
   text-transform  uppercase
   font-size       12px
@@ -11,8 +11,9 @@
 
   &__icon
     position      absolute
-    right         5px
-    width         34px
+    right         -1px
+    width         44px
+    font-weight   normal
     line-height   44px
 
 
@@ -38,14 +39,12 @@
     &.active
       opacity       0.5
 
-
   &_fade05
     color           fade-out(0.5)
-
 
   &_blue
     color           regular-color
 
-
-  &_rel
+  &_relative
     position        relative
+

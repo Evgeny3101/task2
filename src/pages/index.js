@@ -6,7 +6,7 @@ import createDatePicker from "../modules/datepicker/datepicker.js"
 import MenuForCount from '../modules/menu-for-count/menu-for-count.js'
 
 
-const datePicker = createDatePicker({
+const datepicker = createDatePicker({
   range: true,
   multipleDates: true,
   offset: 5,
@@ -43,3 +43,15 @@ const menuForCount = new MenuForCount('.js-menuForCount', {
   placeholder : 'Сколько гостей',
   areControlButtons : true
 })
+
+
+// to make active
+
+// const menuCountDOM = document.querySelector('.dropdown-menu-count')
+// dropdown.classList.add('current')
+
+// datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
+// const datepickerDOM = document.querySelector('.datepicker')
+// datepickerDOM.classList.add('active')
+// datepickerDOM.style.top = '330px'
+// datepickerDOM.style.left = '170px'
