@@ -3,28 +3,29 @@
 .checkbox-list
   position        relative
 
-  &__btn
-    text-align      left
+  // &__button
+  .button
+    container()
     width           100%
-    margin-bottom   12px
 
-  &__title
-    width           210px
-    margin-bottom   6px
+    &__title
+      width         210px
 
-  &__icon-up,
-  &__icon-down
-    position        absolute
-    top             -4px
-    right           10px
-    color           fade-out(0.5)
+    &__icon-up,
+    &__icon-down
+      margin-top    2px
+      margin-right  10px
+
+      font-weight   normal
+      color         fade-out(0.5)
 
   &__menu
     margin-right    auto
     display         none
 
-  &__checkbox-item
-    margin-bottom   10px
+  .menu
+    &__checkbox-item
+      margin-bottom   10px
 
 
 

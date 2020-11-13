@@ -2,12 +2,14 @@ mixin range-slider(title, text)
 
   +b.range-slider
     +e.header
-      +b.H3.title= title
+      +e.title
+        +b.H3.title= title
 
-      +b.prise-range
-        +e.SPAN.value
-        +e.SPAN.field1
-        +e.SPAN.field2
+      +e.prise-range
+        +b.prise-range
+          +e.SPAN.value
+          +e.SPAN.field1
+          +e.SPAN.field2
 
     +e.container
 

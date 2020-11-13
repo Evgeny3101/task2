@@ -2,16 +2,18 @@ include ../checkbox-item/checkbox-item
 
 mixin checkbox-list(title, ...items)
   +b.checkbox-list
-    +e.BUTTON.btn
-      +e.title
-        +b.H3.title= title
-      +e.I.icon-up.material-icons keyboard_arrow_up
-      +e.I.icon-down.material-icons keyboard_arrow_down
+    +e.button
+      +b.BUTTON(type="button").button
+        +e.title
+          +b.H3.title= title
+        +e.I.icon-up.material-icons keyboard_arrow_up
+        +e.I.icon-down.material-icons keyboard_arrow_down
 
-    +e.UL.menu
-      each item in items
-        +e.LI.checkbox-item
-          +checkbox-item(item.name)(checked=item.active)
+    +e.menu
+      +b.UL.menu
+        each item in items
+          +e.LI.checkbox-item
+            +checkbox-item(item.name)(checked=item.active)
 
 
 

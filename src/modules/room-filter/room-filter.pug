@@ -1,0 +1,107 @@
+//- modules
+include ../range-slider/range-slider
+include ../dropdown/dropdown
+include ../checkbox-item/checkbox-item
+include ../rich-checkbox-item/rich-checkbox-item
+include ../checkbox-list/checkbox-list
+include ../menu-for-count/menu-for-count
+
+
+mixin room-filter()
+  +b.FORM.room-filter
+
+    +e.datepicker-container
+      +b.datepicker-container
+        +e.main-field
+          +e.title
+            +b.H3.title даты пребывания в отеле
+
+          +e.dropdown-wrapper
+            +dropdown({
+              "type" : "text",
+              "place": "ДД.ММ - ДД.ММ",
+              "value": "19 авг - 23 авг"
+            })(readonly="true").js-datepicker-main-field
+
+    +e.menu-for-count-guest
+      +menu-for-count({
+        title: 'гости',
+        class: 'js-menuForCountGuest'
+      })
+
+    +e.range-slider
+      +range-slider("диапазон цены", "Стоимость за сутки пребывания в номере")
+
+    +e.checkbox-items
+      +b.checkbox-items
+        +e.title
+          +b.H3.title правила дома
+
+        +e.container
+          +e.checkbox-item
+            +checkbox-item('Можно курить')
+
+          +e.checkbox-item
+            +checkbox-item('Можно с питомцами')(checked)
+
+          +e.checkbox-item
+            +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
+
+    +e.rich-checkbox-items
+      +b.rich-checkbox-items
+        +e.title
+          +b.H3.title Доступность
+
+        +e.container
+          +e.rich-checkbox-item._w230
+            +rich-checkbox-item(
+              /*  title  */
+              "Широкий коридор",
+              /*  text  */
+              "Ширина коридоров в номере не менее 91 см.")
+
+          +e.rich-checkbox-item._w260
+            +rich-checkbox-item(
+              /*  title  */
+              "Помощник для инвалидов",
+              /*  text  */
+              "На 1 этаже вас встретит специалист и проводит до номера.")
+
+    +e.menu-for-count-amenities
+      +menu-for-count({
+        title: 'удобства номера',
+        class: 'js-menuForCount'
+      })
+
+    +e.checkbox-list
+      +checkbox-list(
+        /* title */
+        'дополнительные удобства'
+
+        /* items */
+        ,{
+        name    : 'Завтрак',
+        active  : false
+        },{
+        name    : 'Письменный стол',
+        active  : true
+        },{
+        name    : 'Стул для кормления',
+        active  : true
+        },{
+        name    : 'Кроватка',
+        active  : true
+        },{
+        name    : 'Телевизор',
+        active  : false
+        },{
+        name    : 'Шампунь',
+        active  : false
+        },{
+        name    : 'Телевизор',
+        active  : false
+        },{
+        name    : 'Шампунь',
+        active  : false
+        }
+      )

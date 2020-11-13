@@ -4,17 +4,21 @@ include ../dropdown/dropdown
 mixin datepicker()
   +b.datepicker-container
     +e.main-field
-      +e.H3.title прибытие
+      +e.title
+        +b.H3.title прибытие
 
-      +dropdown({
-        "type"  : "text",
-        "place" : "ДД.ММ.ГГГГ"
-      })(readonly="true").js-datepicker-main-field
+      +e.dropdown-wrapper
+        +dropdown({
+          "type"  : "text",
+          "place" : "ДД.ММ.ГГГГ"
+        })(readonly="true").js-datepicker-main-field
 
     +e.second-field
-      +e.H3.title выезд
+      +e.title
+        +b.H3.title выезд
 
-      +dropdown({
-        "type"  : "text",
-        "place" : "ДД.ММ.ГГГГ"
-      })(readonly="true").js-datepicker-second-field
+      +e.dropdown-wrapper
+        +dropdown({
+          "type"  : "text",
+          "place" : "ДД.ММ.ГГГГ"
+        })(readonly="true").js-datepicker-second-field

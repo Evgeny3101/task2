@@ -1,12 +1,16 @@
 jQuery(function() {
-  $(".checkbox-list__icon-up").hide();
+  const $elements = $(".checkbox-list");
 
-  $(".checkbox-list").on('click', function() {
-    $(".checkbox-list__menu").slideToggle(".active");
-    $(".checkbox-list__icon-up").toggle();
-    $(".checkbox-list__icon-down").toggle();
+  $elements.find(".button__icon-up").hide();
+
+  $elements.on('click', function(event) {
+    const target = event.currentTarget,
+    $iconUp = $(target).find(".button__icon-up"),
+    $iconDown = $(target).find(".button__icon-down"),
+    $menu = $(target).find(".checkbox-list__menu");
+
+    $menu.slideToggle(".active");
+    $iconUp.toggle();
+    $iconDown.toggle();
   });
-
 });
-
-

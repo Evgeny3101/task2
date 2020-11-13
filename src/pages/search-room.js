@@ -13,11 +13,14 @@ const menuForCountGuests = new MenuForCount('.js-menuForCountGuest', {
   itemsCount: [
     {
       title          : 'взрослые',
+      value          : 2
     },  {
       title          : 'дети',
+      value          : 1
     }, {
       title          : 'младенцы',
       index          : 1,
+      value          : 1
     }
   ],
 

@@ -13,7 +13,7 @@ fields.forEach((field, i) => {
 $('.range-slider__container').rangeSlider({
   sliderValues: [5000, 10000],
   sliderType: 'range',
-  maxValue: 15000,
+  maxValue: 15500,
   step: 100,
   textField: fields
 })

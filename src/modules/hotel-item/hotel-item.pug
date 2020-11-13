@@ -4,26 +4,30 @@ include ../hotel-item-price/hotel-item-price
 mixin hotel-item(config)
 
   +b.hotel-item
-    +b.images-slider.js-images-slider
-      +b.switch-arrows
-        +e.BUTTON.prev
-          +e.I.icon.material-icons expand_more
-        +e.BUTTON.next
-          +e.I.icon.material-icons expand_more
+    +e.images-slider
+      +b.images-slider.js-images-slider
+        +e.switch-arrows
+          +b.switch-arrows
+            +e.BUTTON.prev
+              +e.I.icon.material-icons expand_more
+            +e.BUTTON.next
+              +e.I.icon.material-icons expand_more
 
-      +b.container-images
-        each path in config.srcArr
-          - if(path == config.srcArr[0])
-            +e.IMG(src=path alt="фото номера").image.image-current
-          - else
-            +e.IMG(src=path alt="фото номера").image
+        +e.container-images
+          +b.container-images
+            each path in config.srcArr
+              - if(path == config.srcArr[0])
+                +e.IMG(src=path alt="фото номера").image.image-current
+              - else
+                +e.IMG(src=path alt="фото номера").image
 
-      +b.control
-        - for(i = 0; i < config.srcArr.length; i++)
-          - if(i == 0)
-            +e.BUTTON.button.circle-current
-          - else
-            +e.BUTTON.button
+        +e.control
+          +b.control
+            - for(i = 0; i < config.srcArr.length; i++)
+              - if(i == 0)
+                +e.BUTTON.button.circle-current
+              - else
+                +e.BUTTON.button
 
     +e.price
       +hotel-item-price({
@@ -36,7 +40,8 @@ mixin hotel-item(config)
 
     +e.review
       +b.hotel-item-review
-        +rate-button(config.stars)
+        +e.rate-button
+          +rate-button(config.stars)
 
         +e.comments
           +e.SPAN.number-comments= config.reviews

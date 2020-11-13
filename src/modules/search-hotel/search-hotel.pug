@@ -1,5 +1,5 @@
-include ../dropdown/dropdown
 include ../datepicker/datepicker
+include ../menu-for-count/menu-for-count
 
 
 mixin search-hotel()
@@ -8,17 +8,14 @@ mixin search-hotel()
       +e.title
         +b.H1.title Найдём номера под ваши пожелания
 
-      +datepicker()
-
-      +e.title-menu
-        +b.H3.title гости
+      +e.datepicker
+        +datepicker()
 
       +e.menu-for-count
-        +b.menu-for-count.js-menuForCount
-          +dropdown({
-            "type" : "text",
-            "place" : 'Сколько гостей'
-          })(readonly="true")
+        +menu-for-count({
+          title: 'гости',
+          class: 'js-menuForCount'
+        })
 
       +e.button
         +b.BUTTON.button._regular._relative Подобрать номер

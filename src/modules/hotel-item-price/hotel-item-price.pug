@@ -6,11 +6,14 @@
 
 mixin hotel-item-price(data)
   +b.hotel-item-price
-    +e.container
-      +e.SPAN.icon №
-      +e.SPAN.number= data.number
-      if (data.lux)
-        +e.STRONG.room-class_visible люкс
-    +e.container
-      +e.STRONG.price= data.price
-      +e.SPAN.text-price в сутки
+    +e.room-number
+      +b.room-number
+        +e.SPAN.icon №
+        +e.SPAN.number= data.number
+        if (data.lux)
+          +e.STRONG.room-class_visible люкс
+
+    +e.price-per-day
+      +b.price-per-day
+        +e.STRONG.price= data.price
+        +e.SPAN.text в сутки
