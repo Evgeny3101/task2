@@ -11,26 +11,30 @@
   background        default-color
 
   &__wrapper
-    padding         43px 29px 29px 29px
+    padding         40px 29px 29px 29px
 
   //
   &__hotel-item-price
     container()
     color           fade-out(0.5)
 
-    .room-number__number
-      margin-left   1px
-      font-size     22px
+    .room-number
+      &__number
+        margin-left   1px
+        font-size     24px
+
+      &__room-class
+        margin-left   4px
 
     .hotel-item-price__price-per-day
-      margin-top    2px
+      margin-top    5px
 
     .price-per-day__price
       padding-right 3px
 
   //
   &__datepicker
-    margin-top      19px
+    margin-top      20px
 
   //
   &__menu-for-count
@@ -70,13 +74,15 @@
 
     //
     &__total
-      margin-top      16px
+      margin-top      15px
+      margin-right    -9px
 
     .total
       display         flex
       font-size       19px
       font-weight     bold
       color           primary-color
+
 
       &__line
         height          18px
@@ -85,11 +91,10 @@
         border-bottom   1px dotted fade-out(0.25)
 
       &__number
-        padding-top     1px
-        font-size       18px
-        letter-spacing  -0.6px
+        font-size       19px
+        // letter-spacing  0.6px
 
   //
   &__button
-    margin-top      20px
+    margin-top      21px
     height          44px
