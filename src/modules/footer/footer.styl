@@ -9,56 +9,55 @@
   color fade-out()
 
   &__top-area
-    height      372px
-    padding-top 101px
-    box-shadow  0px 1px 0px fade-out(0.1)
+    min-height   372px
+    padding-top  100px
+    box-shadow   0px 1px 0px fade-out(0.1)
 
   .top-area
     container(, flex-start)
 
+    .represent
+      width           260px
+      margin-right   40px
 
-  .represent
-    width           260px
-    margin-right   40px
+      &__logo
+        padding-bottom  17px
 
-    &__logo
-      padding-bottom  17px
-
-    &__text
-      line-height  24px
-
-
-  .footer-menu
-    flex-grow  1
-    padding-top 4px
-    display  flex
-    justify-content  space-between
-    // letter-spacing  -0.1px  -  ui kit
-
-    &__container
-      width           150px
-      display         flex
-      flex-direction  column
-      &_w260
-        width         260px
-
-    &__link
-      color fade-out(0.5)
-      margin-bottom  20px
-
-    &__title
-      margin-bottom  21px
-
-    &__title-sub
-      margin-bottom  18px
-
-    &__text
-      line-height    24px
-
-    &__subscription
-      margin-top     23px
+      &__text
+        line-height  24px
 
 
+    .footer-menu
+      flex-grow  1
+      padding-top 4px
+      display  flex
+      justify-content  space-between
+      // letter-spacing  -0.1px  -  ui kit
+
+      &__container
+        width           150px
+        display         flex
+        flex-direction  column
+        &_w260
+          width         260px
+
+      &__link
+        color fade-out(0.5)
+        margin-bottom  20px
+
+      &__title
+        margin-bottom  21px
+
+      &__title-sub
+        margin-bottom  18px
+
+      &__text
+        line-height    24px
+
+      &__subscription
+        margin-top     23px
+
+  //
   &__bottom-area
     box-shadow  0px 10px 20px fade-out(0.05)
     border-top  1px solid #E5E5E5
@@ -76,51 +75,43 @@
     @media    (max-width  smDesktopWidth + 50px)
       flex-direction  column
 
+      &__top-area
+        padding 30px 0 50px
+        height  auto
 
-  &__top-area
-    @media    (max-width  smDesktopWidth + 50px)
-      padding 30px 0 50px
-      height  auto
+      .represent
+        width 100%
+        padding-right 0
+        container()
+        flex-direction column
+        padding-bottom   40px
 
+        &__text
+          max-width 500px
+          text-align  center
 
-  .represent
-    @media    (max-width  smDesktopWidth + 50px)
-      width 100%
-      padding-right 0
-      container()
-      flex-direction column
-      padding-bottom   40px
-
-
-    &__text
-      @media    (max-width  smDesktopWidth + 50px)
-        max-width 500px
-        text-align  center
-
-
-  .footer-menu
-    @media    (max-width  smDesktopWidth + 50px)
-      width         100%
-      display       grid
-      grid-gap      25px
-      grid-template-columns   150px 260px
-      grid-template-rows      1fr 1fr
-      justify-content         space-around
+      .footer-menu
+        width         100%
+        display       grid
+        grid-gap      25px
+        grid-template-columns   150px 260px
+        grid-template-rows      1fr 1fr
+        justify-content         space-around
 
     @media    (max-width  phoneWidth)
-      padding-left  20px
-      display       grid
-      grid-gap      25px
-      grid-template-columns  260px
-      justify-content        flex-start
+      .footer-menu
+        padding-left  20px
+        display       grid
+        grid-gap      25px
+        grid-template-columns  260px
+        justify-content        flex-start
 
 
-  &__bottom-area
-    @media    (max-width  549px)
+  @media    (max-width  549px)
+    &__bottom-area
       height      100px
 
-  .bottom-area
-    @media    (max-width  549px)
+    .bottom-area
       flex-direction    column
       justify-content   space-around
       align-items       middle

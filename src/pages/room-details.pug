@@ -25,48 +25,50 @@ block content
     +e.wrapper.wrapper
       +e.details
         +b.details
-          +b.SECTION.info
-            +e.H2.title Сведения о номере
-            +e.container
-              +item-info(
-                /*  icon  */    "insert_emoticon",
-                /*  title */    "Комфорт",
-                /*  text  */    "Шумопоглощающие стены"
-                )
-
-              +item-info(
-                /*  icon  */    "location_city",
-                /*  title */    "Удобство",
-                /*  text  */    "Окно в каждой из спален"
-                )
-
-              +item-info(
-                /*  icon  */    "whatshot",
-                /*  title */    "Уют",
-                /*  text  */    "Номер оснащён камином"
-                )
-
-          +b.SECTION.impression
-            +e.H2.title Впечатления от номера
-
-            +e.container
-              +e.chart
-                +b.chart
-                  canvas(id="js-chart" width="120" height="120")
-                  +e.container
-                    +e.number
-                    +e.text голосов
-
-              +e.bullet-list
-                +bullet-list(
-                  "Великолепно",
-                  "Хорошо",
-                  "Удовлетворительно",
-                  "Разочарован"
+          +e.SECTION.info
+            +b.info
+              +e.H2.title Сведения о номере
+              +e.container
+                +item-info(
+                  /*  icon  */    "insert_emoticon",
+                  /*  title */    "Комфорт",
+                  /*  text  */    "Шумопоглощающие стены"
                   )
 
-          +e.user-comments
-            +b.SECTION.user-comments
+                +item-info(
+                  /*  icon  */    "location_city",
+                  /*  title */    "Удобство",
+                  /*  text  */    "Окно в каждой из спален"
+                  )
+
+                +item-info(
+                  /*  icon  */    "whatshot",
+                  /*  title */    "Уют",
+                  /*  text  */    "Номер оснащён камином"
+                  )
+
+          +e.SECTION.impression
+            +b.impression
+              +e.H2.title Впечатления от номера
+
+              +e.container
+                +e.chart
+                  +b.chart
+                    +e.container
+                      +e.number
+                      +e.text голосов
+                    canvas(id="js-chart" width="120" height="120")
+
+                +e.bullet-list
+                  +bullet-list(
+                    "Великолепно",
+                    "Хорошо",
+                    "Удовлетворительно",
+                    "Разочарован"
+                    )
+
+          +e.SECTION.user-comments
+            +b.user-comments
               +e.header
                 +e.H2.title Отзывы посетителей номера
                 +e.P.number 2 отзыва
@@ -92,19 +94,21 @@ block content
                     active: false
                   })
 
-          +b.SECTION.rules
-            +e.H2.title Правила
-            +e.container
-              +bullet-list(
-                "Нельзя с питомцами",
-                "Без вечеринок и мероприятий",
-                "Время прибытия — после 13:00, а выезд до 12:00"
-                )
+          +e.SECTION.rules
+            +b.rules
+              +e.H2.title Правила
+              +e.container
+                +bullet-list(
+                  "Нельзя с питомцами",
+                  "Без вечеринок и мероприятий",
+                  "Время прибытия — после 13:00, а выезд до 12:00"
+                  )
 
-          +b.SECTION.text-block
-            +e.H2.title Отмена
-            +e.container
-              +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          +e.SECTION.text-block
+            +b.text-block
+              +e.H2.title Отмена
+              +e.container
+                +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
       +e.ASIDE.payment
         +payment()

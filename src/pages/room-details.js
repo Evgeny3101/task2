@@ -29,12 +29,14 @@ const datepicker = createDatePicker({
 datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 
 // меню подсчета
-const menuForCountGuests = new MenuForCount('.js-menuForCount', {
+const menuForCount = new MenuForCount('.js-menuForCount', {
   itemsCount: [
         {
           title          : 'взрослые',
+          value          : 2
         },  {
           title          : 'дети',
+          value          : 1
         }, {
           title          : 'младенцы',
           index          : 1,

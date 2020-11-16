@@ -13,32 +13,15 @@ mixin footer(data)
           +e.P.text= data.text
 
         +b.NAV.footer-menu
-          +e.SECTION.container
-            each item in data.menu1
-              if(item.title)
-                +e.title
-                  +b.H3.title= item.title
-              else
-                +e.LI.link
-                  +b.A.link(href=item.href)= item.text
-
-          +e.SECTION.container
-            each item in data.menu2
-              if(item.title)
-                +e.title
-                  +b.H3.title= item.title
-              else
-                +e.LI.link
-                  +b.A.link(href=item.href)= item.text
-
-          +e.SECTION.container
-            each item in data.menu3
-              if(item.title)
-                +e.title
-                  +b.H3.title= item.title
-              else
-                +e.LI.link
-                  +b.A.link(href=item.href)= item.text
+          each menu in data.menus
+            +e.SECTION.container
+              each item in menu
+                if(item.title)
+                  +e.title
+                    +b.H3.title= item.title
+                else
+                  +e.LI.link
+                    +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container._w260
             +e.H3.title-sub= data.subTitle
@@ -54,5 +37,6 @@ mixin footer(data)
       +e.container
         +b.bottom-area.wrapper
           +e.SMALL.text= data.bottomText
-          +social-link()
+          +e.social-link
+            +social-link()
 

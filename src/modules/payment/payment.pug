@@ -1,5 +1,5 @@
-include ../dropdown/dropdown
 include ../datepicker/datepicker
+include ../menu-for-count/menu-for-count
 include ../hotel-item-price/hotel-item-price
 
 
@@ -11,19 +11,18 @@ mixin payment()
         +hotel-item-price({
           number: 888,
           lux: true,
-          price: '9 990'
+          price: '9 990₽'
         })
 
-      +datepicker()
+      +e.datepicker
+        +datepicker()
 
-      +e.title
-        +b.H3.title гости
+      +e.menu-for-count
+        +menu-for-count({
+          title: 'гости',
+          class: 'js-menuForCount'
+        })
 
-      +b.menu-for-count.js-menuForCount
-        +dropdown({
-          "type" : "text",
-          "place" : 'Сколько гостей'
-        })(readonly="true")
 
       +e.price-list
         +b.price-list

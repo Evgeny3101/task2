@@ -28,8 +28,7 @@
       display     flex
       flex-wrap   wrap
 
-
-  //  deitails
+  //
   &__wrapper
     padding-top   69px
     min-height    938px
@@ -37,69 +36,78 @@
     grid-gap      68px
     grid-template-columns auto 380px
 
+  //  deitails
   &__details
-    padding-top   2px
-
-  &__payment
     padding-top   1px
 
   .details
     display                 grid
     grid-gap                10px 81px
     grid-template-columns   280px auto
-    grid-template-rows      293px 325px auto
+    grid-template-rows      293px 326px auto
 
     &__user-comments
       grid-column           1/3
-    //
-  //impression
-  .impression
-    &__title
-      margin-bottom       21px
 
-    &__container
-      max-width       320px
-      display         flex
+    //impression
+    .impression
+      &__container
+        margin-top      18px
+        margin-left     -3px
+        max-width       320px
+        display         flex
 
-    &__bullet-list
-      display       flex
-      align-items   flex-end
+      // chart
+      &__chart
+        width         126px
+        height        126px
+        margin-right  27px
 
-      .bullet-list__item:first-child .bullet-list__circle
-        background   linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-      .bullet-list__item:nth-child(2) .bullet-list__circle
-        background linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-      .bullet-list__item:nth-child(3) .bullet-list__circle
-        background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-      .bullet-list__item:nth-child(4) .bullet-list__circle
-        background linear-gradient(180deg, #919191 0%, #3D4975 100%)
+      .chart
+        position          relative
+        z-index           1
+        width             100%
+        height            100%
 
-    &__chart
-      width         124px
-      height        124px
-      margin-right  30px
+        &__container
+          position          absolute
+          z-index           -1
 
-  .chart
-    &__container
-      position          relative
-      display           flex
-      justify-content   center
+          top               0
+          width             100%
+          height            100%
+          container(center)
+          flex-direction    column
 
-      color             regular-color
-      text-transform    uppercase
-      font-weight       bold
+          color             regular-color
+          text-transform    uppercase
+          font-weight       bold
 
-    &__number
-      position:       absolute
-      top:            -80px
-      font-size       22px
-      letter-spacing  -0.8px
+        &__number
+          font-size         22px
+          letter-spacing    -0.8px
 
-    &__text
-      position:       absolute
-      top:            -55px
-      font-size       12px
-  //
+        &__text
+          font-size         12px
+
+      // bullet-list
+      &__bullet-list
+        display             flex
+        align-items         flex-end
+        margin-bottom       1px
+
+        .bullet-list__item
+          grid-template-columns  5px auto
+
+        .bullet-list__item:first-child .bullet-list__circle
+          background   linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
+        .bullet-list__item:nth-child(2) .bullet-list__circle
+          background linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
+        .bullet-list__item:nth-child(3) .bullet-list__circle
+          background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
+        .bullet-list__item:nth-child(4) .bullet-list__circle
+          background linear-gradient(180deg, #919191 0%, #3D4975 100%)
+
   // user-comments
   .user-comments
     &__header
@@ -107,101 +115,108 @@
       margin-bottom         20px
 
     &__number
+      margin-top            3px
+      margin-right          1px
       white-space           nowrap
-      padding-top           3px
       color                 fade-out(0.5)
 
     &__user-comment
-      margin-bottom         22px
-  //
-  // rules && text-block
+      margin-bottom         23px
+
+  // rules && text-
   .rules,
   .text-block
     &__container
-      margin-top   18px
+      margin-top   17px
 
   .rules
     &__title
       margin-left     20px
+    .bullet-list__item
+      margin-top      10px
 
   .text-block
     &__text
       max-width      340px
       line-height    24px
 
+  // payment
+  &__payment
+    padding-top   1px
+
+
+
   // media //
   // gallery
   &-gallery
+    @media  (max-width  lDesktopWidth)
+      &__img1
+        height        auto
+        width         100%
+
     @media  (min-width  tableWidth + 1px) and (max-width  lDesktopWidth)
       height          0px
       padding         0 0 33.7%
+
+      &__img2,
+      &__img3
+        height        auto
+        width         100%
+
     @media  (max-width  tableWidth)
       flex-direction  column
       height          0px
       padding         0 0 75%
 
-
-    &__column1
-      @media  (max-width  tableWidth)
-        width         100%
-
-    &__column2
-      @media  (max-width  tableWidth)
-        width         100%
-
-
-    &__img1
-      @media  (max-width  lDesktopWidth)
-        height        auto
-        width         100%
-
-    &__img2,
-    &__img3
-      @media  (min-width  tableWidth + 1px) and (max-width  lDesktopWidth)
-        height        auto
-        width         100%
-      @media  (max-width  tableWidth)
+      &__img2,
+      &__img3
         width         50%
+
+      &__column1
+        width         100%
+
+      &__column2
+        width         100%
+
 
 
   //  deitails
-  &__wrapper
-    @media  (max-width  1200px)
+  @media  (max-width  1200px)
+    &__wrapper
       grid-template-columns   auto
       grid-gap                20px
 
-
-  .details
-    @media (min-width  tableWidth + 1px) and (max-width  1200px)
+  @media (min-width  tableWidth + 1px) and (max-width  1200px)
+    .details
       grid-template-columns   auto auto
       grid-gap                20px
-    @media  (max-width  tableWidth)
+
+  @media  (max-width  tableWidth)
+    .details
       grid-template-columns   auto
       grid-template-rows      auto
       grid-gap                40px
 
-
-    // reviews
-    &__user-reviews
-      @media  (max-width  tableWidth)
+      // comments
+      &__user-comments
         grid-column           1/2
 
 
+
+
   //  payment
-  &__payment
-    @media  (max-width  1200px)
-      margin                  0 auto
-      margin-bottom           20px
+  @media  (max-width  1200px)
+    &__payment
+      margin                  20px auto 30px
 
+  @media  (max-width  phoneWidth)
     .payment
-      @media  (max-width  phoneWidth)
-        width                 100%
-        border                none
-        box-shadow            none
+      width                 100%
+      border                none
+      box-shadow            none
 
-        &__wrapper
-          @media  (max-width  phoneWidth)
-            padding               20px 20px 0 0
+      &__wrapper
+          padding               20px 20px 0 0
 
 
 
