@@ -13,7 +13,7 @@ mixin label-icon()
 mixin color-demo(title, hex, mod)
   +b.color-demo
     +e.demo(class=mod)
-    +e.text
+    +e.text-container
       +e.title= title
       +e.hex= hex
 
@@ -27,286 +27,300 @@ block head
 block content
   +b.ui-kit
     +e.page
-      +label-icon()
+      +e.label-icon
+        +label-icon()
 
-      +b.ui-kit-page1.wrapper
-        +e.container-colors
-          +color-demo("Dark Shade 100%", "#1F2041")
-          +color-demo("Dark Shade 75%", "#1F2041", "_fade075")
-          +color-demo("Dark Shade 50%", "#1F2041", "_fade05")
-          +color-demo("Dark Shade 25%", "#1F2041", "_fade025")
-          +color-demo("Dark Shade 5%", "#1F2041", "_fade005")
-          +color-demo("Purple", "#BC9CFF", "_regular")
-          +color-demo("Green", "#6FCF97", "_second")
+      +e.ui-kit-page1
+        +b.ui-kit-page1
+          +e.container-colors
+            +e.color-demo
+              +color-demo("Dark Shade 100%", "#1F2041")
+            +e.color-demo
+              +color-demo("Dark Shade 75%", "#1F2041", "_fade075")
+            +e.color-demo
+              +color-demo("Dark Shade 50%", "#1F2041", "_fade05")
+            +e.color-demo
+              +color-demo("Dark Shade 25%", "#1F2041", "_fade025")
+            +e.color-demo
+              +color-demo("Dark Shade 5%", "#1F2041", "_fade005")
+            +e.color-demo
+              +color-demo("Purple", "#BC9CFF", "_regular")
+            +e.color-demo
+              +color-demo("Green", "#6FCF97", "_second")
 
-        +e.container-titles
+          +e.container-titles
 
-          +b.title-demo
-            +e.container
-              +e.demo-h1 H1
-            H1.title This one is the sub-section or widget title
+            +b.title-demo
+              +e.container
+                +e.demo-h1 H1
+              +b.H1.title This one is the sub-section or widget title
 
-            +e.container
-              +e.demo-h2 H2
-            H2.title Next one is the item title inside widgets
+              +e.container
+                +e.demo-h2 H2
+              +b.H2.title Next one is the item title inside widgets
 
-            +e.container
-              +e.demo-h3 H3
-            H3.title This is a label or CTA text
+              +e.container
+                +e.demo-h3 H3
+              +b.H3.title This is a label or CTA text
 
-            +e.container
-              +e.demo-body body
-            +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+              +e.container
+                +e.demo-body Body
+              +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
     +e.page
-      +label-icon()
+      +e.label-icon
+        +label-icon()
 
-      +b.ui-kit-page2.wrapper
-        mixin module-title(title, comment)
-          +b.module-title
-            +e.H3.title= title
-            if (comment)
-              +e.comment= comment
-        div
-          +e.column1
-            +e.container-pb21
-              +e.container-pb5
-                +module-title("Text Field", "Default")
+      +e.ui-kit-page2
+        +b.ui-kit-page2
+          mixin module-title(title, comment)
+            +b.module-title
+              +e.title
+                +b.H3.title= title
+              if (comment)
+                +e.comment= comment
 
-              +text-field("text", "Email")
+          +e.wrapper
+            +e.column1
+              +e.container_pb21
+                +e.container_pb5
+                  +module-title("Text Field", "Default")
 
-            +e.container-pb20
-              +e.container-pb5
-                +module-title("Text Field", "Hover / Focus")
+                +e.text-field
+                  +text-field("text", "Email")
 
-              +text-field("text", "Email", "This is pretty awesome")._checked
+              +e.container_pb20
+                +e.container_pb5
+                  +module-title("Text Field", "Hover / Focus")
 
-            +e.container-pb22
-              +e.container-pb5
-                +module-title("Dropdown", "Default")
+                +text-field("text", "Email", "This is pretty awesome")._checked
 
-              +dropdown({
-                "type" : "text",
-                "place": "Сколько гостей"
-              })
+              +e.container_pb22
+                +e.container_pb5
+                  +module-title("Dropdown", "Default")
 
-            +e.container-pb41
-              +e.container-pb5
-                +module-title("masked text field", "Default")
+                +dropdown({
+                  "type" : "text",
+                  "place": "Сколько гостей"
+                })
 
-              +text-field("text", "ДД.ММ.ГГГГ")
+              +e.container_pb40
+                +e.container_pb5
+                  +module-title("masked text field", "Default")
 
-            +e.container-pb40
-              +e.container-date-dropdown
-                div
-                  +e.container-pb5
-                    +module-title("date Dropdown")
+                +text-field("text", "ДД.ММ.ГГГГ")
+
+              +e.container_pb40
+                +e.date-dropdown
+                  +e.container_width-150
+                    +e.container_pb6
+                      +module-title("date Dropdown")
+
+                    +dropdown({
+                      "type" : "text",
+                      "place": "ДД.ММ.ГГГГ"
+                    })
+                  +e.container_width-150
+                    +e.container_pb6
+                      +module-title("date Dropdown")
+
+                    +dropdown({
+                      "type" : "text",
+                      "value": "19.08.2019"
+                    })
+
+              +e.container_width-266
+                +e.container_pb41
+                  +e.container_pb5
+                    +module-title("filter date dropdown")
 
                   +dropdown({
                     "type" : "text",
-                    "place": "ДД.ММ.ГГГГ"
+                    "value": "19 авг - 23 авг."
                   })
 
-                div
-                  +e.container-pb5
-                    +module-title("date Dropdown")
+                +e.container_pb100
+                  +e.container_pb5
+                    +module-title("subscription text field")
 
-                  +dropdown({
-                    "type" : "text",
-                    "value": "19.08.2019"
+                  +subscription({
+                    "type" : "email",
+                    "place": "Email",
                   })
 
-            +e.column1_2
-              +e.container-pb41
-                +e.container-pb5
-                  +module-title("filter date dropdown")
-                +dropdown({
-                  "type" : "text",
-                  "value": "19 авг - 23 авг."
-                })
+              +e.column1_2
+                +e.container_width-266
 
-              +e.container-pb100
-                +e.container-pb5
-                  +module-title("subscription text field")
+                  +e.container_pb20
+                    +e.container_pb5
+                      +module-title("dropdown", "default")
 
-                +subscription({
-                  "type" : "email",
-                  "place": "Email",
-                  "icon" : "!"
-                })
+                    +b.dropdown-menu
+                      +dropdown({
+                        "type" : "text",
+                        "place": "2 спальни, 2 кровати..."
+                      })
 
-          +e.column1_2
+                  +e.container_pb170
+                    +e.container_pb5
+                      +module-title("dropdown", "expanded")
 
-            +e.container-pb20
-              +e.container-pb5
-                +module-title("dropdown", "default")
+                    +e.menu-for-count
+                      +menu-for-count({
+                        class: 'js-menuForCount'
+                      })
 
-              +b.dropdown-menu
-                +dropdown({
-                  "type" : "text",
-                  "place": "2 спальни, 2 кровати..."
-                })
+                  +e.container_pb48
+                    +b.checkbox-list1
+                      +e.BUTTON.btn
+                        +e.H3.title expandable checkbox list
+                        +e.I.icon-down.material-icons keyboard_arrow_down
 
-            +e.container-pb170
-              +e.container-pb5
-                +module-title("dropdown", "expanded")
+                  +e.container_pb10
+                    +checkbox-list("expandable checkbox list")
 
-              +b.menu-for-count.js-menuForCount
-                +dropdown({
-                  "type" : "text",
-                })(readonly="true")
+                  +e.container_pb21
 
-            +e.container-pb48
-              +b.checkbox-list1
-                +e.BUTTON.btn
-                  +e.H3.title expandable checkbox list
-                  +e.I.icon-down.material-icons keyboard_arrow_down
+                    +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
 
-            +e.container-pb10
-              +checkbox-list("expandable checkbox list")
+                    +item-info("location_city", "Удобство", "Окно в каждой из спален")
 
-            +e.container-pb21
+          +e.column2-3
 
-              +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+            +e.column2
 
-              +item-info("location_city", "Удобство", "Окно в каждой из спален")
+              //-  Checkbox Buttons
+              +e.container_pb17
+                +module-title("Checkbox Buttons")
+              +e.container_pb31
+                +e.checkbox-item
+                  +checkbox-item("Можно курить")
+                +e.checkbox-item
+                  +checkbox-item("Можно с питомцами")(checked)
+                +e.checkbox-item
+                  +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
 
-        +e.column2-3
+              //-  Radio Buttons
+              +e.container_pb17
+                +module-title("Radio Buttons")
+              +e.container_pb35
+                //- +radio-button({
+                //-   name: 'gender',
+                //-   id: 'male',
+                //-   text: 'Мужчина',
+                //-   checked: true
+                //- })()
 
-          +e.column2
+              //-  Toggle
+              +e.container_pb17
+                +module-title("Toggle")
+              +e.container_pb16
+                +toggle("Получать спецпредложения")(checked)
+              +e.container_pb45
+                +toggle("Получать спецпредложения")
 
-            //-  Checkbox Buttons
-            +e.container-pb17
-              +module-title("Checkbox Buttons")
-            +e.container-pb31
-              +e.checkbox-item
-                +checkbox-item("Можно курить")
-              +e.checkbox-item
-                +checkbox-item("Можно с питомцами")(checked)
-              +e.checkbox-item
-                +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
+              //-  Like button
+              +e.container_pb16
+                +module-title("Like button")
+              +e.container_pb40
+                +e.container-like-buttons
+                  +like-button(2)
+                  +like-button(12, 'checked')
 
-            //-  Radio Buttons
-            +e.container-pb17
-              +module-title("Radio Buttons")
-            +e.container-pb35
-              //- +radio-button({
-              //-   name: 'gender',
-              //-   id: 'male',
-              //-   text: 'Мужчина',
-              //-   checked: true
-              //- })()
-
-            //-  Toggle
-            +e.container-pb17
-              +module-title("Toggle")
-            +e.container-pb16
-              +toggle("Получать спецпредложения")(checked)
-            +e.container-pb45
-              +toggle("Получать спецпредложения")
-
-            //-  Like button
-            +e.container-pb16
-              +module-title("Like button")
-            +e.container-pb40
-              +e.container-like-buttons
-                +like-button(2)
-                +like-button(12, 'checked')
-
-            //-  Rate button
-            +e.container-pb16
-              +module-title("rate button")
-            +e.container-pb17
-              +e.container-rate-button
-                +rate-button("4")
-                +rate-button("5")
+              //-  Rate button
+              +e.container_pb16
+                +module-title("rate button")
+              +e.container_pb17
+                +e.container-rate-button
+                  +rate-button("4")
+                  +rate-button("5")
 
 
-          +e.column3
+            +e.column3
 
-            //-  Range Slider
-            +e.container-pb44
-              +e.container-range-slider
-                +range-slider("Range Slider", "5 000₽ - 10 000₽")
+              //-  Range Slider
+              +e.container_pb44
+                +e.container-range-slider
+                  +range-slider("Range Slider", "5 000₽ - 10 000₽")
 
-            //-  Buttons
-            +e.container-pb15
-              +module-title("Buttons")
-            +e.container-pb40
-              +b.button-ui-kit
-                  +e.container
-                    +e.wrapper
-                      +b.A(href="mock-address").button._transparent CLICK ME
-                    +e.wrapper
-                      +b.A(href="mock-address").button._transparent.active CLICK ME
-                    +e.wrapper
-                      +b.A(href="mock-address").button._regular CLICK ME
-                    +e.wrapper
-                      +b.A(href="mock-address").button._regular.active CLICK ME
-                  +e.wrapper-two-item
-                    +b.A(href="mock-address").button._fade05 CLICK ME
-                    +b.A(href="mock-address").button._blue CLICK ME
-                  +e.wrapper-to-pay
-                    +b.BUTTON.button._regular._relative перейти к оплате
-                      +e.I.icon.material-icons arrow_forward
+              //-  Buttons
+              +e.container_pb15
+                +module-title("Buttons")
+              +e.container_pb40
+                +b.button-ui-kit
+                    +e.container
+                      +e.wrapper
+                        +b.A(href="mock-address").button._transparent CLICK ME
+                      +e.wrapper
+                        +b.A(href="mock-address").button._transparent.active CLICK ME
+                      +e.wrapper
+                        +b.A(href="mock-address").button._regular CLICK ME
+                      +e.wrapper
+                        +b.A(href="mock-address").button._regular.active CLICK ME
+                    +e.wrapper-two-item
+                      +b.A(href="mock-address").button._fade05 CLICK ME
+                      +b.A(href="mock-address").button._blue CLICK ME
+                    +e.wrapper-to-pay
+                      +b.BUTTON.button._regular._relative перейти к оплате
+                        +e.I.icon.material-icons arrow_forward
 
-            //-  Pagination
-            +e.container-pb17
-              +module-title("pagination")
-            +e.container-pb17
-              +pagination()
-
-
-          +e.column4
-
-            //-  Dropdown, guest count
-            +e.container-pb256
-              +module-title("dropdown")
-              +e.block-wrapper
-                +b.menu-for-count.js-menuForCount
-                  +dropdown({
-                    "type" : "text",
-                  })(readonly="true")
-
-            //-  Rich Checkbox Buttons
-            +e.container-pb17
-              +module-title("Rich Checkbox Buttons")
-            +e.container-pb31
-              +e.rich-checkbox-item1
-                +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-              +e.rich-checkbox-item2
-                +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+              //-  Pagination
+              +e.container_pb17
+                +module-title("pagination")
+              +e.container_pb17
+                +pagination()
 
 
-          +e.column5
+            +e.column4
 
-            //-  Dropdown, guest count
-            +e.container-pb256
-              +module-title("dropdown")
-              +e.block-wrapper
-                +b.menu-for-count.js-menuForCount
-                  +dropdown({
-                    "type" : "text",
-                  })(readonly="true")
+              //-  Dropdown, guest count
+              +e.container_pb256
+                +module-title("dropdown")
+                +e.block-wrapper
+                  +b.menu-for-count.js-menuForCount
+                    +dropdown({
+                      "type" : "text",
+                    })(readonly="true")
 
-            //-  Bullet list
-            +e.container-pb13
-              +module-title("Bullet list")
+              //-  Rich Checkbox Buttons
+              +e.container_pb17
+                +module-title("Rich Checkbox Buttons")
+              +e.container_pb31
+                +e.rich-checkbox-item1
+                  +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+                +e.rich-checkbox-item2
+                  +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
 
-            +bullet-list()
+
+            +e.column5
+
+              //-  Dropdown, guest count
+              +e.container_pb256
+                +module-title("dropdown")
+                +e.block-wrapper
+                  +b.menu-for-count.js-menuForCount
+                    +dropdown({
+                      "type" : "text",
+                    })(readonly="true")
+
+              //-  Bullet list
+              +e.container_pb13
+                +module-title("Bullet list")
+
+              +bullet-list()
 
 
-          +e.user-comment
-            +user-comment(
-              'assets/img/user-img1.jpg',
-              'Мурад Сарафанов',
-              '5 дней назад',
-              'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-              12,
-              'checked'
-              )
+            +e.user-comment
+              +user-comment(
+                'assets/img/user-img1.jpg',
+                'Мурад Сарафанов',
+                '5 дней назад',
+                'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                12,
+                'checked'
+                )
 
-    +e.page_bg-gray
+    +e.page._bg-gray
       +label-icon()
 
       +b.ui-kit-page3.wrapper
@@ -346,7 +360,7 @@ block content
             "reviews" : 65
           })
 
-    +e.page_bg-gray
+    +e.page._bg-gray
       +label-icon()
 
       +b.ui-kit-page4

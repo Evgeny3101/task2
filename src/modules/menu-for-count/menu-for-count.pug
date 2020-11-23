@@ -2,8 +2,9 @@ include ../dropdown/dropdown
 
 mixin menu-for-count(config)
   +b.menu-for-count
-    +e.title
-      +b.H3.title= config.title
+    if(config.title)
+      +e.title
+        +b.H3.title= config.title
 
     +e.text-field(class= config.class)
       +dropdown({

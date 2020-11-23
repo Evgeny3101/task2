@@ -53,6 +53,7 @@ const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
     ['ванная комната', 'ванные комнаты', 'ванных комнаты'],
   ],
 });
+// menuForCountAmenities.switchMenu()
 
 
 // календарь
