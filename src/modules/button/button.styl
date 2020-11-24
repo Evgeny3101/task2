@@ -27,17 +27,16 @@
   &_transparent
     color           regular-color
     border          2px solid regular-color
+    &.active
+      border-color  fade-out(0.5, regular-color)
 
 
   &_regular
     color           default-color
-    background      linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-
-
-  &_transparent,
-  &_regular
+    background      regular-color
     &.active
-      opacity       0.5
+      background    fade-out(0.5, regular-color)
+
 
   &_fade05
     color           fade-out(0.5)

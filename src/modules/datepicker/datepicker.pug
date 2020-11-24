@@ -11,7 +11,7 @@ mixin datepicker()
         +dropdown({
           "type"  : "text",
           "place" : "ДД.ММ.ГГГГ"
-        })(readonly="true").js-datepicker-main-field
+        })(readonly="true")._placeholder-dark.js-datepicker-main-field
 
     +e.second-field
       +e.title
@@ -21,4 +21,4 @@ mixin datepicker()
         +dropdown({
           "type"  : "text",
           "place" : "ДД.ММ.ГГГГ"
-        })(readonly="true").js-datepicker-second-field
+        })(readonly="true")._placeholder-dark.js-datepicker-second-field

@@ -18,6 +18,16 @@ mixin color-demo(title, hex, mod)
       +e.hex= hex
 
 
+mixin module-title(title, comment)
+  +b.module-title
+    +e.title
+      +b.H3.title= title
+    if (comment)
+      +e.comment
+        +e.text= comment
+
+
+
 block head
   +head({
     "title": "Toxin - UI Kit"
@@ -73,252 +83,281 @@ block content
 
       +e.ui-kit-page2
         +b.ui-kit-page2
-          mixin module-title(title, comment)
-            +b.module-title
-              +e.title
-                +b.H3.title= title
-              if (comment)
-                +e.comment= comment
+          // rows 1
+          +e.container_width-320._pb100
+            +e.container_pb21
+              +e.container_pb5
+                +module-title("Text Field", "Default")
 
-          +e.wrapper
-            +e.column1
-              +e.container_pb21
-                +e.container_pb5
-                  +module-title("Text Field", "Default")
+              +e.text-field
+                +text-field("text", "Email")
 
-                +e.text-field
-                  +text-field("text", "Email")
+            +e.container_pb20
+              +e.container_pb5
+                +module-title("Text Field", "Hover / Focus")
 
-              +e.container_pb20
-                +e.container_pb5
-                  +module-title("Text Field", "Hover / Focus")
+              +text-field("text", "Email", "This is pretty awesome")._checked
 
-                +text-field("text", "Email", "This is pretty awesome")._checked
+            +e.container_pb22
+              +e.container_pb5
+                +module-title("Dropdown")
 
-              +e.container_pb22
-                +e.container_pb5
-                  +module-title("Dropdown", "Default")
+              +dropdown({
+                "type" : "button",
+                "value": "Сколько гостей"
+              })
 
-                +dropdown({
-                  "type" : "text",
-                  "place": "Сколько гостей"
-                })
+            +e.container_pb40
+              +e.container_pb5
+                +module-title("masked text field")
 
-              +e.container_pb40
-                +e.container_pb5
-                  +module-title("masked text field", "Default")
+              +text-field("text", "ДД.ММ.ГГГГ")
 
-                +text-field("text", "ДД.ММ.ГГГГ")
-
-              +e.container_pb40
-                +e.date-dropdown
-                  +e.container_width-150
-                    +e.container_pb6
-                      +module-title("date Dropdown")
-
-                    +dropdown({
-                      "type" : "text",
-                      "place": "ДД.ММ.ГГГГ"
-                    })
-                  +e.container_width-150
-                    +e.container_pb6
-                      +module-title("date Dropdown")
-
-                    +dropdown({
-                      "type" : "text",
-                      "value": "19.08.2019"
-                    })
-
-              +e.container_width-266
-                +e.container_pb41
-                  +e.container_pb5
-                    +module-title("filter date dropdown")
+            +e.container_pb40
+              +e.date-dropdown
+                +e.container_width-150
+                  +e.container_pb6
+                    +module-title("date Dropdown")
 
                   +dropdown({
                     "type" : "text",
-                    "value": "19 авг - 23 авг."
-                  })
+                    "place": "ДД.ММ.ГГГГ"
+                  })._placeholder-dark
+                +e.container_width-150
+                  +e.container_pb6
+                    +module-title("date Dropdown")
 
-                +e.container_pb100
-                  +e.container_pb5
-                    +module-title("subscription text field")
+                  +dropdown({
+                    "type" : "text",
+                    "place": "ДД.ММ.ГГГГ",
+                    "value": "19.08.2019"
+                  })._placeholder-dark
 
-                  +subscription({
-                    "type" : "email",
-                    "place": "Email",
-                  })
+            +e.container_width-266
+              +e.container_pb41
+                +e.container_pb5
+                  +module-title("filter date dropdown")
 
-              +e.column1_2
-                +e.container_width-266
+                +dropdown({
+                  "type" : "text",
+                  "value": "19 авг - 23 авг."
+                })
 
-                  +e.container_pb20
-                    +e.container_pb5
-                      +module-title("dropdown", "default")
+              +e.container
+                +e.container_pb5
+                  +module-title("subscription text field")
 
-                    +b.dropdown-menu
-                      +dropdown({
-                        "type" : "text",
-                        "place": "2 спальни, 2 кровати..."
-                      })
+                +subscription({
+                  "type" : "email",
+                  "place": "Email",
+                })
 
-                  +e.container_pb170
-                    +e.container_pb5
-                      +module-title("dropdown", "expanded")
+          +e.container_width-266
 
-                    +e.menu-for-count
-                      +menu-for-count({
-                        class: 'js-menuForCount'
-                      })
+            //-  Checkbox Buttons
+            +e.container_pb17
+              +module-title("Checkbox Buttons")
+            +e.container_pb41._width-240
+              +e.container_pb10
+                +checkbox-item("Можно курить")
+              +e.container_pb10
+                +checkbox-item("Можно с питомцами")(checked)
+              +e.container
+                +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
 
-                  +e.container_pb48
-                    +b.checkbox-list1
-                      +e.BUTTON.btn
-                        +e.H3.title expandable checkbox list
-                        +e.I.icon-down.material-icons keyboard_arrow_down
+            //-  Radio Buttons
+            +e.container_pb16
+              +module-title("Radio Buttons")
+            +e.container_pb41
+              +e.radio-buttons
+                +radio-button({
+                  name: 'gender',
+                  id: 'male',
+                  text: 'Мужчина',
+                  checked: true
+                })()
 
-                  +e.container_pb10
-                    +checkbox-list("expandable checkbox list")
+                +radio-button({
+                  name: 'gender',
+                  id: 'female',
+                  text: 'Женщина',
+                  checked: false
+                })()
 
-                  +e.container_pb21
+            //-  Toggle
+            +e.container_pb16
+              +module-title("Toggle")
+            +e.container_pb16
+              +toggle("Получать спецпредложения")(checked)
+            +e.container_pb46
+              +toggle("Получать спецпредложения")
 
-                    +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+            //-  Like button
+            +e.container_pb16
+              +module-title("Like button")
+            +e.container_pb40
+              +e.like-buttons
+                +like-button(2)
+                +like-button(12).like-button_checked
 
-                    +item-info("location_city", "Удобство", "Окно в каждой из спален")
+            //-  Rate button
+            +e.container_pb16
+              +module-title("rate button")
+            +e.container
+              +e.rate-buttons
+                +rate-button("4")
+                +rate-button("5")
 
-          +e.column2-3
+          +e.container
+            //-  Range Slider
+            +e.container_pb43
+              +e.range-slider
+                +range-slider("Range Slider")
 
-            +e.column2
+            //-  Buttons
+            +e.container_pb16
+              +module-title("Buttons")
+            +e.container_pb40
+              +b.buttons-ui-kit
+                +e.container
+                  +e.button
+                    +b.BUTTON.button._regular CLICK ME
+                  +e.button
+                    +b.BUTTON.button._regular.active CLICK ME
+                  +e.button
+                    +b.BUTTON.button._transparent CLICK ME
+                  +e.button
+                    +b.BUTTON.button._transparent.active CLICK ME
 
-              //-  Checkbox Buttons
-              +e.container_pb17
-                +module-title("Checkbox Buttons")
-              +e.container_pb31
-                +e.checkbox-item
-                  +checkbox-item("Можно курить")
-                +e.checkbox-item
-                  +checkbox-item("Можно с питомцами")(checked)
-                +e.checkbox-item
-                  +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
+                  +e.text-button
+                    +b.BUTTON.button._blue CLICK ME
+                  +e.text-button
+                    +b.BUTTON.button._fade05 CLICK ME
 
-              //-  Radio Buttons
-              +e.container_pb17
-                +module-title("Radio Buttons")
-              +e.container_pb35
-                //- +radio-button({
-                //-   name: 'gender',
-                //-   id: 'male',
-                //-   text: 'Мужчина',
-                //-   checked: true
-                //- })()
+                +e.button-large
+                  +b.BUTTON.button._regular._relative перейти к оплате
+                    +e.I.icon.material-icons arrow_forward
 
-              //-  Toggle
-              +e.container_pb17
-                +module-title("Toggle")
-              +e.container_pb16
-                +toggle("Получать спецпредложения")(checked)
-              +e.container_pb45
-                +toggle("Получать спецпредложения")
+            //-  Pagination
+            +e.container_pb17
+              +module-title("pagination")
+            +e.container_width-240
+              +pagination()
 
-              //-  Like button
-              +e.container_pb16
-                +module-title("Like button")
-              +e.container_pb40
-                +e.container-like-buttons
-                  +like-button(2)
-                  +like-button(12, 'checked')
+          // rows 2
+          +e.container_width-266
+            +e.container_pb20
+              +e.container_pb5
+                +module-title("dropdown", "default")
 
-              //-  Rate button
-              +e.container_pb16
-                +module-title("rate button")
-              +e.container_pb17
-                +e.container-rate-button
-                  +rate-button("4")
-                  +rate-button("5")
+              +b.dropdown-menu
+                +dropdown({
+                  "type" : "text",
+                  "place": "2 спальни, 2 кровати..."
+                })._placeholder-dark
 
+            +e.container_pb167
+              +e.container_pb5
+                +module-title("dropdown", "expanded")
 
-            +e.column3
+              +e.menu-for-count
+                +menu-for-count({
+                  class: 'js-menuForCount'
+                })
 
-              //-  Range Slider
-              +e.container_pb44
-                +e.container-range-slider
-                  +range-slider("Range Slider", "5 000₽ - 10 000₽")
+          +e.container
+            //-  Dropdown, guest count
+            +e.container_pb5
+              +module-title("dropdown")
 
-              //-  Buttons
-              +e.container_pb15
-                +module-title("Buttons")
-              +e.container_pb40
-                +b.button-ui-kit
-                    +e.container
-                      +e.wrapper
-                        +b.A(href="mock-address").button._transparent CLICK ME
-                      +e.wrapper
-                        +b.A(href="mock-address").button._transparent.active CLICK ME
-                      +e.wrapper
-                        +b.A(href="mock-address").button._regular CLICK ME
-                      +e.wrapper
-                        +b.A(href="mock-address").button._regular.active CLICK ME
-                    +e.wrapper-two-item
-                      +b.A(href="mock-address").button._fade05 CLICK ME
-                      +b.A(href="mock-address").button._blue CLICK ME
-                    +e.wrapper-to-pay
-                      +b.BUTTON.button._regular._relative перейти к оплате
-                        +e.I.icon.material-icons arrow_forward
+            +e.container
+              +menu-for-count({
+                class: 'js-menuForCount'
+              })
 
-              //-  Pagination
-              +e.container_pb17
-                +module-title("pagination")
-              +e.container_pb17
-                +pagination()
+          +e.container
+            //-  Dropdown, guest count
+            +e.container_pb5
+              +module-title("dropdown")
+            +e.container
+              +menu-for-count({
+                class: 'js-menuForCount'
+              })
 
+          // rows 3
+          +e.container_width-266
+            +e.container_pb38
+              +e.checkbox-list
+                +checkbox-list("expandable checkbox list")
 
-            +e.column4
+            +e.container
+              +e.checkbox-list
+                +checkbox-list(
+                  /* title */
+                  'expandable checkbox list'
 
-              //-  Dropdown, guest count
-              +e.container_pb256
-                +module-title("dropdown")
-                +e.block-wrapper
-                  +b.menu-for-count.js-menuForCount
-                    +dropdown({
-                      "type" : "text",
-                    })(readonly="true")
-
-              //-  Rich Checkbox Buttons
-              +e.container_pb17
-                +module-title("Rich Checkbox Buttons")
-              +e.container_pb31
-                +e.rich-checkbox-item1
-                  +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
-                +e.rich-checkbox-item2
-                  +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
-
-
-            +e.column5
-
-              //-  Dropdown, guest count
-              +e.container_pb256
-                +module-title("dropdown")
-                +e.block-wrapper
-                  +b.menu-for-count.js-menuForCount
-                    +dropdown({
-                      "type" : "text",
-                    })(readonly="true")
-
-              //-  Bullet list
-              +e.container_pb13
-                +module-title("Bullet list")
-
-              +bullet-list()
-
-
-            +e.user-comment
-              +user-comment(
-                'assets/img/user-img1.jpg',
-                'Мурад Сарафанов',
-                '5 дней назад',
-                'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-                12,
-                'checked'
+                  /* items */
+                  ,{
+                  name    : 'Завтрак',
+                  active  : false
+                  },{
+                  name    : 'Письменный стол',
+                  active  : true
+                  },{
+                  name    : 'Стул для кормления',
+                  active  : true
+                  },{
+                  name    : 'Кроватка',
+                  active  : true
+                  },{
+                  name    : 'Телевизор',
+                  active  : false
+                  },{
+                  name    : 'Шампунь',
+                  active  : false
+                  }
                 )
+
+          +e.container_pb202._mt-5
+            //-  Rich Checkbox Buttons
+            +e.container_pb17
+              +module-title("Rich Checkbox Buttons")
+            +e.container
+              +e.rich-checkbox-item1
+                +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+              +e.rich-checkbox-item2
+                +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+
+          +e.container_mt-5
+            //-  Bullet list
+            +e.container_pb13
+              +module-title("Bullet list")
+
+            +e.container
+              +bullet-list(
+                "Нельзя с питомцами",
+                "Без вечеринок и мероприятий",
+                "Время прибытия — после 13:00, а выезд до 12:00"
+              )
+
+          // rows 4
+          +e.container
+            +e.item-info
+              +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+
+            +e.item-info
+              +item-info("location_city", "Удобство", "Окно в каждой из спален")
+
+          +e.user-comment
+            +user-comment({
+              image: 'assets/img/user-img1.jpg',
+              name: 'Мурад Сарафанов',
+              date: '5 дней назад',
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+              likes: 12,
+              active: true
+            })
+
 
     +e.page._bg-gray
       +label-icon()

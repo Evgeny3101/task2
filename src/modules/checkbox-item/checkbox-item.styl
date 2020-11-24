@@ -1,9 +1,7 @@
 .checkbox-item
   font-size               14px
   cursor                  pointer
-  display                 grid
-  grid-gap                0 10px
-  grid-template-columns   20px 1fr
+  display                 flex
 
   &__input
     display               none
@@ -18,7 +16,7 @@
   &__box
     position        relative
     display         block
-    width           20px
+    min-width       20px
     height          20px
     border          1px solid fade-out(0.25)
     border-radius   4px

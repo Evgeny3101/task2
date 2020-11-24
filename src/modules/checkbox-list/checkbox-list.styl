@@ -8,8 +8,8 @@
     container()
     width           100%
 
-    &__title
-      width         210px
+    // &__title
+    //   width         210px
 
     &__icon-up,
     &__icon-down
@@ -23,7 +23,11 @@
     margin-right    auto
     display         none
 
+    &.active
+      display block
+
   .menu
+    margin-top       12px
     &__checkbox-item
       margin-bottom   10px
 
