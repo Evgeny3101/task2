@@ -9,4 +9,6 @@ mixin menu-for-count(config)
     +e.text-field(class= config.class)
       +dropdown({
         "type" : "text",
-      })(readonly="true")
+        "place": config.placeholder,
+        "value": config.value
+      })(readonly="true")._placeholder-dark

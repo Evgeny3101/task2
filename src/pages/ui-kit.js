@@ -87,4 +87,13 @@ jQuery(function() {
   // checkbox-list
   const checkboxList = document.querySelectorAll('.checkbox-list')[1]
   checkboxList.click()
+
+  // hotel-item показать стрелки
+  document.querySelectorAll('.switch-arrows__prev')[0].style.zIndex = '1'
+  document.querySelectorAll('.switch-arrows__next')[0].style.zIndex = '1'
+
+  // payment
+  const paymentDOM = document.querySelector('.payment')
+  paymentDOM.querySelector('.js-datepicker-main-field').value = '19.08.2019'
+  paymentDOM.querySelector('.js-datepicker-second-field').value = '23.08.2019'
 })

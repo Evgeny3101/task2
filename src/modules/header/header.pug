@@ -1,27 +1,26 @@
 include ../logo/logo
 
-mixin header(login, register, data, user)
+mixin header(config)
+  - const {login, register, user} = config
   +b.HEADER.header
-    +e.container.wrapper
-      +logo()
+    +e.wrapper
+      +e.logo
+        +logo()
 
       +e.NAV.container
-        // dropdown неготов
-        +b.INPUT(type="checkbox" id="check-menu")
-        +b.LABEL(for="check-menu").header-menu-dropdown
-          +e.I.icon.material-icons keyboard_arrow_down
-
-        +b.UL.header-menu
-          each item in data.link
-            +e.LI.item
-              +e.A.link(href=item.href class=item.mod onclick="return false;")= item.text
-                if (item.icon === true)
-                  +e.I.icon.material-icons keyboard_arrow_down
+        +e.header-menu
+          +b.UL.header-menu
+            each item in config.link
+              +e.LI.item
+                +e.A.link(href=item.href class=item.mod onclick="return false;")= item.text
+                  if (item.icon === true)
+                    +e.I.icon.material-icons keyboard_arrow_down
 
         if (user)
+          +e.line
           +e.user
             +b.user
-              +e.container-btn
+              +e.button
                 +b.A.button._default= user
 
         else

@@ -4,12 +4,16 @@
 .header
   position relative
   z-index  1
-  padding 15px 0
-  line-height  40px
   background default-color
-  box-shadow   0px 10px 20px fade-out(0.05)
+  box-shadow 0px 10px 20px fade-out(0.05)
 
+  &__wrapper
+    max-width 1160px
+    line-height 40px
+    padding 15px 0
+    margin 0 auto
 
+  &__wrapper,
   &__container,
   .auth-btn,
   .header-menu
@@ -17,61 +21,32 @@
 
 
 
-  & .header-menu__item,
-  &__auth-btn,
-  & .auth-btn__button-sign-up
-    margin-left  20px
+  &__line
+    height 30px
+    border-left  1px solid fade-out(0.1)
 
   &__user
-    margin-left  24px
-
-
-#check-menu
-  display none
-
-
-#check-menu checked ~ .header-menu
-  max-height  250px
-  font-size  14px
-
-  &__icon
-    font-size   24px
-
-
-.header-menu-dropdown
-  cursor pointer
-  height 40px
-  display none
-
-  &__icon
-    vertical-align  middle
-    font-size       36px
-    color fade-out()
-
+    margin-left  20px
 
 .header-menu
   color  fade-out(0.5)
 
   &__link
     display flex
+    justify-content space-between
     align-items  center
     background  default-color
+    margin-right 20.5px
 
-    &_mr10
-      margin-right 8.5px
-    &_mr1
-      padding-right 1px
     &_bold
       color fade-out()
       font-weight bold
 
   &__icon
-    font-size       24px
-    margin-top      4px
+    padding-top      4px
 
 
 .auth-btn
-  margin-bottom  1px
   &__button-sign-in
     height    34px
     width     87px
@@ -79,18 +54,16 @@
   &__button-sign-up
     height    34px
     width     196px
+    margin-left 20px
 
 
-.user
-  line-height   30px
-  border-left   1px solid fade-out(0.1)
-
-  &__containerbtn-btn
-    margin-left   30px
 
 
 // media
 
+.header
+  @media    (max-width  smDesktopWidth)
+    padding 12px 15px
 
 .header-menu
   @media    (max-width  smDesktopWidth)
@@ -107,29 +80,22 @@
     overflow        hidden
     transition      0.15s all
 
-  &__item
-    @media    (max-width  smDesktopWidth)
+    &__item
       border          1px solid fade-out(0.2)
       border-radius   2px
       margin-bottom   -1px
 
-  &__link
-    @media    (max-width  smDesktopWidth)
+    &__link
       width           140px
       padding-left    10px
 
-  &__icon
-    @media    (max-width  smDesktopWidth)
+    &__icon
       margin-left   auto
       margin-right  5px
 
 
-.header-menu-dropdown
-  @media    (max-width  smDesktopWidth)
-    display   block
-
 
 .auth-btn__button-sign-up
-  @media    (max-width  smDesktopWidth)
+  @media    (max-width  phoneWidth)
     display   none
 

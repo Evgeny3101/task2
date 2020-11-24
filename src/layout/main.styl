@@ -6,7 +6,7 @@
 
 @require "../modules/header/header"
 @require "../modules/footer/footer"
-
+@require "../modules/footerM/footerM"
 
 
 // Page sizes
@@ -53,4 +53,12 @@ h3
   text-transform  uppercase
   font-size  12px
 
+.footerM
+  display none
 
+// media
+  @media    (max-width  tableWidth)
+    .footer
+      display none
+    .footerM
+      display block

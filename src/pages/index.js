@@ -5,12 +5,11 @@ import "./index.styl"
 import createDatePicker from "../modules/datepicker/datepicker.js"
 import MenuForCount from '../modules/menu-for-count/menu-for-count.js'
 
-
 const datepicker = createDatePicker({
+  startDate: new Date(2019, 7, 8),
   range: true,
   multipleDates: true,
   offset: 5,
-
   toggleSelected: true,
 
   showButtonPanel: true,
@@ -49,7 +48,6 @@ const menuForCount = new MenuForCount('.js-menuForCount', {
 
 // const menuCountDOM = document.querySelector('.dropdown-menu-count')
 // dropdown.classList.add('current')
-
 // datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 // const datepickerDOM = document.querySelector('.datepicker')
 // datepickerDOM.classList.add('active')

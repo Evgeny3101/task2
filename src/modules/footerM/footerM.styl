@@ -1,25 +1,16 @@
 .footerM
-  height 367px
-  display flex
-
-  flex-direction column
-  align-items  center
-  justify-content space-between
-
+  padding 121px 10px
   background-color default-color
   font-size  14px
   color fade-out()
+  box-shadow 0px 10px 20px fade-out(0.05);
 
-  &__logo
-    margin  102px auto 18px
-    & .logo__icon
-      left 0
-
+  &__container
+    height 126px
+    container()
+    flex-direction column
 
   &__text
     max-width 560px
     text-align  center
     line-height  24px
-
-  .social-link
-    margin  27px auto 108px

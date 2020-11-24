@@ -1,7 +1,9 @@
 mixin footerM(text)
 
   +b.FOOTER.footerM
-    +e.logo
-      +logo()
-    +e.text=text
-    +social-link()
+    +e.container
+      +e.logo
+        +logo()
+      +e.text=text
+      +e.social-link
+        +social-link()

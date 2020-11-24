@@ -3,17 +3,18 @@ include ../social-link/social-link
 include ../subscription/subscription
 
 
-mixin footer(data)
+mixin footer(config)
+  - const {text, subTitle, subText, subPlace, bottomText} = config
   +b.FOOTER.footer
     +e.top-area
-      +b.top-area.wrapper
+      +b.top-area
         +b.represent
           +e.logo
             +logo()
-          +e.P.text= data.text
+          +e.P.text= text
 
         +b.NAV.footer-menu
-          each menu in data.menus
+          each menu in config.menus
             +e.SECTION.container
               each item in menu
                 if(item.title)
@@ -24,19 +25,18 @@ mixin footer(data)
                     +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container._w260
-            +e.H3.title-sub= data.subTitle
-            +e.P.text= data.subText
+            +e.H3.title-sub= subTitle
+            +e.P.text= subText
 
             +e.subscription
               +subscription({
                 "type"  : "email",
-                "place" : data.subPlace,
+                "place" : subPlace,
               })
 
     +e.bottom-area
-      +e.container
-        +b.bottom-area.wrapper
-          +e.SMALL.text= data.bottomText
-          +e.social-link
-            +social-link()
+      +b.bottom-area
+        +e.SMALL.text= bottomText
+        +e.social-link
+          +social-link()
 

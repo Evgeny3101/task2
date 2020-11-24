@@ -4,7 +4,9 @@ mixin calendar()
       +e.month-selection
         +b.month-selection
           +e.I.icon.material-icons arrow_back
-          +e.H4.month Август 2019
+          +e.month
+            +b.P.month Август
+            +e.P.years 2019
           +e.I.icon.material-icons arrow_forward
 
       +e.days
@@ -70,6 +72,6 @@ mixin calendar()
 
       +e.buttons-container
         +e.button
-          +b.button._fade05 очистить
+          +b.button._blue очистить
         +e.button
           +b.button._blue применить

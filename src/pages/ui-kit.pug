@@ -1,8 +1,5 @@
 extends ../layout/supporting.pug
 
-//- modules
-
-
 //- local mixins
 mixin label-icon()
   +b.label-icon
@@ -358,181 +355,174 @@ block content
               active: true
             })
 
+    +e.page._bg-gray
+      +e.label-icon
+        +label-icon()
+
+      +e.ui-kit-page3
+        +b.ui-kit-page3.wrapper
+          +e.column
+            +search-hotel()
+            +sign-up-menu()
+          +e.column
+            +payment()
+            +sign-in-menu()
+          +e.column
+            +calendar()
+
+            +hotel-item({
+              "srcArr"  : [
+                "assets/img/hotel-item1.jpg",
+                "assets/img/hotel-item2.jpg",
+                "assets/img/hotel-item3.jpg",
+                "assets/img/hotel-item4.jpg",
+              ],
+              "number"  : 888,
+              "price"   : "9 990₽",
+              "stars"   : 5,
+              "reviews" : 145,
+              "lux"     : true,
+            })
+
+            +hotel-item({
+              "srcArr"  : [
+                "assets/img/hotel-item2.jpg",
+                "assets/img/hotel-item3.jpg",
+                "assets/img/hotel-item4.jpg",
+                "assets/img/hotel-item5.jpg",
+              ],
+              "number"  : 840,
+              "price"   : "9 900₽",
+              "stars"   : 4,
+              "reviews" : 65
+            })
 
     +e.page._bg-gray
-      +label-icon()
+      +e.label-icon
+        +label-icon()
 
-      +b.ui-kit-page3.wrapper
-        +e.column
-          +search-hotel()
-          +sign-up-menu()
-        +e.column
-          +payment()
-          +sign-in-menu()
-        +e.column
-          +calendar()
+      +e.ui-kit-page4
+        +b.ui-kit-page4
+          +e.container
 
-          +hotel-item({
-            "srcArr"  : [
-              "assets/img/hotel-item1.jpg",
-              "assets/img/hotel-item2.jpg",
-              "assets/img/hotel-item3.jpg",
-              "assets/img/hotel-item4.jpg",
-            ],
-            "number"  : 888,
-            "price"   : "9 990₽",
-            "stars"   : 5,
-            "reviews" : 145,
-            "lux"     : true,
-          })
+            +header({
+              login: "войти",
+              register: "зарегистрироваться",
+              link : [{
+                  "href"  : "mock-address",
+                  "text"  : "О нас",
+                  "mod"   : "_bold"
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Услуги",
+                  "icon"  : true,
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Вакансии"
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Новости",
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Соглашения",
+                  "icon"  : true
+                }
+              ]}
+            )
 
-          +hotel-item({
-            "srcArr"  : [
-              "assets/img/hotel-item2.jpg",
-              "assets/img/hotel-item3.jpg",
-              "assets/img/hotel-item4.jpg",
-              "assets/img/hotel-item5.jpg",
-            ],
-            "number"  : 840,
-            "price"   : "9 900₽",
-            "stars"   : 4,
-            "reviews" : 65
-          })
+          +e.container
+            +header({
+              login: "войти",
+              register: "зарегистрироваться",
+              user: "Юлий Цезарь",
+              link : [{
+                  "href"  : "mock-address",
+                  "text"  : "О нас",
+                  "mod"   : "_bold"
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Услуги",
+                  "icon"  : true,
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Вакансии"
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Новости",
+                },
+                  {
+                  "href"  : "mock-address",
+                  "text"  : "Соглашения",
+                  "icon"  : true
+                }
+              ]}
+            )
 
-    +e.page._bg-gray
-      +label-icon()
+          +e.container
+            +footer({
+              text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
+              subTitle: "Подписка",
+              subText: "Получайте специальные предложения и новости сервиса",
+              subPlace: "Email",
+              bottomText: "Copyright © 2018 Toxin отель. Все права зачищены.",
+              menus: [
+                [
+                  {
+                    "title": "Навигация"
+                  },{
+                    "text" : "О нас",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Новости",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Служба поддержки",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Услуги",
+                    "href" : "mock-address"
+                  }
+                ], [
+                  {
+                    "title": "О нас"
+                  },{
+                    "text" : "О сервисе",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Наша команда",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Вакансии",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Инвесторы",
+                    "href" : "mock-address"
+                  }
+                ], [
+                  {
+                    "title": "Служба поддержки"
+                  },{
+                    "text" : "Соглашения",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Сообщества",
+                    "href" : "mock-address"
+                  },{
+                    "text" : "Связь с нами",
+                    "href" : "mock-address"
+                  }
+                ]
+              ]
+            })
 
-      +b.ui-kit-page4
-        +e.container
-          +header("login", "register", { "link" : [
-              {
-              "href"  : "mock-address",
-              "text"  : "Home",
-              "mod"   : "_bold _mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "About Us",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Services",
-              "icon"  : "!",
-              "mod"   : "_bo"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Careers",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "News",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Documentation",
-              "mod"   : "_mr10"
-            }]}
-          )
-
-        +e.container
-          +header("login", "register", { "link" : [
-              {
-              "href"  : "mock-address",
-              "text"  : "Home",
-              "mod"   : "_bold _mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "About Us",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Services",
-              "icon"  : "!",
-              "mod"   : "_bo"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Careers",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "News",
-              "mod"   : "_mr10"
-            },
-              {
-              "href"  : "mock-address",
-              "text"  : "Documentation",
-              "mod"   : "_mr10"
-            }]}, "Cosmin Negoita"
-          )
+          +e.footerM
+            +footerM("Copyright © 2018 Toxin отель. Все права зачищены.")
 
 
-        +e.container
-          +footer({
-              "text"     : "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
-
-              "subTitle": "Subscribe to our newsletter",
-
-              "subText" : "Receive our latest news and promotions in your inbox!",
-
-              "subPlace": "Your email address",
-
-              "bottomText" : "Copyright © 2018 Toxin UI Kit. All rights reserved.",
-
-            "menus": [[
-              {
-                "title": "Navigation"
-              },{
-                "text": "About Us",
-                "href": "mock-address"
-              },{
-                "text": "News",
-                "href": "mock-address"
-              },{
-                "text": "Support",
-                "href": "mock-address"
-              },{
-                "text": "Products",
-                "href": "mock-address"
-              }
-            ], [
-              {
-                "title": "ABOUT US"
-              },{
-                "text": "Who we are",
-                "href": "mock-address"
-              },{
-                "text": "Our team",
-                "href": "mock-address"
-              },{
-                "text": "Careers",
-                "href": "mock-address"
-              },{
-                "text": "Investors",
-                "href": "mock-address"
-              }
-            ], [
-              {
-                "title": "Support"
-              },{
-                "text": "Documentation",
-                "href": "mock-address"
-              },{
-                "text": "Community",
-                "href": "mock-address"
-              },{
-                "text": "Get in Touch",
-                "href": "mock-address"
-              }
-            ]]
-          })
-
-        +e.container
-          +footerM("Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.")
