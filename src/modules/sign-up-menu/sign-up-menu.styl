@@ -4,17 +4,18 @@
 
 
 .sign-up-menu
-  width 380px
+  max-width 380px
+  width 100%
   background default-color
   border 1px solid rgba(0, 0, 0, 0.12)
   box-shadow 0px 0px 25px 0px rgba(0, 0, 0, 0.2)
   border-radius 4px
 
   &__wrapper
-    padding 38px 29px 29px
+    padding 39px 29px 29px
 
   &__title-main
-    padding-bottom 21px
+    padding-bottom 20px
 
   &__text-field
     padding-bottom 10px
@@ -55,10 +56,11 @@
 // media //
 .sign-up-menu
   @media  (max-width  phoneWidth)
+    max-width   none
     width       100%
 
     &__wrapper
-      padding 20px 29px 29px
+      padding 20px 25px 29px
 
   @media  (max-width  400px)
     &__title-main

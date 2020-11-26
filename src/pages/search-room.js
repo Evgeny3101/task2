@@ -53,7 +53,6 @@ const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
     ['ванная комната', 'ванные комнаты', 'ванных комнаты'],
   ],
 });
-// menuForCountAmenities.switchMenu()
 
 
 // календарь
@@ -84,3 +83,14 @@ datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
 // слайдер изображений
 const cardsDOM = document.querySelectorAll('.js-images-slider')
 cardsDOM.forEach(card => new ImagesSlider(card))
+
+// to make active
+// menuForCountAmenities.switchMenu()
+
+// document.querySelectorAll('.switch-arrows__prev')[0].style.zIndex = '1'
+// document.querySelectorAll('.switch-arrows__next')[0].style.zIndex = '1'
+
+// jQuery(function() {
+//   const checkboxList = document.querySelector('.checkbox-list')
+//   checkboxList.click()
+// })

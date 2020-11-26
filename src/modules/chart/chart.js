@@ -30,7 +30,7 @@ data: {
         getGrd("#FFE39C","#FFBA9C"),
       ],
 
-      borderWidth: 2,
+      borderWidth: 1,
       hoverBorderColor: [
         getGrd("#919191","#3D4975"),
         getGrd("#BC9CFF","#8BA4F9"),
@@ -48,7 +48,7 @@ data: {
   ]
 },
 options: {
-  cutoutPercentage: 88,
+  cutoutPercentage: 90,
   legend: {
     display: false
   },

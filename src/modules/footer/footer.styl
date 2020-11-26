@@ -64,24 +64,29 @@
     padding-left 2px
     box-shadow   0px 10px 20px fade-out(0.05)
     border-top   1px solid #E5E5E5
-    height       70px
 
     .bottom-area
-      max-width     1162px
+      max-width     1161px
       margin        0 auto
       height        70px
       container()
 
 
-
   // media //
-  .top-area
-    @media    (max-width  smDesktopWidth + 50px)
-      flex-direction  column
+  @media (max-width desktopWidth)
+    &__top-area,
+    &__bottom-area
+      padding-right 15px
+      padding-left  15px
 
-      &__top-area
-        padding 30px 0 50px
-        height  auto
+  @media (max-width smDesktopWidth + 50px)
+    &__top-area
+      padding-top 70px
+      padding-bottom 60px
+
+  .top-area
+    @media (max-width  smDesktopWidth + 50px)
+      flex-direction  column
 
       .represent
         width 100%
@@ -100,9 +105,9 @@
         grid-gap      25px
         grid-template-columns   150px 260px
         grid-template-rows      1fr 1fr
-        justify-content         space-around
+        justify-content         space-evenly
 
-    @media    (max-width  phoneWidth)
+    @media (max-width  phoneWidth)
       .footer-menu
         padding-left  20px
         display       grid
@@ -112,9 +117,6 @@
 
 
   @media    (max-width  549px)
-    &__bottom-area
-      height      100px
-
     .bottom-area
       flex-direction    column
       justify-content   space-around
