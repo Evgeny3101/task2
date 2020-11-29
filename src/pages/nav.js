@@ -1,4 +1,2 @@
 // Stylus
-import "./nav.styl"
-
-
+import './nav.styl';

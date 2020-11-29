@@ -1,16 +1,19 @@
-jQuery(function() {
-  const $elements = $(".checkbox-list");
+function initCheckboxList() {
+  const $elements = $('.checkbox-list');
+  $elements.find('.checkbox-list__icon-up').hide();
 
-  $elements.find(".checkbox-list__icon-up").hide();
+  const handleCheckboxListClick = (event) => {
+    const target = event.currentTarget;
+    const $iconUp = $(target).find('.checkbox-list__icon-up');
+    const $iconDown = $(target).find('.checkbox-list__icon-down');
+    const $menu = $(target).find('.checkbox-list__menu');
 
-  $elements.on('click', function(event) {
-    const target = event.currentTarget,
-    $iconUp = $(target).find(".checkbox-list__icon-up"),
-    $iconDown = $(target).find(".checkbox-list__icon-down"),
-    $menu = $(target).find(".checkbox-list__menu");
-
-    $menu.slideToggle(".active");
+    $menu.slideToggle('.active');
     $iconUp.toggle();
     $iconDown.toggle();
-  });
-});
+  };
+
+  $elements.on('click', handleCheckboxListClick);
+}
+
+jQuery(initCheckboxList());

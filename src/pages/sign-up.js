@@ -1,9 +1,2 @@
 // Stylus
-import "./sign-up.styl"
-
-
-
-
-
-
-
+import './sign-up.styl';

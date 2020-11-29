@@ -1,0 +1,6 @@
+# Common
+node_modules
+coverage
+dist
+build
+src/assets/pug/**/*

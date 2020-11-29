@@ -1,11 +1,9 @@
-class ImagesSlider  {
+class ImagesSlider {
   constructor(mainDOM) {
     this.mainDOM = mainDOM;
-    this.imgsDOM = mainDOM.querySelectorAll('.container-images__image');
-    this.controlBtnsDOM = mainDOM.querySelectorAll('.control__button');
-    this.prevBtnDOM = mainDOM.querySelector('.switch-arrows__prev');
-    this.nextBtnDOM = mainDOM.querySelector('.switch-arrows__next');
     this.currentItem = 0;
+    this.findElements();
+    this.setHandlers();
 
     // обработчики
     this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
@@ -17,8 +15,27 @@ class ImagesSlider  {
     this.setListeners();
   } // конструктор
 
+  findElements() {
+    const { mainDOM } = this;
+
+    this.imgsDOM = mainDOM.querySelectorAll('.container-images__image');
+    this.controlBtnsDOM = mainDOM.querySelectorAll('.control__button');
+    this.prevBtnDOM = mainDOM.querySelector('.switch-arrows__prev');
+    this.nextBtnDOM = mainDOM.querySelector('.switch-arrows__next');
+  }
+
+  setHandlers() {
+    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
+    this.handleButtonPrevClick = this.toPrevImage.bind(this);
+    this.handleButtonNextClick = this.toNextImage.bind(this);
+    this.handleImagesSliderMouseover = this.showArrows.bind(this);
+    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
+  }
+
   setListeners() {
-    this.controlBtnsDOM.forEach((item, i) => item.addEventListener('click', this.handleControlButtonClick(i)))
+    this.controlBtnsDOM.forEach((item, i) =>
+      item.addEventListener('click', this.handleControlButtonClick(i))
+    );
     this.prevBtnDOM.addEventListener('click', this.handleButtonPrevClick);
     this.nextBtnDOM.addEventListener('click', this.handleButtonNextClick);
     this.mainDOM.addEventListener('mouseover', this.handleImagesSliderMouseover);
@@ -26,7 +43,7 @@ class ImagesSlider  {
   }
 
   toPrevImage() {
-    if(this.currentItem == 0) this.currentItem = this.imgsDOM.length;
+    if (this.currentItem === 0) this.currentItem = this.imgsDOM.length;
     this.currentItem -= 1;
 
     this.showSelectedImage();
@@ -34,9 +51,9 @@ class ImagesSlider  {
 
   toNextImage() {
     this.currentItem += 1;
-    if(this.currentItem == this.imgsDOM.length) this.currentItem = 0;
+    if (this.currentItem === this.imgsDOM.length) this.currentItem = 0;
 
-    this.showSelectedImage()
+    this.showSelectedImage();
   }
 
   goToImage(index) {
@@ -44,7 +61,6 @@ class ImagesSlider  {
 
     this.showSelectedImage();
   }
-
 
   // показать стрелки
   showArrows() {
@@ -59,27 +75,15 @@ class ImagesSlider  {
   }
 
   // показать выбранное изображение
-  showSelectedImage () {
+  showSelectedImage() {
     const { currentItem } = this;
 
-    this.mainDOM.querySelector(".circle-current").classList.remove('circle-current');
-    this.mainDOM.querySelector(".image-current").classList.remove('image-current');
+    this.mainDOM.querySelector('.circle-current').classList.remove('circle-current');
+    this.mainDOM.querySelector('.image-current').classList.remove('image-current');
 
     this.imgsDOM[currentItem].classList.add('image-current');
     this.controlBtnsDOM[currentItem].classList.add('circle-current');
   }
-
 } // класс
 
-
 export default ImagesSlider;
-
-
-
-
-
-
-
-
-
-

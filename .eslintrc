@@ -1,0 +1,18 @@
+{
+  "parser": "babel-eslint",
+  "env": {
+    "es2020": true,
+    "browser": true,
+    "jquery": true
+  },
+  "extends": ["eslint:recommended", "airbnb-base", "prettier"],
+  "plugins": ["prettier", "fsd"],
+  "rules": {
+    "fsd/hof-name-prefix": "error",
+    "fsd/no-heavy-constructor": "error",
+    "fsd/jq-cache-dom-elements": "error",
+    "fsd/jq-use-js-prefix-in-selector": "error",
+    "fsd/no-function-declaration-in-event-listener": "error",
+    "fsd/split-conditionals": "error"
+  }
+}
