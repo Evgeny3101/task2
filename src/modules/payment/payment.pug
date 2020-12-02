@@ -12,7 +12,7 @@ mixin payment()
           number: 888,
           lux: true,
           price: '9 990₽'
-        })
+        })._big
 
       +e.datepicker
         +datepicker()
@@ -45,7 +45,8 @@ mixin payment()
 
           +e.total
             +b.total
-              +e.P.text Итого
+              +e.title
+                +b.H2.title_size-2 Итого
               +e.line
               +e.STRONG.number 38 081₽
 

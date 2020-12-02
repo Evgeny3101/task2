@@ -1,6 +1,7 @@
 mixin item-info(icon, title, text)
-  +b.item-info
+  +b.item-info&attributes(attributes)
     +e.I.icon.material-icons= icon
     +e.container
-      +e.H4.title= title
+      +e.title
+        +b.H3.title_fade-075= title
       +e.P.text= text

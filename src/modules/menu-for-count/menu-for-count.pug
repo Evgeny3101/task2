@@ -4,7 +4,7 @@ mixin menu-for-count(config)
   +b.menu-for-count
     if(config.title)
       +e.title
-        +b.H3.title= config.title
+        +b.H2.title_size-3= config.title
 
     +e.text-field(class= config.class)
       +dropdown({

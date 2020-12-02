@@ -4,10 +4,6 @@
   font-weight         bold
   color               fade-out(0.5)
 
-  //
-  // &__room-number
-  //   margin-bottom: 2px
-
   .room-number
     &__icon
       margin-right    3px
@@ -16,11 +12,11 @@
       color           primary-color
 
     &__number
-      margin-right    5px
       font-size       20px
       color           primary-color
 
     &__room-class
+      margin-left     7px
       display         none
       color           regular-color
       font-weight     bold
@@ -45,3 +41,20 @@
       font-weight     normal
       padding-left    1px
       font-size       12px
+
+  &_big
+    .room-number
+      &__icon
+        margin-right  4px
+
+      &__number
+        font-size     24px
+
+      &__room-class
+        margin-left   8px
+
+    .hotel-item-price__price-per-day
+      margin-top    5px
+
+    .price-per-day__price
+      padding-right 3px

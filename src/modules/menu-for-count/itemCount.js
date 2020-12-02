@@ -21,7 +21,7 @@ class ItemCount {
 
     item.innerHTML = `
     <div class="item-count__title">
-      <h3 class="title">${this.title}</h3>
+      <h3 class="title title_size-3">${this.title}</h3>
     </div>
     <div class="item-count__container-button">
       <input class="item-count__minus-btn" type="button" value="-"></input>

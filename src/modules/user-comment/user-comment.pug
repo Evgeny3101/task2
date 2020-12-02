@@ -19,7 +19,8 @@ mixin user-comment(data)
       +b.IMG(src= image alt="аватар пользователя").image
 
     +e.header
-      +e.P.name= name
+      +e.name
+        +b.H3.title_fade-075= name
       +e.P.date= date
 
     +e.like-button

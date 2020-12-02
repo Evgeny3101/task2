@@ -19,13 +19,14 @@ mixin footer(config)
               each item in menu
                 if(item.title)
                   +e.title
-                    +b.H3.title= item.title
+                    +b.H2.title_size-3= item.title
                 else
                   +e.LI.link
                     +b.A.link(href=item.href)= item.text
 
           +e.SECTION.container._w260
-            +e.H3.title-sub= subTitle
+            +e.title-sub
+              +b.H2.title_size-3= subTitle
             +e.P.text= subText
 
             +e.subscription

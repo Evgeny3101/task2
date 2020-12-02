@@ -19,9 +19,8 @@ mixin header(config)
         if (user)
           +e.line
           +e.user
-            +b.user
-              +e.button
-                +b.A.button._default= user
+            +e.button
+              +b.BUTTON.button._default= user
 
         else
           +e.auth-btn

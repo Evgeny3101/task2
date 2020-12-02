@@ -14,6 +14,8 @@ block head
 
 block content
   +b.MAIN.room-details
+    +e.main-title
+      +b.H1.title Детали комнаты
     +b.SECTION.room-details-gallery
       +e.column1
         +e.IMG.img1(src='assets/img/room-details1.jpg')
@@ -27,7 +29,8 @@ block content
         +b.details
           +e.SECTION.info
             +b.info
-              +e.H2.title Сведения о номере
+              +e.title
+                +b.H2.title_size-2 Сведения о номере
               +e.container
                 +item-info(
                   /*  icon  */    "insert_emoticon",
@@ -45,11 +48,12 @@ block content
                   /*  icon  */    "whatshot",
                   /*  title */    "Уют",
                   /*  text  */    "Номер оснащён камином"
-                  )
+                  )._border-none
 
           +e.SECTION.impression
             +b.impression
-              +e.H2.title Впечатления от номера
+              +e.title
+                +b.H2.title_size-2 Впечатления от номера
 
               +e.container
                 +e.chart
@@ -70,7 +74,8 @@ block content
           +e.SECTION.user-comments
             +b.user-comments
               +e.header
-                +e.H2.title Отзывы посетителей номера
+                +e.title
+                  +b.H2.title_size-2 Отзывы посетителей номера
                 +e.P.number 2 отзыва
 
               +e.container
@@ -96,7 +101,8 @@ block content
 
           +e.SECTION.rules
             +b.rules
-              +e.H2.title Правила
+              +e.title
+                +b.H2.title_size-2 Правила
               +e.container
                 +bullet-list(
                   "Нельзя с питомцами",
@@ -106,7 +112,8 @@ block content
 
           +e.SECTION.text-block
             +b.text-block
-              +e.H2.title Отмена
+              +e.title
+                +b.H2.title_size-2 Отмена
               +e.container
                 +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 

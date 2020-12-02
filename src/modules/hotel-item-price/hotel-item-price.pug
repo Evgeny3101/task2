@@ -5,7 +5,7 @@
 //- })
 
 mixin hotel-item-price(data)
-  +b.hotel-item-price
+  +b.hotel-item-price&attributes(attributes)
     +e.room-number
       +b.room-number
         +e.SPAN.icon №

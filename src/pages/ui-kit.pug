@@ -18,7 +18,7 @@ mixin color-demo(title, hex, mod)
 mixin module-title(title, comment)
   +b.module-title
     +e.title
-      +b.H3.title= title
+      +b.H2.title_size-3= title
     if (comment)
       +e.comment
         +e.text= comment
@@ -60,15 +60,15 @@ block content
             +b.title-demo
               +e.container
                 +e.demo-h1 H1
-              +b.H1.title This one is the sub-section or widget title
+              +b.H1.title_size-1 This one is the sub-section or widget title
 
               +e.container
                 +e.demo-h2 H2
-              +b.H2.title Next one is the item title inside widgets
+              +b.H2.title_size-2 Next one is the item title inside widgets
 
               +e.container
                 +e.demo-h3 H3
-              +b.H3.title This is a label or CTA text
+              +b.H3.title_size-3 This is a label or CTA text
 
               +e.container
                 +e.demo-body Body
@@ -236,10 +236,11 @@ block content
                     +e.I.icon.material-icons arrow_forward
 
             //-  Pagination
-            +e.container_pb17
-              +module-title("pagination")
-            +e.container_width-240
-              +pagination()
+            +e.pagination
+              +e.container_pb17
+                +module-title("pagination")
+              +e.container_width-240
+                +pagination()
 
           // rows 2
           +e.container_width-266
@@ -315,9 +316,9 @@ block content
                   }
                 )
 
-          +e.container_pb202._mt-5
+          +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
-            +e.container_pb17
+            +e.container_pb16
               +module-title("Rich Checkbox Buttons")
             +e.container
               +e.rich-checkbox-item1
