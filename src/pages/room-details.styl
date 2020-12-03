@@ -1,10 +1,10 @@
-@require "../layout/main"
+@require '../layout/main'
 
 //- modules
-@require "../modules/item-info/item-info"
-@require "../modules/bullet-list/bullet-list"
-@require "../modules/user-comment/user-comment"
-@require "../modules/payment/payment"
+@require '../modules/item-info/item-info'
+@require '../modules/bullet-list/bullet-list'
+@require '../modules/user-comment/user-comment'
+@require '../modules/payment/payment'
 
 
 .room-details
@@ -43,7 +43,7 @@
 
     .details
       display                 grid
-      grid-gap                10px 81px
+      grid-gap                10px 79px
       grid-template-columns   280px auto
       grid-template-rows      293px 326px auto
 
@@ -55,9 +55,11 @@
     .impression
       &__container
         margin-top      19px
-        margin-left     -2px
         max-width       320px
         display         flex
+
+      &__title
+        margin-left 2px
 
       // chart
       &__chart
@@ -139,6 +141,7 @@
       margin-top      10px
 
   .text-block
+    margin-left 2px
     &__text
       max-width      340px
       line-height    24px

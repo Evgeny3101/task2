@@ -1,6 +1,6 @@
-@require "../dropdown/dropdown"
+@require '../dropdown/dropdown'
 
-@require "../../node_modules/air-datepicker/dist/css/datepicker.min.css"
+@require '../../node_modules/air-datepicker/dist/css/datepicker.min.css'
 
 
 // my config
@@ -20,6 +20,7 @@
 
 
 .datepicker
+  font-family mainFont
   width   318px
   background  default-color
   border  1px solid fade-out(0.25)
@@ -30,7 +31,8 @@
     display: none
 
   &--nav
-    padding 18px 16px 20px
+    padding 17px 15px 22px 16px
+    letter-spacing: 0.7px
     border: none
 
     &-action
@@ -41,8 +43,6 @@
     &-title
       line-height  28px
       text-align  center
-
-      font-family  secondFont
       color  primary-color
       font-weight  bold
       font-size  18px
@@ -54,8 +54,6 @@
     padding 0 20px
     width 280px
     min-height 240px
-
-    font-family mainFont
 
   &--days-names
     container(space-around)
@@ -97,7 +95,7 @@
     &.-range-from-::before,
     &.-range-to-::before,
     &.-in-range-::before
-      content: ""
+      content: ''
       position: absolute
       z-index: -1
       width  39.85px
@@ -115,13 +113,11 @@
 
 
   &--buttons
-    padding 10px 19px
+    padding 9px 19px 10px
     container()
 
   &--button
     flex 0
-
-    font-family mainFont
     font-style: normal;
     font-weight: bold;
     font-size: 12px;

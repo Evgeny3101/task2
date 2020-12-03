@@ -25,7 +25,6 @@ mixin payment()
           class: 'js-menuForCount'
         })
 
-
       +e.price-list
         +b.price-list
           +e.UL.items
@@ -43,12 +42,12 @@ mixin payment()
               +e.info i
               +e.P.sum 300₽
 
-          +e.total
-            +b.total
-              +e.title
-                +b.H2.title_size-2 Итого
-              +e.line
-              +e.STRONG.number 38 081₽
+      +e.total
+        +b.total
+          +e.title
+            +b.H2.title_size-2 Итого
+          +e.line
+          +e.STRONG.number 38 081₽
 
       +e.button
         +b.BUTTON.button._regular._relative забронировать

@@ -52,7 +52,9 @@ const menuForCount = new MenuForCount('.js-menuForCount', {
 });
 
 // to make active
-// menuForCount.switchMenu()
+// menuForCount.switchMenu();
 
-// datepicker.show()
-// datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)])
+// window.onload = () => {
+//   datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+//   datepicker.show();
+// };

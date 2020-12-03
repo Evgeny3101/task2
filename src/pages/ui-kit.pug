@@ -12,7 +12,7 @@ mixin color-demo(title, hex, mod)
     +e.demo(class=mod)
     +e.text-container
       +e.title= title
-      +e.hex= hex
+      +e.P.hex= hex
 
 
 mixin module-title(title, comment)
@@ -21,7 +21,7 @@ mixin module-title(title, comment)
       +b.H2.title_size-3= title
     if (comment)
       +e.comment
-        +e.text= comment
+        +e.P.text= comment
 
 
 
@@ -56,23 +56,26 @@ block content
               +color-demo("Green", "#6FCF97", "_second")
 
           +e.container-titles
-
             +b.title-demo
-              +e.container
-                +e.demo-h1 H1
-              +b.H1.title_size-1 This one is the sub-section or widget title
+              +e.wrapper-h1
+                +e.container
+                  +e.P.demo-h1 H1
+                  +b.H1.title_size-1 This one is the sub-section or widget title
 
-              +e.container
-                +e.demo-h2 H2
-              +b.H2.title_size-2 Next one is the item title inside widgets
+              +e.wrapper-h2
+                +e.container
+                  +e.P.demo-h2 H2
+                  +b.H2.title_size-2 Next one is the item title inside widgets
 
-              +e.container
-                +e.demo-h3 H3
-              +b.H3.title_size-3 This is a label or CTA text
+              +e.wrapper-h3
+                +e.container
+                  +e.P.demo-h3 H3
+                  +b.H3.title_size-3 This is a label or CTA text
 
-              +e.container
-                +e.demo-body Body
-              +e.body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+              +e.wrapper-body
+                +e.container
+                  +e.P.demo-body Body
+                  +e.P.text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
     +e.page
       +e.label-icon
@@ -216,7 +219,7 @@ block content
               +module-title("Buttons")
             +e.container_pb40
               +b.buttons-ui-kit
-                +e.container
+                +e.container-button
                   +e.button
                     +b.BUTTON.button._regular CLICK ME
                   +e.button
@@ -226,12 +229,13 @@ block content
                   +e.button
                     +b.BUTTON.button._transparent.active CLICK ME
 
+                +e.container-text-button
                   +e.text-button
                     +b.BUTTON.button._blue CLICK ME
                   +e.text-button
                     +b.BUTTON.button._fade05 CLICK ME
 
-                +e.button-large
+                +e.button-with-icon
                   +b.BUTTON.button._regular._relative перейти к оплате
                     +e.I.icon.material-icons arrow_forward
 

@@ -1,81 +1,5 @@
-@require "../layout/supporting.styl"
+@require '../layout/supporting.styl'
 
-// local mixins
-.color-demo
-  display flex
-
-  &__text-container
-    margin-top  10px
-
-  &__title
-    line-height  24px
-    font-family  secondFont
-    font-size    19px
-    font-weight  bold
-    color fade-out(0)
-
-  &__hex
-    margin-top  4px
-    font-size   19px
-
-  &__demo
-    height 70px
-    width 70px
-    border-radius  6px
-    background  fade-out(0)
-    margin-right  40px
-
-    &_fade075
-      background  fade-out()
-
-    &_fade05
-      background  fade-out(0.5)
-
-    &_fade025
-      background  fade-out(0.25)
-
-    &_fade005
-      background  fade-out(0.05)
-
-    &_regular
-      background  fade-out(0, regular-color)
-
-    &_second
-      background  fade-out(0, secondary-color)
-
-//
-.title-demo
-  display grid
-  grid-template-columns  40px auto
-  grid-gap  50px 30px
-  font-weight  normal
-  color fade-out(0.25)
-
-
-  &__container
-    width 40px
-    text-align  right
-    margin-right  20px
-
-  &__demo-h1
-    font-size  24px
-    line-height  29px
-
-  &__demo-h2
-    font-size  19px
-    line-height  23px
-
-  &__demo-h3
-    font-size  12px
-    line-height  15px
-
-  &__body
-    margin-top  -3px
-    width 302px
-    line-height  24px
-    color fade-out()
-
-//
 .module-title
   display flex
   align-self flex-start
@@ -89,7 +13,7 @@
     text-transform  uppercase
 
 //
-// contant
+// pages
 .ui-kit
   &__page
     background default-color
@@ -128,6 +52,95 @@
 
       &__color-demo
         margin-bottom 20px
+
+      //
+      .color-demo
+        display flex
+
+        &__text-container
+          margin-top  10px
+
+        &__title
+          line-height  24px
+          font-size    19px
+          font-weight  bold
+          color fade-out(0)
+
+        &__hex
+          margin-top  4px
+          font-size   19px
+
+        &__demo
+          height 70px
+          width 70px
+          border-radius  6px
+          background  fade-out(0)
+          margin-right  40px
+
+          &_fade075
+            background  fade-out()
+
+          &_fade05
+            background  fade-out(0.5)
+
+          &_fade025
+            background  fade-out(0.25)
+
+          &_fade005
+            background  fade-out(0.05)
+
+          &_regular
+            background  fade-out(0, regular-color)
+
+          &_second
+            background  fade-out(0, secondary-color)
+
+      //
+      .title-demo
+        display flex
+        flex-direction column
+
+        &__wrapper-h2
+          margin-top 52px
+
+        &__wrapper-h3
+          margin-top 50px
+
+        &__wrapper-body
+          margin-top 47px
+
+        &__container
+          display flex
+
+        &__demo-h1,
+        &__demo-h2,
+        &__demo-h3,
+        &__demo-body
+          min-width 41px
+          margin-right 29px
+          text-align  right
+          color fade-out(0.25)
+
+        &__demo-h1
+          margin-top 2px
+          font-size  24px
+          line-height  26px
+
+        &__demo-h2
+          font-size  19px
+          line-height  23px
+
+        &__demo-h3
+          font-size  12px
+          line-height  15px
+
+        &__demo-body
+          margin-top 3px
+
+        &__text-body
+          width 302px
+          color fade-out()
+          line-height 24px
 
   // page 2
   &__ui-kit-page2
@@ -210,23 +223,30 @@
 
       // buttons
       .buttons-ui-kit
-        &__container
+        &__container-button
           width: 240px
-          display flex
-          flex-wrap wrap
+          display grid
+          grid-template-columns: 100px 100px
+          grid-template-rows: 44px 44px
+          grid-column-gap: 19px
+          grid-row-gap: 30px
 
         &__button
-          height 44px
-          width 100px
-          margin-right 18px
-          margin-bottom 30px
+          height 100%
+          width 100%
+
+        //
+        &__container-text-button
+          margin-top 27px
+          margin-left 2px
+          display: flex
 
         &__text-button
-          margin-top -2px
           margin-right 20px
-          margin-bottom 24px
 
-        &__button-large
+        //
+        &__button-with-icon
+          margin-top 25px
           width 320px
           height 44px
 

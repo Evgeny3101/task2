@@ -1,49 +1,36 @@
 // assets
-@require "../assets/stylus/utils/reset.styl"
-@require "../assets/stylus/utils/fonts.styl"
-@require "../assets/stylus/utils/vars.styl"
-@require "../assets/stylus/utils/mixins.styl"
+@require './main.styl'
 
 // modules
-@require "../modules/logo/logo"
-@require "../modules/text-field/text-field"
-@require "../modules/dropdown/dropdown"
-@require "../modules/subscription/subscription"
-@require "../modules/checkbox-list/checkbox-list"
-@require "../modules/item-info/item-info"
-@require "../modules/checkbox-item/checkbox-item"
-@require "../modules/radio-button/radio-button"
-@require "../modules/toggle/toggle"
-@require "../modules/like-button/like-button"
-@require "../modules/rate-button/rate-button"
-@require "../modules/button/button"
-@require "../modules/range-slider/range-slider"
-@require "../modules/pagination/pagination"
-@require "../modules/rich-checkbox-item/rich-checkbox-item"
-@require "../modules/bullet-list/bullet-list"
-@require "../modules/user-comment/user-comment"
-@require "../modules/social-link/social-link"
-@require "../modules/menu-for-count/menu-for-count"
+@require '../modules/logo/logo'
+@require '../modules/text-field/text-field'
+@require '../modules/dropdown/dropdown'
+@require '../modules/subscription/subscription'
+@require '../modules/checkbox-list/checkbox-list'
+@require '../modules/item-info/item-info'
+@require '../modules/checkbox-item/checkbox-item'
+@require '../modules/radio-button/radio-button'
+@require '../modules/toggle/toggle'
+@require '../modules/like-button/like-button'
+@require '../modules/rate-button/rate-button'
+@require '../modules/button/button'
+@require '../modules/range-slider/range-slider'
+@require '../modules/pagination/pagination'
+@require '../modules/rich-checkbox-item/rich-checkbox-item'
+@require '../modules/bullet-list/bullet-list'
+@require '../modules/user-comment/user-comment'
+@require '../modules/social-link/social-link'
+@require '../modules/menu-for-count/menu-for-count'
 
-@require "../modules/sign-in-menu/sign-in-menu"
-@require "../modules/search-hotel/search-hotel"
-@require "../modules/sign-up-menu/sign-up-menu"
-@require "../modules/payment/payment"
-@require "../modules/calendar/calendar"
-@require "../modules/hotel-item/hotel-item"
-
-@require "../modules/header/header"
-@require "../modules/footer/footer"
-@require "../modules/footerM/footerM"
+@require '../modules/sign-in-menu/sign-in-menu'
+@require '../modules/search-hotel/search-hotel'
+@require '../modules/sign-up-menu/sign-up-menu'
+@require '../modules/payment/payment'
+@require '../modules/calendar/calendar'
+@require '../modules/hotel-item/hotel-item'
 
 
 //  Common styles
-body
-  font-family  mainFont
-  font-size  14px
-  color fade-out()
-
-// Page sizes
 .page-supporting
   min-width  320px
   width  1440px
@@ -51,36 +38,5 @@ body
   margin  0 auto
   background #E5E5E5
 
-//  Page wrapper
-.wrapper
-  margin  0 auto
-  max-width  1160px
-
-//
-body
-  font-family  mainFont
-  font-size  14px
-  color fade-out()
-
-.title
-  font-family  mainFont
-  font-weight  bold
-  color fade-out(0)
-  &_size-1
-    font-size  24px
-    line-height  30px
-
-  &_size-2
-    font-size  19px
-    line-height  24px
-
-  &_size-3
-    text-transform  uppercase
-    font-size  12px
-
-  &_fade-075
-    color fade-out(0.75)
-
-
-
-
+  .footerM
+    display flex
