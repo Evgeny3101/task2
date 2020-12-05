@@ -2,10 +2,9 @@ include ../assets/pug/bemto/bemto
 
 // modules
 include ../modules/head/head
-
 include ../modules/header/header
 include ../modules/footer/footer
-include ../modules/footerM/footerM
+include ../modules/footer-minimal/footer-minimal
 
 
 
@@ -45,9 +44,7 @@ body.page
       ]}
     )
 
-
   block content
-
 
   block footer
     +footer({
@@ -106,5 +103,5 @@ body.page
       ]
     })
 
-    +footerM('Copyright © 2018 Toxin отель. Все права зачищены.')
+    +footer-minimal('Copyright © 2018 Toxin отель. Все права зачищены.')
 

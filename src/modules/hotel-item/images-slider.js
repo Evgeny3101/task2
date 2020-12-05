@@ -4,14 +4,6 @@ class ImagesSlider {
     this.currentItem = 0;
     this.findElements();
     this.setHandlers();
-
-    // обработчики
-    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
-    this.handleButtonPrevClick = this.toPrevImage.bind(this);
-    this.handleButtonNextClick = this.toNextImage.bind(this);
-    this.handleImagesSliderMouseover = this.showArrows.bind(this);
-    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
-
     this.setListeners();
   } // конструктор
 

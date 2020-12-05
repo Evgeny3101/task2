@@ -28,7 +28,7 @@ const datepicker = createDatePicker(
 );
 
 // eslint-disable-next-line no-unused-vars
-const menuForCount = new MenuForCount('.js-menuForCount', {
+const menuForCount = new MenuForCount('.js-menu-for-count', {
   itemsCount: [
     {
       title: 'взрослые',

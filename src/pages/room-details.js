@@ -32,7 +32,7 @@ datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
 
 // меню подсчета
 // eslint-disable-next-line no-unused-vars
-const menuForCount = new MenuForCount('.js-menuForCount', {
+const menuForCount = new MenuForCount('.js-menu-for-count', {
   itemsCount: [
     {
       title: 'взрослые',

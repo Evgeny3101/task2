@@ -5,99 +5,97 @@
 
 
 .landing-page
-  position      relative
-  height        830px
-  max-width     1440px
-  margin        0 auto
-  overflow      hidden
+  max-width 1440px
+  max-height 830px
+  width 100%
+  height 58vw
+  margin 0 auto
 
-  .background-slides
-    &__img
-      animation-duration: 18s;
+  &__wrapper
+    height 100%
+    display flex
 
-    :nth-child(3)
-      animation-delay  12.0s
+  // background-slides
+  &__background-slides
+    position relative
+    z-index -1
 
-    @keyframes anim_slides {
-      0% {opacity: 0;}
-      4% {opacity: 1;}
-      28% {opacity: 1;}
-      32% {opacity: 0;}
-      100% {opacity: 0;}
-    }
+    .background-slides
+      &__img
+        animation-duration 18s
+
+      :nth-child(3)
+        animation-delay  12.0s
+
+      @keyframes anim_slides {
+        0% {opacity: 0;}
+        4% {opacity: 1;}
+        28% {opacity: 1;}
+        32% {opacity: 0;}
+        100% {opacity: 0;}
+      }
 
 
   // search-hotel
   &__search-hotel
-    width         100%
-    position      absolute
-    top           70px
-    left          140px
-
+    padding-top    70px
+    padding-left   140px
 
   // welcome text
   &__welcome-text
-    position      absolute
-    bottom        21px
-    right         134px
+    width 100%
+    height 100%
+    container(flex-end,flex-end)
+    padding-bottom  21px
+    padding-right   134px
+    padding-left    20px
 
-
-  .welcome-text
-    height        48px
-    width         265px
-    text-align    right
-    line-height   24px
-    color         fade-out()
+    .welcome-text
+      max-width     265px
+      text-align    right
+      line-height   24px
+      color         fade-out()
 
 
 // media //
 .landing-page
-  @media  (max-width  lDesktopWidth)
-    height          0px
-    padding         0 0 47.5%
-    margin-bottom   30px
   @media  (max-width  smDesktopWidth)
-    min-height      500px
-  @media  (max-width  tableWidth)
-    height          400px
+    min-height 480px
 
+    &__search-hotel
+      padding-left 30px
+    &__welcome-text
+      padding-right 30px
 
-  .background-slides__img
-    @media  (max-width  868px)
+  @media  (max-width  868px)
+    .background-slides__img
       width       868px
-    @media  (max-width  tableWidth)
+
+  @media  (max-width  tableWidth)
+    &__welcome-text
+      display none
+
+  @media (min-width  phoneWidth + 1px) and (max-width  tableWidth)
+    min-height 480px
+
+    &__search-hotel
+      padding 30px 0 0
+      margin 0 auto
+
+  @media  (max-width  phoneWidth)
+    min-height 400px
+
+    &__search-hotel
+      width 100%
+      padding 0
+      margin 0
+
+      .search-hotel
+        width 100%
+        padding 0 10px
+
+    .background-slides__img
       display     none
-
-
-  &__search-hotel
-    @media  (max-width  smDesktopWidth)
-      top           50px
-      left          50px
-    @media  (max-width  tableWidth)
-      top           0
-      left          0
-
-
-  .search-hotel
-    @media  (min-width  phoneWidth + 1px) and (max-width  tableWidth)
-      width       100%
-      padding     0 30px
-    @media  (max-width  phoneWidth)
-      width       100%
-      padding     0px
-
-  &__welcome-text
-    @media  (max-width  smDesktopWidth)
-      right         50px
-    @media  (max-width  tableWidth)
-      display     none
-
-
-
-
-
-
-
 
 
 

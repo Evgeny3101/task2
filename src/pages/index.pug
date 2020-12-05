@@ -19,27 +19,9 @@ block content
         'assets/img/bg-slide3.jpg',
       ])
 
-    +e.ASIDE.welcome-text
-      +b.P.welcome-text Лучшие номера для вашей работы, отдыха и просто вдохновения
+    +e.wrapper
+      +e.search-hotel
+        +search-hotel()
 
-    +e.search-hotel
-      +search-hotel()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      +e.ASIDE.welcome-text
+        +b.P.welcome-text Лучшие номера для вашей работы, отдыха и просто вдохновения

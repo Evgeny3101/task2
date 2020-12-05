@@ -51,25 +51,28 @@ const pieChart = new Chart(ctx, {
       enabled: false,
       mode: 'index',
     },
-    onHover: mouseHover,
   },
 });
 
-const firstValue = pieChart.config.data.datasets[0];
-for (let i = 0; i < firstValue.data.length; i += 1) {
-  if (firstValue.data[i] > 0) {
-    const value = firstValue.data[i];
-    const color = firstValue.text[i];
+// // подключение количества голосов
+const colorsArr = pieChart.config.data.datasets[0].text;
+const valuesArr = pieChart.config.data.datasets[0].data;
+const chartNumberDOM = document.querySelector('.chart__number');
+const chartContainerDOM = document.querySelector('.chart__container');
 
-    document.querySelector('.chart__number').textContent = value;
-    document.querySelector('.chart__container').style.color = color;
+// установит 1е значение
+for (let i = 0; i < valuesArr.length; i += 1) {
+  if (valuesArr[i] > 0) {
+    chartNumberDOM.textContent = valuesArr[i];
+    chartContainerDOM.style.color = colorsArr[i];
 
     break;
   }
 }
 
-function mouseHover(evt) {
-  const activePoints = pieChart.getElementsAtEvent(evt);
+// смена значений при наведении
+function handleChartHover(event) {
+  const activePoints = pieChart.getElementsAtEvent(event);
   if (activePoints[0]) {
     const chartData = activePoints[0]._chart.config.data;
     const idx = activePoints[0]._index;
@@ -77,7 +80,9 @@ function mouseHover(evt) {
     const value = chartData.datasets[0].data[idx];
     const color = chartData.datasets[0].text[idx];
 
-    document.querySelector('.chart__number').textContent = value;
-    document.querySelector('.chart__container').style.color = color;
+    chartNumberDOM.textContent = value;
+    chartContainerDOM.style.color = color;
   }
 }
+
+pieChart.options.onHover = handleChartHover;

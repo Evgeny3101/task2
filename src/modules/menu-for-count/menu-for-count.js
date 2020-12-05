@@ -1,5 +1,5 @@
 import { declOfNum } from '../../assets/js/mixins';
-import ItemCount from './itemCount';
+import ItemCount from './components/item-count';
 
 class MenuForCount {
   constructor(elem, config) {
@@ -95,8 +95,8 @@ class MenuForCount {
   createHandlers() {
     const { areControlButtons } = this.config;
 
-    this.handleDropdownMenuClick = () => this.switchMenu();
-    this.handleDropdownMenuMouseleave = () => this.closeMenu();
+    this.handleDropdownMenuClick = this.switchMenu.bind(this);
+    this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
     this.handlePlusBtnClick = () => {
       if (areControlButtons) {
         this.showClearButton();
@@ -195,7 +195,7 @@ class MenuForCount {
     });
     valuesWithDescript = valuesWithDescript.slice(0, -2);
 
-    // если значения нет выставит placeholder
+    // если значения нет, выставит placeholder
     if (valuesWithDescript === '') valuesWithDescript = placeholder;
 
     return valuesWithDescript;

@@ -8,7 +8,7 @@ import '../modules/range-slider/range-slider';
 import '../modules/like-button/like-button';
 
 // меню подсчета
-const menuArrDOM = document.querySelectorAll('.js-menuForCount');
+const menuArrDOM = document.querySelectorAll('.js-menu-for-count');
 const menuArr = [];
 const menuConfigArr = [
   {
@@ -84,6 +84,7 @@ const menuConfigArr = [
   },
 ];
 
+// установит на 3 первых (нужных)
 for (let i = 0; i < 3; i += 1) {
   menuArr[i] = new MenuForCount(menuArrDOM[i], menuConfigArr[i]);
   menuArr[i].removeListeners();

@@ -33,7 +33,7 @@ function createDatePicker(config, mainField, secondField) {
 
   // установка обработчиков
   function handleApplyButtonClick() {
-    $mainField.datepicker().data('datepicker').hide();
+    datepicker.hide();
     const dateArray = $mainField.val().split(',');
     $mainField.val(dateArray[0]);
   }
@@ -50,7 +50,8 @@ function createDatePicker(config, mainField, secondField) {
     $mainField.removeClass('text-field_checked');
   }
   function handleSecondFieldClick() {
-    $mainField.datepicker().data('datepicker').show();
+    datepicker.show();
+    datepicker.onSelect();
   }
 
   $applyButton.on('click', handleApplyButtonClick);

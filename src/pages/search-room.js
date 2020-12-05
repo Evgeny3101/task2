@@ -10,7 +10,7 @@ import '../modules/range-slider/range-slider';
 
 // меню подсчета
 // eslint-disable-next-line no-unused-vars
-const menuForCountGuest = new MenuForCount('.js-menuForCountGuest', {
+const menuForCountGuest = new MenuForCount('.js-menu-for-countGuest', {
   itemsCount: [
     {
       title: 'взрослые',
@@ -36,7 +36,7 @@ const menuForCountGuest = new MenuForCount('.js-menuForCountGuest', {
 });
 
 // eslint-disable-next-line no-unused-vars
-const menuForCountAmenities = new MenuForCount('.js-menuForCount', {
+const menuForCountAmenities = new MenuForCount('.js-menu-for-count', {
   itemsCount: [
     {
       title: 'спальни',
