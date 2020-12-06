@@ -2,13 +2,13 @@
 import './ui-kit.styl';
 
 // JS
-import MenuForCount from '../modules/menu-for-count/menu-for-count';
+import MenuForCount from '../modules/menu-count/menu-count';
 import '../modules/checkbox-list/checkbox-list';
 import '../modules/range-slider/range-slider';
 import '../modules/like-button/like-button';
 
 // меню подсчета
-const menuArrDOM = document.querySelectorAll('.js-menu-for-count');
+const menuArrDOM = document.querySelectorAll('.js-menu-count');
 const menuArr = [];
 const menuConfigArr = [
   {
@@ -92,12 +92,12 @@ for (let i = 0; i < 3; i += 1) {
 }
 
 // checkbox-list
-const checkboxList = document.querySelectorAll('.checkbox-list')[1];
+const checkboxList = document.querySelectorAll('.checkbox-list__button')[1];
 checkboxList.click();
 
 // hotel-item показать стрелки
-document.querySelectorAll('.switch-arrows__prev')[0].style.zIndex = '1';
-document.querySelectorAll('.switch-arrows__next')[0].style.zIndex = '1';
+document.querySelectorAll('.images-slider-arrows__prev')[0].style.zIndex = '1';
+document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
 
 // payment
 const paymentDOM = document.querySelector('.payment');

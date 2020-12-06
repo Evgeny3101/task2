@@ -12,7 +12,7 @@ mixin header(config)
           +b.UL.header-menu
             each item in config.link
               +e.LI.item
-                +e.A.link(href=item.href class=item.mod onclick="return false;")= item.text
+                +e.A.link(href=item.href class=item.mod)= item.text
                   if (item.icon === true)
                     +e.I.icon.material-icons keyboard_arrow_down
 
@@ -24,10 +24,10 @@ mixin header(config)
 
         else
           +e.auth-btn
-            +b.auth-btn
+            +b.header-auth-button
               +e.button-sign-in
-                +b.A(href="sign-in.html").button._transparent= login
+                +b.A(href='sign-in.html').button._transparent= login
 
               +e.button-sign-up
-                +b.A(href="sign-up.html").button._regular= register
+                +b.A(href='sign-up.html').button._regular= register
 

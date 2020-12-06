@@ -10,10 +10,10 @@ class ImagesSlider {
   findElements() {
     const { mainDOM } = this;
 
-    this.imgsDOM = mainDOM.querySelectorAll('.container-images__image');
-    this.controlBtnsDOM = mainDOM.querySelectorAll('.control__button');
-    this.prevBtnDOM = mainDOM.querySelector('.switch-arrows__prev');
-    this.nextBtnDOM = mainDOM.querySelector('.switch-arrows__next');
+    this.imgsDOM = mainDOM.querySelectorAll('.js-images-slider-container__image');
+    this.controlBtnsDOM = mainDOM.querySelectorAll('.js-images-slider-circles__button');
+    this.prevBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__prev');
+    this.nextBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__next');
   }
 
   setHandlers() {

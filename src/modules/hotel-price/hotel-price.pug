@@ -1,0 +1,19 @@
+//- +hotel-price({
+//-   number: number/string,
+//-   lux: boolean,
+//-   price: number/string,
+//- })
+
+mixin hotel-price(data)
+  +b.hotel-price&attributes(attributes)
+    +e.room
+      +b.hotel-price-room
+        +e.P.icon №
+        +e.P.number= data.number
+        if (data.lux)
+          +e.STRONG.room-class_visible люкс
+
+    +e.day
+      +b.hotel-price-day
+        +e.STRONG.price= data.price
+        +e.P.text в сутки

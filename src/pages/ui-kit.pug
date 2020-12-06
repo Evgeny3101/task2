@@ -3,8 +3,8 @@ extends ../layout/supporting.pug
 //- local mixins
 mixin label-icon()
   +b.label-icon
-    +e.A(href="nav.html").link
-      +e.IMG.img(src='assets/img/ui-kit-icon.svg' alt="иконка сайта")
+    +e.A(href='nav.html').link
+      +e.IMG.img(src='assets/img/ui-kit-icon.svg' alt='иконка сайта')
 
 
 mixin color-demo(title, hex, mod)
@@ -27,7 +27,7 @@ mixin module-title(title, comment)
 
 block head
   +head({
-    "title": "Toxin - UI Kit"
+    'title': 'Toxin - UI Kit'
   })
 
 
@@ -41,19 +41,19 @@ block content
         +b.ui-kit-page1
           +e.container-colors
             +e.color-demo
-              +color-demo("Dark Shade 100%", "#1F2041")
+              +color-demo('Dark Shade 100%', '#1F2041')
             +e.color-demo
-              +color-demo("Dark Shade 75%", "#1F2041", "_fade075")
+              +color-demo('Dark Shade 75%', '#1F2041', '_fade075')
             +e.color-demo
-              +color-demo("Dark Shade 50%", "#1F2041", "_fade05")
+              +color-demo('Dark Shade 50%', '#1F2041', '_fade05')
             +e.color-demo
-              +color-demo("Dark Shade 25%", "#1F2041", "_fade025")
+              +color-demo('Dark Shade 25%', '#1F2041', '_fade025')
             +e.color-demo
-              +color-demo("Dark Shade 5%", "#1F2041", "_fade005")
+              +color-demo('Dark Shade 5%', '#1F2041', '_fade005')
             +e.color-demo
-              +color-demo("Purple", "#BC9CFF", "_regular")
+              +color-demo('Purple', '#BC9CFF', '_regular')
             +e.color-demo
-              +color-demo("Green", "#6FCF97", "_second")
+              +color-demo('Green', '#6FCF97', '_second')
 
           +e.container-titles
             +b.title-demo
@@ -87,87 +87,87 @@ block content
           +e.container_width-320._pb100
             +e.container_pb21
               +e.container_pb5
-                +module-title("Text Field", "Default")
+                +module-title('Text Field', 'Default')
 
               +e.text-field
-                +text-field("text", "Email")
+                +text-field('text', 'Email')
 
             +e.container_pb20
               +e.container_pb5
-                +module-title("Text Field", "Hover / Focus")
+                +module-title('Text Field', 'Hover / Focus')
 
-              +text-field("text", "Email", "This is pretty awesome")._checked
+              +text-field('text', 'Email', 'This is pretty awesome')._checked
 
             +e.container_pb22
               +e.container_pb5
-                +module-title("Dropdown")
+                +module-title('Dropdown')
 
               +dropdown({
-                "type" : "button",
-                "value": "Сколько гостей"
+                'type' : 'button',
+                'value': 'Сколько гостей'
               })
 
             +e.container_pb40
               +e.container_pb5
-                +module-title("masked text field")
+                +module-title('masked text field')
 
-              +text-field("text", "ДД.ММ.ГГГГ")
+              +text-field('text', 'ДД.ММ.ГГГГ')
 
             +e.container_pb40
               +e.date-dropdown
                 +e.container_width-150
                   +e.container_pb6
-                    +module-title("date Dropdown")
+                    +module-title('date Dropdown')
 
                   +dropdown({
-                    "type" : "text",
-                    "place": "ДД.ММ.ГГГГ"
+                    'type' : 'text',
+                    'place': 'ДД.ММ.ГГГГ'
                   })._placeholder-dark
                 +e.container_width-150
                   +e.container_pb6
-                    +module-title("date Dropdown")
+                    +module-title('date Dropdown')
 
                   +dropdown({
-                    "type" : "text",
-                    "place": "ДД.ММ.ГГГГ",
-                    "value": "19.08.2019"
+                    'type' : 'text',
+                    'place': 'ДД.ММ.ГГГГ',
+                    'value': '19.08.2019'
                   })._placeholder-dark
 
             +e.container_width-266
               +e.container_pb41
                 +e.container_pb5
-                  +module-title("filter date dropdown")
+                  +module-title('filter date dropdown')
 
                 +dropdown({
-                  "type" : "text",
-                  "value": "19 авг - 23 авг."
+                  'type' : 'text',
+                  'value': '19 авг - 23 авг.'
                 })
 
               +e.container
                 +e.container_pb5
-                  +module-title("subscription text field")
+                  +module-title('subscription text field')
 
                 +subscription({
-                  "type" : "email",
-                  "place": "Email",
+                  'type' : 'email',
+                  'place': 'Email',
                 })
 
           +e.container_width-266
 
             //-  Checkbox Buttons
             +e.container_pb17
-              +module-title("Checkbox Buttons")
+              +module-title('Checkbox Buttons')
             +e.container_pb41._width-240
               +e.container_pb10
-                +checkbox-item("Можно курить")
+                +checkbox-item('Можно курить')
               +e.container_pb10
-                +checkbox-item("Можно с питомцами")(checked)
+                +checkbox-item('Можно с питомцами')(checked)
               +e.container
-                +checkbox-item("Можно пригласить гостей (до 10 человек)")(checked)
+                +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
 
             //-  Radio Buttons
             +e.container_pb16
-              +module-title("Radio Buttons")
+              +module-title('Radio Buttons')
             +e.container_pb41
               +e.radio-buttons
                 +radio-button({
@@ -186,15 +186,15 @@ block content
 
             //-  Toggle
             +e.container_pb16
-              +module-title("Toggle")
+              +module-title('Toggle')
             +e.container_pb16
-              +toggle("Получать спецпредложения")(checked)
+              +toggle('Получать спецпредложения')(checked)
             +e.container_pb46
-              +toggle("Получать спецпредложения")
+              +toggle('Получать спецпредложения')
 
             //-  Like button
             +e.container_pb16
-              +module-title("Like button")
+              +module-title('Like button')
             +e.container_pb40
               +e.like-buttons
                 +like-button(2)
@@ -202,21 +202,21 @@ block content
 
             //-  Rate button
             +e.container_pb16
-              +module-title("rate button")
+              +module-title('rate button')
             +e.container
               +e.rate-buttons
-                +rate-button("4")
-                +rate-button("5")
+                +rate-button('4')
+                +rate-button('5')
 
           +e.container
             //-  Range Slider
             +e.container_pb43
               +e.range-slider
-                +range-slider("Range Slider")
+                +range-slider('Range Slider')
 
             //-  Buttons
             +e.container_pb16
-              +module-title("Buttons")
+              +module-title('Buttons')
             +e.container_pb40
               +b.buttons-ui-kit
                 +e.container-button
@@ -242,7 +242,7 @@ block content
             //-  Pagination
             +e.pagination
               +e.container_pb17
-                +module-title("pagination")
+                +module-title('pagination')
               +e.container_width-240
                 +pagination()
 
@@ -250,105 +250,102 @@ block content
           +e.container_width-266
             +e.container_pb20
               +e.container_pb5
-                +module-title("dropdown", "default")
+                +module-title('dropdown', 'default')
 
               +b.dropdown-menu
                 +dropdown({
-                  "type" : "text",
-                  "place": "2 спальни, 2 кровати..."
+                  'type' : 'text',
+                  'place': '2 спальни, 2 кровати...'
                 })._placeholder-dark
 
             +e.container_pb167
               +e.container_pb5
-                +module-title("dropdown", "expanded")
+                +module-title('dropdown', 'expanded')
 
-              +e.menu-for-count
-                +menu-for-count({
-                  class: 'js-menu-for-count'
+              +e.menu-count
+                +menu-count({
+                  class: 'js-menu-count'
                 })
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
-              +module-title("dropdown")
+              +module-title('dropdown')
 
             +e.container
-              +menu-for-count({
-                class: 'js-menu-for-count'
+              +menu-count({
+                class: 'js-menu-count'
               })
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
-              +module-title("dropdown")
+              +module-title('dropdown')
             +e.container
-              +menu-for-count({
-                class: 'js-menu-for-count'
+              +menu-count({
+                class: 'js-menu-count'
               })
 
           // rows 3
           +e.container_width-266
             +e.container_pb36
               +e.checkbox-list
-                +checkbox-list("expandable checkbox list")
+                +checkbox-list('expandable checkbox list', [])
 
             +e.container
               +e.checkbox-list
                 +checkbox-list(
-                  /* title */
-                  'expandable checkbox list'
-
-                  /* items */
-                  ,{
-                  name    : 'Завтрак',
-                  active  : false
+                  'expandable checkbox list',
+                  [{
+                    name    : 'Завтрак',
+                    active  : false
                   },{
-                  name    : 'Письменный стол',
-                  active  : true
+                    name    : 'Письменный стол',
+                    active  : true
                   },{
-                  name    : 'Стул для кормления',
-                  active  : true
+                    name    : 'Стул для кормления',
+                    active  : true
                   },{
-                  name    : 'Кроватка',
-                  active  : true
+                    name    : 'Кроватка',
+                    active  : true
                   },{
-                  name    : 'Телевизор',
-                  active  : false
+                    name    : 'Телевизор',
+                    active  : false
                   },{
-                  name    : 'Шампунь',
-                  active  : false
-                  }
+                    name    : 'Шампунь',
+                    active  : false
+                  }]
                 )
 
           +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
             +e.container_pb16
-              +module-title("Rich Checkbox Buttons")
+              +module-title('Rich Checkbox Buttons')
             +e.container
               +e.rich-checkbox-item1
-                +rich-checkbox-item("Широкий коридор", "Ширина коридоров в номере не менее 91 см.")
+                +rich-checkbox-item('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
               +e.rich-checkbox-item2
-                +rich-checkbox-item("Помощник для инвалидов", "На 1 этаже вас встретит специалист и проводит до номера.")
+                +rich-checkbox-item('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
 
           +e.container_mt-5
             //-  Bullet list
             +e.container_pb13
-              +module-title("Bullet list")
+              +module-title('Bullet list')
 
             +e.container
               +bullet-list(
-                "Нельзя с питомцами",
-                "Без вечеринок и мероприятий",
-                "Время прибытия — после 13:00, а выезд до 12:00"
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00'
               )
 
           // rows 4
           +e.container
             +e.item-info
-              +item-info("insert_emoticon", "Комфорт", "Шумопоглощающие стены")
+              +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
 
             +e.item-info
-              +item-info("location_city", "Удобство", "Окно в каждой из спален")
+              +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
 
           +e.user-comment
             +user-comment({
@@ -376,30 +373,30 @@ block content
             +calendar()
 
             +hotel-item({
-              "srcArr"  : [
-                "assets/img/hotel-item1.jpg",
-                "assets/img/hotel-item2.jpg",
-                "assets/img/hotel-item3.jpg",
-                "assets/img/hotel-item4.jpg",
+              'srcArr'  : [
+                'assets/img/hotel-item1.jpg',
+                'assets/img/hotel-item2.jpg',
+                'assets/img/hotel-item3.jpg',
+                'assets/img/hotel-item4.jpg',
               ],
-              "number"  : 888,
-              "price"   : "9 990₽",
-              "stars"   : 5,
-              "reviews" : 145,
-              "lux"     : true,
+              'number'  : 888,
+              'price'   : '9 990₽',
+              'stars'   : 5,
+              'reviews' : 145,
+              'lux'     : true,
             })
 
             +hotel-item({
-              "srcArr"  : [
-                "assets/img/hotel-item2.jpg",
-                "assets/img/hotel-item3.jpg",
-                "assets/img/hotel-item4.jpg",
-                "assets/img/hotel-item5.jpg",
+              'srcArr'  : [
+                'assets/img/hotel-item2.jpg',
+                'assets/img/hotel-item3.jpg',
+                'assets/img/hotel-item4.jpg',
+                'assets/img/hotel-item5.jpg',
               ],
-              "number"  : 840,
-              "price"   : "9 900₽",
-              "stars"   : 4,
-              "reviews" : 65
+              'number'  : 840,
+              'price'   : '9 900₽',
+              'stars'   : 4,
+              'reviews' : 65
             })
 
     +e.page._bg-gray
@@ -411,123 +408,123 @@ block content
           +e.container
 
             +header({
-              login: "войти",
-              register: "зарегистрироваться",
+              login: 'войти',
+              register: 'зарегистрироваться',
               link : [{
-                  "href"  : "mock-address",
-                  "text"  : "О нас",
-                  "mod"   : "_bold"
+                  'href'  : 'mock-address',
+                  'text'  : 'О нас',
+                  'mod'   : '_bold'
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Услуги",
-                  "icon"  : true,
+                  'href'  : 'mock-address',
+                  'text'  : 'Услуги',
+                  'icon'  : true,
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Вакансии"
+                  'href'  : 'mock-address',
+                  'text'  : 'Вакансии'
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Новости",
+                  'href'  : 'mock-address',
+                  'text'  : 'Новости',
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Соглашения",
-                  "icon"  : true
+                  'href'  : 'mock-address',
+                  'text'  : 'Соглашения',
+                  'icon'  : true
                 }
               ]}
             )
 
           +e.container
             +header({
-              login: "войти",
-              register: "зарегистрироваться",
-              user: "Юлий Цезарь",
+              login: 'войти',
+              register: 'зарегистрироваться',
+              user: 'Юлий Цезарь',
               link : [{
-                  "href"  : "mock-address",
-                  "text"  : "О нас",
-                  "mod"   : "_bold"
+                  'href'  : 'mock-address',
+                  'text'  : 'О нас',
+                  'mod'   : '_bold'
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Услуги",
-                  "icon"  : true,
+                  'href'  : 'mock-address',
+                  'text'  : 'Услуги',
+                  'icon'  : true,
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Вакансии"
+                  'href'  : 'mock-address',
+                  'text'  : 'Вакансии'
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Новости",
+                  'href'  : 'mock-address',
+                  'text'  : 'Новости',
                 },
                   {
-                  "href"  : "mock-address",
-                  "text"  : "Соглашения",
-                  "icon"  : true
+                  'href'  : 'mock-address',
+                  'text'  : 'Соглашения',
+                  'icon'  : true
                 }
               ]}
             )
 
           +e.container
             +footer({
-              text: "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»",
-              subTitle: "Подписка",
-              subText: "Получайте специальные предложения и новости сервиса",
-              subPlace: "Email",
-              bottomText: "Copyright © 2018 Toxin отель. Все права зачищены.",
+              text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+              subTitle: 'Подписка',
+              subText: 'Получайте специальные предложения и новости сервиса',
+              subPlace: 'Email',
+              bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.',
               menus: [
                 [
                   {
-                    "title": "Навигация"
+                    'title': 'Навигация'
                   },{
-                    "text" : "О нас",
-                    "href" : "mock-address"
+                    'text' : 'О нас',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Новости",
-                    "href" : "mock-address"
+                    'text' : 'Новости',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Служба поддержки",
-                    "href" : "mock-address"
+                    'text' : 'Служба поддержки',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Услуги",
-                    "href" : "mock-address"
+                    'text' : 'Услуги',
+                    'href' : 'mock-address'
                   }
                 ], [
                   {
-                    "title": "О нас"
+                    'title': 'О нас'
                   },{
-                    "text" : "О сервисе",
-                    "href" : "mock-address"
+                    'text' : 'О сервисе',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Наша команда",
-                    "href" : "mock-address"
+                    'text' : 'Наша команда',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Вакансии",
-                    "href" : "mock-address"
+                    'text' : 'Вакансии',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Инвесторы",
-                    "href" : "mock-address"
+                    'text' : 'Инвесторы',
+                    'href' : 'mock-address'
                   }
                 ], [
                   {
-                    "title": "Служба поддержки"
+                    'title': 'Служба поддержки'
                   },{
-                    "text" : "Соглашения",
-                    "href" : "mock-address"
+                    'text' : 'Соглашения',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Сообщества",
-                    "href" : "mock-address"
+                    'text' : 'Сообщества',
+                    'href' : 'mock-address'
                   },{
-                    "text" : "Связь с нами",
-                    "href" : "mock-address"
+                    'text' : 'Связь с нами',
+                    'href' : 'mock-address'
                   }
                 ]
               ]
             })
 
           +e.footer-minimal
-            +footer-minimal("Copyright © 2018 Toxin отель. Все права зачищены.")
+            +footer-minimal('Copyright © 2018 Toxin отель. Все права зачищены.')
 
 

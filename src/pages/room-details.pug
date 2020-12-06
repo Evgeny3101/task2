@@ -9,7 +9,7 @@ include ../modules/payment/payment
 
 block head
   +head({
-    "title": "Toxin - Room Details"
+    'title': 'Toxin - Room Details'
   })
 
 block content
@@ -33,21 +33,21 @@ block content
                 +b.H2.title_size-2 Сведения о номере
               +e.container
                 +item-info(
-                  /*  icon  */    "insert_emoticon",
-                  /*  title */    "Комфорт",
-                  /*  text  */    "Шумопоглощающие стены"
+                  /*  icon  */    'insert_emoticon',
+                  /*  title */    'Комфорт',
+                  /*  text  */    'Шумопоглощающие стены'
                   )
 
                 +item-info(
-                  /*  icon  */    "location_city",
-                  /*  title */    "Удобство",
-                  /*  text  */    "Окно в каждой из спален"
+                  /*  icon  */    'location_city',
+                  /*  title */    'Удобство',
+                  /*  text  */    'Окно в каждой из спален'
                   )
 
                 +item-info(
-                  /*  icon  */    "whatshot",
-                  /*  title */    "Уют",
-                  /*  text  */    "Номер оснащён камином"
+                  /*  icon  */    'whatshot',
+                  /*  title */    'Уют',
+                  /*  text  */    'Номер оснащён камином'
                   )._border-none
 
           +e.SECTION.impression
@@ -61,14 +61,14 @@ block content
                     +e.container
                       +e.number
                       +e.text голосов
-                    canvas(id="js-chart" width="124" height="124")
+                    canvas(id='js-chart' width='124' height='124')
 
                 +e.bullet-list
                   +bullet-list(
-                    "Великолепно",
-                    "Хорошо",
-                    "Удовлетворительно",
-                    "Разочарован"
+                    'Великолепно',
+                    'Хорошо',
+                    'Удовлетворительно',
+                    'Разочарован'
                     )
 
           +e.SECTION.user-comments
@@ -105,9 +105,9 @@ block content
                 +b.H2.title_size-2 Правила
               +e.container
                 +bullet-list(
-                  "Нельзя с питомцами",
-                  "Без вечеринок и мероприятий",
-                  "Время прибытия — после 13:00, а выезд до 12:00"
+                  'Нельзя с питомцами',
+                  'Без вечеринок и мероприятий',
+                  'Время прибытия — после 13:00, а выезд до 12:00'
                   )
 
           +e.SECTION.text-block

@@ -1,0 +1,14 @@
+include ../dropdown/dropdown
+
+mixin menu-count(config)
+  +b.menu-count
+    if(config.title)
+      +e.title
+        +b.H2.title_size-3= config.title
+
+    +e.text-field(class= config.class)
+      +dropdown({
+        'type' : 'text',
+        'place': config.placeholder,
+        'value': config.value
+      })(readonly='true')._placeholder-dark

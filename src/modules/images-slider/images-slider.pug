@@ -1,0 +1,31 @@
+//- +images-slider([
+//-   'assets/img/hotel-item1.jpg',
+//-   'assets/img/hotel-item2.jpg',
+//-   'assets/img/hotel-item3.jpg',
+//-   'assets/img/hotel-item4.jpg',
+//- ])
+
+mixin images-slider(srcArr)
+  +b.images-slider.js-images-slider
+    +e.arrows
+      +b.images-slider-arrows
+        +e.BUTTON.prev.js-images-slider-arrows__prev
+          +e.I.icon.material-icons expand_more
+        +e.BUTTON.next.js-images-slider-arrows__next
+          +e.I.icon.material-icons expand_more
+
+    +e.container
+      +b.images-slider-container
+        each path in srcArr
+          - if(path == srcArr[0])
+            +e.IMG(src=path alt='фото номера').image.js-images-slider-container__image.image-current
+          - else
+            +e.IMG(src=path alt='фото номера').image.js-images-slider-container__image
+
+    +e.circles
+      +b.images-slider-circles
+        - for(i = 0; i < srcArr.length; i++)
+          - if(i == 0)
+            +e.BUTTON.button.js-images-slider-circles__button.circle-current
+          - else
+            +e.BUTTON.button.js-images-slider-circles__button

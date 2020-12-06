@@ -12,14 +12,14 @@ mixin sign-up-menu()
 
       +e.text-field
         +text-field(
-          /*  type  */  "text",
-          /*  place */  "Имя"
+          /*  type  */  'text',
+          /*  place */  'Имя'
         )
 
       +e.text-field
         +text-field(
-          /*  type  */  "text",
-          /*  place */  "Фамилия"
+          /*  type  */  'text',
+          /*  place */  'Фамилия'
         )
 
       +e.radio-buttons-container
@@ -43,8 +43,8 @@ mixin sign-up-menu()
 
       +e.date-birth
         +text-field(
-          /*  type  */  "text",
-          /*  place */  "ДД.ММ.ГГГГ"
+          /*  type  */  'text',
+          /*  place */  'ДД.ММ.ГГГГ'
           )
 
       +e.title
@@ -52,19 +52,19 @@ mixin sign-up-menu()
 
       +e.text-field
         +text-field(
-          /*  type  */  "email",
-          /*  place */  "Email"
-          )(autocomplete="username")
+          /*  type  */  'email',
+          /*  place */  'Email'
+          )(autocomplete='username')
 
       +e.text-field
         +text-field(
-          /*  type  */  "password",
-          /*  place */  "Пароль"
-          )(autocomplete="new-password")
+          /*  type  */  'password',
+          /*  place */  'Пароль'
+          )(autocomplete='new-password')
 
       +e.toggle
         +toggle(
-          /*  text  */  "Получать спецпредложения"
+          /*  text  */  'Получать спецпредложения'
           )
 
       +e.button-payment
@@ -75,5 +75,5 @@ mixin sign-up-menu()
         +e.text Уже есть аккаунт на Toxin
         +e.button-sign-in
           +b.BUTTON.button._transparent
-            +e.A(href="sign-in.html").link войти
+            +e.A(href='sign-in.html').link войти
 

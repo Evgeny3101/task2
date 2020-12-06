@@ -2,7 +2,7 @@
 import './room-details.styl';
 
 // JS
-import MenuForCount from '../modules/menu-for-count/menu-for-count';
+import MenuForCount from '../modules/menu-count/menu-count';
 import createDatePicker from '../modules/datepicker/datepicker';
 import '../modules/chart/chart';
 import '../modules/like-button/like-button';
@@ -32,7 +32,7 @@ datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
 
 // меню подсчета
 // eslint-disable-next-line no-unused-vars
-const menuForCount = new MenuForCount('.js-menu-for-count', {
+const menuForCount = new MenuForCount('.js-menu-count', {
   itemsCount: [
     {
       title: 'взрослые',

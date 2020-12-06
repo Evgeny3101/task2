@@ -14,8 +14,8 @@
 
   &__wrapper,
   &__navigation,
-  .auth-btn,
-  .header-menu
+  &-auth-button,
+  &-menu
     container()
 
   &__logo,
@@ -29,74 +29,71 @@
   &__user
     margin-left  20px
 
+  // header-menu
+  &-menu
+    color  fade-out(0.5)
 
-.header-menu
-  color  fade-out(0.5)
+    &__link
+      display flex
+      justify-content space-between
+      align-items  center
+      background  default-color
+      margin-right 20px
+      letter-spacing 0.05px
 
-  &__link
-    display flex
-    justify-content space-between
-    align-items  center
-    background  default-color
-    margin-right 20px
-    letter-spacing 0.05px
+      &_bold
+        color fade-out()
+        font-weight bold
+        padding-right 1px
 
-    &_bold
-      color fade-out()
-      font-weight bold
-      padding-right 1px
+    &__icon
+      padding-top 4px
 
-  &__icon
-    padding-top 4px
+  // header-auth-button
+  &-auth-button
+    &__button-sign-in
+      height    34px
+      width     87px
 
-
-.auth-btn
-  &__button-sign-in
-    height    34px
-    width     87px
-
-  &__button-sign-up
-    height    34px
-    width     196px
-    margin-left 20px
-
-
-// media
-.header
-  @media    (max-width  desktopWidth)
+    &__button-sign-up
+      height    34px
+      width     196px
+      margin-left 20px
+  //
+  //
+  // media
+  @media (max-width  desktopWidth)
     padding-right 15px
     padding-left  15px
 
-.header-menu
-  @media    (max-width  smDesktopWidth)
-    display         flex
-    flex-direction  column
-    justify-content flex-start
-    align-items     flex-start
-    position        absolute
-    top             60px
-    right           25px
-    z-index         1
-    max-height      0
-    font-size       0
-    overflow        hidden
-    transition      0.15s all
+  @media (max-width  smDesktopWidth)
+    &-menu
+      display         flex
+      flex-direction  column
+      justify-content flex-start
+      align-items     flex-start
+      position        absolute
+      top             60px
+      right           25px
+      z-index         1
+      max-height      0
+      font-size       0
+      overflow        hidden
+      transition      0.15s all
 
-    &__item
-      border          1px solid fade-out(0.2)
-      border-radius   2px
+      &__item
+        border          1px solid fade-out(0.2)
+        border-radius   2px
 
-    &__link
-      width           140px
-      padding-left    10px
+      &__link
+        width           140px
+        padding-left    10px
 
-    &__icon
-      margin-left   auto
-      margin-right  5px
+      &__icon
+        margin-left   auto
+        margin-right  5px
 
-
-
-.auth-btn__button-sign-up
-  @media    (max-width  phoneWidth)
-    display   none
+  @media (max-width  phoneWidth)
+    &-auth-button__button-sign-up
+      display   none
 

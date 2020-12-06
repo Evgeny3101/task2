@@ -1,24 +1,30 @@
 include ../dropdown/dropdown
 
 
-mixin datepicker()
+mixin datepicker(main, second=false)
+  - const {title, placeholder, value} = main
+  - console.log(main)
   +b.datepicker-container
     +e.main-field
       +e.title
-        +b.H2.title_size-3 прибытие
+        +b.H2.title_size-3= title
 
       +e.dropdown-wrapper
         +dropdown({
-          type : "text",
-          place: "ДД.ММ.ГГГГ",
-        })(readonly="true")._placeholder-dark.js-datepicker-main-field
+          place: placeholder,
+          value: value
+        })(readonly='true')._placeholder-dark.js-datepicker-main-field
 
-    +e.second-field
-      +e.title
-        +b.H2.title_size-3 выезд
+    if(second)
+      - const {title, placeholder, value} = second
+      +e.second-field
+        +e.title
+          +b.H2.title_size-3= title
 
-      +e.dropdown-wrapper
-        +dropdown({
-          type : "text",
-          place: "ДД.ММ.ГГГГ",
-        })(readonly="true")._placeholder-dark.js-datepicker-second-field
+        +e.dropdown-wrapper
+          +dropdown({
+            type : 'text',
+            place: placeholder,
+            value: value
+          })(readonly='true')._placeholder-dark.js-datepicker-second-field
+

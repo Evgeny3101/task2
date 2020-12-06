@@ -17,21 +17,20 @@ class ItemCount {
 
   createHTML() {
     const item = document.createElement('div');
-    item.classList.add('item-count');
-
+    item.classList.add('menu-count-item');
     item.innerHTML = `
-    <div class="item-count__title">
+    <div class="menu-count-item__title">
       <h3 class="title title_size-3">${this.title}</h3>
     </div>
-    <div class="item-count__container-button">
-      <input class="item-count__minus-btn" type="button" value="-"></input>
-      <div class="item-count__result">${this.value}</div>
-      <input class="item-count__plus-btn" type="button" value="+"></input>
+    <div class="menu-count-item__container-button">
+      <input class="menu-count-item__minus-btn" type="button" value="-"></input>
+      <div class="menu-count-item__result">${this.value}</div>
+      <input class="menu-count-item__plus-btn" type="button" value="+"></input>
     </div>`;
 
-    this.minusBtnDOM = item.querySelector('.item-count__minus-btn');
-    this.plusBtnDOM = item.querySelector('.item-count__plus-btn');
-    this.resultDOM = item.querySelector('.item-count__result');
+    this.minusBtnDOM = item.querySelector('.menu-count-item__minus-btn');
+    this.plusBtnDOM = item.querySelector('.menu-count-item__plus-btn');
+    this.resultDOM = item.querySelector('.menu-count-item__result');
 
     this.isMinValue = this.value === this.minValue;
     if (this.isMinValue) {

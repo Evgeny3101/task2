@@ -13,65 +13,66 @@
     padding-top  100px
     padding-bottom 80px
     box-shadow   0px 1px 0px fade-out(0.1)
+    max-width    1160px
+    container(, flex-start)
+    margin       0 auto
 
-    .top-area
-      max-width    1160px
-      container(, flex-start)
-      margin       0 auto
+  // represent
+  &__represent
+    width          260px
+    margin-right   40px
 
-    .represent
-      width          260px
-      margin-right   40px
+  &-represent
+    &__logo
+      padding-bottom  17px
+    &__text
+      line-height  24px
 
-      &__logo
-        padding-bottom  17px
+  // menu
+  &__menu
+    flex-grow  1
+    padding-top 4px
 
-      &__text
-        line-height  24px
+  &-menu
+    display  flex
+    justify-content  space-between
 
+    &__container
+      width           150px
+      display         flex
+      flex-direction  column
+      &_width-260
+        width         260px
 
-    .footer-menu
-      flex-grow  1
-      padding-top 4px
-      display  flex
-      justify-content  space-between
+    &__link
+      color fade-out(0.5)
+      margin-bottom  20px
 
-      &__container
-        width           150px
-        display         flex
-        flex-direction  column
-        &_w260
-          width         260px
+    &__title
+      margin-bottom  21px
 
-      &__link
-        color fade-out(0.5)
-        margin-bottom  20px
+    &__title-sub
+      margin-bottom  18px
 
-      &__title
-        margin-bottom  21px
+    &__text
+      line-height    24px
 
-      &__title-sub
-        margin-bottom  18px
+    &__subscription
+      margin-top     23px
 
-      &__text
-        line-height    24px
-
-      &__subscription
-        margin-top     23px
-
-  //
+  // bottom-area
   &__bottom-area
     padding-left 2px
     box-shadow   0px 10px 20px fade-out(0.05)
     border-top   1px solid #E5E5E5
 
-    .bottom-area
-      max-width     1161px
-      margin        0 auto
-      height        70px
-      container()
+  &-bottom-area
+    max-width     1161px
+    margin        0 auto
+    height        70px
+    container()
 
-
+  //
   // media //
   @media (max-width desktopWidth)
     &__top-area,
@@ -83,42 +84,28 @@
     &__top-area
       padding-top 70px
       padding-bottom 60px
-
-  .top-area
-    @media (max-width  smDesktopWidth + 50px)
       flex-direction  column
 
-      .represent
-        width 100%
-        padding-right 0
-        container()
-        flex-direction column
-        padding-bottom   40px
+    &__represent
+      width 100%
+      margin-right 0
 
-        &__text
-          max-width 500px
-          text-align  center
+    &-represent
+      container()
+      flex-direction column
+      padding-bottom   40px
 
-      .footer-menu
-        width         100%
-        display       grid
-        grid-gap      25px
-        grid-template-columns   150px 260px
-        grid-template-rows      1fr 1fr
-        justify-content         space-evenly
+      &__text
+        max-width 500px
+        text-align  center
 
-    @media (max-width  phoneWidth)
-      .footer-menu
-        padding-left  20px
-        display       grid
-        grid-gap      25px
-        grid-template-columns  260px
-        justify-content        flex-start
+    &__menu
+      width 100%
 
-
-  @media    (max-width  549px)
-    .bottom-area
-      flex-direction    column
-      justify-content   space-around
-      align-items       middle
-      height            100px
+    &-menu
+      width 100%
+      display       grid
+      grid-gap      25px
+      grid-template-columns   150px 260px
+      grid-template-rows      1fr 1fr
+      justify-content         space-evenly

@@ -1,36 +1,29 @@
 include ../rate-button/rate-button
-include ../hotel-item-price/hotel-item-price
+include ../hotel-price/hotel-price
+include ../images-slider/images-slider
+
+//- +hotel-item({
+//-   'srcArr'  : [
+//-     'assets/img/hotel-item1.jpg',
+//-     'assets/img/hotel-item2.jpg',
+//-     'assets/img/hotel-item3.jpg',
+//-     'assets/img/hotel-item4.jpg',
+//-   ],
+//-   'number'  : 888,
+//-   'price'   : '9 990₽',
+//-   'stars'   : 5,
+//-   'reviews' : 145,
+//-   'lux'     : true
+//- })
 
 mixin hotel-item(config)
 
   +b.hotel-item
     +e.images-slider
-      +b.images-slider.js-images-slider
-        +e.switch-arrows
-          +b.switch-arrows
-            +e.BUTTON.prev
-              +e.I.icon.material-icons expand_more
-            +e.BUTTON.next
-              +e.I.icon.material-icons expand_more
-
-        +e.container-images
-          +b.container-images
-            each path in config.srcArr
-              - if(path == config.srcArr[0])
-                +e.IMG(src=path alt="фото номера").image.image-current
-              - else
-                +e.IMG(src=path alt="фото номера").image
-
-        +e.control
-          +b.control
-            - for(i = 0; i < config.srcArr.length; i++)
-              - if(i == 0)
-                +e.BUTTON.button.circle-current
-              - else
-                +e.BUTTON.button
+      +images-slider(config.srcArr)
 
     +e.price
-      +hotel-item-price({
+      +hotel-price({
         number: config.number,
         lux: config.lux,
         price: config.price

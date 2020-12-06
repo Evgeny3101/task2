@@ -1,33 +1,30 @@
 include ../checkbox-item/checkbox-item
 
-mixin checkbox-list(title, ...items)
+//- +checkbox-list(
+//-   /* title */
+//-   'дополнительные удобства',
+//-   /* items */
+//-   [{
+//-     name    : 'Завтрак',
+//-     active  : false
+//-   },{
+//-     name    : 'Письменный стол',
+//-     active  : true
+//-   }]
+//- )
+
+
+mixin checkbox-list(title, items)
   +b.checkbox-list
     +e.button
-      +e.BUTTON(type="button").button
+      +b.BUTTON(type='button').checkbox-list-button
         +e.title
           +b.H2.title_size-3= title
         +e.I.icon-up.material-icons keyboard_arrow_up
         +e.I.icon-down.material-icons keyboard_arrow_down
 
     +e.menu
-      +b.UL.menu
+      +b.UL.checkbox-list-menu
         each item in items
           +e.LI.checkbox-item
             +checkbox-item(item.name)(checked=item.active)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

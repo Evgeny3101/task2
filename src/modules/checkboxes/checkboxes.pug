@@ -1,0 +1,22 @@
+//- +checkboxes(
+//-   /* title */
+//-   'правила дома',
+//-   /* items */
+//-   [{
+//-     text: 'Можно курить'
+//-   }, {
+//-     text: 'Можно с питомцами',
+//-     checked: true
+//-   }]
+//- )
+
+
+mixin checkboxes(title, items)
+  +b.checkboxes
+    +e.title
+      +b.H2.title_size-3= title
+
+    +e.container
+      each item in items
+        +e.checkbox-item
+        +checkbox-item(item.text)(checked= item.checked)

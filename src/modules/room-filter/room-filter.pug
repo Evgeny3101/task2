@@ -1,101 +1,88 @@
 //- modules
 include ../range-slider/range-slider
-include ../dropdown/dropdown
 include ../checkbox-item/checkbox-item
 include ../rich-checkbox-item/rich-checkbox-item
 include ../checkbox-list/checkbox-list
-include ../menu-for-count/menu-for-count
+include ../menu-count/menu-count
+include ../datepicker/datepicker
+include ../checkboxes/checkboxes
+include ../rich-checkboxes/rich-checkboxes
 
 
 mixin room-filter()
   +b.FORM.room-filter
 
     +e.datepicker-container
-      +b.datepicker-container
-        +e.main-field
-          +e.title
-            +b.H2.title_size-3 даты пребывания в отеле
+      +datepicker({
+          title: 'даты пребывания в отеле',
+          placeholder: 'ДД.ММ - ДД.ММ',
+          value: '19 авг - 23 авг'
+        }
+      )
 
-          +e.dropdown-wrapper
-            +dropdown({
-              "type" : "text",
-              "place": "ДД.ММ - ДД.ММ",
-              "value": "19 авг - 23 авг"
-            })(readonly="true").js-datepicker-main-field
-
-    +e.menu-for-count-guest
-      +menu-for-count({
+    +e.menu-count-guest
+      +menu-count({
         title: 'гости',
-        class: 'js-menu-for-countGuest'
+        class: 'js-menu-count-guest'
       })
 
     +e.range-slider
-      +range-slider("диапазон цены", "Стоимость за сутки пребывания в номере")
+      +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
 
-    +e.checkbox-items
-      +b.checkbox-items
-        +e.title
-          +b.H2.title_size-3 правила дома
+    +e.checkboxes
+      +checkboxes(
+        'правила дома',
+        [{
+          text: 'Можно курить'
+        }, {
+          text: 'Можно с питомцами',
+          checked: true
+        }, {
+          text: 'Можно пригласить гостей (до 10 человек)',
+          checked: true
+        }]
+      )
 
-        +e.container
-          +e.checkbox-item
-            +checkbox-item('Можно курить')
+    +e.rich-checkboxes
+      +rich-checkboxes(
+        'Доступность',
+        [{
+          title: 'Широкий коридор',
+          text: 'Ширина коридоров в номере не менее 91 см.',
+          mod: '_width-230'
+        }, {
+          title: 'Помощник для инвалидов',
+          text: 'На 1 этаже вас встретит специалист и проводит до номера.',
+          mod: '_width-260'
+        }
+      ])
 
-          +e.checkbox-item
-            +checkbox-item('Можно с питомцами')(checked)
-
-          +e.checkbox-item
-            +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
-
-    +e.rich-checkbox-items
-      +b.rich-checkbox-items
-        +e.title
-          +b.H2.title_size-3 Доступность
-
-        +e.container
-          +e.rich-checkbox-item._w230
-            +rich-checkbox-item(
-              /*  title  */
-              "Широкий коридор",
-              /*  text  */
-              "Ширина коридоров в номере не менее 91 см.")
-
-          +e.rich-checkbox-item._w260
-            +rich-checkbox-item(
-              /*  title  */
-              "Помощник для инвалидов",
-              /*  text  */
-              "На 1 этаже вас встретит специалист и проводит до номера.")
-
-    +e.menu-for-count-amenities
-      +menu-for-count({
+    +e.menu-count-amenities
+      +menu-count({
         title: 'удобства номера',
-        class: 'js-menu-for-count'
+        class: 'js-menu-count'
       })
 
     +e.checkbox-list
       +checkbox-list(
-        /* title */
-        'дополнительные удобства'
-
-        /* items */
-        ,{
-        name    : 'Завтрак',
-        active  : false
+        'дополнительные удобства',
+        [{
+          name    : 'Завтрак',
+          active  : false
         },{
-        name    : 'Письменный стол',
-        active  : true
+          name    : 'Письменный стол',
+          active  : true
         },{
-        name    : 'Стул для кормления',
-        active  : true
+          name    : 'Стул для кормления',
+          active  : true
         },{
-        name    : 'Кроватка',
-        active  : true
+          name    : 'Кроватка',
+          active  : true
         },{
-        name    : 'Телевизор',
-        active  : false
+          name    : 'Телевизор',
+          active  : false
         },{
-        name    : 'Шампунь',
-        active  : false
-        }
+          name    : 'Шампунь',
+          active  : false
+        }]
       )

@@ -2,15 +2,15 @@
 import './search-room.styl';
 
 // JS
-import MenuForCount from '../modules/menu-for-count/menu-for-count';
-import ImagesSlider from '../modules/hotel-item/images-slider';
+import MenuForCount from '../modules/menu-count/menu-count';
+import ImagesSlider from '../modules/images-slider/images-slider';
 import createDatePicker from '../modules/datepicker/datepicker';
 import '../modules/checkbox-list/checkbox-list';
 import '../modules/range-slider/range-slider';
 
 // меню подсчета
 // eslint-disable-next-line no-unused-vars
-const menuForCountGuest = new MenuForCount('.js-menu-for-countGuest', {
+const menuForCountGuest = new MenuForCount('.js-menu-count-guest', {
   itemsCount: [
     {
       title: 'взрослые',
@@ -36,7 +36,7 @@ const menuForCountGuest = new MenuForCount('.js-menu-for-countGuest', {
 });
 
 // eslint-disable-next-line no-unused-vars
-const menuForCountAmenities = new MenuForCount('.js-menu-for-count', {
+const menuForCountAmenities = new MenuForCount('.js-menu-count', {
   itemsCount: [
     {
       title: 'спальни',
@@ -93,8 +93,8 @@ cardsDOM.forEach((card) => new ImagesSlider(card));
 // // to make active
 // menuForCountAmenities.switchMenu();
 
-// document.querySelectorAll('.switch-arrows__prev')[0].style.zIndex = '1';
-// document.querySelectorAll('.switch-arrows__next')[0].style.zIndex = '1';
+// document.querySelectorAll('.images-slider-arrows__prev')[0].style.zIndex = '1';
+// document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
 
-// const checkboxList = document.querySelector('.checkbox-list');
+// const checkboxList = document.querySelector('.checkbox-list__button');
 // checkboxList.click();

@@ -16,11 +16,11 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('
 const CHUNKS = [
   'landing',
   'nav',
-  'roomDetails',
-  'searchRoom',
-  'signIn',
-  'signUp',
-  'uiKit',
+  'room-details',
+  'search-room',
+  'sign-in',
+  'sign-up',
+  'ui-kit',
 ];
 
 module.exports = {
@@ -32,11 +32,11 @@ module.exports = {
   entry: {
     landing: `${PAGES_DIR}index.js`,
     nav: `${PAGES_DIR}nav.js`,
-    roomDetails: `${PAGES_DIR}room-details.js`,
-    searchRoom: `${PAGES_DIR}search-room.js`,
-    signIn: `${PAGES_DIR}sign-in.js`,
-    signUp: `${PAGES_DIR}sign-up.js`,
-    uiKit: `${PAGES_DIR}ui-kit.js`,
+    'room-details': `${PAGES_DIR}room-details.js`,
+    'search-room': `${PAGES_DIR}search-room.js`,
+    'sign-in': `${PAGES_DIR}sign-in.js`,
+    'sign-up': `${PAGES_DIR}sign-up.js`,
+    'ui-kit': `${PAGES_DIR}ui-kit.js`,
   },
 
   output: {

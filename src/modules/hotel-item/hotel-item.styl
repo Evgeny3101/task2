@@ -1,6 +1,6 @@
 @require '../rate-button/rate-button'
-@require '../hotel-item-price/hotel-item-price'
-
+@require '../hotel-price/hotel-price'
+@require '../images-slider/images-slider'
 
 .hotel-item
   width               270px
@@ -11,85 +11,9 @@
   color               fade-out(0.5)
   box-shadow          0px 10px 20px fade-out(0.05)
 
-  // slider
-  .images-slider
-    position            relative
-    overflow            hidden
-    height              100%
-    width               100%
-
-    //
-    &__switch-arrows
-      position absolute
-      height 100%
-      width  100%
-
-    .switch-arrows
-      height 100%
-      width  100%
-      container()
-
-      &__next,
-      &__prev
-        height 100%
-        width  44px
-        padding-top: 4px
-        font-size           24px
-        font-weight         normal
-
-      &__next
-        background:  linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
-        transform: matrix(-1, 0, 0, 1, 0, 0);
-
-      &__prev
-        background:  linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%)
-
-      &__icon
-        color             default-color
-        transform         rotate(90deg)
-
-    //
-    .container-images
-      border-top-left-radius  4px
-      border-top-right-radius 4px
-      width             270px
-      height            151px
-      background      #777
-
-      &__image
-        position          absolute
-        visibility        hidden
-        opacity           0
-        transition        0.3s
-
-        &.image-current
-          position    top
-          visibility  visible
-          opacity     1
-
-    //
-    .control
-      position            absolute
-      bottom              15px
-      right               15px
-      display             flex
-
-      &__button
-        margin-left       3.75px
-        height            7.5px
-        width             7.5px
-        border            1px solid default-color
-        box-shadow        0px 5px 5px fade-out( 0.3)
-        border-radius     25px
-
-        &.circle-current
-          background      default-color
-
-  // hotel-item-price
   &__price
     margin            20px 16px 0 20.5px
 
-  //
   &__line
     margin            10px auto 0
     width             230px
@@ -99,7 +23,7 @@
   &__review
     margin            8px 19px 15.5px 21px
 
-  .hotel-item-review
+  &-review
     width             100%
     container()
 

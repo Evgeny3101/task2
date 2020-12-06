@@ -42,18 +42,18 @@ class MenuForCount {
     const { mainDOM, textFieldDOM, items } = this;
 
     this.menuDOM = document.createElement('div');
-    this.menuDOM.classList.add('dropdown-menu-count');
+    this.menuDOM.classList.add('menu-count-dropdown');
 
     const wrapper = document.createElement('div');
     const container = document.createElement('ul');
-    wrapper.classList.add('dropdown-menu-count__wrapper');
-    container.classList.add('dropdown-menu-count__items-container');
+    wrapper.classList.add('menu-count-dropdown__wrapper');
+    container.classList.add('menu-count-dropdown__items-container');
     wrapper.append(container);
     this.menuDOM.append(wrapper);
 
     itemsCount.forEach((itemConfig, i) => {
       const item = document.createElement('li');
-      item.classList.add('dropdown-menu-count__item');
+      item.classList.add('menu-count-dropdown__item');
       items[i] = new ItemCount(item, itemConfig);
       container.append(item);
     });
@@ -63,14 +63,14 @@ class MenuForCount {
       wrapper.insertAdjacentHTML(
         'beforeend',
         `
-      <div class="dropdown-menu-count__control-buttons">
-        <div>
-           <input class="button button_fade05 js-clear" type="button" value="очистить">
-        </div>
-        <div>
-          <input class="button button_blue js-apply" type="button" value="применить">
-        </div>
-      </div>`
+        <div class="menu-count-dropdown__control-buttons">
+          <div>
+            <input class="button button_fade05 js-clear" type="button" value="очистить">
+          </div>
+          <div>
+            <input class="button button_blue js-apply" type="button" value="применить">
+          </div>
+        </div>`
       );
 
       this.applyBtn = wrapper.querySelector('.js-apply');

@@ -2,7 +2,7 @@ mixin calendar()
   +b.calendar
     +e.wrapper
       +e.month-selection
-        +b.month-selection
+        +b.calendar-month-selection
           +e.I.icon.material-icons arrow_back
           +e.month
             +b.P.month Август
@@ -10,65 +10,65 @@ mixin calendar()
           +e.I.icon.material-icons arrow_forward
 
       +e.days
-        +b.TABLE.days
+        +b.TABLE.calendar-days
           +e.TR.weekly-day.__container
-            +b.TD.day Пн
-            +b.TD.day Вт
-            +b.TD.day Ср
-            +b.TD.day Чт
-            +b.TD.day Пт
-            +b.TD.day Сб
-            +b.TD.day Вс
+            +b.TD.calendar-day Пн
+            +b.TD.calendar-day Вт
+            +b.TD.calendar-day Ср
+            +b.TD.calendar-day Чт
+            +b.TD.calendar-day Пт
+            +b.TD.calendar-day Сб
+            +b.TD.calendar-day Вс
 
           +e.TR.week.__container
-            +b.TD.day._fade 29
-            +b.TD.day._fade 30
-            +b.TD.day._fade 31
-            +b.TD.day  1
-            +b.TD.day  2
-            +b.TD.day  3
-            +b.TD.day  4
+            +b.TD.calendar-day._fade 29
+            +b.TD.calendar-day._fade 30
+            +b.TD.calendar-day._fade 31
+            +b.TD.calendar-day  1
+            +b.TD.calendar-day  2
+            +b.TD.calendar-day  3
+            +b.TD.calendar-day  4
 
           +e.TR.week.__container
-            +b.TD.day  5
-            +b.TD.day  6
-            +b.TD.day  7
-            +b.TD.day._gradient 8
-            +b.TD.day  9
-            +b.TD.day  10
-            +b.TD.day  11
+            +b.TD.calendar-day  5
+            +b.TD.calendar-day  6
+            +b.TD.calendar-day  7
+            +b.TD.calendar-day._gradient 8
+            +b.TD.calendar-day  9
+            +b.TD.calendar-day  10
+            +b.TD.calendar-day  11
 
           +e.TR.week.__container
-            +b.TD.day  12
-            +b.TD.day  13
-            +b.TD.day  14
-            +b.TD.day  15
-            +b.TD.day  16
-            +b.TD.day  17
-            +b.TD.day  18
+            +b.TD.calendar-day  12
+            +b.TD.calendar-day  13
+            +b.TD.calendar-day  14
+            +b.TD.calendar-day  15
+            +b.TD.calendar-day  16
+            +b.TD.calendar-day  17
+            +b.TD.calendar-day  18
 
           +e.TR.week.__container
-            +b.TD.day._checked._blue 19
+            +b.TD.calendar-day._checked._blue 19
               +b.bg-checked._first
-            +b.TD.day._checked  20
+            +b.TD.calendar-day._checked  20
               +b.bg-checked
-            +b.TD.day._checked  21
+            +b.TD.calendar-day._checked  21
               +b.bg-checked
-            +b.TD.day._checked  22
+            +b.TD.calendar-day._checked  22
               +b.bg-checked
-            +b.TD.day._checked._blue  23
+            +b.TD.calendar-day._checked._blue  23
               +b.bg-checked._last
-            +b.TD.day._checked  24
-            +b.TD.day  25
+            +b.TD.calendar-day._checked  24
+            +b.TD.calendar-day  25
 
           +e.TR.week.__container
-            +b.TD.day  26
-            +b.TD.day  27
-            +b.TD.day  28
-            +b.TD.day  29
-            +b.TD.day  30
-            +b.TD.day  31
-            +b.TD.day._fade 1
+            +b.TD.calendar-day  26
+            +b.TD.calendar-day  27
+            +b.TD.calendar-day  28
+            +b.TD.calendar-day  29
+            +b.TD.calendar-day  30
+            +b.TD.calendar-day  31
+            +b.TD.calendar-day._fade 1
 
       +e.buttons-container
         +e.button

@@ -1,7 +1,7 @@
-import '../../assets/js/libs/rangeSlider';
+import '../../assets/js/libs/range-slider';
 
-const fields = ['.prise-range__field1', '.prise-range__field2'];
-const valueDOM = document.querySelector('.prise-range__value');
+const fields = ['.range-slider__field1', '.range-slider__field2'];
+const valueDOM = document.querySelector('.range-slider__value');
 const fieldDOM = [];
 const values = [];
 

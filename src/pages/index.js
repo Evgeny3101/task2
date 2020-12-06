@@ -3,7 +3,7 @@ import './index.styl';
 
 // JS
 import createDatePicker from '../modules/datepicker/datepicker';
-import MenuForCount from '../modules/menu-for-count/menu-for-count';
+import MenuForCount from '../modules/menu-count/menu-count';
 
 // eslint-disable-next-line no-unused-vars
 const datepicker = createDatePicker(
@@ -28,7 +28,7 @@ const datepicker = createDatePicker(
 );
 
 // eslint-disable-next-line no-unused-vars
-const menuForCount = new MenuForCount('.js-menu-for-count', {
+const menuForCount = new MenuForCount('.js-menu-count', {
   itemsCount: [
     {
       title: 'взрослые',

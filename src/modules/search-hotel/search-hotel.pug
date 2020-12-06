@@ -1,5 +1,5 @@
 include ../datepicker/datepicker
-include ../menu-for-count/menu-for-count
+include ../menu-count/menu-count
 
 
 mixin search-hotel()
@@ -9,13 +9,20 @@ mixin search-hotel()
         +b.H1.title_size-1 Найдём номера под ваши пожелания
 
       +e.datepicker
-        +datepicker()
+        +datepicker({
+            title: 'прибытие',
+            placeholder: 'ДД.ММ.ГГГГ',
+          },{
+            title: 'выезд',
+            placeholder: 'ДД.ММ.ГГГГ',
+          }
+        )
 
-      +e.menu-for-count
-        +menu-for-count({
+      +e.menu-count
+        +menu-count({
           title: 'гости',
           placeholder: 'Сколько гостей',
-          class: 'js-menu-for-count'
+          class: 'js-menu-count'
         })
 
       +e.button

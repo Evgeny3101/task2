@@ -1,13 +1,22 @@
-.hotel-item-price
+.hotel-price
   width               100%
   container()
   font-weight         bold
   color               fade-out(0.5)
 
-  .room-number
+  &-day,
+  &-room
+    display flex
+    align-items flex-end
+
+  // hotel-price-room
+  &-room
+    &__icon,
+    &__room-class
+      margin-bottom   2px
+
     &__icon
       margin-right    3px
-
       font-size       14px
       color           primary-color
 
@@ -26,11 +35,11 @@
       &_visible
         display       inline
 
-  //
-  &__price-per-day
+  // hotel-price-day
+  &__day
     margin-bottom 1px
 
-  .price-per-day
+  &-day
     &__price
       display         inline-block
       margin-top      2px
@@ -42,19 +51,22 @@
       padding-left    1px
       font-size       12px
 
+  //
+  // modifier
   &_big
-    .room-number
-      &__icon
-        margin-right  4px
+    .hotel-price
+      &-room
+        &__icon
+          margin-right  4px
 
-      &__number
-        font-size     24px
+        &__number
+          font-size     24px
 
-      &__room-class
-        margin-left   8px
+        &__room-class
+          margin-left   8px
 
-    .hotel-item-price__price-per-day
-      margin-top    5px
+      &__day
+        margin-top    5px
 
-    .price-per-day__price
-      padding-right 3px
+      &-day__price
+        padding-right 3px
