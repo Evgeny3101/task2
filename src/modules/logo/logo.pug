@@ -1,4 +1,5 @@
 mixin logo()
-  +b.A.logo(href='nav.html')
-    +e.IMG.icon(src='assets/img/icon.svg' alt='logo')
-    +e.IMG.title(src='assets/img/title.svg' alt='toxin')
+  +b.FIGURE.logo
+    +e.A(href='nav.html').container
+      +e.IMG.icon(src='assets/img/icon.svg' alt='logo')
+      +e.IMG.title(src='assets/img/title.svg' alt='toxin')

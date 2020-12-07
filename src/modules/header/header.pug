@@ -20,7 +20,7 @@ mixin header(config)
           +e.line
           +e.user
             +e.button
-              +b.BUTTON.button._default= user
+              +b.BUTTON(type='button').button._default= user
 
         else
           +e.auth-btn

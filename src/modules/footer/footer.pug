@@ -12,7 +12,7 @@ mixin footer(config)
         +b.footer-represent
           +e.logo
             +logo()
-          +e.P.text= text
+          +e.SPAN.text= text
 
       +e.menu
         +b.footer-menu
@@ -29,7 +29,7 @@ mixin footer(config)
           +e.SECTION.container._width-260
             +e.title-sub
               +b.H2.title_size-3= subTitle
-            +e.P.text= subText
+            +e.SPAN.text= subText
 
             +e.subscription
               +subscription({

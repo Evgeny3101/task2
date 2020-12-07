@@ -15,13 +15,13 @@ mixin user-comment(data)
   - const {name, date, active, image, likes} = data;
 
   +b.user-comment
-    +e.image
+    +e.FIGURE.image
       +b.IMG(src= image alt='аватар пользователя').user-comment-image
 
     +e.header
       +e.name
         +b.H3.title_fade-075= name
-      +e.P.date= date
+      +e.SPAN.date= date
 
     +e.like-button
       if(active === true)
@@ -29,4 +29,4 @@ mixin user-comment(data)
       else
         +like-button(likes)
 
-    +e.P.text= data.text
+    +e.SPAN.text= data.text

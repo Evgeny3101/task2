@@ -2,7 +2,7 @@ extends ../layout/supporting.pug
 
 //- local mixins
 mixin label-icon()
-  +b.label-icon
+  +b.FIGURE.label-icon
     +e.A(href='nav.html').link
       +e.IMG.img(src='assets/img/ui-kit-icon.svg' alt='иконка сайта')
 
@@ -11,8 +11,8 @@ mixin color-demo(title, hex, mod)
   +b.color-demo
     +e.demo(class=mod)
     +e.text-container
-      +e.title= title
-      +e.P.hex= hex
+      +e.SPAN.title= title
+      +e.SPAN.hex= hex
 
 
 mixin module-title(title, comment)
@@ -21,7 +21,7 @@ mixin module-title(title, comment)
       +b.H2.title_size-3= title
     if (comment)
       +e.comment
-        +e.P.text= comment
+        +e.SPAN.text= comment
 
 
 
@@ -59,23 +59,23 @@ block content
             +b.title-demo
               +e.wrapper-h1
                 +e.container
-                  +e.P.demo-h1 H1
+                  +e.SPAN.demo-h1 H1
                   +b.H1.title_size-1 This one is the sub-section or widget title
 
               +e.wrapper-h2
                 +e.container
-                  +e.P.demo-h2 H2
+                  +e.SPAN.demo-h2 H2
                   +b.H2.title_size-2 Next one is the item title inside widgets
 
               +e.wrapper-h3
                 +e.container
-                  +e.P.demo-h3 H3
+                  +e.SPAN.demo-h3 H3
                   +b.H3.title_size-3 This is a label or CTA text
 
               +e.wrapper-body
                 +e.container
-                  +e.P.demo-body Body
-                  +e.P.text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
+                  +e.SPAN.demo-body Body
+                  +e.SPAN.text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
     +e.page
       +e.label-icon
@@ -221,22 +221,22 @@ block content
               +b.buttons-ui-kit
                 +e.container-button
                   +e.button
-                    +b.BUTTON.button._regular CLICK ME
+                    +b.BUTTON(type='button').button._regular CLICK ME
                   +e.button
-                    +b.BUTTON.button._regular.active CLICK ME
+                    +b.BUTTON(type='button').button._regular.active CLICK ME
                   +e.button
-                    +b.BUTTON.button._transparent CLICK ME
+                    +b.BUTTON(type='button').button._transparent CLICK ME
                   +e.button
-                    +b.BUTTON.button._transparent.active CLICK ME
+                    +b.BUTTON(type='button').button._transparent.active CLICK ME
 
                 +e.container-text-button
                   +e.text-button
-                    +b.BUTTON.button._blue CLICK ME
+                    +b.BUTTON(type='button').button._blue CLICK ME
                   +e.text-button
-                    +b.BUTTON.button._fade05 CLICK ME
+                    +b.BUTTON(type='button').button._fade05 CLICK ME
 
                 +e.button-with-icon
-                  +b.BUTTON.button._regular._relative перейти к оплате
+                  +b.BUTTON(type='button').button._regular._relative перейти к оплате
                     +e.I.icon.material-icons arrow_forward
 
             //-  Pagination

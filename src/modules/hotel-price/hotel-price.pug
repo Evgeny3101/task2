@@ -8,12 +8,12 @@ mixin hotel-price(data)
   +b.hotel-price&attributes(attributes)
     +e.room
       +b.hotel-price-room
-        +e.P.icon №
-        +e.P.number= data.number
+        +e.SPAN.icon №
+        +e.SPAN.number= data.number
         if (data.lux)
           +e.STRONG.room-class_visible люкс
 
     +e.day
       +b.hotel-price-day
         +e.STRONG.price= data.price
-        +e.P.text в сутки
+        +e.SPAN.text в сутки

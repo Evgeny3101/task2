@@ -22,6 +22,6 @@ mixin price-list(items)
         - const modInfo = item.info ? '' : '_without-info'
 
         +b.LI.price-list-item(class= modInfo)
-          +e.P.text= item.text
-          +e.P.info i
-          +e.P.sum= item.sum
+          +e.SPAN.text= item.text
+          +e.SPAN.info i
+          +e.SPAN.sum= item.sum
