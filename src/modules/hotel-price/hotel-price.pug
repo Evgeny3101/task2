@@ -9,8 +9,8 @@ mixin hotel-price(config)
   - const classMod = isH1 ? '_h1' : '';
 
   +b.hotel-price(class= classMod)&attributes(attributes)
-    +e.SPAN.room
-      +b.SPAN.hotel-price-room
+    +e.room
+      +b.DIV.hotel-price-room
         +e.SPAN.icon №
 
         if (isH1)
