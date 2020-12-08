@@ -1,0 +1,15 @@
+//- +chart({
+//-   id: 'js-chart',
+//-   text: 'голосов',
+//-   width: '124',
+//-   height: '124'
+//- })
+
+mixin chart(config)
+  - const {id, text, width, height} = config
+
+  +b.FIGURE.chart
+    +e.container
+      +e.number
+      +e.text= text
+    +e.CANVAS(id= id width= width height= height).image

@@ -5,7 +5,7 @@ include ../toggle/toggle
 
 mixin sign-up-menu()
 
-  +b.sign-up-menu
+  +b.SECTION.sign-up-menu
     +e.wrapper
       +e.FORM.container
         +e.title-main
@@ -75,5 +75,4 @@ mixin sign-up-menu()
       +e.footer
         +e.text Уже есть аккаунт на Toxin
         +e.button-sign-in
-          +b.A(href='sign-in.html').button._transparent
-
+          +b.A(href='sign-in.html').button._transparent создать

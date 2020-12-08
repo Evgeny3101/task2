@@ -1,9 +1,9 @@
 @require '../layout/main'
 
 // modules
-@require '../modules/hotel-item/hotel-item'
+@require '../modules/hotel-list/hotel-list'
 @require '../modules/pagination/pagination'
-@require '../modules/room-filter/room-filter'
+@require '../modules/filter/filter'
 
 
 .room-search
@@ -18,28 +18,18 @@
     grid-gap                59px
     grid-template-columns   266px auto
 
-  &__room-filter
-    margin-top             1px
+  &__filter
+    margin-top              1px
 
   //
-  &__search-result
+  &__result
     margin                  1px auto 0
 
-  .search-result
+  &-result
     //
     &__hotel-list
       margin-top            22px
       margin-left           1px
-
-    .hotel-list
-      display               grid
-      grid-gap              20.5px 12px
-      grid-template-columns 1fr 1fr 1fr
-      justify-content       space-between
-
-      &__item
-        box-shadow     0px 10px 20px fade-out(0.05)
-        border-radius  4px
 
     //
     &__pagination
@@ -51,21 +41,22 @@
 
 // media //
 .room-search
-  @media  (max-width  625px)
-    &__wrapper
-      grid-template-columns   266px
-      justify-content         space-around
-
-  .search-result
-    @media (min-width  920px) and (max-width  lDesktopWidth)
+  @media (min-width  920px) and (max-width  lDesktopWidth)
+    &-result
       .hotel-list
         grid-template-columns     270px 270px
 
-    @media  (max-width  919px)
+  @media  (max-width  919px)
+    &-result
       .hotel-list
         grid-template-columns     270px
 
       &__pagination
         margin         40px 0 0 15px
+
+  @media  (max-width  625px)
+    &__wrapper
+      grid-template-columns   266px
+      justify-content         space-around
 
 

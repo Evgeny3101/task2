@@ -7,102 +7,101 @@ include ../modules/footer/footer
 include ../modules/footer-minimal/footer-minimal
 
 
-
-
 doctype html
 html(lang='ru')
-head
-  block head
 
-body.page
+  head
+    block head
 
-  block header
-    +header({
-      login: 'войти',
-      register: 'зарегистрироваться',
-      link : [{
-          'href'  : 'mock-address',
-          'text'  : 'О нас'
-        },
-          {
-          'href'  : 'mock-address',
-          'text'  : 'Услуги',
-          'icon'  : true,
-        },
-          {
-          'href'  : 'mock-address',
-          'text'  : 'Вакансии'
-        },
-          {
-          'href'  : 'mock-address',
-          'text'  : 'Новости',
-        },
-          {
-          'href'  : 'mock-address',
-          'text'  : 'Соглашения',
-          'icon'  : true
-        }
-      ]}
-    )
+  body.page
 
-  block content
-
-  block footer
-    +footer({
-      text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
-      subTitle: 'Подписка',
-      subText: 'Получайте специальные предложения и новости сервиса',
-      subPlace: 'Email',
-      bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.',
-      menus: [
-        [
-          {
-            'title': 'Навигация'
-          },{
-            'text' : 'О нас',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Новости',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Служба поддержки',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Услуги',
-            'href' : 'mock-address'
+    block header
+      +header({
+        login: 'войти',
+        register: 'зарегистрироваться',
+        link : [{
+            'href'  : 'mock-address',
+            'text'  : 'О нас'
+          },
+            {
+            'href'  : 'mock-address',
+            'text'  : 'Услуги',
+            'icon'  : true,
+          },
+            {
+            'href'  : 'mock-address',
+            'text'  : 'Вакансии'
+          },
+            {
+            'href'  : 'mock-address',
+            'text'  : 'Новости',
+          },
+            {
+            'href'  : 'mock-address',
+            'text'  : 'Соглашения',
+            'icon'  : true
           }
-        ], [
-          {
-            'title': 'О нас'
-          },{
-            'text' : 'О сервисе',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Наша команда',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Вакансии',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Инвесторы',
-            'href' : 'mock-address'
-          }
-        ], [
-          {
-            'title': 'Служба поддержки'
-          },{
-            'text' : 'Соглашения',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Сообщества',
-            'href' : 'mock-address'
-          },{
-            'text' : 'Связь с нами',
-            'href' : 'mock-address'
-          }
+        ]}
+      )
+
+    block content
+
+    block footer
+      +footer({
+        text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
+        subTitle: 'Подписка',
+        subText: 'Получайте специальные предложения и новости сервиса',
+        subPlace: 'Email',
+        bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.',
+        menus: [
+          [
+            {
+              'title': 'Навигация'
+            },{
+              'text' : 'О нас',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Новости',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Служба поддержки',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Услуги',
+              'href' : 'mock-address'
+            }
+          ], [
+            {
+              'title': 'О нас'
+            },{
+              'text' : 'О сервисе',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Наша команда',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Вакансии',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Инвесторы',
+              'href' : 'mock-address'
+            }
+          ], [
+            {
+              'title': 'Служба поддержки'
+            },{
+              'text' : 'Соглашения',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Сообщества',
+              'href' : 'mock-address'
+            },{
+              'text' : 'Связь с нами',
+              'href' : 'mock-address'
+            }
+          ]
         ]
-      ]
-    })
+      })
 
-    +footer-minimal('Copyright © 2018 Toxin отель. Все права зачищены.')
+      +footer-minimal('Copyright © 2018 Toxin отель. Все права зачищены.')
 

@@ -13,20 +13,21 @@ include ../images-slider/images-slider
 //-   'price'   : '9 990₽',
 //-   'stars'   : 5,
 //-   'reviews' : 145,
-//-   'lux'     : true
+//-   'isLux'     : true
 //- })
 
 mixin hotel-item(config)
+  - const {srcArr, number, isLux, price, stars, reviews} = config
 
-  +b.hotel-item
+  +b.SECTION.hotel-item
     +e.images-slider
-      +images-slider(config.srcArr)
+      +images-slider(srcArr)
 
     +e.price
       +hotel-price({
-        number: config.number,
-        lux: config.lux,
-        price: config.price
+        number,
+        isLux,
+        price
       })
 
     +e.line
@@ -34,8 +35,8 @@ mixin hotel-item(config)
     +e.review
       +b.hotel-item-review
         +e.rate-button
-          +rate-button(config.stars)
+          +rate-button(stars)
 
         +e.comments
-          +e.SPAN.number-comments= config.reviews
+          +e.SPAN.number-comments= reviews
           +e.SPAN.text Отзывов

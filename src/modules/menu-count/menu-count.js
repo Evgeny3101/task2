@@ -65,10 +65,10 @@ class MenuForCount {
         `
         <div class="menu-count-dropdown__control-buttons">
           <div>
-            <input class="button button_fade05 js-clear" type="button" value="очистить">
+            <button class="button button_fade05 js-clear" type="button">очистить</button>
           </div>
           <div>
-            <input class="button button_blue js-apply" type="button" value="применить">
+            <button class="button button_blue js-apply" type="button">применить</button>
           </div>
         </div>`
       );

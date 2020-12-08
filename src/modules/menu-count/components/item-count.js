@@ -23,9 +23,9 @@ class ItemCount {
       <h3 class="title title_size-3">${this.title}</h3>
     </div>
     <div class="menu-count-item__container-button">
-      <input class="menu-count-item__minus-btn" type="button" value="-"></input>
+      <button class="menu-count-item__minus-btn" type="button">-</button>
       <div class="menu-count-item__result">${this.value}</div>
-      <input class="menu-count-item__plus-btn" type="button" value="+"></input>
+      <button class="menu-count-item__plus-btn" type="button">+</button>
     </div>`;
 
     this.minusBtnDOM = item.querySelector('.menu-count-item__minus-btn');

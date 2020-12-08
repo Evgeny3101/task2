@@ -1,0 +1,17 @@
+include ../hotel-item/hotel-item
+
+mixin hotel-list(config)
+
+  +b.UL.hotel-list
+    each item in config
+      - const {srcArr, number, price, stars, reviews, isLux} = item;
+
+      +e.LI.item
+        +hotel-item({
+          srcArr,
+          number,
+          price,
+          stars,
+          reviews,
+          isLux
+        })

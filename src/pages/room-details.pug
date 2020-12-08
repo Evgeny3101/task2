@@ -5,6 +5,7 @@ include ../modules/item-info/item-info
 include ../modules/bullet-list/bullet-list
 include ../modules/user-comment/user-comment
 include ../modules/payment/payment
+include ../modules/chart/chart
 
 
 block head
@@ -14,110 +15,111 @@ block head
 
 block content
   +b.MAIN.room-details
-    +e.main-title
-      +b.H1.title Детали комнаты
-    +b.FIGURE.room-details-gallery
-      +e.column1
-        +e.IMG.img1(src='assets/img/room-details1.jpg')
 
-      +e.column2
-        +e.IMG.img2(src='assets/img/room-details2.jpg')
-        +e.IMG.img3(src='assets/img/room-details3.jpg')
+    +e.gallery
+      +b.FIGURE.room-details-gallery
+        +e.column1
+          +e.IMG.img1(src='assets/img/room-details1.jpg')
+
+        +e.column2
+          +e.IMG.img2(src='assets/img/room-details2.jpg')
+          +e.IMG.img3(src='assets/img/room-details3.jpg')
 
     +e.wrapper.wrapper
       +e.details
-        +b.details
-          +e.SECTION.info
-            +b.info
-              +e.title
-                +b.H2.title_size-2 Сведения о номере
-              +e.container
-                +item-info(
-                  /*  icon  */    'insert_emoticon',
-                  /*  title */    'Комфорт',
-                  /*  text  */    'Шумопоглощающие стены'
-                  )
+        +e.SECTION.info
+          +b.room-details-info
+            +e.title
+              +b.H2.title_size-2 Сведения о номере
+            +e.container
+              +item-info(
+                /*  icon  */    'insert_emoticon',
+                /*  title */    'Комфорт',
+                /*  text  */    'Шумопоглощающие стены'
+                )
 
-                +item-info(
-                  /*  icon  */    'location_city',
-                  /*  title */    'Удобство',
-                  /*  text  */    'Окно в каждой из спален'
-                  )
+              +item-info(
+                /*  icon  */    'location_city',
+                /*  title */    'Удобство',
+                /*  text  */    'Окно в каждой из спален'
+                )
 
-                +item-info(
-                  /*  icon  */    'whatshot',
-                  /*  title */    'Уют',
-                  /*  text  */    'Номер оснащён камином'
-                  )._border-none
+              +item-info(
+                /*  icon  */    'whatshot',
+                /*  title */    'Уют',
+                /*  text  */    'Номер оснащён камином'
+                )._border-none
 
-          +e.SECTION.impression
-            +b.impression
-              +e.title
-                +b.H2.title_size-2 Впечатления от номера
+        +e.SECTION.impression
+          +b.room-details-impression
+            +e.title
+              +b.H2.title_size-2 Впечатления от номера
 
-              +e.container
-                +e.chart
-                  +b.chart
-                    +e.container
-                      +e.number
-                      +e.text голосов
-                    canvas(id='js-chart' width='124' height='124')
+            +e.container
+              +e.chart
+                +chart({
+                  id: 'js-chart',
+                  text: 'голосов',
+                  width: '124',
+                  height: '124'
+                })
 
-                +e.bullet-list
-                  +bullet-list(
-                    'Великолепно',
-                    'Хорошо',
-                    'Удовлетворительно',
-                    'Разочарован'
-                    )
-
-          +e.SECTION.user-comments
-            +b.user-comments
-              +e.header
-                +e.title
-                  +b.H2.title_size-2 Отзывы посетителей номера
-                +e.SPAN.number 2 отзыва
-
-              +e.container
-                +e.user-comment
-                  +user-comment({
-                    image : 'assets/img/user-img1.jpg',
-                    name  : 'Мурад Сарафанов',
-                    date  : '5 дней назад',
-                    text  : 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-                    likes  : 12,
-                    active: true
-                  })
-
-                +e.user-comment
-                  +user-comment({
-                    image : 'assets/img/user-img2.jpg',
-                    name  : 'Патрисия Стёклышкова',
-                    date  : 'Неделю назад',
-                    text  : 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
-                    likes : 2,
-                    active: false
-                  })
-
-          +e.SECTION.rules
-            +b.rules
-              +e.title
-                +b.H2.title_size-2 Правила
-              +e.container
+              +e.bullet-list
                 +bullet-list(
-                  'Нельзя с питомцами',
-                  'Без вечеринок и мероприятий',
-                  'Время прибытия — после 13:00, а выезд до 12:00'
+                  'Великолепно',
+                  'Хорошо',
+                  'Удовлетворительно',
+                  'Разочарован'
                   )
 
-          +e.SECTION.text-block
-            +b.text-block
+        +e.SECTION.comments
+          +b.room-details-comments
+            +e.header
               +e.title
-                +b.H2.title_size-2 Отмена
-              +e.container
-                +e.SPAN.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                +b.H2.title_size-2 Отзывы посетителей номера
+              +e.SPAN.number 2 отзыва
 
-      +e.ASIDE.payment
+            +e.container
+              +e.user-comment
+                +user-comment({
+                  image : 'assets/img/user-img1.jpg',
+                  name  : 'Мурад Сарафанов',
+                  date  : '5 дней назад',
+                  text  : 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
+                  likes  : 12,
+                  active: true
+                })
+
+              +e.user-comment
+                +user-comment({
+                  image : 'assets/img/user-img2.jpg',
+                  name  : 'Патрисия Стёклышкова',
+                  date  : 'Неделю назад',
+                  text  : 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
+                  likes : 2,
+                  active: false
+                })
+
+        +e.SECTION.rules
+          +b.room-details-rules
+            +e.title
+              +b.H2.title_size-2 Правила
+            +e.container
+              +bullet-list(
+                'Нельзя с питомцами',
+                'Без вечеринок и мероприятий',
+                'Время прибытия — после 13:00, а выезд до 12:00'
+                )
+
+        +e.SECTION.cancel
+          +b.room-details-cancel
+            +e.title
+              +b.H2.title_size-2 Отмена
+
+            +e.container
+              +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+      +e.SECTION.payment
         +payment()
 
 
