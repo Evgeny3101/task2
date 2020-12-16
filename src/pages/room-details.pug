@@ -7,15 +7,11 @@ include ../modules/user-comment/user-comment
 include ../modules/payment/payment
 include ../modules/chart/chart
 
-
 block head
-  +head({
-    'title': 'Toxin - Room Details'
-  })
+  +head({ 'title': 'Toxin - Room Details' })
 
 block content
   +b.MAIN.room-details
-
     +e.gallery
       +b.FIGURE.room-details-gallery
         +e.column1
@@ -32,23 +28,11 @@ block content
             +e.title
               +b.H2.title_size-2 Сведения о номере
             +e.container
-              +item-info(
-                /*  icon  */    'insert_emoticon',
-                /*  title */    'Комфорт',
-                /*  text  */    'Шумопоглощающие стены'
-                )
+              +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
 
-              +item-info(
-                /*  icon  */    'location_city',
-                /*  title */    'Удобство',
-                /*  text  */    'Окно в каждой из спален'
-                )
+              +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
 
-              +item-info(
-                /*  icon  */    'whatshot',
-                /*  title */    'Уют',
-                /*  text  */    'Номер оснащён камином'
-                )._border-none
+              +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
 
         +e.SECTION.impression
           +b.room-details-impression
@@ -57,20 +41,10 @@ block content
 
             +e.container
               +e.chart
-                +chart({
-                  id: 'js-chart',
-                  text: 'голосов',
-                  width: '124',
-                  height: '124'
-                })
+                +chart({ id: 'js-chart', text: 'голосов', width: '124', height: '124' })
 
               +e.bullet-list
-                +bullet-list(
-                  'Великолепно',
-                  'Хорошо',
-                  'Удовлетворительно',
-                  'Разочарован'
-                  )
+                +bullet-list('Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован')
 
         +e.SECTION.comments
           +b.room-details-comments
@@ -81,35 +55,17 @@ block content
 
             +e.container
               +e.user-comment
-                +user-comment({
-                  image : 'assets/img/user-img1.jpg',
-                  name  : 'Мурад Сарафанов',
-                  date  : '5 дней назад',
-                  text  : 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-                  likes  : 12,
-                  active: true
-                })
+                +user-comment({ image : 'assets/img/user-img1.jpg', name : 'Мурад Сарафанов', date : '5 дней назад', text : 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes : 12, active: true })
 
               +e.user-comment
-                +user-comment({
-                  image : 'assets/img/user-img2.jpg',
-                  name  : 'Патрисия Стёклышкова',
-                  date  : 'Неделю назад',
-                  text  : 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент',
-                  likes : 2,
-                  active: false
-                })
+                +user-comment({ image : 'assets/img/user-img2.jpg', name : 'Патрисия Стёклышкова', date : 'Неделю назад', text : 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', likes : 2, active: false })
 
         +e.SECTION.rules
           +b.room-details-rules
             +e.title
               +b.H2.title_size-2 Правила
             +e.container
-              +bullet-list(
-                'Нельзя с питомцами',
-                'Без вечеринок и мероприятий',
-                'Время прибытия — после 13:00, а выезд до 12:00'
-                )
+              +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
 
         +e.SECTION.cancel
           +b.room-details-cancel
@@ -120,16 +76,4 @@ block content
               +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
       +e.SECTION.payment
-        +payment()
-
-
-
-
-
-
-
-
-
-
-
-
+        +payment

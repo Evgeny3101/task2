@@ -1,33 +1,33 @@
 include ../logo/logo
 
 mixin header(config)
-  - const {login, register, user} = config
+  - const { login, register, user } = config;
   +b.HEADER.header
     +e.wrapper
       +e.logo
-        +logo()
+        +logo
 
       +e.NAV.navigation
         +e.header-menu
           +b.UL.header-menu
-            each item in config.link
+            each itemConfig in config.link
+              - const { href, mod, text, icon } = itemConfig;
               +e.LI.item
-                +e.A.link(href=item.href class=item.mod)= item.text
-                  if (item.icon === true)
+                +e.A.link(href=href, class=mod)= text
+                  if (icon === true)
                     +e.I.icon.material-icons keyboard_arrow_down
 
         if (user)
           +e.line
           +e.user
             +e.button
-              +b.BUTTON(type='button').button._default= user
+              +b.BUTTON.button._default(type='button')= user
 
         else
           +e.auth-btn
             +b.header-auth-button
               +e.button-sign-in
-                +b.A(href='sign-in.html').button._transparent= login
+                +b.A.button._transparent(href='sign-in.html')= login
 
               +e.button-sign-up
-                +b.A(href='sign-up.html').button._regular= register
-
+                +b.A.button._regular(href='sign-up.html')= register

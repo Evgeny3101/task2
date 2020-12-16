@@ -1,19 +1,5 @@
 include ../checkbox-item/checkbox-item
 
-//- +checkbox-list(
-//-   /* title */
-//-   'дополнительные удобства',
-//-   /* items */
-//-   [{
-//-     name    : 'Завтрак',
-//-     active  : false
-//-   },{
-//-     name    : 'Письменный стол',
-//-     active  : true
-//-   }]
-//- )
-
-
 mixin checkbox-list(title, items)
   +b.SECTION.checkbox-list
     +e.button
@@ -25,6 +11,8 @@ mixin checkbox-list(title, items)
 
     +e.menu
       +b.UL.checkbox-list-menu
-        each item in items
+        each itemConfig in items
+          - const { name, active } = itemConfig;
+
           +e.LI.checkbox-item
-            +checkbox-item(item.name)(checked=item.active)
+            +checkbox-item(name)(checked=active)

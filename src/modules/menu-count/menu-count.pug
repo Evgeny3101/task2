@@ -2,13 +2,11 @@ include ../dropdown/dropdown
 
 mixin menu-count(config)
   +b.SECTION.menu-count
-    if(config.title)
+    if (config.title)
       +e.title
         +b.H2.title_size-3= config.title
 
-    +e.text-field(class= config.class)
-      +dropdown({
-        'type' : 'text',
-        'place': config.placeholder,
-        'value': config.value
-      })(readonly='readonly')._placeholder-dark
+    +e.text-field(class=config.class)
+      +dropdown({ 'type' : 'text', 'place': config.placeholder, 'value': config.value })._placeholder-dark(
+        readonly='readonly'
+      )

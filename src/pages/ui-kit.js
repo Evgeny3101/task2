@@ -1,12 +1,14 @@
 // Stylus
 import './ui-kit.styl';
 
-// JS
-import MenuForCount from '../modules/menu-count/menu-count';
+// libs
+import '../../node_modules/inputmask/dist/jquery.inputmask.min';
 import '../modules/checkbox-list/checkbox-list';
 import '../modules/range-slider/range-slider';
 import '../modules/like-button/like-button';
+import MenuForCount from '../modules/menu-count/menu-count';
 
+// JS
 // меню подсчета
 const menuArrDOM = document.querySelectorAll('.js-menu-count');
 const menuArr = [];
@@ -103,3 +105,13 @@ document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
 const paymentDOM = document.querySelector('.payment');
 paymentDOM.querySelector('.js-datepicker-main-field').value = '19.08.2019';
 paymentDOM.querySelector('.js-datepicker-second-field').value = '23.08.2019';
+
+
+// input mask
+$('.js-date-birth-text-field').inputmask({
+  placeholder: 'ДД.ММ.ГГГГ',
+  alias: 'datetime',
+  inputFormat: 'dd.mm.yyyy',
+  min: '01.01.1900',
+  max: '01.01.2021',
+});

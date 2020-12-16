@@ -1,11 +1,10 @@
 extends ../layout/supporting.pug
 
 //- local mixins
-mixin label-icon()
+mixin label-icon
   +b.FIGURE.label-icon
-    +e.A(href='nav.html').link
-      +e.IMG.img(src='assets/img/ui-kit-icon.svg' alt='иконка сайта')
-
+    +e.A.link(href='nav.html')
+      +e.IMG.img(src='assets/img/ui-kit-icon.svg', alt='иконка сайта')
 
 mixin color-demo(title, hex, mod)
   +b.color-demo
@@ -13,7 +12,6 @@ mixin color-demo(title, hex, mod)
     +e.text-container
       +e.SPAN.title= title
       +e.SPAN.hex= hex
-
 
 mixin module-title(title, comment)
   +b.module-title
@@ -23,19 +21,14 @@ mixin module-title(title, comment)
       +e.comment
         +e.SPAN.text= comment
 
-
-
 block head
-  +head({
-    'title': 'Toxin - UI Kit'
-  })
-
+  +head({ 'title': 'Toxin - UI Kit' })
 
 block content
   +b.ui-kit
     +e.page
       +e.label-icon
-        +label-icon()
+        +label-icon
 
       +e.ui-kit-page1
         +b.ui-kit-page1
@@ -79,7 +72,7 @@ block content
 
     +e.page
       +e.label-icon
-        +label-icon()
+        +label-icon
 
       +e.ui-kit-page2
         +b.ui-kit-page2
@@ -102,16 +95,15 @@ block content
               +e.container_pb5
                 +module-title('Dropdown')
 
-              +dropdown({
-                'type' : 'button',
-                'value': 'Сколько гостей'
-              })
+              +dropdown({ 'type' : 'button', 'value': 'Сколько гостей' })
 
             +e.container_pb40
               +e.container_pb5
                 +module-title('masked text field')
 
-              +text-field('text', 'ДД.ММ.ГГГГ')
+              +text-field('text', 'ДД.ММ.ГГГГ').js-date-birth-text-field(
+                spellcheck='false'
+              )
 
             +e.container_pb40
               +e.date-dropdown
@@ -119,41 +111,33 @@ block content
                   +e.container_pb6
                     +module-title('date Dropdown')
 
-                  +dropdown({
-                    'type' : 'text',
-                    'place': 'ДД.ММ.ГГГГ'
-                  })._placeholder-dark
+                  +dropdown({ 'type' : 'text', 'place': 'ДД.ММ.ГГГГ' })._placeholder-dark(
+                    readonly='readonly'
+                  )
                 +e.container_width-150
                   +e.container_pb6
                     +module-title('date Dropdown')
 
-                  +dropdown({
-                    'type' : 'text',
-                    'place': 'ДД.ММ.ГГГГ',
-                    'value': '19.08.2019'
-                  })._placeholder-dark
+                  +dropdown({ 'type' : 'text', 'place': 'ДД.ММ.ГГГГ', 'value': '19.08.2019' })._placeholder-dark(
+                    readonly='readonly'
+                  )
 
             +e.container_width-266
               +e.container_pb41
                 +e.container_pb5
                   +module-title('filter date dropdown')
 
-                +dropdown({
-                  'type' : 'text',
-                  'value': '19 авг - 23 авг.'
-                })
+                +dropdown({ 'type' : 'text', 'value': '19 авг - 23 авг.' })(
+                  readonly='readonly'
+                )
 
               +e.container
                 +e.container_pb5
                   +module-title('subscription text field')
 
-                +subscription({
-                  'type' : 'email',
-                  'place': 'Email',
-                })
+                +subscription({ 'type' : 'email', 'place': 'Email', })
 
           +e.container_width-266
-
             //-  Checkbox Buttons
             +e.container_pb17
               +module-title('Checkbox Buttons')
@@ -170,19 +154,9 @@ block content
               +module-title('Radio Buttons')
             +e.container_pb41
               +e.radio-buttons
-                +radio-button({
-                  name: 'gender',
-                  id: 'male',
-                  text: 'Мужчина',
-                  checked: true
-                })()
+                +radio-button({ name: 'gender', id: 'male', text: 'Мужчина', checked: true })
 
-                +radio-button({
-                  name: 'gender',
-                  id: 'female',
-                  text: 'Женщина',
-                  checked: false
-                })()
+                +radio-button({ name: 'gender', id: 'female', text: 'Женщина', checked: false })
 
             //-  Toggle
             +e.container_pb16
@@ -221,22 +195,22 @@ block content
               +b.buttons-ui-kit
                 +e.container-button
                   +e.button
-                    +b.BUTTON(type='button').button._regular CLICK ME
+                    +b.BUTTON.button._regular(type='button') CLICK ME
                   +e.button
-                    +b.BUTTON(type='button').button._regular.active CLICK ME
+                    +b.BUTTON.button._regular.active(type='button') CLICK ME
                   +e.button
-                    +b.BUTTON(type='button').button._transparent CLICK ME
+                    +b.BUTTON.button._transparent(type='button') CLICK ME
                   +e.button
-                    +b.BUTTON(type='button').button._transparent.active CLICK ME
+                    +b.BUTTON.button._transparent.active(type='button') CLICK ME
 
                 +e.container-text-button
                   +e.text-button
-                    +b.BUTTON(type='button').button._blue CLICK ME
+                    +b.BUTTON.button._blue(type='button') CLICK ME
                   +e.text-button
-                    +b.BUTTON(type='button').button._fade05 CLICK ME
+                    +b.BUTTON.button._fade05(type='button') CLICK ME
 
                 +e.button-with-icon
-                  +b.BUTTON(type='button').button._regular._relative перейти к оплате
+                  +b.BUTTON.button._regular._relative(type='button') перейти к оплате
                     +e.I.icon.material-icons arrow_forward
 
             //-  Pagination
@@ -244,7 +218,7 @@ block content
               +e.container_pb17
                 +module-title('pagination')
               +e.container_width-240
-                +pagination()
+                +pagination
 
           // rows 2
           +e.container_width-266
@@ -253,19 +227,16 @@ block content
                 +module-title('dropdown', 'default')
 
               +b.dropdown-menu
-                +dropdown({
-                  'type' : 'text',
-                  'place': '2 спальни, 2 кровати...'
-                })._placeholder-dark
+                +dropdown({ 'type' : 'text', 'place': '2 спальни, 2 кровати...' })._placeholder-dark(
+                  readonly='readonly'
+                )
 
             +e.container_pb167
               +e.container_pb5
                 +module-title('dropdown', 'expanded')
 
               +e.menu-count
-                +menu-count({
-                  class: 'js-menu-count'
-                })
+                +menu-count({ class: 'js-menu-count' })
 
           +e.container
             //-  Dropdown, guest count
@@ -273,18 +244,14 @@ block content
               +module-title('dropdown')
 
             +e.container
-              +menu-count({
-                class: 'js-menu-count'
-              })
+              +menu-count({ class: 'js-menu-count' })
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
               +module-title('dropdown')
             +e.container
-              +menu-count({
-                class: 'js-menu-count'
-              })
+              +menu-count({ class: 'js-menu-count' })
 
           // rows 3
           +e.container_width-266
@@ -294,28 +261,7 @@ block content
 
             +e.container
               +e.checkbox-list
-                +checkbox-list(
-                  'expandable checkbox list',
-                  [{
-                    name    : 'Завтрак',
-                    active  : false
-                  },{
-                    name    : 'Письменный стол',
-                    active  : true
-                  },{
-                    name    : 'Стул для кормления',
-                    active  : true
-                  },{
-                    name    : 'Кроватка',
-                    active  : true
-                  },{
-                    name    : 'Телевизор',
-                    active  : false
-                  },{
-                    name    : 'Шампунь',
-                    active  : false
-                  }]
-                )
+                +checkbox-list('expandable checkbox list', [{ name : 'Завтрак', active : false },{ name : 'Письменный стол', active : true },{ name : 'Стул для кормления', active : true },{ name : 'Кроватка', active : true },{ name : 'Телевизор', active : false },{ name : 'Шампунь', active : false }])
 
           +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
@@ -333,11 +279,7 @@ block content
               +module-title('Bullet list')
 
             +e.container
-              +bullet-list(
-                'Нельзя с питомцами',
-                'Без вечеринок и мероприятий',
-                'Время прибытия — после 13:00, а выезд до 12:00'
-              )
+              +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
 
           // rows 4
           +e.container
@@ -348,183 +290,41 @@ block content
               +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
 
           +e.user-comment
-            +user-comment({
-              image: 'assets/img/user-img1.jpg',
-              name: 'Мурад Сарафанов',
-              date: '5 дней назад',
-              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
-              likes: 12,
-              active: true
-            })
+            +user-comment({ image: 'assets/img/user-img1.jpg', name: 'Мурад Сарафанов', date: '5 дней назад', text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes: 12, active: true })
 
     +e.page._bg-gray
       +e.label-icon
-        +label-icon()
+        +label-icon
 
       +e.ui-kit-page3
         +b.ui-kit-page3.wrapper
           +e.column
-            +search-hotel()
-            +sign-up-menu()
+            +search-hotel
+            +sign-up-menu
           +e.column
-            +payment()
-            +sign-in-menu()
+            +payment
+            +sign-in-menu
           +e.column
-            +calendar()
+            +calendar
 
-            +hotel-item({
-              'srcArr'  : [
-                'assets/img/hotel-item1.jpg',
-                'assets/img/hotel-item2.jpg',
-                'assets/img/hotel-item3.jpg',
-                'assets/img/hotel-item4.jpg',
-              ],
-              'number'  : 888,
-              'price'   : '9 990₽',
-              'stars'   : 5,
-              'reviews' : 145,
-              'lux'     : true,
-            })
+            +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item1.jpg', 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', ], 'number' : 888, 'price' : '9 990₽', 'stars' : 5, 'reviews' : 145, 'lux' : true, })
 
-            +hotel-item({
-              'srcArr'  : [
-                'assets/img/hotel-item2.jpg',
-                'assets/img/hotel-item3.jpg',
-                'assets/img/hotel-item4.jpg',
-                'assets/img/hotel-item5.jpg',
-              ],
-              'number'  : 840,
-              'price'   : '9 900₽',
-              'stars'   : 4,
-              'reviews' : 65
-            })
+            +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', 'assets/img/hotel-item5.jpg', ], 'number' : 840, 'price' : '9 900₽', 'stars' : 4, 'reviews' : 65 })
 
     +e.page._bg-gray
       +e.label-icon
-        +label-icon()
+        +label-icon
 
       +e.ui-kit-page4
         +b.ui-kit-page4
           +e.container
-
-            +header({
-              login: 'войти',
-              register: 'зарегистрироваться',
-              link : [{
-                  'href'  : 'mock-address',
-                  'text'  : 'О нас',
-                  'mod'   : '_bold'
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Услуги',
-                  'icon'  : true,
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Вакансии'
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Новости',
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Соглашения',
-                  'icon'  : true
-                }
-              ]}
-            )
+            +header({ login: 'войти', register: 'зарегистрироваться', link : [{ 'href' : 'mock-address', 'text' : 'О нас', 'mod' : '_bold' }, { 'href' : 'mock-address', 'text' : 'Услуги', 'icon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'icon' : true } ]})
 
           +e.container
-            +header({
-              login: 'войти',
-              register: 'зарегистрироваться',
-              user: 'Юлий Цезарь',
-              link : [{
-                  'href'  : 'mock-address',
-                  'text'  : 'О нас',
-                  'mod'   : '_bold'
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Услуги',
-                  'icon'  : true,
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Вакансии'
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Новости',
-                },
-                  {
-                  'href'  : 'mock-address',
-                  'text'  : 'Соглашения',
-                  'icon'  : true
-                }
-              ]}
-            )
+            +header({ login: 'войти', register: 'зарегистрироваться', user: 'Юлий Цезарь', link : [{ 'href' : 'mock-address', 'text' : 'О нас', 'mod' : '_bold' }, { 'href' : 'mock-address', 'text' : 'Услуги', 'icon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'icon' : true } ]})
 
           +e.container
-            +footer({
-              text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»',
-              subTitle: 'Подписка',
-              subText: 'Получайте специальные предложения и новости сервиса',
-              subPlace: 'Email',
-              bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.',
-              menus: [
-                [
-                  {
-                    'title': 'Навигация'
-                  },{
-                    'text' : 'О нас',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Новости',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Служба поддержки',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Услуги',
-                    'href' : 'mock-address'
-                  }
-                ], [
-                  {
-                    'title': 'О нас'
-                  },{
-                    'text' : 'О сервисе',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Наша команда',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Вакансии',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Инвесторы',
-                    'href' : 'mock-address'
-                  }
-                ], [
-                  {
-                    'title': 'Служба поддержки'
-                  },{
-                    'text' : 'Соглашения',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Сообщества',
-                    'href' : 'mock-address'
-                  },{
-                    'text' : 'Связь с нами',
-                    'href' : 'mock-address'
-                  }
-                ]
-              ]
-            })
+            +footer({ text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', subTitle: 'Подписка', subText: 'Получайте специальные предложения и новости сервиса', subPlace: 'Email', bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.', menus: [ [ { 'title': 'Навигация' },{ 'text' : 'О нас', 'href' : 'mock-address' },{ 'text' : 'Новости', 'href' : 'mock-address' },{ 'text' : 'Служба поддержки', 'href' : 'mock-address' },{ 'text' : 'Услуги', 'href' : 'mock-address' } ], [ { 'title': 'О нас' },{ 'text' : 'О сервисе', 'href' : 'mock-address' },{ 'text' : 'Наша команда', 'href' : 'mock-address' },{ 'text' : 'Вакансии', 'href' : 'mock-address' },{ 'text' : 'Инвесторы', 'href' : 'mock-address' } ], [ { 'title': 'Служба поддержки' },{ 'text' : 'Соглашения', 'href' : 'mock-address' },{ 'text' : 'Сообщества', 'href' : 'mock-address' },{ 'text' : 'Связь с нами', 'href' : 'mock-address' } ] ] })
 
           +e.footer-minimal
             +footer-minimal('Copyright © 2018 Toxin отель. Все права зачищены.')
-
-

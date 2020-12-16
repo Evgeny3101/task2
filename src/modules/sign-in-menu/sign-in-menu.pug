@@ -1,24 +1,16 @@
 include ../text-field/text-field
 
-
-mixin sign-in-menu()
-
+mixin sign-in-menu
   +b.SECTION.sign-in-menu
     +e.FORM.wrapper
       +e.title
         +b.H1.title_size-1 Войти
 
       +e.text-field
-        +text-field(
-          /*  type  */  'email',
-          /*  place */  'Email'
-          )(autocomplete='email')
+        +text-field('email', 'Email')(autocomplete='email')
 
       +e.text-field
-        +text-field(
-          /*  type  */  'password',
-          /*  place */  'Пароль'
-          )(autocomplete='current-password')
+        +text-field('password', 'Пароль')(autocomplete='current-password')
 
       +e.login-button
         +b.BUTTON.button._regular._relative войти

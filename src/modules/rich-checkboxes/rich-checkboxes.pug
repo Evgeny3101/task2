@@ -1,18 +1,3 @@
-//- +rich-checkboxes(
-//-   'Доступность',
-//-   [{
-//-     title: 'Широкий коридор',
-//-     text: 'Ширина коридоров в номере не менее 91 см.',
-//-     mod: '_width-230'
-//-   }, {
-//-     title: 'Помощник для инвалидов',
-//-     text: 'На 1 этаже вас встретит специалист и проводит до номера.',
-//-     checked: true,
-//-     mod: '_width-260'
-//-   }
-//- ])
-
-
 mixin rich-checkboxes(title, items)
   +b.SECTION.rich-checkboxes
     +e.title
@@ -20,7 +5,7 @@ mixin rich-checkboxes(title, items)
 
     +e.container
       each item in items
-        - const mod = item.mod ? item.mod : ''
+        - const mod = item.mod ? item.mod : "";
 
-        +e.rich-checkbox-item(class= mod)
-          +rich-checkbox-item(item.title, item.text)(checked= item.checked)
+        +e.rich-checkbox-item(class=mod)
+          +rich-checkbox-item(item.title, item.text)(checked=item.checked)

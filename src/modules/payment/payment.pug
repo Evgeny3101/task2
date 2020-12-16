@@ -3,52 +3,20 @@ include ../menu-count/menu-count
 include ../hotel-price/hotel-price
 include ../price-list/price-list
 
-
-mixin payment()
-
+mixin payment
   +b.FORM.payment
     +e.wrapper
       +e.hotel-item-price
-        +hotel-price({
-          number: 888,
-          price: '9 990₽',
-          isLux: true,
-          isH1: true
-        })
+        +hotel-price({ number: 888, price: '9 990₽', isLux: true, isH1: true })
 
       +e.datepicker
-        +datepicker({
-            title: 'прибытие',
-            placeholder: 'ДД.ММ.ГГГГ',
-          },{
-            title: 'выезд',
-            placeholder: 'ДД.ММ.ГГГГ',
-          }
-        )
+        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', },{ title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', })
 
       +e.menu-count
-        +menu-count({
-          title: 'гости',
-          placeholder: 'Сколько гостей',
-          value: '3 гостя',
-          class: 'js-menu-count'
-        })
+        +menu-count({ title: 'гости', placeholder: 'Сколько гостей', value: '3 гостя', class: 'js-menu-count' })
 
       +e.price-list
-        +price-list([{
-            text: '9 990₽ х 4 суток',
-            info: false,
-            sum: '39 960₽'
-          },{
-            text: 'Сбор за услуги: скидка 2 179₽',
-            info: true,
-            sum: '0₽'
-          },{
-            text: 'Сбор за дополнительные услуги',
-            info: true,
-            sum: '300₽'
-          }
-        ])
+        +price-list([{ text: '9 990₽ х 4 суток', info: false, sum: '39 960₽' },{ text: 'Сбор за услуги: скидка 2 179₽', info: true, sum: '0₽' },{ text: 'Сбор за дополнительные услуги', info: true, sum: '300₽' } ])
 
       +e.total
         +b.payment-total

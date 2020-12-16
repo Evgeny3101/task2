@@ -1,29 +1,17 @@
 include ../datepicker/datepicker
 include ../menu-count/menu-count
 
-
-mixin search-hotel()
+mixin search-hotel
   +b.FORM.search-hotel
     +e.wrapper
       +e.title
         +b.H1.title_size-1 Найдём номера под ваши пожелания
 
       +e.datepicker
-        +datepicker({
-            title: 'прибытие',
-            placeholder: 'ДД.ММ.ГГГГ',
-          },{
-            title: 'выезд',
-            placeholder: 'ДД.ММ.ГГГГ',
-          }
-        )
+        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', },{ title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', })
 
       +e.menu-count
-        +menu-count({
-          title: 'гости',
-          placeholder: 'Сколько гостей',
-          class: 'js-menu-count'
-        })
+        +menu-count({ title: 'гости', placeholder: 'Сколько гостей', class: 'js-menu-count' })
 
       +e.button
         +b.BUTTON.button._regular._relative Подобрать номер

@@ -51,7 +51,6 @@ function createDatePicker(config, mainField, secondField) {
   }
   function handleSecondFieldClick() {
     datepicker.show();
-    datepicker.onSelect();
   }
 
   $applyButton.on('click', handleApplyButtonClick);

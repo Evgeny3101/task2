@@ -1,22 +1,11 @@
 include ../like-button/like-button
 
-//- using
-//- +user-comment({
-//-   image : 'assets/img/user-img1.jpg',
-//-   name  : 'Мурад Сарафанов',
-//-   date  : '5 дней назад',
-//-   text  : 'Великолепный матрас н...',
-//-   likes : 12,
-//-   active: true
-//- })
-
-
 mixin user-comment(data)
-  - const {name, date, active, image, likes} = data;
+  - const { name, date, active, image, likes } = data;
 
   +b.ARTICLE.user-comment
     +e.FIGURE.image
-      +b.IMG(src= image alt='аватар пользователя').user-comment-image
+      +b.IMG.user-comment-image(src=image, alt='аватар пользователя')
 
     +e.header
       +e.name
@@ -25,7 +14,7 @@ mixin user-comment(data)
         +e.SPAN.date= date
 
     +e.like-button
-      if(active === true)
+      if (active === true)
         +like-button(likes).like-button_checked
       else
         +like-button(likes)
