@@ -1,8 +1,0 @@
-include ../text-field/text-field
-
-mixin dropdown(config)
-  - const { type, place, value } = config;
-
-  +b.dropdown
-    +text-field(type, place, value)&attributes(attributes)
-    +e.I.icon.material-icons keyboard_arrow_down

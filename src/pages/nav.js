@@ -1,2 +1,0 @@
-// Stylus
-import './nav.styl';
