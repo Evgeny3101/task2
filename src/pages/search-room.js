@@ -4,7 +4,7 @@ import './search-room.styl';
 // JS
 import MenuForCount from '../modules/menu-count/menu-count';
 import ImagesSlider from '../modules/images-slider/images-slider';
-import createDatePicker from '../modules/datepicker/datepicker';
+import DatePicker from '../modules/datepicker/datepicker';
 import '../modules/checkbox-list/checkbox-list';
 import '../modules/range-slider/range-slider';
 
@@ -61,7 +61,7 @@ const menuForCountAmenities = new MenuForCount('.js-menu-count', {
 });
 
 // календарь
-const datepicker = createDatePicker(
+const datepicker = new DatePicker(
   {
     dateFormat: 'dd M',
     multipleDatesSeparator: ' - ',
@@ -84,7 +84,7 @@ const datepicker = createDatePicker(
   },
   '.js-datepicker-main-field'
 );
-datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
 
 // слайдер изображений
 const cardsDOM = document.querySelectorAll('.js-images-slider');

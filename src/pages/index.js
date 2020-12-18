@@ -2,11 +2,11 @@
 import './index.styl';
 
 // JS
-import createDatePicker from '../modules/datepicker/datepicker';
+import DatePicker from '../modules/datepicker/datepicker';
 import MenuForCount from '../modules/menu-count/menu-count';
 
 // eslint-disable-next-line no-unused-vars
-const datepicker = createDatePicker(
+const datepicker = new DatePicker(
   {
     range: true,
     multipleDates: true,
@@ -55,6 +55,6 @@ const menuForCount = new MenuForCount('.js-menu-count', {
 // menuForCount.switchMenu();
 
 // window.onload = () => {
-//   datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
-//   datepicker.show();
+//   datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+//   datepicker.plugin.show();
 // };

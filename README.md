@@ -1,6 +1,6 @@
 # Сайт поиска гостиничных номеров
 
-[Сайт на Github Pages](https://evgeny3101.github.io/task2/dist/nav.html)
+[Сайт на Github Pages](https://evgeny3101.github.io/task2/nav.html)
 
 [Репозиторий](https://github.com/Evgeny3101/task2.git)
 
@@ -22,6 +22,12 @@ npm start
 
 ```
 npm run build
+```
+
+Запуск линтера
+
+```
+npm run lint
 ```
 
 ### Навигация

@@ -3,11 +3,11 @@ import './room-details.styl';
 
 // JS
 import MenuForCount from '../modules/menu-count/menu-count';
-import createDatePicker from '../modules/datepicker/datepicker';
+import DatePicker from '../modules/datepicker/datepicker';
 import '../modules/chart/chart';
 import '../modules/like-button/like-button';
 
-const datepicker = createDatePicker(
+const datepicker = new DatePicker(
   {
     range: true,
     multipleDates: true,
@@ -28,7 +28,7 @@ const datepicker = createDatePicker(
   '.js-datepicker-main-field',
   '.js-datepicker-second-field'
 );
-datepicker.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
 
 // меню подсчета
 // eslint-disable-next-line no-unused-vars

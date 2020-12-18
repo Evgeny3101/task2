@@ -2,7 +2,7 @@ mixin chart(config)
   - const { id, text, width, height } = config;
 
   +b.FIGURE.chart
-    +e.container
-      +e.number
+    +e.container.js-chart__container
+      +e.number.js-chart__number
       +e.text= text
     +e.CANVAS.image(id=id, width=width, height=height)

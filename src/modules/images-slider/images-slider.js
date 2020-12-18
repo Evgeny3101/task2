@@ -1,28 +1,12 @@
+/* eslint-disable no-underscore-dangle */
 class ImagesSlider {
   constructor(mainDOM) {
     this.mainDOM = mainDOM;
     this.currentItem = 0;
-    this.findElements();
-    this.setHandlers();
+    this._findElements();
+    this._setHandlers();
     this.setListeners();
   } // конструктор
-
-  findElements() {
-    const { mainDOM } = this;
-
-    this.imgsDOM = mainDOM.querySelectorAll('.js-images-slider-container__image');
-    this.controlBtnsDOM = mainDOM.querySelectorAll('.js-images-slider-circles__button');
-    this.prevBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__prev');
-    this.nextBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__next');
-  }
-
-  setHandlers() {
-    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
-    this.handleButtonPrevClick = this.toPrevImage.bind(this);
-    this.handleButtonNextClick = this.toNextImage.bind(this);
-    this.handleImagesSliderMouseover = this.showArrows.bind(this);
-    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
-  }
 
   setListeners() {
     this.controlBtnsDOM.forEach((item, i) =>
@@ -38,20 +22,20 @@ class ImagesSlider {
     if (this.currentItem === 0) this.currentItem = this.imgsDOM.length;
     this.currentItem -= 1;
 
-    this.showSelectedImage();
+    this._showSelectedImage();
   }
 
   toNextImage() {
     this.currentItem += 1;
     if (this.currentItem === this.imgsDOM.length) this.currentItem = 0;
 
-    this.showSelectedImage();
+    this._showSelectedImage();
   }
 
   goToImage(index) {
     this.currentItem = index;
 
-    this.showSelectedImage();
+    this._showSelectedImage();
   }
 
   // показать стрелки
@@ -67,7 +51,7 @@ class ImagesSlider {
   }
 
   // показать выбранное изображение
-  showSelectedImage() {
+  _showSelectedImage() {
     const { currentItem } = this;
 
     this.mainDOM.querySelector('.circle-current').classList.remove('circle-current');
@@ -75,6 +59,23 @@ class ImagesSlider {
 
     this.imgsDOM[currentItem].classList.add('image-current');
     this.controlBtnsDOM[currentItem].classList.add('circle-current');
+  }
+
+  _findElements() {
+    const { mainDOM } = this;
+
+    this.imgsDOM = mainDOM.querySelectorAll('.js-images-slider-container__image');
+    this.controlBtnsDOM = mainDOM.querySelectorAll('.js-images-slider-circles__button');
+    this.prevBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__prev');
+    this.nextBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__next');
+  }
+
+  _setHandlers() {
+    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
+    this.handleButtonPrevClick = this.toPrevImage.bind(this);
+    this.handleButtonNextClick = this.toNextImage.bind(this);
+    this.handleImagesSliderMouseover = this.showArrows.bind(this);
+    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
   }
 } // класс
 

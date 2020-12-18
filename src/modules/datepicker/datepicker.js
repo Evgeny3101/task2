@@ -1,20 +1,43 @@
+/* eslint-disable no-underscore-dangle */
 import 'air-datepicker/dist/js/datepicker.min';
 
-function createDatePicker(config, mainField, secondField) {
-  const $mainField = $(mainField);
-  const $secondField = $(secondField);
-  const datepicker = $mainField.datepicker(config).data('datepicker');
-  const $clearButton = $('span.datepicker--button[data-action="clear"]');
+class DatePicker {
+  constructor(config, mainField, secondField) {
+    this.createCalendar(config, mainField, secondField);
+    this.setListeners();
 
-  // создаю кнопку 'Применить' в контейнере кнопок
-  // eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
-  $('.datepicker--buttons').append(
-    '<span class="datepicker--button apply">Применить</span>'
-  );
-  const $applyButton = $('span.datepicker--button.apply');
+    this.plugin.update('onSelect', this._onSelect.bind(this)); // установка в плагин
+    this._onSelect(); // выставит заданные значения
+  }
+
+  createCalendar(config, mainField, secondField) {
+    this.$mainField = $(mainField);
+    this.$secondField = $(secondField);
+    this.plugin = this.$mainField.datepicker(config).data('datepicker');
+    this.$clearButton = $('span.datepicker--button[data-action="clear"]');
+
+    // создаю кнопку 'Применить' в контейнере кнопок
+    // eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
+    $('.datepicker--buttons').append(
+      '<span class="datepicker--button" data-action="apply">Применить</span>'
+    );
+    this.$applyButton = $('span.datepicker--button[data-action="apply"]');
+  }
+
+  setListeners() {
+    this.$applyButton.on('click', this._handleApplyButtonClick.bind(this));
+    this.$mainField
+      .on('focusin', this._handleMainFieldFocusIn.bind(this))
+      .on('focusout', this._handleMainFieldFocusOut.bind(this));
+    this.$secondField
+      .on('focusin', this._handleSecondFieldFocusIn.bind(this))
+      .on('focusout', this._handleSecondFieldFocusOut.bind(this))
+      .on('click', this._handleSecondFieldClick.bind(this));
+  }
 
   // вывод при выборе значений
-  function onSelect(date) {
+  _onSelect(date) {
+    const { $mainField, $secondField, $clearButton } = this;
     const isDate = Boolean(date);
 
     if (isDate) {
@@ -28,41 +51,33 @@ function createDatePicker(config, mainField, secondField) {
       $secondField.val('');
     }
   }
-  datepicker.update('onSelect', onSelect); // установка в плагин
-  onSelect(); // выставит заданные значения
 
   // установка обработчиков
-  function handleApplyButtonClick() {
-    datepicker.hide();
-    const dateArray = $mainField.val().split(',');
-    $mainField.val(dateArray[0]);
-  }
-  function handleMainFieldFocusIn() {
-    $secondField.addClass('text-field_checked');
-  }
-  function handleMainFieldFocusOut() {
-    $secondField.removeClass('text-field_checked');
-  }
-  function handleSecondFieldFocusIn() {
-    $mainField.addClass('text-field_checked');
-  }
-  function handleSecondFieldFocusOut() {
-    $mainField.removeClass('text-field_checked');
-  }
-  function handleSecondFieldClick() {
-    datepicker.show();
+  _handleApplyButtonClick() {
+    this.plugin.hide();
+    const dateArray = this.$mainField.val().split(',');
+    this.$mainField.val(dateArray[0]);
   }
 
-  $applyButton.on('click', handleApplyButtonClick);
-  $mainField
-    .on('focusin', handleMainFieldFocusIn)
-    .on('focusout', handleMainFieldFocusOut);
-  $secondField
-    .on('focusin', handleSecondFieldFocusIn)
-    .on('focusout', handleSecondFieldFocusOut)
-    .on('click', handleSecondFieldClick);
+  _handleMainFieldFocusIn() {
+    this.$secondField.addClass('text-field_checked');
+  }
 
-  return datepicker;
+  _handleMainFieldFocusOut() {
+    this.$secondField.removeClass('text-field_checked');
+  }
+
+  _handleSecondFieldFocusIn() {
+    this.$mainField.addClass('text-field_checked');
+  }
+
+  _handleSecondFieldFocusOut() {
+    this.$mainField.removeClass('text-field_checked');
+  }
+
+  _handleSecondFieldClick() {
+    this.plugin.show();
+  }
 }
 
-export default createDatePicker;
+export default DatePicker;

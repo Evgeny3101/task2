@@ -1,123 +1,26 @@
+/* eslint-disable no-underscore-dangle */
+
 import { declOfNum } from '../../assets/js/mixins';
 import ItemCount from './components/item-count';
 
 class MenuForCount {
   constructor(elem, config) {
     this.items = [];
-    this.setConfig(config);
-    this.findElement(elem);
-    this.installComponents();
-    this.createHandlers();
+    this._setConfig(config);
+    this._findElement(elem);
+    this._installComponents();
+    this._createHandlers();
     this.setListeners();
 
     // при загрузке страницы
     // посчитает значения и выставит результат в инпут
-    this.textFieldDOM.value = this.addTypeDescription(this.countValuesByTypes());
+    this.textFieldDOM.value = this._addTypeDescription(this._countValuesByTypes());
 
     // скроет кнопку очистить, если значения минимальны
     if (this.config.areControlButtons) {
       const isMinValue = !this.items.some((item) => item.isMinValue === false);
-      if (isMinValue) this.hideClearButton();
+      if (isMinValue) this._hideClearButton();
     }
-  }
-
-  findElement(elem) {
-    if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
-    else this.mainDOM = elem;
-    this.textFieldDOM = this.mainDOM.querySelector('input');
-  }
-
-  setConfig(config) {
-    const { placeholder, areControlButtons } = config;
-    const newConfig = config;
-
-    newConfig.placeholder = placeholder || '';
-    newConfig.areControlButtons = areControlButtons || false;
-
-    this.config = newConfig;
-  }
-
-  installComponents() {
-    const { itemsCount, areControlButtons } = this.config;
-    const { mainDOM, textFieldDOM, items } = this;
-
-    this.menuDOM = document.createElement('div');
-    this.menuDOM.classList.add('menu-count-dropdown');
-
-    const wrapper = document.createElement('div');
-    const container = document.createElement('ul');
-    wrapper.classList.add('menu-count-dropdown__wrapper');
-    container.classList.add('menu-count-dropdown__items-container');
-    wrapper.append(container);
-    this.menuDOM.append(wrapper);
-
-    itemsCount.forEach((itemConfig, i) => {
-      const item = document.createElement('li');
-      item.classList.add('menu-count-dropdown__item');
-      items[i] = new ItemCount(item, itemConfig);
-      container.append(item);
-    });
-
-    // кнопки контроля
-    if (areControlButtons) {
-      wrapper.insertAdjacentHTML(
-        'beforeend',
-        `
-        <div class="menu-count-dropdown__control-buttons">
-          <div>
-            <button class="button button_fade05 js-clear" type="button">очистить</button>
-          </div>
-          <div>
-            <button class="button button_blue js-apply" type="button">применить</button>
-          </div>
-        </div>`
-      );
-
-      this.applyBtn = wrapper.querySelector('.js-apply');
-      this.clearBtn = wrapper.querySelector('.js-clear');
-
-      this.handleButtonApplyClick = () => {
-        const valuesByTypes = this.countValuesByTypes();
-        textFieldDOM.value = this.addTypeDescription(valuesByTypes);
-        this.closeMenu();
-      };
-
-      this.handleButtonClearClick = () => {
-        items.forEach((item) => item.clearResult());
-        this.hideClearButton();
-      };
-    }
-
-    // вставить в страницу
-    mainDOM.append(this.menuDOM);
-  }
-
-  createHandlers() {
-    const { areControlButtons } = this.config;
-
-    this.handleDropdownMenuClick = this.switchMenu.bind(this);
-    this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
-    this.handlePlusBtnClick = () => {
-      if (areControlButtons) {
-        this.showClearButton();
-      }
-
-      if (!areControlButtons) {
-        const valuesByTypes = this.countValuesByTypes();
-        this.textFieldDOM.value = this.addTypeDescription(valuesByTypes);
-      }
-    };
-    this.handleMinusBtnClick = () => {
-      if (areControlButtons) {
-        const isMinValue = !this.items.some((item) => item.isMinValue === false);
-        if (isMinValue) this.hideClearButton();
-      }
-
-      if (!areControlButtons) {
-        const valuesByTypes = this.countValuesByTypes();
-        this.textFieldDOM.value = this.addTypeDescription(valuesByTypes);
-      }
-    };
   }
 
   setListeners() {
@@ -164,8 +67,130 @@ class MenuForCount {
     }
   }
 
+  // для выпадающего меню
+  closeMenu() {
+    this.menuDOM.classList.remove('current');
+    this.textFieldDOM.classList.remove('count-active');
+  }
+
+  switchMenu() {
+    this.menuDOM.classList.toggle('current');
+    this.textFieldDOM.classList.toggle('count-active');
+  }
+
+  // установка
+  _findElement(elem) {
+    if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
+    else this.mainDOM = elem;
+    this.textFieldDOM = this.mainDOM.querySelector('input');
+  }
+
+  _setConfig(config) {
+    const { placeholder, areControlButtons } = config;
+    const newConfig = config;
+
+    newConfig.placeholder = placeholder || '';
+    newConfig.areControlButtons = areControlButtons || false;
+
+    this.config = newConfig;
+  }
+
+  _installComponents() {
+    const { itemsCount, areControlButtons } = this.config;
+    const { mainDOM, items } = this;
+
+    this.menuDOM = document.createElement('div');
+    this.menuDOM.classList.add('menu-count-dropdown');
+
+    const wrapper = document.createElement('div');
+    const container = document.createElement('ul');
+    wrapper.classList.add('menu-count-dropdown__wrapper');
+    container.classList.add('menu-count-dropdown__items-container');
+    wrapper.append(container);
+    this.menuDOM.append(wrapper);
+
+    itemsCount.forEach((itemConfig, i) => {
+      const item = document.createElement('li');
+      item.classList.add('menu-count-dropdown__item');
+      items[i] = new ItemCount(item, itemConfig);
+      container.append(item);
+    });
+
+    // кнопки контроля
+    if (areControlButtons) {
+      wrapper.insertAdjacentHTML(
+        'beforeend',
+        `
+        <div class="menu-count-dropdown__control-buttons">
+          <div>
+            <button class="button button_fade05 js-clear" type="button">очистить</button>
+          </div>
+          <div>
+            <button class="button button_blue js-apply" type="button">применить</button>
+          </div>
+        </div>`
+      );
+
+      this.applyBtn = wrapper.querySelector('.js-apply');
+      this.clearBtn = wrapper.querySelector('.js-clear');
+    }
+
+    // вставить в страницу
+    mainDOM.append(this.menuDOM);
+  }
+
+  _createHandlers() {
+    const { areControlButtons } = this.config;
+    const { textFieldDOM, items } = this;
+    if (areControlButtons) {
+      this.handleButtonApplyClick = () => {
+        const valuesByTypes = this._countValuesByTypes();
+        textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+        this.closeMenu();
+      };
+
+      this.handleButtonClearClick = () => {
+        items.forEach((item) => item.clearResult());
+        this._hideClearButton();
+      };
+    }
+
+    this.handleDropdownMenuClick = this.switchMenu.bind(this);
+    this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
+    this.handlePlusBtnClick = () => {
+      if (areControlButtons) {
+        this._showClearButton();
+      }
+
+      if (!areControlButtons) {
+        const valuesByTypes = this._countValuesByTypes();
+        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+      }
+    };
+    this.handleMinusBtnClick = () => {
+      if (areControlButtons) {
+        const isMinValue = !this.items.some((item) => item.isMinValue === false);
+        if (isMinValue) this._hideClearButton();
+      }
+
+      if (!areControlButtons) {
+        const valuesByTypes = this._countValuesByTypes();
+        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+      }
+    };
+  }
+
+  // для кнопки очистить
+  _showClearButton() {
+    this.clearBtn.style.visibility = 'visible';
+  }
+
+  _hideClearButton() {
+    this.clearBtn.style.visibility = 'hidden';
+  }
+
   // посчитает значения по типам и вернет их массивом
-  countValuesByTypes() {
+  _countValuesByTypes() {
     const { descriptionTypes } = this.config;
     const valuesByTypes = [];
 
@@ -181,7 +206,7 @@ class MenuForCount {
   }
 
   // добавит описание типов и вернет строку
-  addTypeDescription(valuesByTypes) {
+  _addTypeDescription(valuesByTypes) {
     const { descriptionTypes, placeholder } = this.config;
     let valuesWithDescript = '';
 
@@ -199,26 +224,6 @@ class MenuForCount {
     if (valuesWithDescript === '') valuesWithDescript = placeholder;
 
     return valuesWithDescript;
-  }
-
-  // для выпадающего меню
-  closeMenu() {
-    this.menuDOM.classList.remove('current');
-    this.textFieldDOM.classList.remove('count-active');
-  }
-
-  switchMenu() {
-    this.menuDOM.classList.toggle('current');
-    this.textFieldDOM.classList.toggle('count-active');
-  }
-
-  // для кнопки очистить
-  showClearButton() {
-    this.clearBtn.style.visibility = 'visible';
-  }
-
-  hideClearButton() {
-    this.clearBtn.style.visibility = 'hidden';
   }
 }
 
