@@ -3,6 +3,7 @@ include ../social-link/social-link
 include ../subscription/subscription
 
 mixin footer(config)
+  - if (!config) config = require("../../modules/footer/footer.json");
   - const { text, subTitle, subText, subPlace, bottomText } = config;
 
   +b.FOOTER.footer

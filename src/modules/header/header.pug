@@ -1,7 +1,9 @@
 include ../logo/logo
 
 mixin header(config)
+  - if (!config) config = require("../../modules/header/header.json");
   - const { login, register, user } = config;
+
   +b.HEADER.header
     +e.wrapper
       +e.logo

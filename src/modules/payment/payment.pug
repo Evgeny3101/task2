@@ -4,9 +4,6 @@ include ../hotel-price/hotel-price
 include ../price-list/price-list
 
 mixin payment
-  //- config
-  - const priceListConfig = require("../modules/payment/config/price-list.json");
-
   +b.FORM.payment
     +e.wrapper
       +e.hotel-item-price
@@ -19,7 +16,7 @@ mixin payment
         +menu-count({ title: 'гости', placeholder: 'Сколько гостей', value: '3 гостя', class: 'js-menu-count' })
 
       +e.price-list
-        +price-list(priceListConfig)
+        +price-list
 
       +e.total
         +b.payment-total

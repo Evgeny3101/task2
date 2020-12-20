@@ -1,4 +1,6 @@
 mixin footer-minimal(text)
+  - if (!text) text = "Copyright © 2018 Toxin отель. Все права зачищены.";
+
   +b.FOOTER.footer-minimal
     +e.container
       +e.logo

@@ -1,0 +1,21 @@
+//- layout
+extends ../../layout/main
+
+//- modules
+include ../../modules/search-hotel/search-hotel
+include ../../modules/background-slides/background-slides
+
+block head
+  +head({ 'title': 'Toxin' })
+
+block content
+  +b.MAIN.landing-page
+    +e.background-slides
+      +background-slides(['assets/img/bg-slide1.jpg', 'assets/img/bg-slide2.jpg', 'assets/img/bg-slide3.jpg'])
+
+    +e.container
+      +e.search-hotel
+        +search-hotel
+
+      +e.ASIDE.welcome-text
+        +b.SPAN.welcome-text Лучшие номера для вашей работы, отдыха и просто вдохновения

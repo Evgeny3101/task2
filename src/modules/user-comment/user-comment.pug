@@ -1,7 +1,8 @@
 include ../like-button/like-button
 
-mixin user-comment(data)
-  - const { name, date, active, image, likes } = data;
+mixin user-comment(config)
+  - if (!config) config = require("../../modules/user-comment/user-comment.json");
+  - const { name, date, active, image, likes, text } = config;
 
   +b.ARTICLE.user-comment
     +e.FIGURE.image
@@ -19,4 +20,4 @@ mixin user-comment(data)
       else
         +like-button(likes)
 
-    +e.P.text= data.text
+    +e.P.text= text

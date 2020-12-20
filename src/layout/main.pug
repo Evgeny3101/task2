@@ -1,0 +1,22 @@
+include ../assets/pug/bemto/lib/index
+
+//- modules
+include ../modules/head/head
+include ../modules/header/header
+include ../modules/footer/footer
+include ../modules/footer-minimal/footer-minimal
+
+doctype html
+html(lang='ru')
+  head
+    block head
+
+  body.page
+    block header
+      +header
+
+    block content
+
+    block footer
+      +footer
+      +footer-minimal

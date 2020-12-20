@@ -12,8 +12,9 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
-const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
-const CHUNKS = [
+// const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
+// const CHUNKS = [
+const PAGES = [
   'landing',
   'nav',
   'room-details',
@@ -30,17 +31,16 @@ module.exports = {
   },
 
   entry: {
-    landing: `${PAGES_DIR}index.js`,
-    nav: `${PAGES_DIR}nav.js`,
-    'room-details': `${PAGES_DIR}room-details.js`,
-    'search-room': `${PAGES_DIR}search-room.js`,
-    'sign-in': `${PAGES_DIR}sign-in.js`,
-    'sign-up': `${PAGES_DIR}sign-up.js`,
-    'ui-kit': `${PAGES_DIR}ui-kit.js`,
+    landing: `${PAGES_DIR}landing/landing.js`,
+    nav: `${PAGES_DIR}nav/nav.js`,
+    'room-details': `${PAGES_DIR}room-details/room-details.js`,
+    'search-room': `${PAGES_DIR}search-room/search-room.js`,
+    'sign-in': `${PAGES_DIR}sign-in/sign-in.js`,
+    'sign-up': `${PAGES_DIR}sign-up/sign-up.js`,
+    'ui-kit': `${PAGES_DIR}ui-kit/ui-kit.js`,
   },
 
   output: {
-    // filename: `${PATHS.assets}js/[name].[hash].js`,
     filename: `${PATHS.assets}js/[name].js`,
     path: PATHS.dist,
     publicPath: '',
@@ -63,7 +63,7 @@ module.exports = {
     rules: [
       {
         test: /\.pug$/,
-        loader: ['pug-loader'],
+        loader: 'pug-loader',
       },
       {
         test: /\.js$/,
@@ -133,24 +133,21 @@ module.exports = {
 
   plugins: [
     new MiniCssExtractPlugin({
-      // filename: `${PATHS.assets}css/[name].[hash].css`,
       filename: `${PATHS.assets}css/[name].css`,
     }),
 
     new CopyWebpackPlugin([
       { from: '**/img/*', to: `${PATHS.assets}img`, flatten: true },
-
       { from: `${PATHS.src}/${PATHS.assets}fonts`, to: `${PATHS.assets}fonts` },
-
       { from: `${PATHS.src}/${PATHS.assets}favicons`, to: `${PATHS.assets}favicons` },
     ]),
 
     ...PAGES.map(
       (page, index) =>
         new HtmlWebpackPlugin({
-          template: `${PAGES_DIR}/${page}`,
-          filename: `./${page.replace(/\.pug/, '.html')}`,
-          chunks: [`${CHUNKS[index]}`, 'vendors'],
+          template: `${PAGES_DIR}/${page}/${page}.pug`,
+          filename: `./${page}.html`,
+          chunks: [`${page}`, 'vendors'],
         })
     ),
 

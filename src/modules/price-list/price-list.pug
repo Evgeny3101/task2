@@ -1,7 +1,10 @@
-mixin price-list(items)
+mixin price-list(config)
+  - if (!config) config = require("../../modules/price-list/price-list.json");
+  - const { login, register, user } = config;
+
   +b.price-list
     +e.UL.items
-      each item in items
+      each item in config
         - const modInfo = item.info ? "" : "_without-info";
 
         +b.LI.price-list-item(class=modInfo)

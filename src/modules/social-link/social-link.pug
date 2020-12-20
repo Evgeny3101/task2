@@ -1,9 +1,8 @@
-mixin social-link
-  //- config
-  - const itemsConfig = require("../modules/social-link/social-link.json");
+mixin social-link(config)
+  - if (!config) config = require("../../modules/social-link/social-link.json");
 
   +b.FIGURE.social-link
-    each config in itemsConfig
-      - const { href, src, alt } = config;
+    each item in config
+      - const { href, src, alt } = item;
       +e.A.icon(href=href, target='_blank', rel='noopener noreferrer')
         +e.image(src=src, alt=alt)
