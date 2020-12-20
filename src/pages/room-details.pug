@@ -1,4 +1,4 @@
-extends ../layout/main
+extends ../layout/main/main
 
 //- modules
 include ../modules/item-info/item-info
@@ -11,6 +11,8 @@ block head
   +head({ 'title': 'Toxin - Room Details' })
 
 block content
+  - const commentsConfigArr = require("./room-details.json");
+
   +b.MAIN.room-details
     +e.gallery
       +b.FIGURE.room-details-gallery
@@ -29,9 +31,7 @@ block content
               +b.H2.title_size-2 Сведения о номере
             +e.container
               +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
-
               +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
-
               +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
 
         +e.SECTION.impression
@@ -55,10 +55,10 @@ block content
 
             +e.container
               +e.user-comment
-                +user-comment({ image : 'assets/img/user-img1.jpg', name : 'Мурад Сарафанов', date : '5 дней назад', text : 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.', likes : 12, active: true })
+                +user-comment(commentsConfigArr[0])
 
               +e.user-comment
-                +user-comment({ image : 'assets/img/user-img2.jpg', name : 'Патрисия Стёклышкова', date : 'Неделю назад', text : 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент', likes : 2, active: false })
+                +user-comment(commentsConfigArr[1])
 
         +e.SECTION.rules
           +b.room-details-rules

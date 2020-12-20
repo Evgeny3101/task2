@@ -1,0 +1,148 @@
+[
+  {
+    "srcArr": [
+      "assets/img/hotel-item1.jpg",
+      "assets/img/hotel-item2.jpg",
+      "assets/img/hotel-item3.jpg",
+      "assets/img/hotel-item4.jpg"
+    ],
+    "number": 888,
+    "price": "9 990₽",
+    "stars": 5,
+    "reviews": 145,
+    "isLux": true
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item2.jpg",
+      "assets/img/hotel-item3.jpg",
+      "assets/img/hotel-item4.jpg",
+      "assets/img/hotel-item5.jpg"
+    ],
+    "number": 840,
+    "price": "9 900₽",
+    "stars": 4,
+    "reviews": 65
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item3.jpg",
+      "assets/img/hotel-item4.jpg",
+      "assets/img/hotel-item5.jpg",
+      "assets/img/hotel-item6.jpg"
+    ],
+    "number": 980,
+    "price": "8 500₽",
+    "stars": 3,
+    "reviews": 35,
+    "isLux": true
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item4.jpg",
+      "assets/img/hotel-item5.jpg",
+      "assets/img/hotel-item6.jpg",
+      "assets/img/hotel-item7.jpg"
+    ],
+    "number": 856,
+    "price": "7 300₽",
+    "stars": 5,
+    "reviews": 19
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item5.jpg",
+      "assets/img/hotel-item6.jpg",
+      "assets/img/hotel-item7.jpg",
+      "assets/img/hotel-item8.jpg"
+    ],
+    "number": 740,
+    "price": "6 000₽",
+    "stars": 4,
+    "reviews": 44
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item6.jpg",
+      "assets/img/hotel-item7.jpg",
+      "assets/img/hotel-item8.jpg",
+      "assets/img/hotel-item9.jpg"
+    ],
+    "number": 982,
+    "price": "5 800₽",
+    "stars": 3,
+    "reviews": 56
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item7.jpg",
+      "assets/img/hotel-item8.jpg",
+      "assets/img/hotel-item9.jpg",
+      "assets/img/hotel-item10.jpg"
+    ],
+    "number": 678,
+    "price": "5 500₽",
+    "stars": 5,
+    "reviews": 45
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item8.jpg",
+      "assets/img/hotel-item9.jpg",
+      "assets/img/hotel-item10.jpg",
+      "assets/img/hotel-item11.jpg"
+    ],
+    "number": 450,
+    "price": "5 300₽",
+    "stars": 4,
+    "reviews": 39
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item9.jpg",
+      "assets/img/hotel-item10.jpg",
+      "assets/img/hotel-item11.jpg",
+      "assets/img/hotel-item12.jpg"
+    ],
+    "number": 350,
+    "price": "5 000₽",
+    "stars": 3,
+    "reviews": 77
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item10.jpg",
+      "assets/img/hotel-item11.jpg",
+      "assets/img/hotel-item12.jpg",
+      "assets/img/hotel-item1.jpg"
+    ],
+    "number": 666,
+    "price": "5 000₽",
+    "stars": 5,
+    "reviews": 25
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item11.jpg",
+      "assets/img/hotel-item12.jpg",
+      "assets/img/hotel-item1.jpg",
+      "assets/img/hotel-item2.jpg"
+    ],
+    "number": 444,
+    "price": "5 000₽",
+    "stars": 3,
+    "reviews": 15
+  },
+  {
+    "srcArr": [
+      "assets/img/hotel-item12.jpg",
+      "assets/img/hotel-item1.jpg",
+      "assets/img/hotel-item2.jpg",
+      "assets/img/hotel-item3.jpg"
+    ],
+    "number": 352,
+    "price": "5 000₽",
+    "stars": 3,
+    "reviews": 55
+  }
+]

@@ -1,0 +1,5 @@
+[
+  { "href": "mock-address", "src": "assets/img/twitter.svg", "alt": "twitter" },
+  { "href": "mock-address", "src": "assets/img/facebook.svg", "alt": "facebook" },
+  { "href": "mock-address", "src": "assets/img/insta.svg", "alt": "insta" }
+]

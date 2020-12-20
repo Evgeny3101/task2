@@ -1,9 +1,12 @@
 include ../hotel-item/hotel-item
 
-mixin hotel-list(config)
+mixin hotel-list
+  //- config
+  - const hotelListConfig = require("../modules/hotel-list/hotel-list.json");
+
   +b.UL.hotel-list
-    each itemConfig in config
-      - const { srcArr, number, price, stars, reviews, isLux } = itemConfig;
+    each config in hotelListConfig
+      - const { srcArr, number, price, stars, reviews, isLux } = config;
 
       +e.LI.item
         +hotel-item({ srcArr, number, price, stars, reviews, isLux })

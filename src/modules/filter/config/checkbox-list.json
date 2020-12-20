@@ -1,0 +1,8 @@
+[
+  { "name": "Завтрак", "active": false },
+  { "name": "Письменный стол", "active": true },
+  { "name": "Стул для кормления", "active": true },
+  { "name": "Кроватка", "active": true },
+  { "name": "Телевизор", "active": false },
+  { "name": "Шампунь", "active": false }
+]

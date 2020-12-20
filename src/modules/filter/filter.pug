@@ -9,6 +9,12 @@ include ../checkboxes/checkboxes
 include ../rich-checkboxes/rich-checkboxes
 
 mixin filter
+  //- config
+  - const checkboxesConfig = require("../modules/filter/config/checkboxes.json");
+  - const richCheckboxesConfig = require("../modules/filter/config/rich-checkboxes.json");
+  - const checkboxList = require("../modules/filter/config/checkbox-list.json");
+
+  //- block
   +b.FORM.filter
     +e.datepicker-container
       +datepicker({ title: 'даты пребывания в отеле', placeholder: 'ДД.ММ - ДД.ММ', value: '19 авг - 23 авг' })
@@ -20,13 +26,13 @@ mixin filter
       +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
 
     +e.checkboxes
-      +checkboxes('правила дома', [{ text: 'Можно курить' }, { text: 'Можно с питомцами', checked: true }, { text: 'Можно пригласить гостей (до 10 человек)', checked: true }])
+      +checkboxes('правила дома', checkboxesConfig)
 
     +e.rich-checkboxes
-      +rich-checkboxes('Доступность', [{ title: 'Широкий коридор', text: 'Ширина коридоров в номере не менее 91 см.', mod: '_width-230' }, { title: 'Помощник для инвалидов', text: 'На 1 этаже вас встретит специалист и проводит до номера.', mod: '_width-260' } ])
+      +rich-checkboxes('Доступность', richCheckboxesConfig)
 
     +e.menu-count-amenities
       +menu-count({ title: 'удобства номера', class: 'js-menu-count' })
 
     +e.checkbox-list
-      +checkbox-list('дополнительные удобства', [{ name : 'Завтрак', active : false },{ name : 'Письменный стол', active : true },{ name : 'Стул для кормления', active : true },{ name : 'Кроватка', active : true },{ name : 'Телевизор', active : false },{ name : 'Шампунь', active : false }])
+      +checkbox-list('дополнительные удобства', checkboxList)

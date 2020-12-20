@@ -1,10 +1,9 @@
-mixin social-link(items)
+mixin social-link
+  //- config
+  - const itemsConfig = require("../modules/social-link/social-link.json");
+
   +b.FIGURE.social-link
-    +e.A.icon(href='mock-address', target='_blank', rel='noopener noreferrer')
-      +e.image(src='assets/img/twitter.svg', alt='twitter')
-
-    +e.A.icon(href='mock-address', target='_blank', rel='noopener noreferrer')
-      +e.image(src='assets/img/facebook.svg', alt='facebook')
-
-    +e.A.icon(href='mock-address', target='_blank', rel='noopener noreferrer')
-      +e.image(src='assets/img/insta.svg', alt='insta')
+    each config in itemsConfig
+      - const { href, src, alt } = config;
+      +e.A.icon(href=href, target='_blank', rel='noopener noreferrer')
+        +e.image(src=src, alt=alt)
