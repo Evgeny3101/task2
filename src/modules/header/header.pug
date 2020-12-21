@@ -1,6 +1,6 @@
 include ../logo/logo
 
-mixin header(config)
+mixin header(config=false)
   - if (!config) config = require("../../modules/header/header.json");
   - const { login, register, user } = config;
 

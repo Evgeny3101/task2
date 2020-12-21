@@ -4,8 +4,9 @@ mixin rich-checkboxes(title, items)
       +b.H2.title_size-3= title
 
     +e.container
-      each item in items
-        - const mod = item.mod ? item.mod : "";
+      each itemConfig in items
+        - const { mod, title, text, checked } = itemConfig;
+        - const classMod = mod ? mod : "";
 
-        +e.rich-checkbox-item(class=mod)
-          +rich-checkbox-item(item.title, item.text)(checked=item.checked)
+        +e.rich-checkbox-item(class=classMod)
+          +rich-checkbox-item(title, text)(checked=checked)

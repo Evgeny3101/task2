@@ -1,5 +1,4 @@
-mixin hotel-price(config)
-  - const { isH1, number, isLux, price } = config;
+mixin hotel-price({ isH1, number, isLux, price } )
   - const classMod = isH1 ? "_h1" : "";
 
   +b.hotel-price(class=classMod)&attributes(attributes)

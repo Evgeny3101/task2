@@ -2,9 +2,7 @@ include ../rate-button/rate-button
 include ../hotel-price/hotel-price
 include ../images-slider/images-slider
 
-mixin hotel-item(config)
-  - const { srcArr, number, isLux, price, stars, reviews } = config;
-
+mixin hotel-item({ srcArr, number, isLux, price, stars, reviews })
   +b.SECTION.hotel-item
     +e.images-slider
       +images-slider(srcArr)

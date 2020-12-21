@@ -2,9 +2,9 @@ include ../logo/logo
 include ../social-link/social-link
 include ../subscription/subscription
 
-mixin footer(config)
+mixin footer(config=false)
   - if (!config) config = require("../../modules/footer/footer.json");
-  - const { text, subTitle, subText, subPlace, bottomText } = config;
+  - const { text, subTitle, subText, subPlace, bottomText, menus } = config;
 
   +b.FOOTER.footer
     +e.top-area
@@ -16,7 +16,7 @@ mixin footer(config)
 
       +e.menu
         +b.footer-menu
-          each menu in config.menus
+          each menu in menus
             +e.SECTION.container
               each itemConfig in menu
                 - const { text, title, href } = itemConfig;

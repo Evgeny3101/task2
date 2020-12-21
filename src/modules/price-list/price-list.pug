@@ -1,13 +1,13 @@
-mixin price-list(config)
+mixin price-list(config=false)
   - if (!config) config = require("../../modules/price-list/price-list.json");
-  - const { login, register, user } = config;
 
   +b.price-list
     +e.UL.items
-      each item in config
-        - const modInfo = item.info ? "" : "_without-info";
+      each itemConfig in config
+        - const { info, text, sum } = itemConfig;
+        - const modInfo = info ? "" : "_without-info";
 
         +b.LI.price-list-item(class=modInfo)
-          +e.SPAN.text= item.text
+          +e.SPAN.text= text
           +e.SPAN.info i
-          +e.SPAN.sum= item.sum
+          +e.SPAN.sum= sum
