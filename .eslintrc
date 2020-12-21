@@ -13,6 +13,9 @@
     "fsd/jq-cache-dom-elements": "error",
     "fsd/jq-use-js-prefix-in-selector": "error",
     "fsd/no-function-declaration-in-event-listener": "error",
-    "fsd/split-conditionals": "error"
+    "fsd/split-conditionals": "error",
+
+    // my rules
+    "no-underscore-dangle": ["error", { "allowAfterThis": true }]
   }
 }

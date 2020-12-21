@@ -4,8 +4,8 @@ import './room-details.styl';
 // JS
 import DatePicker from '../../modules/datepicker/datepicker';
 import MenuForCount from '../../modules/menu-count/menu-count';
+import LikeButton from '../../modules/like-button/like-button';
 import '../../modules/chart/chart';
-import '../../modules/like-button/like-button';
 
 const datepicker = new DatePicker(
   {
@@ -54,4 +54,11 @@ const menuForCount = new MenuForCount('.js-menu-count', {
   ],
 
   placeholder: 'Сколько гостей',
+});
+
+// кнопка лайка
+const likeButtonArr = [];
+const buttonsDOM = document.querySelectorAll('.js-like-button');
+buttonsDOM.forEach((button, i) => {
+  likeButtonArr[i] = new LikeButton(button);
 });

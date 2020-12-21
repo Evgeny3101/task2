@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import Chart from 'chart.js';
 
 // подключение диаграммы

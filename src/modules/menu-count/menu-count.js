@@ -1,5 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-
 import { declOfNum } from '../../assets/js/mixins';
 import ItemCount from './components/item-count';
 
@@ -82,7 +80,7 @@ class MenuForCount {
   _findElement(elem) {
     if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
     else this.mainDOM = elem;
-    this.textFieldDOM = this.mainDOM.querySelector('input');
+    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count-input');
   }
 
   _setConfig(config) {

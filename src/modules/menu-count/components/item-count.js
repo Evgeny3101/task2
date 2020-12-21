@@ -23,14 +23,14 @@ class ItemCount {
       <h3 class="title title_size-3">${this.title}</h3>
     </div>
     <div class="menu-count-item__container-button">
-      <button class="menu-count-item__minus-btn" type="button">-</button>
-      <div class="menu-count-item__result">${this.value}</div>
-      <button class="menu-count-item__plus-btn" type="button">+</button>
+      <button class="menu-count-item__minus-btn js-menu-count-item__minus-btn" type="button">-</button>
+      <div class="menu-count-item__result js-menu-count-item__result">${this.value}</div>
+      <button class="menu-count-item__plus-btn js-menu-count-item__plus-btn" type="button">+</button>
     </div>`;
 
-    this.minusBtnDOM = item.querySelector('.menu-count-item__minus-btn');
-    this.plusBtnDOM = item.querySelector('.menu-count-item__plus-btn');
-    this.resultDOM = item.querySelector('.menu-count-item__result');
+    this.minusBtnDOM = item.querySelector('.js-menu-count-item__minus-btn');
+    this.plusBtnDOM = item.querySelector('.js-menu-count-item__plus-btn');
+    this.resultDOM = item.querySelector('.js-menu-count-item__result');
 
     this.isMinValue = this.value === this.minValue;
     if (this.isMinValue) {

@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 class ImagesSlider {
   constructor(mainDOM) {
     this.mainDOM = mainDOM;
@@ -54,11 +53,13 @@ class ImagesSlider {
   _showSelectedImage() {
     const { currentItem } = this;
 
-    this.mainDOM.querySelector('.circle-current').classList.remove('circle-current');
-    this.mainDOM.querySelector('.image-current').classList.remove('image-current');
+    const oldImage = this.mainDOM.querySelector('.js-image-current');
+    oldImage.classList.remove('js-image-current');
+    this.imgsDOM[currentItem].classList.add('js-image-current');
 
-    this.imgsDOM[currentItem].classList.add('image-current');
-    this.controlBtnsDOM[currentItem].classList.add('circle-current');
+    const oldCircle = this.mainDOM.querySelector('.js-circle-current');
+    oldCircle.classList.remove('js-circle-current');
+    this.controlBtnsDOM[currentItem].classList.add('js-circle-current');
   }
 
   _findElements() {

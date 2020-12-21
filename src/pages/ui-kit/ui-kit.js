@@ -102,7 +102,7 @@ document.querySelectorAll('.images-slider-arrows__prev')[0].style.zIndex = '1';
 document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
 
 // payment
-const paymentDOM = document.querySelector('.payment');
+const paymentDOM = document.querySelector('.js-payment');
 paymentDOM.querySelector('.js-datepicker-main-field').value = '19.08.2019';
 paymentDOM.querySelector('.js-datepicker-second-field').value = '23.08.2019';
 

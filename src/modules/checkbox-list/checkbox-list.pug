@@ -2,14 +2,14 @@ include ../checkbox-item/checkbox-item
 
 mixin checkbox-list(title, items)
   +b.SECTION.checkbox-list
-    +e.button
+    +e.button.js-checkbox-list__button
       +b.checkbox-list-button
         +e.title
           +b.H2.title_size-3= title
-        +e.I.icon-up.material-icons keyboard_arrow_up
-        +e.I.icon-down.material-icons keyboard_arrow_down
+        +e.I.icon-up.js-checkbox-list-button__icon-up.material-icons keyboard_arrow_up
+        +e.I.icon-down.js-checkbox-list-button__icon-down.material-icons keyboard_arrow_down
 
-    +e.menu
+    +e.menu.js-checkbox-list__menu
       +b.UL.checkbox-list-menu
         each itemConfig in items
           - const { name, active } = itemConfig;

@@ -96,5 +96,5 @@ cardsDOM.forEach((card) => new ImagesSlider(card));
 // document.querySelectorAll('.images-slider-arrows__prev')[0].style.zIndex = '1';
 // document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
 
-// const checkboxList = document.querySelector('.checkbox-list__button');
+// const checkboxList = document.querySelector('.js-checkbox-list__button');
 // checkboxList.click();

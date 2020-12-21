@@ -7,6 +7,6 @@ mixin menu-count(config)
         +b.H2.title_size-3= config.title
 
     +e.text-field(class=config.class)
-      +dropdown({ 'type' : 'text', 'place': config.placeholder, 'value': config.value })._placeholder-dark(
+      +dropdown({ 'type' : 'text', 'place': config.placeholder, 'value': config.value })._placeholder-dark.js-menu-count-input(
         readonly='readonly'
       )

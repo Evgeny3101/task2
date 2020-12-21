@@ -11,7 +11,7 @@ mixin images-slider(srcArr)
       +b.FIGURE.images-slider-container
         each path in srcArr
           - if(path == srcArr[0])
-            +e.IMG.image.js-images-slider-container__image.image-current(
+            +e.IMG.image.js-images-slider-container__image.js-image-current(
               src=path,
               alt='фото номера'
             )
@@ -22,7 +22,7 @@ mixin images-slider(srcArr)
       +b.images-slider-circles
         - for(i = 0; i < srcArr.length; i += 1)
           - if(i == 0)
-            +e.BUTTON.button.js-images-slider-circles__button.circle-current(
+            +e.BUTTON.button.js-images-slider-circles__button.js-circle-current(
               type='button'
             )
           - else

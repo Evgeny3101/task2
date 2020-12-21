@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import 'air-datepicker/dist/js/datepicker.min';
 
 class DatePicker {
@@ -19,9 +18,9 @@ class DatePicker {
     // создаю кнопку 'Применить' в контейнере кнопок
     // eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
     $('.datepicker--buttons').append(
-      '<span class="datepicker--button" data-action="apply">Применить</span>'
+      '<span class="datepicker--button js-datepicker--button-apply" data-action="apply">Применить</span>'
     );
-    this.$applyButton = $('span.datepicker--button[data-action="apply"]');
+    this.$applyButton = $('.js-datepicker--button-apply');
   }
 
   setListeners() {
