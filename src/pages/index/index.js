@@ -1,5 +1,5 @@
 // Stylus
-import './landing.styl';
+import './index.styl';
 
 // JS
 import DatePicker from '../../modules/datepicker/datepicker';

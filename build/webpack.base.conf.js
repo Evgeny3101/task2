@@ -12,10 +12,8 @@ const PATHS = {
 };
 
 const PAGES_DIR = `${PATHS.src}/pages/`;
-// const PAGES = fs.readdirSync(PAGES_DIR).filter((fileName) => fileName.endsWith('.pug'));
-// const CHUNKS = [
 const PAGES = [
-  'landing',
+  'index',
   'nav',
   'room-details',
   'search-room',
@@ -31,7 +29,7 @@ module.exports = {
   },
 
   entry: {
-    landing: `${PAGES_DIR}landing/landing.js`,
+    index: `${PAGES_DIR}index/index.js`,
     nav: `${PAGES_DIR}nav/nav.js`,
     'room-details': `${PAGES_DIR}room-details/room-details.js`,
     'search-room': `${PAGES_DIR}search-room/search-room.js`,
