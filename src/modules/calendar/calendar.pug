@@ -33,7 +33,7 @@ mixin calendar
             +b.TD.calendar-day 5
             +b.TD.calendar-day 6
             +b.TD.calendar-day 7
-            +b.TD.calendar-day._gradient 8
+            +b.TD.calendar-day._current 8
             +b.TD.calendar-day 9
             +b.TD.calendar-day 10
             +b.TD.calendar-day 11
@@ -48,7 +48,7 @@ mixin calendar
             +b.TD.calendar-day 18
 
           +e.TR.week.__container
-            +b.TD.calendar-day._checked._blue 19
+            +b.TD.calendar-day._checked._selected 19
               +b.bg-checked._first
             +b.TD.calendar-day._checked 20
               +b.bg-checked
@@ -56,7 +56,7 @@ mixin calendar
               +b.bg-checked
             +b.TD.calendar-day._checked 22
               +b.bg-checked
-            +b.TD.calendar-day._checked._blue 23
+            +b.TD.calendar-day._checked._selected 23
               +b.bg-checked._last
             +b.TD.calendar-day._checked 24
             +b.TD.calendar-day 25
@@ -72,6 +72,6 @@ mixin calendar
 
       +e.buttons-container
         +e.button
-          +b.button._blue очистить
+          +b.button._regular-text очистить
         +e.button
-          +b.button._blue применить
+          +b.button._regular-text применить

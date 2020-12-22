@@ -2,7 +2,7 @@ mixin pagination
   +b.NAV.pagination
     +e.UL.list
       +e.LI.pagination-number
-        +b.A.pagination-number._blue(href='mock-address') 1
+        +b.A.pagination-number._current(href='mock-address') 1
       +e.LI.pagination-number
         +b.A.pagination-number(href='mock-address') 2
       +e.LI.pagination-number
@@ -12,7 +12,7 @@ mixin pagination
       +e.LI.pagination-number
         +b.A.pagination-number(href='mock-address') 15
       +e.LI.pagination-number
-        +b.A.pagination-number._gradient(href='mock-address')
+        +b.A.pagination-number._switch(href='mock-address')
           +e.I.icon.material-icons arrow_forward
 
     +e.SPAN.text 1 – 12 из 100+ вариантов аренды

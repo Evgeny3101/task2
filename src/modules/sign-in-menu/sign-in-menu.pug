@@ -13,11 +13,11 @@ mixin sign-in-menu
         +text-field('password', 'Пароль')(autocomplete='current-password')
 
       +e.login-button
-        +b.BUTTON.button._regular._relative войти
+        +b.BUTTON.button._regular-big._relative войти
           +e.I.icon.material-icons arrow_forward
 
       +e.create-account
         +b.sign-in-menu-create-account
           +e.text Нет аккаунта на Toxin?
           +e.button-create
-            +b.A.button._transparent(href='sign-up.html') создать
+            +b.A.button._regular-big-transparent(href='sign-up.html') создать

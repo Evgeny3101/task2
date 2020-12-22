@@ -121,16 +121,16 @@ class MenuForCount {
         `
         <div class="menu-count-dropdown__control-buttons">
           <div>
-            <button class="button button_fade05 js-clear" type="button">очистить</button>
+            <button class="button button_default-text-fade js-menu-count-button-clear" type="button">очистить</button>
           </div>
           <div>
-            <button class="button button_blue js-apply" type="button">применить</button>
+            <button class="button button_regular-text js-menu-count-button-apply" type="button">применить</button>
           </div>
         </div>`
       );
 
-      this.applyBtn = wrapper.querySelector('.js-apply');
-      this.clearBtn = wrapper.querySelector('.js-clear');
+      this.applyBtn = wrapper.querySelector('.js-menu-count-button-apply');
+      this.clearBtn = wrapper.querySelector('.js-menu-count-button-clear');
     }
 
     // вставить в страницу
