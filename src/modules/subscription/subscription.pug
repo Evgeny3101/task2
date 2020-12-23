@@ -1,7 +1,7 @@
 include ../text-field/text-field
 
-mixin subscription(data)
+mixin subscription({type, placeholder, value})
   +b.FORM.subscription
     +e.BUTTON.button(type='button')
       +e.I.icon.material-icons arrow_forward
-    +text-field(data.type, data.place, data.value)&attributes(attributes)
+    +text-field(type, placeholder, value)&attributes(attributes)

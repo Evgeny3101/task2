@@ -9,7 +9,7 @@ mixin datepicker(main, second=false)
         +b.H2.title_size-3= title
 
       +e.dropdown-wrapper
-        +dropdown({ place: placeholder, value: value })._placeholder-dark.js-datepicker-main-field(
+        +dropdown({ 'placeholder': placeholder, 'value': value })._placeholder-dark.js-datepicker-main-field(
           readonly='readonly'
         )
 
@@ -20,6 +20,6 @@ mixin datepicker(main, second=false)
           +b.H2.title_size-3= title
 
         +e.dropdown-wrapper
-          +dropdown({ type : 'text', place: placeholder, value: value })._placeholder-dark.js-datepicker-second-field(
+          +dropdown({ 'type' : 'text', 'placeholder': placeholder, value: value })._placeholder-dark.js-datepicker-second-field(
             readonly='readonly'
           )

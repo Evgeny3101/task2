@@ -1,12 +1,12 @@
 include ../dropdown/dropdown
 
-mixin menu-count(config)
+mixin menu-count({title,placeholder, value}={})
   +b.SECTION.menu-count
-    if (config.title)
+    if (title)
       +e.title
-        +b.H2.title_size-3= config.title
+        +b.H2.title_size-3= title
 
-    +e.text-field(class=config.class)
-      +dropdown({ 'type' : 'text', 'place': config.placeholder, 'value': config.value })._placeholder-dark.js-menu-count-input(
+    +e.text-field&attributes(attributes)
+      +dropdown({ type : 'text', placeholder: placeholder, value: value })._placeholder-dark.js-menu-count-input(
         readonly='readonly'
       )

@@ -112,14 +112,14 @@ block content
                   +e.container_pb6
                     +module-title('date Dropdown')
 
-                  +dropdown({ 'type' : 'text', 'place': 'ДД.ММ.ГГГГ' })._placeholder-dark(
+                  +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ' })._placeholder-dark(
                     readonly='readonly'
                   )
                 +e.container_width-150
                   +e.container_pb6
                     +module-title('date Dropdown')
 
-                  +dropdown({ 'type' : 'text', 'place': 'ДД.ММ.ГГГГ', 'value': '19.08.2019' })._placeholder-dark(
+                  +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ', 'value': '19.08.2019' })._placeholder-dark(
                     readonly='readonly'
                   )
 
@@ -136,7 +136,7 @@ block content
                 +e.container_pb5
                   +module-title('subscription text field')
 
-                +subscription({ 'type' : 'email', 'place': 'Email', })
+                +subscription({ 'type' : 'email', 'placeholder': 'Email', })
 
           +e.container_width-266
             //-  Checkbox Buttons
@@ -228,7 +228,7 @@ block content
                 +module-title('dropdown', 'default')
 
               +b.dropdown-menu
-                +dropdown({ 'type' : 'text', 'place': '2 спальни, 2 кровати...' })._placeholder-dark(
+                +dropdown({ 'type' : 'text', 'placeholder': '2 спальни, 2 кровати...' })._placeholder-dark(
                   readonly='readonly'
                 )
 
@@ -237,7 +237,7 @@ block content
                 +module-title('dropdown', 'expanded')
 
               +e.menu-count
-                +menu-count({ class: 'js-menu-count' })
+                +menu-count.js-menu-count
 
           +e.container
             //-  Dropdown, guest count
@@ -245,14 +245,14 @@ block content
               +module-title('dropdown')
 
             +e.container
-              +menu-count({ class: 'js-menu-count' })
+              +menu-count({title: false}).js-menu-count
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
               +module-title('dropdown')
             +e.container
-              +menu-count({ class: 'js-menu-count' })
+              +menu-count({title: false}).js-menu-count
 
           // rows 3
           +e.container_width-266
