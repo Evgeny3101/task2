@@ -4,10 +4,10 @@ mixin price-list(config=false)
   +b.price-list
     +e.UL.items
       each itemConfig in config
-        - const { info, text, sum } = itemConfig;
-        - const modInfo = info ? "" : "_without-info";
+        - const { isInfo, text, sum } = itemConfig;
+        - const classMod = isInfo ? "" : "_without-info";
 
-        +b.LI.price-list-item(class=modInfo)
+        +b.LI.price-list-item(class=classMod)
           +e.SPAN.text= text
           +e.SPAN.info i
           +e.SPAN.sum= sum

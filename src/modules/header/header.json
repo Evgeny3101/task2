@@ -1,7 +1,7 @@
 {
   "login": "войти",
   "register": "зарегистрироваться",
-  "link": [
+  "links": [
     { "href": "mock-address", "text": "О нас" },
     { "href": "mock-address", "text": "Услуги", "icon": true },
     { "href": "mock-address", "text": "Вакансии" },

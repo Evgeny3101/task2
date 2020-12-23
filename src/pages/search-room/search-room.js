@@ -9,8 +9,8 @@ import '../../modules/checkbox-list/checkbox-list';
 import '../../modules/range-slider/range-slider';
 
 // меню подсчета
-// eslint-disable-next-line no-unused-vars
-const menuForCountGuest = new MenuForCount('.js-menu-count-guest', {
+const menuCountConfigArr = [];
+menuCountConfigArr[0] = {
   itemsCount: [
     {
       title: 'взрослые',
@@ -33,10 +33,8 @@ const menuForCountGuest = new MenuForCount('.js-menu-count-guest', {
   ],
 
   placeholder: 'Сколько гостей',
-});
-
-// eslint-disable-next-line no-unused-vars
-const menuForCountAmenities = new MenuForCount('.js-menu-count', {
+};
+menuCountConfigArr[1] = {
   itemsCount: [
     {
       title: 'спальни',
@@ -58,7 +56,10 @@ const menuForCountAmenities = new MenuForCount('.js-menu-count', {
     ['кровать', 'кровати', 'кроватей'],
     ['ванная комната', 'ванные комнаты', 'ванных комнаты'],
   ],
-});
+};
+
+const menusCountDOM = document.querySelectorAll('.js-menu-count');
+menusCountDOM.forEach((menu, i) => new MenuForCount(menu, menuCountConfigArr[i]));
 
 // календарь
 const datepicker = new DatePicker(

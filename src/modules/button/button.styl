@@ -29,14 +29,19 @@
   &_regular-big-transparent
     color           regular-color
     border          2px solid regular-color
-    &.active
+
+    &.active,
+    &:hover
       border-color  fade-out(0.5, regular-color)
+
 
 
   &_regular-big
     color           default-color
     background      regular-color
-    &.active
+
+    &.active,
+    &:hover
       background    fade-out(0.5, regular-color)
 
 

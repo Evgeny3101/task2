@@ -5,8 +5,8 @@ mixin rich-checkboxes(title, items)
 
     +e.container
       each itemConfig in items
-        - const { mod, title, text, checked } = itemConfig;
-        - const classMod = mod ? mod : "";
+        - const { isShort, title, text, checked } = itemConfig;
+        - const classMod = isShort ? "_short" : "";
 
         +e.rich-checkbox-item(class=classMod)
           +rich-checkbox-item(title, text)(checked=checked)
