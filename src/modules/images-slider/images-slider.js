@@ -1,11 +1,8 @@
 class ImagesSlider {
   constructor(mainDOM) {
     this.mainDOM = mainDOM;
-    this.currentItem = 0;
-    this._findElements();
-    this._setHandlers();
-    this.setListeners();
-  } // конструктор
+    this._init();
+  }
 
   setListeners() {
     this.controlBtnsDOM.forEach((item, i) =>
@@ -47,6 +44,13 @@ class ImagesSlider {
   hideArrows() {
     this.nextBtnDOM.style.zIndex = 0;
     this.prevBtnDOM.style.zIndex = 0;
+  }
+
+  _init() {
+    this.currentItem = 0;
+    this._findElements();
+    this._setHandlers();
+    this.setListeners();
   }
 
   // показать выбранное изображение

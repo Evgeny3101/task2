@@ -3,22 +3,7 @@ import ItemCount from './components/item-count';
 
 class MenuForCount {
   constructor(elem, config) {
-    this.items = [];
-    this._setConfig(config);
-    this._findElement(elem);
-    this._installComponents();
-    this._createHandlers();
-    this.setListeners();
-
-    // при загрузке страницы
-    // посчитает значения и выставит результат в инпут
-    this.textFieldDOM.value = this._addTypeDescription(this._countValuesByTypes());
-
-    // скроет кнопку очистить, если значения минимальны
-    if (this.config.areControlButtons) {
-      const isMinValue = !this.items.some((item) => item.isMinValue === false);
-      if (isMinValue) this._hideClearButton();
-    }
+    this._init(elem, config);
   }
 
   setListeners() {
@@ -32,8 +17,6 @@ class MenuForCount {
     this.items.forEach((item) => {
       item.plusBtnDOM.addEventListener('click', item.handlePlusBtnClick);
       item.minusBtnDOM.addEventListener('click', item.handleMinusBtnClick);
-      item.plusBtnDOM.addEventListener('click', this.handlePlusBtnClick);
-      item.minusBtnDOM.addEventListener('click', this.handleMinusBtnClick);
     });
 
     // кнопки контроля
@@ -54,8 +37,6 @@ class MenuForCount {
     this.items.forEach((item) => {
       item.plusBtnDOM.removeEventListener('click', item.handlePlusBtnClick);
       item.minusBtnDOM.removeEventListener('click', item.handleMinusBtnClick);
-      item.plusBtnDOM.removeEventListener('click', this.handlePlusBtnClick);
-      item.minusBtnDOM.removeEventListener('click', this.handleMinusBtnClick);
     });
 
     // кнопки контроля
@@ -77,10 +58,23 @@ class MenuForCount {
   }
 
   // установка
-  _findElement(elem) {
-    if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
-    else this.mainDOM = elem;
-    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count-input');
+  _init(elem, config) {
+    this.items = [];
+    this._setConfig(config);
+    this._findElement(elem);
+    this._installComponents();
+    this._createHandlers();
+    this.setListeners();
+
+    // при загрузке страницы
+    // посчитает значения и выставит результат в инпут
+    this.textFieldDOM.value = this._addTypeDescription(this._countValuesByTypes());
+
+    // скроет кнопку очистить, если значения минимальны
+    if (this.config.areControlButtons) {
+      const isMinValue = !this.items.some((item) => item.isMinValue === false);
+      if (isMinValue) this._hideClearButton();
+    }
   }
 
   _setConfig(config) {
@@ -91,6 +85,12 @@ class MenuForCount {
     newConfig.areControlButtons = areControlButtons || false;
 
     this.config = newConfig;
+  }
+
+  _findElement(elem) {
+    if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
+    else this.mainDOM = elem;
+    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count-input');
   }
 
   _installComponents() {
@@ -155,27 +155,6 @@ class MenuForCount {
 
     this.handleDropdownMenuClick = this.switchMenu.bind(this);
     this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
-    this.handlePlusBtnClick = () => {
-      if (areControlButtons) {
-        this._showClearButton();
-      }
-
-      if (!areControlButtons) {
-        const valuesByTypes = this._countValuesByTypes();
-        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
-      }
-    };
-    this.handleMinusBtnClick = () => {
-      if (areControlButtons) {
-        const isMinValue = !this.items.some((item) => item.isMinValue === false);
-        if (isMinValue) this._hideClearButton();
-      }
-
-      if (!areControlButtons) {
-        const valuesByTypes = this._countValuesByTypes();
-        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
-      }
-    };
   }
 
   // для кнопки очистить
