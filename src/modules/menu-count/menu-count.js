@@ -17,6 +17,8 @@ class MenuForCount {
     this.items.forEach((item) => {
       item.plusBtnDOM.addEventListener('click', item.handlePlusBtnClick);
       item.minusBtnDOM.addEventListener('click', item.handleMinusBtnClick);
+      item.plusBtnDOM.addEventListener('click', this.handlePlusBtnClick);
+      item.minusBtnDOM.addEventListener('click', this.handleMinusBtnClick);
     });
 
     // кнопки контроля
@@ -37,6 +39,8 @@ class MenuForCount {
     this.items.forEach((item) => {
       item.plusBtnDOM.removeEventListener('click', item.handlePlusBtnClick);
       item.minusBtnDOM.removeEventListener('click', item.handleMinusBtnClick);
+      item.plusBtnDOM.removeEventListener('click', this.handlePlusBtnClick);
+      item.minusBtnDOM.removeEventListener('click', this.handleMinusBtnClick);
     });
 
     // кнопки контроля
@@ -48,13 +52,13 @@ class MenuForCount {
 
   // для выпадающего меню
   closeMenu() {
-    this.menuDOM.classList.remove('current');
-    this.textFieldDOM.classList.remove('count-active');
+    this.menuDOM.classList.remove('menu-count-dropdown_active');
+    this.textFieldDOM.classList.remove('text-field_dropdown-active');
   }
 
   switchMenu() {
-    this.menuDOM.classList.toggle('current');
-    this.textFieldDOM.classList.toggle('count-active');
+    this.menuDOM.classList.toggle('menu-count-dropdown_active');
+    this.textFieldDOM.classList.toggle('text-field_dropdown-active');
   }
 
   // установка
@@ -155,15 +159,38 @@ class MenuForCount {
 
     this.handleDropdownMenuClick = this.switchMenu.bind(this);
     this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
+
+    this.handlePlusBtnClick = () => {
+      if (areControlButtons) {
+        this._showClearButton();
+      }
+
+      if (!areControlButtons) {
+        const valuesByTypes = this._countValuesByTypes();
+        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+      }
+    };
+
+    this.handleMinusBtnClick = () => {
+      if (areControlButtons) {
+        const isMinValue = !this.items.some((item) => item.isMinValue === false);
+        if (isMinValue) this._hideClearButton();
+      }
+
+      if (!areControlButtons) {
+        const valuesByTypes = this._countValuesByTypes();
+        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+      }
+    };
   }
 
   // для кнопки очистить
   _showClearButton() {
-    this.clearBtn.style.visibility = 'visible';
+    this.clearBtn.classList.remove('menu-count-button_hidden');
   }
 
   _hideClearButton() {
-    this.clearBtn.style.visibility = 'hidden';
+    this.clearBtn.classList.add('menu-count-button_hidden');
   }
 
   // посчитает значения по типам и вернет их массивом

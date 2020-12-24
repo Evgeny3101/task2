@@ -14,7 +14,7 @@ mixin color-demo(title, hex, mod)
       +e.SPAN.title= title
       +e.SPAN.hex= hex
 
-mixin module-title(title, comment)
+mixin module-title(title, comment=false)
   +b.module-title
     +e.title
       +b.H2.title_size-3= title
@@ -157,7 +157,7 @@ block content
               +e.radio-buttons
                 +radio-button({ name: 'gender', id: 'male', text: 'Мужчина', checked: true })
 
-                +radio-button({ name: 'gender', id: 'female', text: 'Женщина', checked: false })
+                +radio-button({ name: 'gender', id: 'female', text: 'Женщина' })
 
             //-  Toggle
             +e.container_pb16
@@ -245,14 +245,14 @@ block content
               +module-title('dropdown')
 
             +e.container
-              +menu-count({title: false}).js-menu-count
+              +menu-count.js-menu-count
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
               +module-title('dropdown')
             +e.container
-              +menu-count({title: false}).js-menu-count
+              +menu-count.js-menu-count
 
           // rows 3
           +e.container_width-266
@@ -262,7 +262,7 @@ block content
 
             +e.container
               +e.checkbox-list
-                +checkbox-list('expandable checkbox list', [{ name : 'Завтрак', active : false },{ name : 'Письменный стол', active : true },{ name : 'Стул для кормления', active : true },{ name : 'Кроватка', active : true },{ name : 'Телевизор', active : false },{ name : 'Шампунь', active : false }])
+                +checkbox-list('expandable checkbox list', [{ name : 'Завтрак', isActive : false },{ name : 'Письменный стол', isActive : true },{ name : 'Стул для кормления', isActive : true },{ name : 'Кроватка', isActive : true },{ name : 'Телевизор', isActive : false },{ name : 'Шампунь', isActive : false }])
 
           +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
@@ -309,7 +309,7 @@ block content
           +e.column
             +calendar
 
-            +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item1.jpg', 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', ], 'number' : 888, 'price' : '9 990₽', 'stars' : 5, 'reviews' : 145, 'lux' : true, })
+            +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item1.jpg', 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', ], 'number' : 888, 'price' : '9 990₽', 'stars' : 5, 'reviews' : 145, 'isLux' : true, })
 
             +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', 'assets/img/hotel-item5.jpg', ], 'number' : 840, 'price' : '9 900₽', 'stars' : 4, 'reviews' : 65 })
 
@@ -320,10 +320,10 @@ block content
       +e.ui-kit-page4
         +b.ui-kit-page4
           +e.container
-            +header({ login: 'войти', register: 'зарегистрироваться', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'icon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'icon' : true } ]})
+            +header({ login: 'войти', register: 'зарегистрироваться', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'hasIcon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'hasIcon' : true } ]})
 
           +e.container
-            +header({ login: 'войти', register: 'зарегистрироваться', user: 'Юлий Цезарь', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'icon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'icon' : true } ]})
+            +header({ login: 'войти', register: 'зарегистрироваться', user: 'Юлий Цезарь', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'hasIcon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'hasIcon' : true } ]})
 
           +e.container
             +footer({ text: 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»', subTitle: 'Подписка', subText: 'Получайте специальные предложения и новости сервиса', subPlace: 'Email', bottomText: 'Copyright © 2018 Toxin отель. Все права зачищены.', menus: [ [ { 'title': 'Навигация' },{ 'text' : 'О нас', 'href' : 'mock-address' },{ 'text' : 'Новости', 'href' : 'mock-address' },{ 'text' : 'Служба поддержки', 'href' : 'mock-address' },{ 'text' : 'Услуги', 'href' : 'mock-address' } ], [ { 'title': 'О нас' },{ 'text' : 'О сервисе', 'href' : 'mock-address' },{ 'text' : 'Наша команда', 'href' : 'mock-address' },{ 'text' : 'Вакансии', 'href' : 'mock-address' },{ 'text' : 'Инвесторы', 'href' : 'mock-address' } ], [ { 'title': 'Служба поддержки' },{ 'text' : 'Соглашения', 'href' : 'mock-address' },{ 'text' : 'Сообщества', 'href' : 'mock-address' },{ 'text' : 'Связь с нами', 'href' : 'mock-address' } ] ] })

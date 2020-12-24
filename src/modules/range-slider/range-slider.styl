@@ -1,3 +1,5 @@
+@require '../../assets/js/libs/range-slider/range-slider.css'
+
 .range-slider
   font-size           12px
   width               266px
@@ -20,41 +22,20 @@
     white-space       pre
     text-align        right
 
-.js-range-slider
-  position            relative
-  height              6px
-  width               100%
-
+// плагин
+.rs-range-slider
+  height 6px
   border              1px solid fade-out(0.25)
-  border-radius       25px
+  border-radius       3px
 
   &__button
-    position          absolute
     top               -6px
-
     width             16px
     height            16px
-    z-index           1
-    border            2px solid default-color
-    border-radius     100%
     background        linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-    cursor            pointer
-    user-select       none
 
-    &_lift-up
-      z-index: 10;
+.rs-range-slider_horizontal .rs-slider-interval
+  height      6px
 
-  &__interval
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .js-slider-interval
-      background: #a7a9b4;
-      width: 100%;
-      height: 100%;
-
-
+.rs-slider-interval
+  background  linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)

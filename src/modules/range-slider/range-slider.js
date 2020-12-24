@@ -1,4 +1,4 @@
-import '../../assets/js/libs/range-slider';
+import '../../assets/js/libs/range-slider/range-slider';
 
 $('.js-range-slider__container').rangeSlider({
   sliderValues: [5000, 10000],

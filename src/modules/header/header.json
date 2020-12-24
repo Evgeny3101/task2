@@ -3,9 +3,9 @@
   "register": "зарегистрироваться",
   "links": [
     { "href": "mock-address", "text": "О нас" },
-    { "href": "mock-address", "text": "Услуги", "icon": true },
+    { "href": "mock-address", "text": "Услуги", "hasIcon": true },
     { "href": "mock-address", "text": "Вакансии" },
     { "href": "mock-address", "text": "Новости" },
-    { "href": "mock-address", "text": "Соглашения", "icon": true }
+    { "href": "mock-address", "text": "Соглашения", "hasIcon": true }
   ]
 }

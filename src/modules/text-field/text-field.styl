@@ -10,9 +10,7 @@
   text-overflow ellipsis   // работает на input type=text
   text-align    left
 
-  &_checked
-    border      1px solid fade-out(0.5)
-
+  &_checked,
   &:focus,
   &:hover
     border      1px solid fade-out(0.5)
@@ -23,3 +21,9 @@
   &_placeholder-dark
     &::placeholder
       color fade-out(0.75)
+
+  // dropdown активен
+  &_dropdown-active
+    border-color    fade-out(0.5)
+    border-bottom-left-radius   0px
+    border-bottom-right-radius  0px

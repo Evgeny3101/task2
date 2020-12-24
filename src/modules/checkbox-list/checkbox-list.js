@@ -8,7 +8,7 @@ function initCheckboxList() {
     const $iconDown = $(target).find('.js-checkbox-list-button__icon-down');
     const $menu = $(target.parentElement).find('.js-checkbox-list__menu');
 
-    $menu.slideToggle('.active');
+    $menu.slideToggle('.checkbox-list__menu_active');
     $iconUp.toggle();
     $iconDown.toggle();
   };

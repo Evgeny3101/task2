@@ -14,7 +14,7 @@ class ItemCount {
 
     // уберет класс если значение больше(на 1) минимального
     if (this.value === 1 + this.minValue)
-      this.minusBtnDOM.classList.remove('btn-deactive');
+      this.minusBtnDOM.classList.remove('menu-count-item__minus-btn_deactive');
   }
 
   minusOne() {
@@ -24,13 +24,14 @@ class ItemCount {
     this.resultDOM.innerText = this.value;
 
     // добавит класс если значение равно минимальному
-    if (this.value === this.minValue) this.minusBtnDOM.classList.add('btn-deactive');
+    if (this.value === this.minValue)
+      this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
   }
 
   clearResult() {
     this.value = this.minValue;
     this.resultDOM.innerText = this.value;
-    this.minusBtnDOM.classList.add('btn-deactive');
+    this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
   }
 
   _setConfig({ title, minValue, value, index }) {
@@ -59,8 +60,8 @@ class ItemCount {
 
     this.isMinValue = this.value === this.minValue;
     if (this.isMinValue) {
-      // добавит стиль btn-deactive
-      this.minusBtnDOM.classList.add('btn-deactive');
+      // добавит стиль menu-count-item__minus-btn_deactive
+      this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
     }
 
     return item;

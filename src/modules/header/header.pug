@@ -13,12 +13,12 @@ mixin header(config=false)
         +e.header-menu
           +b.UL.header-menu
             each itemConfig in links
-              - const { href, isMod, text, icon } = itemConfig;
+              - const { href, isMod, text, hasIcon } = itemConfig;
               - const classMod = isMod ? "_bold" : "";
 
               +e.LI.item
                 +e.A.link(href=href, class=classMod)= text
-                  if (icon)
+                  if (hasIcon)
                     +e.I.icon.material-icons keyboard_arrow_down
 
         if (user)

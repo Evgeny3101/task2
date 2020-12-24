@@ -4,8 +4,8 @@ mixin price-list(config=false)
   +b.price-list
     +e.UL.items
       each itemConfig in config
-        - const { isInfo, text, sum } = itemConfig;
-        - const classMod = isInfo ? "" : "_without-info";
+        - const { hasInfo, text, sum } = itemConfig;
+        - const classMod = hasInfo ? "" : "_without-info";
 
         +b.LI.price-list-item(class=classMod)
           +e.SPAN.text= text

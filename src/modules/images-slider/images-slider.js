@@ -15,55 +15,68 @@ class ImagesSlider {
   }
 
   toPrevImage() {
-    if (this.currentItem === 0) this.currentItem = this.imgsDOM.length;
-    this.currentItem -= 1;
+    if (this.currentImageNumber === 0) this.currentImageNumber = this.imgsDOM.length;
+    this.currentImageNumber -= 1;
 
-    this._showSelectedImage();
+    this._setSelectedImage();
   }
 
   toNextImage() {
-    this.currentItem += 1;
-    if (this.currentItem === this.imgsDOM.length) this.currentItem = 0;
+    this.currentImageNumber += 1;
+    if (this.currentImageNumber === this.imgsDOM.length) this.currentImageNumber = 0;
 
-    this._showSelectedImage();
+    this._setSelectedImage();
   }
 
   goToImage(index) {
-    this.currentItem = index;
+    this.currentImageNumber = index;
 
-    this._showSelectedImage();
+    this._setSelectedImage();
   }
 
   // показать стрелки
   showArrows() {
-    this.nextBtnDOM.style.zIndex = 1;
-    this.prevBtnDOM.style.zIndex = 1;
+    this.nextBtnDOM.classList.add('images-slider-arrows__next_active');
+    this.prevBtnDOM.classList.add('images-slider-arrows__prev_active');
   }
 
   // убрать стрелки
   hideArrows() {
-    this.nextBtnDOM.style.zIndex = 0;
-    this.prevBtnDOM.style.zIndex = 0;
+    this.nextBtnDOM.classList.remove('images-slider-arrows__next_active');
+    this.prevBtnDOM.classList.remove('images-slider-arrows__prev_active');
   }
 
   _init() {
-    this.currentItem = 0;
+    this.currentImageNumber = 0;
     this._findElements();
     this._setHandlers();
     this.setListeners();
   }
 
   // показать выбранное изображение
-  _showSelectedImage() {
-    const { currentItem } = this;
+  _setSelectedImage() {
+    const { currentImageNumber } = this;
 
     const oldImage = this.mainDOM.querySelector('.js-image-current');
-    oldImage.classList.remove('js-image-current');
-    this.imgsDOM[currentItem].classList.add('js-image-current');
+
+    oldImage.classList.remove(
+      'js-image-current',
+      'images-slider-container__image_current'
+    );
+    this.imgsDOM[currentImageNumber].classList.add(
+      'js-image-current',
+      'images-slider-container__image_current'
+    );
 
     const oldCircle = this.mainDOM.querySelector('.js-circle-current');
-    oldCircle.classList.remove('js-circle-current');
-    this.controlBtnsDOM[currentItem].classList.add('js-circle-current');
+    oldCircle.classList.remove(
+      'js-circle-current',
+      'images-slider-circles__button_current'
+    );
+    this.controlBtnsDOM[currentImageNumber].classList.add(
+      'js-circle-current',
+      'images-slider-circles__button_current'
+    );
   }
 
   _findElements() {
