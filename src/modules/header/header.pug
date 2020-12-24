@@ -2,7 +2,7 @@ include ../logo/logo
 
 mixin header(config=false)
   - if (!config) config = require("../../modules/header/header.json");
-  - const { login, register, user } = config;
+  - const { login, register, user, links } = config;
 
   +b.HEADER.header
     +e.wrapper
@@ -12,17 +12,16 @@ mixin header(config=false)
       +e.NAV.navigation
         +e.header-menu
           +b.UL.header-menu
-            each itemConfig in config.links
+            each itemConfig in links
               - const { href, isMod, text, icon } = itemConfig;
               - const classMod = isMod ? "_bold" : "";
 
               +e.LI.item
                 +e.A.link(href=href, class=classMod)= text
-                  if (icon === true)
+                  if (icon)
                     +e.I.icon.material-icons keyboard_arrow_down
 
         if (user)
-          +e.line
           +e.user
             +e.button
               +b.BUTTON.button._default(type='button')= user
