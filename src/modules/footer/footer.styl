@@ -109,3 +109,36 @@
       grid-template-columns   150px 260px
       grid-template-rows      1fr 1fr
       justify-content         space-evenly
+
+  // footer-minimal
+  @media (max-width  tableWidth)
+    padding-top 20px
+    min-height 367px
+
+    &__menu,
+    &-represent__text
+      display none
+
+    &__represent
+      width 100%
+      margin-right 0px
+
+    &-represent
+      container()
+      flex-direction column
+      padding-bottom 0px
+
+    &__bottom-area
+      border-top 0px
+      box-shadow none
+
+    &__top-area
+      padding-bottom 0px
+      box-shadow none
+
+    &-bottom-area
+      line-height 24px
+      flex-direction column
+
+      &__text
+        text-align center

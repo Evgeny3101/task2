@@ -12,37 +12,22 @@
 // 800 – Extra Bold || Ultra Bold || Heavy
 // 900 – Black || Heavy
 
+// font
+fontFormatsArr = 'eot?#iefix' 'woff2' 'woff' 'ttf'
 
-@font-face
-  font-family 'Montserrat'
-  src url('/assets/fonts/montserrat/regular/montserrat-regular.eot'),
-      url('/assets/fonts/montserrat/regular/montserrat-regular.eot?#iefix') format('embedded-opentype'),
-      url('/assets/fonts/montserrat/regular/montserrat-regular.woff2') format('woff2'),
-      url('/assets/fonts/montserrat/regular/montserrat-regular.woff') format('woff'),
-      url('/assets/fonts/montserrat/regular/montserrat-regular.ttf') format('truetype')
-  font-weight normal
-  font-style  normal
+includeFonts(name, url, fontWeight='normal', fontStyle='normal')
+  @font-face
+    font-family name
 
-@font-face
-  font-family 'Montserrat'
-  src url('/assets/fonts/montserrat/bold/montserrat-bold.eot'),
-      url('/assets/fonts/montserrat/bold/montserrat-bold.eot?#iefix') format('embedded-opentype'),
-      url('/assets/fonts/montserrat/bold/montserrat-bold.woff2') format('woff2'),
-      url('/assets/fonts/montserrat/bold/montserrat-bold.woff') format('woff'),
-      url('/assets/fonts/montserrat/bold/montserrat-bold.ttf') format('truetype')
-  font-weight bold
-  font-style  normal
+    for format in fontFormatsArr
+      src url(url+'.'+format) format(format)
 
-@font-face
-  font-family 'Material Icons'
-  src url('/assets/fonts/material-icons/material-icons.eot'),
-      url('/assets/fonts/material-icons/material-icons.eot?#iefix') format('embedded-opentype'),
-      url('/assets/fonts/material-icons/material-icons.woff2') format('woff2'),
-      url('/assets/fonts/material-icons/material-icons.woff') format('woff'),
-      url('/assets/fonts/material-icons/material-icons.ttf') format('truetype')
-  font-weight normal
-  font-style  normal
+    font-weight fontWeight
+    font-style fontStyle
 
+includeFonts('Montserrat','/assets/fonts/montserrat/regular/montserrat-regular')
+includeFonts('Montserrat','/assets/fonts/montserrat/regular/montserrat-regular',bold)
+includeFonts('Material Icons','/assets/fonts/material-icons/material-icons')
 
 
 .material-icons
