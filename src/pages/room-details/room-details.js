@@ -49,8 +49,8 @@ const menuForCount = new MenuForCount('.js-menu-count', {
   ],
 
   descriptionTypes: [
-    ['гость', 'гостя', 'гостей'],
-    ['младенец', 'младенца', 'младенцев'],
+    { type: 'guests', description: ['гость', 'гостя', 'гостей'] },
+    { type: 'child', description: ['младенец', 'младенца', 'младенцев'] },
   ],
 
   placeholder: 'Сколько гостей',

@@ -72,7 +72,9 @@ class MenuForCount {
 
     // при загрузке страницы
     // посчитает значения и выставит результат в инпут
-    this.textFieldDOM.value = this._addTypeDescription(this._countValuesByTypes());
+    const valuesByTypes = this._countValuesByTypes();
+    this.textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);
+    this._setValuesInInput(valuesByTypes);
 
     // скроет кнопку очистить, если значения минимальны
     if (this.config.areControlButtons) {
@@ -94,12 +96,13 @@ class MenuForCount {
   _findElement(elem) {
     if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
     else this.mainDOM = elem;
-    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count-input');
+    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count__text');
   }
 
   _installComponents() {
-    const { itemsCount, areControlButtons } = this.config;
+    const { itemsCount, areControlButtons, descriptionTypes } = this.config;
     const { mainDOM, items } = this;
+    const inputsFragment = document.createDocumentFragment();
 
     this.menuDOM = document.createElement('div');
     this.menuDOM.classList.add('menu-count-dropdown');
@@ -108,14 +111,25 @@ class MenuForCount {
     const container = document.createElement('ul');
     wrapper.classList.add('menu-count-dropdown__wrapper');
     container.classList.add('menu-count-dropdown__items-container');
-    wrapper.append(container);
-    this.menuDOM.append(wrapper);
+    wrapper.appendChild(container);
+    this.menuDOM.appendChild(wrapper);
 
     itemsCount.forEach((itemConfig, i) => {
       const item = document.createElement('li');
       item.classList.add('menu-count-dropdown__item');
       items[i] = new ItemCount(item, itemConfig);
-      container.append(item);
+      container.appendChild(item);
+    });
+
+    // inputs
+    this.inputTypesDOM = [];
+    descriptionTypes.forEach((itemConfig, i) => {
+      this.inputTypesDOM[i] = document.createElement('input');
+      const item = this.inputTypesDOM[i];
+
+      item.classList.add('menu-count__input');
+      item.setAttribute('name', itemConfig.type);
+      inputsFragment.appendChild(item);
     });
 
     // кнопки контроля
@@ -138,7 +152,8 @@ class MenuForCount {
     }
 
     // вставить в страницу
-    mainDOM.append(this.menuDOM);
+    inputsFragment.appendChild(this.menuDOM);
+    mainDOM.appendChild(inputsFragment);
   }
 
   _createHandlers() {
@@ -147,7 +162,7 @@ class MenuForCount {
     if (areControlButtons) {
       this.handleButtonApplyClick = () => {
         const valuesByTypes = this._countValuesByTypes();
-        textFieldDOM.value = this._addTypeDescription(valuesByTypes);
+        textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);
         this.closeMenu();
       };
 
@@ -161,26 +176,28 @@ class MenuForCount {
     this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
 
     this.handlePlusBtnClick = () => {
+      const valuesByTypes = this._countValuesByTypes();
+
       if (areControlButtons) {
         this._showClearButton();
+      } else {
+        this.textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);
       }
 
-      if (!areControlButtons) {
-        const valuesByTypes = this._countValuesByTypes();
-        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
-      }
+      this._setValuesInInput(valuesByTypes);
     };
 
     this.handleMinusBtnClick = () => {
+      const valuesByTypes = this._countValuesByTypes();
+
       if (areControlButtons) {
         const isMinValue = !this.items.some((item) => item.isMinValue === false);
         if (isMinValue) this._hideClearButton();
+      } else {
+        this.textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);
       }
 
-      if (!areControlButtons) {
-        const valuesByTypes = this._countValuesByTypes();
-        this.textFieldDOM.value = this._addTypeDescription(valuesByTypes);
-      }
+      this._setValuesInInput(valuesByTypes);
     };
   }
 
@@ -205,8 +222,16 @@ class MenuForCount {
         if (item.descIndex === i) valuesByTypes[i] += item.value;
       });
     });
-
     return valuesByTypes;
+  }
+
+  _setValuesInInput(valuesByTypes) {
+    const { inputTypesDOM } = this;
+
+    inputTypesDOM.forEach((elem, i) => {
+      const value = valuesByTypes[i] || '0';
+      elem.setAttribute('value', value);
+    });
   }
 
   // добавит описание типов и вернет строку
@@ -217,7 +242,7 @@ class MenuForCount {
     // добавление описаний
     valuesByTypes.forEach((value, i) => {
       if (value !== 0) {
-        const type = declOfNum(value, descriptionTypes[i]);
+        const type = declOfNum(value, descriptionTypes[i].description);
 
         valuesWithDescript += `${value} ${type}, `;
       }
@@ -249,8 +274,8 @@ export default MenuForCount;
 //     }
 //   ],
 //   descriptionTypes: [
-//     ['гость', 'гостя', 'гостей'],
-//     ['младенец', 'младенца', 'младенцев'],
+//     {type: 'guests', description: ['гость', 'гостя', 'гостей']},
+//     {type: 'child', description: ['младенец', 'младенца', 'младенцев']},
 //   ],
 //   placeholder : 'Сколько гостей',         // default = ''
 //   areControlButtons : false               // default = false
