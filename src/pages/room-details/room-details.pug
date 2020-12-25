@@ -31,10 +31,13 @@ block content
           +b.room-details-info
             +e.title
               +b.H2.title_size-2 Сведения о номере
-            +e.container
-              +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
-              +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
-              +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
+            +e.UL.container
+              +e.item-info
+                +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+              +e.item-info
+                +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
+              +e.item-info
+                +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
 
         +e.SECTION.impression
           +b.room-details-impression
@@ -55,8 +58,8 @@ block content
                 +b.H2.title_size-2 Отзывы посетителей номера
               +e.SPAN.number 2 отзыва
 
-            each itemConfig in commentsConfigArr
-              +e.container
+            +e.UL.container
+              each itemConfig in commentsConfigArr
                 +e.user-comment
                   +user-comment(itemConfig)
 

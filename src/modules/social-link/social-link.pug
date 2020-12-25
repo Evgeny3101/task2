@@ -1,8 +1,10 @@
 mixin social-link(config=false)
   - if (!config) config = require("../../modules/social-link/social-link.json");
 
-  +b.FIGURE.social-link
+  +b.UL.social-link
     each itemConfig in config
       - const { href, src, alt } = itemConfig;
-      +e.A.icon(href=href, target='_blank', rel='noopener noreferrer')
-        +e.image(src=src, alt=alt)
+
+      +e.LI.container
+        +e.A.icon(href=href, target='_blank', rel='noopener noreferrer')
+          +e.image(src=src, alt=alt)

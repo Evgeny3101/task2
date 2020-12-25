@@ -3,7 +3,7 @@ mixin rich-checkboxes(title, items)
     +e.title
       +b.H2.title_size-3= title
 
-    +e.container
+    +e.UL.container
       each itemConfig in items
         - const { isShort, title, text, checked } = itemConfig;
         - const classMod = isShort ? "_short" : "";

@@ -8,18 +8,22 @@ mixin images-slider(srcArr)
           +e.I.icon.material-icons expand_more
 
     +e.container
-      +b.FIGURE.images-slider-container
+      +b.UL.images-slider-container
         each path in srcArr
-          - if(path == srcArr[0])
-            +e.IMG.image._current.js-image-current.js-images-slider-container__image(
-              src=path,
-              alt='фото номера'
-            )
-          - else
-            +e.IMG.image.js-images-slider-container__image(src=path, alt='фото номера')
+          +e.container
+            - if(path == srcArr[0])
+              +e.IMG.image._current.js-image-current.js-images-slider-container__image(
+                src=path,
+                alt='фото номера'
+              )
+            - else
+              +e.IMG.image.js-images-slider-container__image(
+                src=path,
+                alt='фото номера'
+              )
 
     +e.circles
-      +b.images-slider-circles
+      +b.UL.images-slider-circles
         - for(i = 0; i < srcArr.length; i += 1)
           - if(i == 0)
             +e.BUTTON.button._current.js-circle-current.js-images-slider-circles__button(

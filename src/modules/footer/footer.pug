@@ -15,18 +15,19 @@ mixin footer(config=false)
           +e.SPAN.text= text
 
       +e.menu
-        +b.footer-menu
+        +b.UL.footer-menu
           each menu in menus
-            +e.SECTION.container
-              each itemConfig in menu
-                - const { text, title, href } = itemConfig;
+            - const { title, links } = menu;
 
-                if (title)
-                  +e.title
-                    +b.H2.title_size-3= title
-                else
-                  +e.LI.link
-                    +b.A.link(href=href)= text
+            +e.LI.container
+              +e.title
+                +b.H2.title_size-3= title
+
+              +e.UL.list
+                each itemConfig in links
+                  - const { text, href } = itemConfig;
+                    +e.LI.link
+                      +b.A.link(href=href)= text
 
           +e.SECTION.container._big
             +e.title-sub

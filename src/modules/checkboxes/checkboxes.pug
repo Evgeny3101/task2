@@ -3,9 +3,9 @@ mixin checkboxes(title, items)
     +e.title
       +b.H2.title_size-3= title
 
-    +e.container
+    +e.UL.container
       each itemConfig in items
         - const { text, checked } = itemConfig;
 
         +e.checkbox-item
-        +checkbox-item(text)(checked=checked)
+          +checkbox-item(text)(checked=checked)
