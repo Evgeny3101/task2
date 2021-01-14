@@ -1,5 +1,9 @@
 [
-  { "text": "Можно курить" },
-  { "text": "Можно с питомцами", "checked": true },
-  { "text": "Можно пригласить гостей (до 10 человек)", "checked": true }
+  { "text": "Можно курить", "name": "smoke" },
+  { "text": "Можно с питомцами", "name": "pets", "checked": true },
+  {
+    "text": "Можно пригласить гостей (до 10 человек)",
+    "name": "invite-guests",
+    "checked": true
+  }
 ]

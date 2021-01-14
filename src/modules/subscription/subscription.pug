@@ -1,7 +1,5 @@
-include ../text-field/text-field
-
-mixin subscription({type, placeholder, value})
+mixin subscription({type, placeholder, value, name})
   +b.FORM.subscription
     +e.BUTTON.button(type='button')
       +e.I.icon.material-icons arrow_forward
-    +text-field(type, placeholder, value)&attributes(attributes)
+    +b.INPUT.text-field(type=type, placeholder=placeholder, name=name, value=value)&attributes(attributes)

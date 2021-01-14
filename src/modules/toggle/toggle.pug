@@ -1,5 +1,5 @@
-mixin toggle(text)
+mixin toggle(text, name)
   +b.LABEL.toggle
-    +e.INPUT.input(type='checkbox')&attributes(attributes)
+    +e.INPUT.input(type='checkbox', name=name)&attributes(attributes)
     +e.box
     +e.text= text

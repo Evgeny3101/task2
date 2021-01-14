@@ -1,4 +1,3 @@
-include ../text-field/text-field
 include ../radio-button/radio-button
 include ../toggle/toggle
 
@@ -10,10 +9,10 @@ mixin sign-up-menu
           +b.H1.title_size-1 Регистрация аккаунта
 
         +e.text-field
-          +text-field('text', 'Имя')
+          +b.INPUT.text-field(type='text', placeholder='Имя', name='name')
 
         +e.text-field
-          +text-field('text', 'Фамилия')
+          +b.INPUT.text-field(type='text', placeholder='Фамилия', name='surname')
 
         +e.radio-buttons-container
           +e.radio-button
@@ -26,7 +25,10 @@ mixin sign-up-menu
           +b.H2.title_size-3 дата рождения
 
         +e.date-birth
-          +text-field('text', 'ДД.ММ.ГГГГ').js-date-birth-text-field(
+          +b.INPUT.text-field.js-date-birth-text-field(
+            type='text',
+            placeholder='ДД.ММ.ГГГГ',
+            name='birthday',
             spellcheck='false'
           )
 
@@ -34,13 +36,23 @@ mixin sign-up-menu
           +b.H2.title_size-3 данные для входа в сервис
 
         +e.text-field
-          +text-field('email', 'Email')(autocomplete='email')
+          +b.INPUT.text-field(
+            type='email',
+            placeholder='Email',
+            name='email',
+            autocomplete='email'
+          )
 
         +e.text-field
-          +text-field('password', 'Пароль')(autocomplete='new-password')
+          +b.INPUT.text-field(
+            type='password',
+            placeholder='Пароль',
+            name='password',
+            autocomplete='new-password'
+          )
 
         +e.toggle
-          +toggle('Получать спецпредложения')
+          +toggle('Получать спецпредложения', 'offers')
 
         +e.button-payment
           +b.BUTTON.button._regular-big._relative перейти к оплате

@@ -35,7 +35,7 @@ mixin footer(config=false)
             +e.SPAN.text= subText
 
             +e.subscription
-              +subscription({ 'type' : 'email', 'placeholder' : subPlace, })
+              +subscription({ type: 'email', placeholder: subPlace, name: "subscription"})
 
     +e.bottom-area
       +b.footer-bottom-area

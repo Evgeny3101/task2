@@ -1,5 +1,3 @@
-include ../text-field/text-field
-
 mixin sign-in-menu
   +b.SECTION.sign-in-menu
     +e.FORM.wrapper
@@ -7,13 +5,23 @@ mixin sign-in-menu
         +b.H1.title_size-1 Войти
 
       +e.text-field
-        +text-field('email', 'Email')(autocomplete='email')
+        +b.INPUT.text-field(
+          type='email',
+          placeholder='Email',
+          name='email',
+          autocomplete='email'
+        )
 
       +e.text-field
-        +text-field('password', 'Пароль')(autocomplete='current-password')
+        +b.INPUT.text-field(
+          type='password',
+          placeholder='Пароль',
+          name='password',
+          autocomplete='new-password'
+        )
 
       +e.login-button
-        +b.BUTTON.button._regular-big._relative войти
+        +b.BUTTON.button._regular-big._relative(type='submit') войти
           +e.I.icon.material-icons arrow_forward
 
       +e.create-account

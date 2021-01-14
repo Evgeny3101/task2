@@ -1,5 +1,6 @@
 import '../../assets/js/libs/range-slider/range-slider';
 
+const resultValueDOM = document.querySelectorAll('.js-range-slider__result')[0];
 $('.js-range-slider__container').rangeSlider({
   sliderValues: [5000, 10000],
   sliderType: 'range',
@@ -9,8 +10,10 @@ $('.js-range-slider__container').rangeSlider({
   textField: ['.js-range-slider__field1', '.js-range-slider__field2'],
 
   updateValues(values) {
-    const valuesArr = values.map((name) => `${name.toLocaleString()}₽`);
-    valuesArr[0] += ' - ';
-    return valuesArr;
+    const formalizedValuesArr = values.map((name) => {
+      return `${name.toLocaleString()} ₽`;
+    });
+
+    resultValueDOM.innerText = formalizedValuesArr.join(' - ');
   },
 });

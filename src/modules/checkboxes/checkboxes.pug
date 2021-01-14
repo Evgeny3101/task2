@@ -5,7 +5,7 @@ mixin checkboxes(title, items)
 
     +e.UL.container
       each itemConfig in items
-        - const { text, checked } = itemConfig;
+        - const { text, name, checked } = itemConfig;
 
         +e.checkbox-item
-          +checkbox-item(text)(checked=checked)
+          +checkbox-item(text, name)(checked=checked)

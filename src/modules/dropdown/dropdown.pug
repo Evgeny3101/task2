@@ -1,10 +1,8 @@
-include ../text-field/text-field
-
-mixin dropdown({ type, placeholder, value, isParagraph}= false)
+mixin dropdown({ type, placeholder, value, name, isParagraph}= false)
   +b.dropdown
     if (isParagraph)
       +b.P.text-field._placeholder-dark&attributes(attributes)= value ? value : placeholder
     else
-      +text-field(type, placeholder, value)&attributes(attributes)
+      +b.INPUT.text-field(type=type, placeholder=placeholder, name=name, value=value)&attributes(attributes)
 
     +e.I.icon.material-icons keyboard_arrow_down

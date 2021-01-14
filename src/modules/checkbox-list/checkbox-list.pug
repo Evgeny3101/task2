@@ -12,7 +12,7 @@ mixin checkbox-list(title, items)
     +e.menu.js-checkbox-list__menu
       +b.UL.checkbox-list-menu
         each itemConfig in items
-          - const { name, isActive } = itemConfig;
+          - const { text, name, isActive } = itemConfig;
 
           +e.LI.checkbox-item
-            +checkbox-item(name)(checked=isActive)
+            +checkbox-item(text, name)(checked=isActive)

@@ -1,8 +1,8 @@
 [
-  { "name": "Завтрак" },
-  { "name": "Письменный стол", "isActive": true },
-  { "name": "Стул для кормления", "isActive": true },
-  { "name": "Кроватка", "isActive": true },
-  { "name": "Телевизор" },
-  { "name": "Шампунь" }
+  { "text": "Завтрак", "name": "breakfast" },
+  { "text": "Письменный стол", "name": "desk", "isActive": true },
+  { "text": "Стул для кормления", "name": "feeding-chair", "isActive": true },
+  { "text": "Кроватка", "name": "crib", "isActive": true },
+  { "text": "Телевизор", "name": "tv-set" },
+  { "text": "Шампунь", "name": "shampoo" }
 ]

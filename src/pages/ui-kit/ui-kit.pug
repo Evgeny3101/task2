@@ -84,13 +84,17 @@ block content
                 +module-title('Text Field', 'Default')
 
               +e.text-field
-                +text-field('text', 'Email')
+                +b.INPUT.text-field(type='text', placeholder='Email')
 
             +e.container_pb20
               +e.container_pb5
                 +module-title('Text Field', 'Hover / Focus')
 
-              +text-field('text', 'Email', 'This is pretty awesome')._checked
+                +b.INPUT.text-field._checked(
+                  type='text',
+                  placeholder='Email',
+                  value='This is pretty awesome'
+                )
 
             +e.container_pb22
               +e.container_pb5
@@ -102,7 +106,9 @@ block content
               +e.container_pb5
                 +module-title('masked text field')
 
-              +text-field('text', 'ДД.ММ.ГГГГ').js-date-birth-text-field(
+              +b.INPUT.text-field.js-date-birth-text-field(
+                type='text',
+                placeholder='ДД.ММ.ГГГГ',
                 spellcheck='false'
               )
 
@@ -136,7 +142,7 @@ block content
                 +e.container_pb5
                   +module-title('subscription text field')
 
-                +subscription({ 'type' : 'email', 'placeholder': 'Email', })
+                +subscription({ type: 'email', placeholder: 'Email', name: "subscription"})
 
           +e.container_width-266
             //-  Checkbox Buttons

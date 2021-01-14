@@ -1,6 +1,6 @@
-mixin rich-checkbox-item(title, text)
+mixin rich-checkbox-item(title, name, text)
   +b.LABEL.rich-checkbox-item
-    +e.INPUT.input(type='checkbox')&attributes(attributes)
+    +e.INPUT.input(type='checkbox', name=name)&attributes(attributes)
     +e.box
     +e.container
       +e.title
