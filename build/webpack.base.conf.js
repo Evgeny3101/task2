@@ -29,8 +29,8 @@ module.exports = {
   },
 
   entry: {
-    index: `${PAGES_DIR}index/index.js`,
-    nav: `${PAGES_DIR}nav/nav.js`,
+    'index': `${PAGES_DIR}index/index.js`,
+    'nav': `${PAGES_DIR}nav/nav.js`,
     'room-details': `${PAGES_DIR}room-details/room-details.js`,
     'search-room': `${PAGES_DIR}search-room/search-room.js`,
     'sign-in': `${PAGES_DIR}sign-in/sign-in.js`,
@@ -69,14 +69,7 @@ module.exports = {
         exclude: '/node_modules/',
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]',
-        },
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
+        test: /\.(woff|woff2|ttf|eot|otf|svg|jpg|gif|png)$/,
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',

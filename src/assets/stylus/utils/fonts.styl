@@ -12,23 +12,20 @@
 // 800 – Extra Bold || Ultra Bold || Heavy
 // 900 – Black || Heavy
 
-// font
-fontFormatsArr = 'eot?#iefix' 'woff2' 'woff' 'ttf'
-
 includeFonts(name, url, fontWeight='normal', fontStyle='normal')
-  @font-face
-    font-family name
-
-    for format in fontFormatsArr
-      src url(url+'.'+format) format(format)
-
-    font-weight fontWeight
-    font-style fontStyle
+  @font-face 
+    font-family: name;
+    src: url(url+'.eot');
+    src: url(url+'.eot?#iefix') format('embedded-opentype'),
+      url(url+'.woff2') format('woff2'),
+      url(url+'.woff') format('woff'),
+      url(url+'.ttf') format('truetype');
+    font-weight: fontWeight
+    font-style: fontStyle
 
 includeFonts('Montserrat','/assets/fonts/montserrat/regular/montserrat-regular')
-includeFonts('Montserrat','/assets/fonts/montserrat/regular/montserrat-regular',bold)
+includeFonts('Montserrat','/assets/fonts/montserrat/bold/montserrat-bold', bold)
 includeFonts('Material Icons','/assets/fonts/material-icons/material-icons')
-
 
 .material-icons
   font-family  'Material Icons'

@@ -38,12 +38,12 @@
 
   &_regular-big
     color           default-color
-    background      regular-color
+    background      linear-gradient(primary-gradient)
 
     &.active,
     &:hover
-      background    fade-out(0.5, regular-color)
-
+      background    linear-gradient(primary-gradient)
+      opacity       0.5
 
   &_default-text-fade
     color           fade-out(0.5)
