@@ -10,10 +10,10 @@ mixin payment
         +hotel-price({ number: 888, price: '9 990₽', isLux: true, isH1: true })
 
       +e.datepicker
-        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', name: 'arrival' }, { title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', name: 'departure' })
+        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', name: 'arrival' }, { title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', name: 'departure' }).js-datepicker-payment
 
       +e.menu-count
-        +menu-count({ title: 'гости', placeholder: 'Сколько гостей', value: '3 гостя' })
+        +menu-count({ title: 'гости', placeholder: 'Сколько гостей', value: '3 гостя' }).js-menu-count-payment
 
       +e.price-list
         +price-list

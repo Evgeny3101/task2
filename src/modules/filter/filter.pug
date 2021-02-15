@@ -17,10 +17,10 @@ mixin filter
   //- block
   +b.FORM.filter
     +e.datepicker-container
-      +datepicker({ title: 'даты пребывания в отеле', placeholder: 'ДД.ММ - ДД.ММ', name: 'dates-stay', value: '19 авг - 23 авг' })
+      +datepicker({ title: 'даты пребывания в отеле', placeholder: 'ДД.ММ - ДД.ММ', name: 'dates-stay', value: '19 авг - 23 авг' }).js-datepicker-filter
 
     +e.menu-count-guest
-      +menu-count({ title: 'гости' })
+      +menu-count({ title: 'гости' }).js-menu-count-filter-guest
 
     +e.range-slider
       +range-slider('диапазон цены', 'Стоимость за сутки пребывания в номере')
@@ -32,7 +32,7 @@ mixin filter
       +rich-checkboxes('Доступность', richCheckboxesConfig)
 
     +e.menu-count-amenities
-      +menu-count({ title: 'удобства номера' })
+      +menu-count({ title: 'удобства номера' }).js-menu-count-filter-amenities
 
     +e.checkbox-list
       +checkbox-list('дополнительные удобства', checkboxList)

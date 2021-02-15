@@ -1,6 +1,6 @@
-mixin bullet-list(...items)
+mixin bullet-list(items)
   +b.UL.bullet-list
-    each elem in items
+    each text in items
       +e.LI.item
         +e.circle
-        +e.SPAN.text= elem
+        +e.SPAN.text= text

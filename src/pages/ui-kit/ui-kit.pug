@@ -142,7 +142,7 @@ block content
                 +e.container_pb5
                   +module-title('subscription text field')
 
-                +subscription({ type: 'email', placeholder: 'Email', name: "subscription"})
+                +subscription({ type: 'email', placeholder: 'Email', name: 'subscription'})
 
           +e.container_width-266
             //-  Checkbox Buttons
@@ -243,7 +243,7 @@ block content
                 +module-title('dropdown', 'expanded')
 
               +e.menu-count
-                +menu-count
+                +menu-count.js-menu-count
 
           +e.container
             //-  Dropdown, guest count
@@ -251,14 +251,14 @@ block content
               +module-title('dropdown')
 
             +e.container
-              +menu-count
+              +menu-count.js-menu-count
 
           +e.container
             //-  Dropdown, guest count
             +e.container_pb5
               +module-title('dropdown')
             +e.container
-              +menu-count
+              +menu-count.js-menu-count
 
           // rows 3
           +e.container_width-266
@@ -268,7 +268,14 @@ block content
 
             +e.container
               +e.checkbox-list
-                +checkbox-list('expandable checkbox list', [{ name : 'Завтрак', isActive : false },{ name : 'Письменный стол', isActive : true },{ name : 'Стул для кормления', isActive : true },{ name : 'Кроватка', isActive : true },{ name : 'Телевизор', isActive : false },{ name : 'Шампунь', isActive : false }])
+                +checkbox-list('expandable checkbox list', [
+                  { 'text': 'Завтрак', 'name': 'breakfast' },
+                  { 'text': 'Письменный стол', 'name': 'desk', 'isActive': true },
+                  { 'text': 'Стул для кормления', 'name': 'feeding-chair', 'isActive': true },
+                  { 'text': 'Кроватка', 'name': 'crib', 'isActive': true },
+                  { 'text': 'Телевизор', 'name': 'tv-set' },
+                  { 'text': 'Шампунь', 'name': 'shampoo' }
+                ])
 
           +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
@@ -276,9 +283,9 @@ block content
               +module-title('Rich Checkbox Buttons')
             +e.container
               +e.rich-checkbox-item1
-                +rich-checkbox-item('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+                +rich-checkbox-item('Широкий коридор', 'wide-corridor', 'Ширина коридоров в номере не менее 91 см.')
               +e.rich-checkbox-item2
-                +rich-checkbox-item('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+                +rich-checkbox-item('Помощник для инвалидов', 'disabled-assistant', 'На 1 этаже вас встретит специалист и проводит до номера.')
 
           +e.container_mt-5
             //-  Bullet list
@@ -286,7 +293,7 @@ block content
               +module-title('Bullet list')
 
             +e.container
-              +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
+              +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
 
           // rows 4
           +e.container

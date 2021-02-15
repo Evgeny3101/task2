@@ -6,7 +6,7 @@
 @require '../../modules/bullet-list/bullet-list'
 @require '../../modules/user-comment/user-comment'
 @require '../../modules/payment/payment'
-@require '../../modules/chart/chart'
+@require '../../modules/impression/impression'
 
 
 .room-details
@@ -43,40 +43,6 @@
     display                 grid
     grid-gap                10px 79px
     grid-template-columns   280px auto
-
-  //  room-details-impression
-  &-impression
-    &__container
-      margin-top      19px
-      max-width       320px
-      display         flex
-
-    &__title
-      margin-left 2px
-
-    // chart
-    &__chart
-      width         124px
-      height        124px
-      margin-right  28px
-
-
-    // bullet-list
-    &__bullet-list
-      display             flex
-      align-items         flex-end
-
-      .bullet-list__item
-        grid-template-columns  5px auto
-
-      .bullet-list__item:first-child .bullet-list__circle
-        background   linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)
-      .bullet-list__item:nth-child(2) .bullet-list__circle
-        background linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)
-      .bullet-list__item:nth-child(3) .bullet-list__circle
-        background linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)
-      .bullet-list__item:nth-child(4) .bullet-list__circle
-        background linear-gradient(180deg, #919191 0%, #3D4975 100%)
 
   // room-details-comments
   &__comments

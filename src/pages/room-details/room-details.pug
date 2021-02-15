@@ -6,7 +6,7 @@ include ../../modules/item-info/item-info
 include ../../modules/bullet-list/bullet-list
 include ../../modules/user-comment/user-comment
 include ../../modules/payment/payment
-include ../../modules/chart/chart
+include ../../modules/impression/impression
 
 block head
   +head({ 'title': 'Toxin - Room Details' })
@@ -40,16 +40,11 @@ block content
                 +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
 
         +e.SECTION.impression
-          +b.room-details-impression
-            +e.title
-              +b.H2.title_size-2 Впечатления от номера
-
-            +e.container
-              +e.chart
-                +chart({ id: 'js-chart', text: 'голосов', width: '124', height: '124' })
-
-              +e.bullet-list
-                +bullet-list('Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован')
+          +impression({
+            title: 'Впечатления от номера',
+            text: 'голосов',
+            list: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+          })
 
         +e.SECTION.comments
           +b.room-details-comments
@@ -68,7 +63,7 @@ block content
             +e.title
               +b.H2.title_size-2 Правила
             +e.container
-              +bullet-list('Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00')
+              +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
 
         +e.SECTION.cancel
           +b.room-details-cancel

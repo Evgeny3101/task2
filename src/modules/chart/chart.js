@@ -1,7 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import Chart from 'chart.js';
 
-// подключение диаграммы
+// подключение 
 const canvas = document.getElementById('js-chart');
 const ctx = canvas.getContext('2d');
 

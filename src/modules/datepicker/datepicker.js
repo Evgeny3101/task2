@@ -1,17 +1,17 @@
 import 'air-datepicker/dist/js/datepicker.min';
 
 class DatePicker {
-  constructor(config, mainField, secondField) {
-    this.createCalendar(config, mainField, secondField);
+  constructor(config) {
+    this.createCalendar(config);
+    this.plugin.update('onSelect', this._onSelect.bind(this));
+    this._onSelect();
     this.setListeners();
-
-    this.plugin.update('onSelect', this._onSelect.bind(this)); // установка в плагин
-    this._onSelect(); // выставит заданные значения
   }
 
-  createCalendar(config, mainField, secondField) {
-    this.$mainField = $(mainField);
-    this.$secondField = $(secondField);
+  createCalendar(config) {
+    const { baseElement, isSingleField } = config;
+    this.$mainField = $(baseElement).find('.js-datepicker-main-field');
+    if (!isSingleField) this.$secondField = $(baseElement).find('.js-datepicker-second-field');
     this.plugin = this.$mainField.datepicker(config).data('datepicker');
     this.$clearButton = $('span.datepicker--button[data-action="clear"]');
 
@@ -24,14 +24,20 @@ class DatePicker {
   }
 
   setListeners() {
-    this.$applyButton.on('click', this._handleApplyButtonClick.bind(this));
-    this.$mainField
-      .on('focusin', this._handleMainFieldFocusIn.bind(this))
-      .on('focusout', this._handleMainFieldFocusOut.bind(this));
-    this.$secondField
-      .on('focusin', this._handleSecondFieldFocusIn.bind(this))
-      .on('focusout', this._handleSecondFieldFocusOut.bind(this))
-      .on('click', this._handleSecondFieldClick.bind(this));
+    const { $applyButton, $mainField, $secondField } = this;
+
+    $applyButton.on('click', this._handleApplyButtonClick.bind(this));
+
+    if ($secondField) {
+      $mainField
+        .on('focusin', this._handleMainFieldFocusIn.bind(this))
+        .on('focusout', this._handleMainFieldFocusOut.bind(this));
+
+      $secondField
+        .on('focusin', this._handleSecondFieldFocusIn.bind(this))
+        .on('focusout', this._handleSecondFieldFocusOut.bind(this))
+        .on('click', this._handleSecondFieldClick.bind(this));
+    }
   }
 
   // вывод при выборе значений
@@ -43,11 +49,11 @@ class DatePicker {
       $clearButton.removeClass('datepicker--button_hide');
       const dateArray = date.split(',');
       $mainField.val(dateArray[0]);
-      $secondField.val(dateArray[1]);
+      if ($secondField) $secondField.val(dateArray[1]);
     } else {
       $clearButton.addClass('datepicker--button_hide');
       $mainField.val('');
-      $secondField.val('');
+      if ($secondField) $secondField.val('');
     }
   }
 

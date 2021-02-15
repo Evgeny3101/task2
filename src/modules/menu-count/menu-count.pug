@@ -6,5 +6,5 @@ mixin menu-count({title, placeholder, value}={})
       +e.title
         +b.H2.title_size-3= title
 
-    +e.text-field.js-menu-count
+    +e.text-field&attributes(attributes)
       +dropdown({title, placeholder, value, isParagraph: true}).js-menu-count__text

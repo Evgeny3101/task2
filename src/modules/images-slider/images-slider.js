@@ -1,6 +1,6 @@
 class ImagesSlider {
-  constructor(mainDOM) {
-    this.mainDOM = mainDOM;
+  constructor(baseElement) {
+    this.baseElement = baseElement;
     this._init();
   }
 
@@ -10,8 +10,8 @@ class ImagesSlider {
     );
     this.prevBtnDOM.addEventListener('click', this.handleButtonPrevClick);
     this.nextBtnDOM.addEventListener('click', this.handleButtonNextClick);
-    this.mainDOM.addEventListener('mouseover', this.handleImagesSliderMouseover);
-    this.mainDOM.addEventListener('mouseleave', this.handleImagesSliderMouseleave);
+    this.baseElement.addEventListener('mouseover', this.handleImagesSliderMouseover);
+    this.baseElement.addEventListener('mouseleave', this.handleImagesSliderMouseleave);
   }
 
   toPrevImage() {
@@ -57,7 +57,7 @@ class ImagesSlider {
   _setSelectedImage() {
     const { currentImageNumber } = this;
 
-    const oldImage = this.mainDOM.querySelector('.js-image-current');
+    const oldImage = this.baseElement.querySelector('.js-image-current');
 
     oldImage.classList.remove(
       'js-image-current',
@@ -68,7 +68,7 @@ class ImagesSlider {
       'images-slider-container__image_current'
     );
 
-    const oldCircle = this.mainDOM.querySelector('.js-circle-current');
+    const oldCircle = this.baseElement.querySelector('.js-circle-current');
     oldCircle.classList.remove(
       'js-circle-current',
       'images-slider-circles__button_current'
@@ -80,12 +80,12 @@ class ImagesSlider {
   }
 
   _findElements() {
-    const { mainDOM } = this;
+    const { baseElement } = this;
 
-    this.imgsDOM = mainDOM.querySelectorAll('.js-images-slider-container__image');
-    this.controlBtnsDOM = mainDOM.querySelectorAll('.js-images-slider-circles__button');
-    this.prevBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__prev');
-    this.nextBtnDOM = mainDOM.querySelector('.js-images-slider-arrows__next');
+    this.imgsDOM = baseElement.querySelectorAll('.js-images-slider-container__image');
+    this.controlBtnsDOM = baseElement.querySelectorAll('.js-images-slider-circles__button');
+    this.prevBtnDOM = baseElement.querySelector('.js-images-slider-arrows__prev');
+    this.nextBtnDOM = baseElement.querySelector('.js-images-slider-arrows__next');
   }
 
   _setHandlers() {

@@ -1,0 +1,13 @@
+include ../chart/chart
+
+mixin impression({ title, text, list })
+  +b.room-details-impression
+    +e.title
+      +b.H2.title_size-2= title
+
+    +e.container
+      +e.chart
+        +chart({ id: 'js-chart', text: text, width: '124', height: '124' })
+
+      +e.bullet-list
+        +bullet-list(list)

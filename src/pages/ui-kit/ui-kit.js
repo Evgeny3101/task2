@@ -1,18 +1,31 @@
 // Stylus
 import './ui-kit.styl';
 
-// libs
-import 'inputmask/dist/jquery.inputmask.min';
+// // libs
+// import 'inputmask/dist/jquery.inputmask.min';
+
+// // JS
 import '../../modules/checkbox-list/checkbox-list';
 import '../../modules/range-slider/range-slider';
-import '../../modules/like-button/like-button';
+import '../../modules/sign-up-menu/sign-up-menu';
+import '../../modules/hotel-list/hotel-list';
+import '../../modules/search-hotel/search-hotel';
+import '../../modules/payment/payment';
 import MenuForCount from '../../modules/menu-count/menu-count';
+import LikeButton from '../../modules/like-button/like-button';
 
-// JS
-// меню подсчета
-const menuArrDOM = document.querySelectorAll('.js-menu-count');
-const menuArr = [];
-const menuConfigArr = [
+
+// // подключение LikeButton
+const likeButtonArr = [];
+const buttonsDOM = document.querySelectorAll('.js-like-button');
+buttonsDOM.forEach((button, i) => {
+  likeButtonArr[i] = new LikeButton(button);
+});
+
+// // меню подсчета
+const baseElementsMenuCount = document.querySelectorAll('.js-menu-count');
+const menuCountArr = [];
+const menuCountConfigArr = [
   {
     itemsCount: [
       {
@@ -89,31 +102,25 @@ const menuConfigArr = [
   },
 ];
 
-// установит на 3 первых (нужных)
-for (let i = 0; i < 3; i += 1) {
-  menuArr[i] = new MenuForCount(menuArrDOM[i], menuConfigArr[i]);
-  menuArr[i].removeListeners();
-  menuArr[i].switchMenu();
-}
+// установка
+menuCountConfigArr.forEach((config, i) => {
+  config.baseElement = baseElementsMenuCount[i]
+  menuCountArr[i] = new MenuForCount(config);
+  menuCountArr[i].switchMenu();
+})
 
-// checkbox-list
+// //checkbox-list
 const checkboxList = document.querySelectorAll('.checkbox-list__button')[1];
 checkboxList.click();
 
-// hotel-item показать стрелки
-document.querySelectorAll('.images-slider-arrows__prev')[0].style.zIndex = '1';
-document.querySelectorAll('.images-slider-arrows__next')[0].style.zIndex = '1';
+// // hotel-item 
 
-// payment
-const paymentDOM = document.querySelector('.js-payment');
-paymentDOM.querySelector('.js-datepicker-main-field').value = '19.08.2019';
-paymentDOM.querySelector('.js-datepicker-second-field').value = '23.08.2019';
 
-// input mask
-$('.js-date-birth-text-field').inputmask({
-  placeholder: 'ДД.ММ.ГГГГ',
-  alias: 'datetime',
-  inputFormat: 'dd.mm.yyyy',
-  min: '01.01.1900',
-  max: '01.01.2021',
-});
+// // input mask
+// $('.js-date-birth-text-field').inputmask({
+//   placeholder: 'ДД.ММ.ГГГГ',
+//   alias: 'datetime',
+//   inputFormat: 'dd.mm.yyyy',
+//   min: '01.01.1900',
+//   max: '01.01.2021',
+// });

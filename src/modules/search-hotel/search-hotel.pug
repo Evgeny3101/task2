@@ -8,10 +8,10 @@ mixin search-hotel
         +b.H1.title_size-1 Найдём номера под ваши пожелания
 
       +e.datepicker
-        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', name: 'arrival' }, { title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', name: 'departure' })
+        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', name: 'arrival' }, { title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', name: 'departure' }).js-datepicker-search-hotel
 
       +e.menu-count
-        +menu-count({ title: 'гости', placeholder: 'Сколько гостей' })
+        +menu-count({ title: 'гости', placeholder: 'Сколько гостей' }).js-menu-count-search-hotel
 
       +e.button
         +b.BUTTON.button_regular-big._relative Подобрать номер

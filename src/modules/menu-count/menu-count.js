@@ -2,15 +2,15 @@ import { declOfNum } from '../../assets/js/mixins';
 import ItemCount from './components/item-count';
 
 class MenuForCount {
-  constructor(elem, config) {
-    this._init(elem, config);
+  constructor(config) {
+    this._init(config);
   }
 
   setListeners() {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    this.mainDOM.addEventListener('mouseleave', this.handleDropdownMenuMouseleave);
+    this.baseElement.addEventListener('mouseleave', this.handleDropdownMenuMouseleave);
     this.textFieldDOM.addEventListener('click', this.handleDropdownMenuClick);
 
     // кнопки + и -
@@ -32,7 +32,7 @@ class MenuForCount {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    this.mainDOM.removeEventListener('mouseleave', this.handleDropdownMenuMouseleave);
+    this.baseElement.removeEventListener('mouseleave', this.handleDropdownMenuMouseleave);
     this.textFieldDOM.removeEventListener('click', this.handleDropdownMenuClick);
 
     // кнопки + и -
@@ -62,10 +62,10 @@ class MenuForCount {
   }
 
   // установка
-  _init(elem, config) {
+  _init(config) {
     this.items = [];
     this._setConfig(config);
-    this._findElement(elem);
+    this._findBaseElement();
     this._installComponents();
     this._createHandlers();
     this.setListeners();
@@ -93,15 +93,18 @@ class MenuForCount {
     this.config = newConfig;
   }
 
-  _findElement(elem) {
-    if (typeof elem === 'string') this.mainDOM = document.querySelector(elem);
-    else this.mainDOM = elem;
-    this.textFieldDOM = this.mainDOM.querySelector('.js-menu-count__text');
+  _findBaseElement() {
+    const { baseElement } = this.config;
+
+    if (typeof baseElement === 'string') this.baseElement = document.querySelector(baseElement);
+    else this.baseElement = baseElement;
+    this.textFieldDOM = this.baseElement.querySelector('.js-menu-count__text');
+
   }
 
   _installComponents() {
     const { itemsCount, areControlButtons, descriptionTypes } = this.config;
-    const { mainDOM, items } = this;
+    const { baseElement, items } = this;
     const inputsFragment = document.createDocumentFragment();
 
     this.menuDOM = document.createElement('div');
@@ -153,7 +156,7 @@ class MenuForCount {
 
     // вставить в страницу
     inputsFragment.appendChild(this.menuDOM);
-    mainDOM.appendChild(inputsFragment);
+    baseElement.appendChild(inputsFragment);
   }
 
   _createHandlers() {
