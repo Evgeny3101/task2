@@ -10,7 +10,7 @@ class MenuForCount {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    this.baseElement.addEventListener('mouseleave', this.handleDropdownMenuMouseleave);
+    document.addEventListener('keydown', this.handleDropdownMenuKeydown);
     this.textFieldDOM.addEventListener('click', this.handleDropdownMenuClick);
 
     // кнопки + и -
@@ -32,7 +32,7 @@ class MenuForCount {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    this.baseElement.removeEventListener('mouseleave', this.handleDropdownMenuMouseleave);
+    document.removeEventListener('keydown', this.handleDropdownMenuKeydown);
     this.textFieldDOM.removeEventListener('click', this.handleDropdownMenuClick);
 
     // кнопки + и -
@@ -176,7 +176,11 @@ class MenuForCount {
     }
 
     this.handleDropdownMenuClick = this.switchMenu.bind(this);
-    this.handleDropdownMenuMouseleave = this.closeMenu.bind(this);
+    this.handleDropdownMenuKeydown = (e) => {
+      if (e.code == 'Escape') {
+        this.closeMenu();
+      }
+    }
 
     this.handlePlusBtnClick = () => {
       const valuesByTypes = this._countValuesByTypes();

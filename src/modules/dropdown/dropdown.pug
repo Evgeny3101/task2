@@ -1,7 +1,7 @@
 mixin dropdown({ type, placeholder, value, name, isParagraph}= false)
   +b.dropdown
     if (isParagraph)
-      +b.P.text-field._placeholder-dark&attributes(attributes)= value ? value : placeholder
+      +b.P.text-field._button._placeholder-dark&attributes(attributes)= value ? value : placeholder
     else
       +b.INPUT.text-field(type=type, placeholder=placeholder, name=name, value=value)&attributes(attributes)
 

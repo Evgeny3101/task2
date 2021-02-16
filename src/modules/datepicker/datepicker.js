@@ -6,6 +6,7 @@ class DatePicker {
     this.plugin.update('onSelect', this._onSelect.bind(this));
     this._onSelect();
     this.setListeners();
+    this.isActive = false;
   }
 
   createCalendar(config) {
@@ -29,6 +30,7 @@ class DatePicker {
   setListeners() {
     const { $applyButton, $mainField, $secondField } = this;
 
+    $mainField.on('click', this._handleMainFieldClick.bind(this));
     $applyButton.on('click', this._handleApplyButtonClick.bind(this));
 
     if ($secondField) {
@@ -61,7 +63,21 @@ class DatePicker {
     }
   }
 
+  _toggle() {
+    if (this.isActive === false) {
+      this.isActive = true
+      this.plugin.show();
+    } else {
+      this.isActive = false
+      this.plugin.hide();
+    }
+  }
+
   // установка обработчиков
+  _handleMainFieldClick() {
+    this._toggle()
+  }
+
   _handleApplyButtonClick() {
     this.plugin.hide();
     const dateArray = this.$mainField.val().split(',');
@@ -85,7 +101,7 @@ class DatePicker {
   }
 
   _handleSecondFieldClick() {
-    this.plugin.show();
+    this._toggle()
   }
 }
 

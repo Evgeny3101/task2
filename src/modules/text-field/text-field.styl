@@ -11,6 +11,11 @@
   text-overflow ellipsis   // работает на input type=text
   white-space   nowrap
   overflow      hidden
+  cursor        text  
+
+  &_button
+  &[type='button']
+    cursor pointer
 
   &_checked,
   &:focus,
@@ -31,4 +36,7 @@
     border-bottom-right-radius  0px
 
   &_padding-right 
-    padding-right: 45px
+    padding-right 45px
+
+  &_padding-right-large
+    padding-right 90px

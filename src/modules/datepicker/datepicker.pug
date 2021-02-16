@@ -9,7 +9,7 @@ mixin datepicker(main, second=false)
         +b.H2.title_size-3= title
 
       +e.dropdown-wrapper
-        +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field
+        +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field(autocomplete="off")
 
     if (second)
       - const { title, placeholder, name, value } = second;
@@ -18,4 +18,4 @@ mixin datepicker(main, second=false)
           +b.H2.title_size-3= title
 
         +e.dropdown-wrapper
-          +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field
+          +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field(autocomplete="off")

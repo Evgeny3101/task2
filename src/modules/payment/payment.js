@@ -6,9 +6,9 @@ const datepicker = new DatePicker({
   range: true,
   multipleDates: true,
   offset: 5,
+  keyboardNav: false,
 
   toggleSelected: true,
-
   showButtonPanel: true,
   clearButton: true,
 
@@ -46,4 +46,14 @@ const menuForCount = new MenuForCount({
   ],
 
   placeholder: 'Сколько гостей',
+});
+
+
+// // input mask
+$('.js-datepicker-payment').find('input').inputmask({
+  placeholder: 'ДД.ММ.ГГГГ',
+  alias: 'datetime',
+  inputFormat: 'dd.mm.yyyy',
+  min: '01.01.2018',
+  max: '01.01.2029',
 });
