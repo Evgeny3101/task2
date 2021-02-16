@@ -2,7 +2,7 @@
 import './ui-kit.styl';
 
 // // libs
-// import 'inputmask/dist/jquery.inputmask.min';
+import 'inputmask/dist/jquery.inputmask.min';
 
 // // JS
 import '../../modules/checkbox-list/checkbox-list';
@@ -113,14 +113,11 @@ menuCountConfigArr.forEach((config, i) => {
 const checkboxList = document.querySelectorAll('.checkbox-list__button')[1];
 checkboxList.click();
 
-// // hotel-item 
-
-
 // // input mask
-// $('.js-date-birth-text-field').inputmask({
-//   placeholder: 'ДД.ММ.ГГГГ',
-//   alias: 'datetime',
-//   inputFormat: 'dd.mm.yyyy',
-//   min: '01.01.1900',
-//   max: '01.01.2021',
-// });
+$('.js-masked-text-field').inputmask({
+  placeholder: 'ДД.ММ.ГГГГ',
+  alias: 'datetime',
+  inputFormat: 'dd.mm.yyyy',
+  min: '01.01.1900',
+  max: '01.01.2021',
+});

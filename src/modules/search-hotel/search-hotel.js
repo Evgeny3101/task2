@@ -1,6 +1,12 @@
+// libs
+import 'inputmask/dist/jquery.inputmask.min';
+
+// JS
 import DatePicker from '../datepicker/datepicker';
 import MenuForCount from '../menu-count/menu-count';
 
+
+// // DatePicker
 // eslint-disable-next-line no-unused-vars
 const datepicker = new DatePicker({
   baseElement: '.js-datepicker-search-hotel',
@@ -20,6 +26,8 @@ const datepicker = new DatePicker({
   },
 });
 
+
+// // MenuForCount
 // eslint-disable-next-line no-unused-vars
 const menuForCount = new MenuForCount({
   baseElement: '.js-menu-count-search-hotel',
@@ -43,4 +51,14 @@ const menuForCount = new MenuForCount({
   ],
   placeholder: 'Сколько гостей',
   areControlButtons: true,
+});
+
+
+// // input mask
+$('.js-datepicker-search-hotel').find('input').inputmask({
+  placeholder: 'ДД.ММ.ГГГГ',
+  alias: 'datetime',
+  inputFormat: 'dd.mm.yyyy',
+  min: '01.01.2018',
+  max: '01.01.2029',
 });

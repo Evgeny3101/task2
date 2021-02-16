@@ -2,7 +2,7 @@ import 'air-datepicker/dist/js/datepicker.min';
 
 class DatePicker {
   constructor(config) {
-    this.createCalendar(config);
+    this.createCalendar(config); // isSingleField
     this.plugin.update('onSelect', this._onSelect.bind(this));
     this._onSelect();
     this.setListeners();
@@ -10,17 +10,20 @@ class DatePicker {
 
   createCalendar(config) {
     const { baseElement, isSingleField } = config;
-    this.$mainField = $(baseElement).find('.js-datepicker-main-field');
-    if (!isSingleField) this.$secondField = $(baseElement).find('.js-datepicker-second-field');
+    const $el = $(baseElement);
+
+    this.$mainField = $el.find('.js-datepicker-field:eq(0)');
+    if (!isSingleField) this.$secondField = $el.find('.js-datepicker-field:eq(1)');
+
     this.plugin = this.$mainField.datepicker(config).data('datepicker');
-    this.$clearButton = $('span.datepicker--button[data-action="clear"]');
+
+    this.$clearButton = this.plugin.$datepicker.find('.datepicker--button[data-action="clear"]');
 
     // создаю кнопку 'Применить' в контейнере кнопок
-    // eslint-disable-next-line fsd/jq-use-js-prefix-in-selector
-    $('.datepicker--buttons').append(
+    this.plugin.$datepicker.find('.datepicker--buttons').append(
       '<span class="datepicker--button js-datepicker--button-apply" data-action="apply">Применить</span>'
     );
-    this.$applyButton = $('.js-datepicker--button-apply');
+    this.$applyButton = this.plugin.$datepicker.find('.js-datepicker--button-apply');
   }
 
   setListeners() {
@@ -41,6 +44,7 @@ class DatePicker {
   }
 
   // вывод при выборе значений
+  // в date прилетают выбранные значения 
   _onSelect(date) {
     const { $mainField, $secondField, $clearButton } = this;
     const isDate = Boolean(date);
