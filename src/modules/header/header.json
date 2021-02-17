@@ -2,10 +2,51 @@
   "login": "войти",
   "register": "зарегистрироваться",
   "links": [
-    { "href": "mock-address", "text": "О нас" },
-    { "href": "mock-address", "text": "Услуги", "hasIcon": true },
-    { "href": "mock-address", "text": "Вакансии" },
-    { "href": "mock-address", "text": "Новости" },
-    { "href": "mock-address", "text": "Соглашения", "hasIcon": true }
+    {
+      "href": "mock-address",
+      "text": "О нас"
+    },
+    {
+      "title": "Услуги",
+      "dropdown": [
+        {
+          "text": "Услугa1",
+          "href": "mock-address"
+        },
+        {
+          "text": "Услугa2",
+          "href": "mock-address"
+        },
+        {
+          "text": "Услугa3",
+          "href": "mock-address"
+        }
+      ]
+    },
+    {
+      "href": "mock-address",
+      "text": "Вакансии"
+    },
+    {
+      "href": "mock-address",
+      "text": "Новости"
+    },
+    {
+      "title": "Соглашения",
+      "dropdown": [
+        {
+          "text": "Соглашение1",
+          "href": "mock-address"
+        },
+        {
+          "text": "Соглашение2",
+          "href": "mock-address"
+        },
+        {
+          "text": "Соглашение3",
+          "href": "mock-address"
+        }
+      ]
+    }
   ]
 }

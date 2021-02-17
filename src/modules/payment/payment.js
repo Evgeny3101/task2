@@ -21,7 +21,7 @@ const datepicker = new DatePicker({
 });
 datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
 
-// меню подсчета
+// // меню подсчета
 // eslint-disable-next-line no-unused-vars
 const menuForCount = new MenuForCount({
   baseElement: '.js-menu-count-payment',

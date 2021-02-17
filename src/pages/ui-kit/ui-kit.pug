@@ -333,10 +333,95 @@ block content
       +e.ui-kit-page4
         +b.ui-kit-page4
           +e.container
-            +header({ login: 'войти', register: 'зарегистрироваться', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'hasIcon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'hasIcon' : true } ]})
+            +header({ 
+              login: 'войти', 
+              register: 'зарегистрироваться', 
+              links : [{
+                'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true 
+              }, {
+                "title": "Услуги",
+                "dropdown": [
+                  {
+                    "text": "Услугa1",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Услугa2",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Услугa3",
+                    "href": "mock-address"
+                  }
+                ]
+              }, { 
+                'href' : 'mock-address', 'text' : 'Вакансии' 
+              }, { 
+                'href' : 'mock-address', 'text' : 'Новости', 
+              }, { 
+                "title": "Соглашения",
+                "dropdown": [
+                  {
+                    "text": "Соглашение1",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Соглашение2",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Соглашение3",
+                    "href": "mock-address"
+                  }
+                ]
+              }]
+            })
 
           +e.container
-            +header({ login: 'войти', register: 'зарегистрироваться', user: 'Юлий Цезарь', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { 'href' : 'mock-address', 'text' : 'Услуги', 'hasIcon' : true, }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { 'href' : 'mock-address', 'text' : 'Соглашения', 'hasIcon' : true } ]})
+            +header({ 
+              login: 'войти', 
+              register: 'зарегистрироваться', 
+              user: 'Юлий Цезарь',
+              links : [{
+                'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true 
+              }, {
+                "title": "Услуги",
+                "dropdown": [
+                  {
+                    "text": "Услугa1",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Услугa2",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Услугa3",
+                    "href": "mock-address"
+                  }
+                ]
+              }, { 
+                'href' : 'mock-address', 'text' : 'Вакансии' 
+              }, { 
+                'href' : 'mock-address', 'text' : 'Новости', 
+              }, { 
+                "title": "Соглашения",
+                "dropdown": [
+                  {
+                    "text": "Соглашение1",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Соглашение2",
+                    "href": "mock-address"
+                  },
+                  {
+                    "text": "Соглашение3",
+                    "href": "mock-address"
+                  }
+                ]
+              }]
+            })
 
           +e.container
             +footer

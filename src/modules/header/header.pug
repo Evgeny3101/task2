@@ -1,4 +1,5 @@
 include ../logo/logo
+include ../header-menu/header-menu
 
 mixin header(config=false)
   - if (!config) config = require("../../modules/header/header.json");
@@ -11,15 +12,7 @@ mixin header(config=false)
 
       +e.NAV.navigation
         +e.header-menu
-          +b.UL.header-menu
-            each itemConfig in links
-              - const { href, isMod, text, hasIcon } = itemConfig;
-              - const classMod = isMod ? "_bold" : "";
-
-              +e.LI.item
-                +e.A.link(href=href, class=classMod)= text
-                  if (hasIcon)
-                    +e.I.icon.material-icons keyboard_arrow_down
+          +header-menu(links)
 
         if (user)
           +e.user

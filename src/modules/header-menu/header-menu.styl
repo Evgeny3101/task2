@@ -1,0 +1,72 @@
+.header-menu
+  color  fade-out(0.5)
+
+  &__item
+    margin 0 5px
+
+  &__link
+    letter-spacing 0.05px
+    padding 5px 0 5px 10px
+
+    &_bold
+      color fade-out()
+      font-weight bold
+      padding-right 1px
+
+  // // header-menu-dropdown  
+  &-dropdown
+    position relative
+    z-index 1
+
+    &__title
+      height 30px
+      display flex
+      align-items center
+      letter-spacing 0.05px
+      padding 5px 0 5px 10px
+      cursor pointer
+    
+    &__links
+      width 100%
+      position absolute
+
+      display none
+      background default-color
+      box-shadow 0px 2px 3px 0px fade-out(0.2)
+        
+      &_active
+        display block
+
+    &__link
+      padding 5px 0 5px 10px
+
+    &__icon
+      padding-top 4px
+
+
+  // // media
+  @media (max-width  smDesktopWidth)
+    display         flex
+    flex-direction  column
+    justify-content flex-start
+    align-items     flex-start
+    position        absolute
+    top             60px
+    right           25px
+    z-index         1
+    max-height      0
+    font-size       0
+    overflow        hidden
+    transition      0.15s all
+
+    &__item
+      border          1px solid fade-out(0.2)
+      border-radius   2px
+
+    &__link
+      width           140px
+      padding-left    10px
+
+    &__icon
+      margin-left   auto
+      margin-right  5px

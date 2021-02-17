@@ -1,0 +1,35 @@
+mixin header-menu(links)
+
+  +b.UL.header-menu
+    each itemConfig in links
+      - const { href, text, isMod, title, dropdown } = itemConfig;
+      - const classMod = isMod ? "_bold" : "";
+
+      +e.LI.item
+        if (text)
+          +e.A.link(href=href, class=classMod)= text
+            //- if (hasIcon)
+            //-   +e.I.icon.material-icons keyboard_arrow_down
+
+        else
+          +b.header-menu-dropdown.js-header-menu-dropdown
+            +e.title= title
+              +e.I.icon-up.js-header-menu__icon-up.material-icons keyboard_arrow_up
+              +e.I.icon-down.js-header-menu__icon-down.material-icons keyboard_arrow_down
+            
+            +e.UL.links
+              each item in dropdown
+                - const { href, text, isMod, title, dropdown } = item;
+                
+                +e.LI.item
+                  +e.A.link(href=href)= text
+
+          //- +b.UL.header-menu
+          //-   each itemConfig in links
+          //-     - const { href, isMod, text, hasIcon } = itemConfig;
+          //-     - const classMod = isMod ? "_bold" : "";
+
+          //-     +e.LI.item
+          //-       +e.A.link(href=href, class=classMod)= text
+          //-         if (hasIcon)
+          //-           +e.I.icon.material-icons keyboard_arrow_down
