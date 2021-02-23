@@ -177,7 +177,7 @@ class MenuForCount {
 
     this.handleDropdownMenuClick = this.switchMenu.bind(this);
     this.handleDropdownMenuKeydown = (e) => {
-      if (e.code == 'Escape') {
+      if (e.code === 'Escape') {
         this.closeMenu();
       }
     }

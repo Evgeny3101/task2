@@ -1,12 +1,12 @@
 include ../like-button/like-button
 
 mixin user-comment(config=false)
-  - if (!config) config = require("../../modules/user-comment/user-comment.json");
+  - if (!config) config = require('../../modules/user-comment/user-comment.json');
   - const { name, date, isActive, image, likes, text } = config;
 
   +b.ARTICLE.user-comment
     +e.FIGURE.image
-      +b.IMG.user-comment-image(src=image, alt='аватар пользователя')
+      +b.IMG.user-comment-image(src=image, alt="аватар пользователя")
 
     +e.header
       +e.name
@@ -15,9 +15,6 @@ mixin user-comment(config=false)
         +e.SPAN.date= date
 
     +e.like-button
-      if (isActive)
-        +like-button(likes).like-button_checked
-      else
-        +like-button(likes)
+      +like-button(likes)(class=isActive ? 'like-button_checked' : '')
 
     +e.P.text= text

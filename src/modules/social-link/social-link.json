@@ -1,5 +1,5 @@
 [
-  { "href": "mock-address", "src": "assets/img/twitter.svg", "alt": "twitter" },
-  { "href": "mock-address", "src": "assets/img/facebook.svg", "alt": "facebook" },
-  { "href": "mock-address", "src": "assets/img/insta.svg", "alt": "insta" }
+  { "href": "https://www.twitter.com/", "src": "assets/img/twitter.svg", "alt": "twitter" },
+  { "href": "https://www.facebook.com/", "src": "assets/img/facebook.svg", "alt": "facebook" },
+  { "href": "https://www.instagram.com/", "src": "assets/img/insta.svg", "alt": "insta" }
 ]

@@ -1,33 +1,38 @@
 mixin images-slider(srcArr)
   +b.images-slider.js-images-slider
     +e.arrows
-      +b.images-slider-arrows
-        +e.BUTTON.prev.js-images-slider-arrows__prev(type='button')
-          +e.I.icon.material-icons expand_more
-        +e.BUTTON.next.js-images-slider-arrows__next(type='button')
-          +e.I.icon.material-icons expand_more
+      +e.arrows-container
+        +e.BUTTON.arrows-prev.js-images-slider__arrows-prev(type="button")
+          +e.I.arrows-icon.material-icons expand_more
 
-    +e.container
-      +b.UL.images-slider-container
+        +e.BUTTON.arrows-next.js-images-slider__arrows-next(
+          type="button"
+        )
+          +e.I.arrows-icon.material-icons expand_more
+
+    +e.images
+      +e.UL.images-container
         each path in srcArr
           +e.container
-            - if(path == srcArr[0])
-              +e.IMG.image._current.js-image-current.js-images-slider-container__image(
+            - if(path === srcArr[0])
+              +e.IMG.image._current.js-images-slider__image_current.js-images-slider__image(
                 src=path,
-                alt='фото номера'
+                alt="фото номера"
               )
             - else
-              +e.IMG.image.js-images-slider-container__image(
+              +e.IMG.image.js-images-slider__image(
                 src=path,
-                alt='фото номера'
+                alt="фото номера"
               )
 
     +e.circles
-      +b.UL.images-slider-circles
+      +e.UL.circles-container
         - for(i = 0; i < srcArr.length; i += 1)
-          - if(i == 0)
-            +e.BUTTON.button._current.js-circle-current.js-images-slider-circles__button(
-              type='button'
+          - if(i === 0)
+            +e.BUTTON.circles-button._current.js-images-slider__circles-button_current.js-images-slider__circles-button(
+              type="button"
             )
           - else
-            +e.BUTTON.button.js-images-slider-circles__button(type='button')
+            +e.BUTTON.circles-button.js-images-slider__circles-button(
+              type="button"
+            )

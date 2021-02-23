@@ -13,19 +13,20 @@ class ItemCount {
     this.resultDOM.innerText = this.value;
 
     // уберет класс если значение больше(на 1) минимального
-    if (this.value === 1 + this.minValue)
+    const isMoreMinValue = this.value >= 1 + this.minValue;
+
+    if (isMoreMinValue)
       this.minusBtnDOM.classList.remove('menu-count-item__minus-btn_deactive');
   }
 
   minusOne() {
-    if (this.value >= 1 + this.minValue) this.value -= 1;
-    if (this.value === this.minValue) this.isMinValue = true;
-
-    this.resultDOM.innerText = this.value;
-
-    // добавит класс если значение равно минимальному
-    if (this.value === this.minValue)
+    if (!this.isMinValue) this.value -= 1;
+    if (this.value === this.minValue) { 
+      this.isMinValue = true;
       this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
+    }
+  
+    this.resultDOM.innerText = this.value;
   }
 
   clearResult() {

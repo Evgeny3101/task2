@@ -1,5 +1,10 @@
 mixin subscription({type, placeholder, value, name})
   +b.FORM.subscription
-    +e.BUTTON.button(type='button')
+    +e.BUTTON.button
       +e.I.icon.material-icons arrow_forward
-    +b.INPUT.text-field(type=type, placeholder=placeholder, name=name, value=value)&attributes(attributes)._padding-right
+    +b.INPUT.text-field._padding-right(
+      type=type,
+      placeholder=placeholder,
+      name=name,
+      value=value
+    )&attributes(attributes)

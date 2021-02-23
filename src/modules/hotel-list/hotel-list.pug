@@ -1,7 +1,7 @@
 include ../hotel-item/hotel-item
 
-mixin hotel-list
-  - const config = require("../../modules/hotel-list/hotel-list.json");
+mixin hotel-list(config=false)
+  - if (!config) config = require('../../modules/hotel-list/hotel-list.json');
 
   +b.UL.hotel-list
     each itemConfig in config

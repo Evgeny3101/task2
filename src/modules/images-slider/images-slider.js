@@ -36,14 +36,14 @@ class ImagesSlider {
 
   // показать стрелки
   showArrows() {
-    this.nextBtnDOM.classList.add('images-slider-arrows__next_active');
-    this.prevBtnDOM.classList.add('images-slider-arrows__prev_active');
+    this.nextBtnDOM.classList.add('images-slider__arrows-next_active');
+    this.prevBtnDOM.classList.add('images-slider__arrows-prev_active');
   }
 
   // убрать стрелки
   hideArrows() {
-    this.nextBtnDOM.classList.remove('images-slider-arrows__next_active');
-    this.prevBtnDOM.classList.remove('images-slider-arrows__prev_active');
+    this.nextBtnDOM.classList.remove('images-slider__arrows-next_active');
+    this.prevBtnDOM.classList.remove('images-slider__arrows-prev_active');
   }
 
   _init() {
@@ -57,35 +57,35 @@ class ImagesSlider {
   _setSelectedImage() {
     const { currentImageNumber } = this;
 
-    const oldImage = this.baseElement.querySelector('.js-image-current');
+    const oldImage = this.baseElement.querySelector('.js-images-slider__image_current');
 
     oldImage.classList.remove(
-      'js-image-current',
-      'images-slider-container__image_current'
+      'js-images-slider__image_current',
+      'images-slider__image_current'
     );
     this.imgsDOM[currentImageNumber].classList.add(
-      'js-image-current',
-      'images-slider-container__image_current'
+      'js-images-slider__image_current',
+      'images-slider__image_current'
     );
 
-    const oldCircle = this.baseElement.querySelector('.js-circle-current');
+    const oldCircle = this.baseElement.querySelector('.js-images-slider__circles-button_current');
     oldCircle.classList.remove(
-      'js-circle-current',
-      'images-slider-circles__button_current'
+      'js-images-slider__circles-button_current',
+      'images-slider__circles-button_current'
     );
     this.controlBtnsDOM[currentImageNumber].classList.add(
-      'js-circle-current',
-      'images-slider-circles__button_current'
+      'js-images-slider__circles-button_current',
+      'images-slider__circles-button_current'
     );
   }
 
   _findElements() {
     const { baseElement } = this;
 
-    this.imgsDOM = baseElement.querySelectorAll('.js-images-slider-container__image');
-    this.controlBtnsDOM = baseElement.querySelectorAll('.js-images-slider-circles__button');
-    this.prevBtnDOM = baseElement.querySelector('.js-images-slider-arrows__prev');
-    this.nextBtnDOM = baseElement.querySelector('.js-images-slider-arrows__next');
+    this.imgsDOM = baseElement.querySelectorAll('.js-images-slider__image');
+    this.controlBtnsDOM = baseElement.querySelectorAll('.js-images-slider__circles-button');
+    this.prevBtnDOM = baseElement.querySelector('.js-images-slider__arrows-prev');
+    this.nextBtnDOM = baseElement.querySelector('.js-images-slider__arrows-next');
   }
 
   _setHandlers() {
