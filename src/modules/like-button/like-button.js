@@ -1,24 +1,24 @@
 class LikeButton {
-  constructor(baseElement) {
-    this.baseElement = baseElement;
+  constructor(elem) {
+    this.elem = elem;
     this._findElement();
     this._setListeners();
   }
 
   _findElement() {
-    this.iconDOM = this.baseElement.querySelector('.js-like-button__icon');
-    this.numberDOM = this.baseElement.querySelector('.js-like-button__number');
+    this.iconDOM = this.elem.querySelector('.js-like-button__icon');
+    this.numberDOM = this.elem.querySelector('.js-like-button__number');
   }
 
   _setListeners() {
-    this.baseElement.addEventListener('click', this._handleLikeButtonClick.bind(this));
+    this.elem.addEventListener('click', this._handleLikeButtonClick.bind(this));
   }
 
   _handleLikeButtonClick() {
-    const { baseElement, iconDOM, numberDOM } = this;
+    const { elem, iconDOM, numberDOM } = this;
 
-    baseElement.classList.toggle('like-button_checked');
-    const isChecked = baseElement.classList.contains('like-button_checked');
+    elem.classList.toggle('like-button_checked');
+    const isChecked = elem.classList.contains('like-button_checked');
     iconDOM.innerText = isChecked ? 'favorite' : 'favorite_border';
 
     const numberText = numberDOM.innerText;
