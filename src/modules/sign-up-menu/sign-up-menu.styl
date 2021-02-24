@@ -14,8 +14,16 @@
   &__wrapper
     padding 39px 29px 29px
 
+    @media  (max-width  phoneWidth)
+      padding 20px 25px 29px
+
   &__title-main
     padding-bottom 21px
+
+    @media  (max-width  400px)
+      padding-bottom 10px
+      .title_size-1
+        font-size 20px
 
   &__text-field
     padding-bottom 10px
@@ -26,7 +34,7 @@
     padding-bottom 23px
 
   &__radio-button
-    margin-right: 20px
+    margin-right 20px
 
   &__title
     padding-bottom 5px
@@ -34,9 +42,6 @@
   &__date-birth
     padding-bottom 20px
     text-transform uppercase
-
-    .text-field:invalid
-      color: red;
 
   &__toggle
     padding-bottom 25.5px
@@ -57,17 +62,7 @@
     height 44px
     width 99px
 
-// media //
-.sign-up-menu
+  // media 
   @media  (max-width  phoneWidth)
     max-width   none
     width       100%
-
-    &__wrapper
-      padding 20px 25px 29px
-
-  @media  (max-width  400px)
-    &__title-main
-      padding-bottom 10px
-      .title_size-1
-        font-size: 20px

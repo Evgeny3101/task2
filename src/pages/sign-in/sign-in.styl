@@ -11,7 +11,7 @@
   max-width         1440px
   margin            0 auto
   overflow          hidden
-
+    
   &__background-slides
     position        absolute
     top             -70px
@@ -19,22 +19,21 @@
     width           1440px
     height          100%
     z-index         -1
+    @media (min-width phoneWidth + 1px) and (max-width lDesktopWidth)
+      top          -200px
+
+    @media  (max-width phoneWidth)
+      display       none
 
   &__sign-in-menu
     height          100%
     container(space-around)
 
-
-// media //
-.sign-in-page
+  // media
   @media (min-width phoneWidth + 1px) and (max-width lDesktopWidth)
     height          600px
-    &__background-slides
-      top          -200px
 
   @media  (max-width phoneWidth)
     height          auto
 
-    &__background-slides
-      display       none
 

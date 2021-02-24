@@ -14,6 +14,9 @@
   &__background-slides
     position        absolute
     top             -70px
+    
+    @media  (max-width  phoneWidth)
+      display       none
 
     width           1440px
     height          100%
@@ -23,12 +26,6 @@
     margin          19px 0 19px 6px
     container(space-around)
 
-// media //
-.sign-up-page
-  @media  (max-width  phoneWidth)
-    &__background-slides
-      display       none
-
-    &__sign-up-menu
+    @media  (max-width  phoneWidth)
       margin        0
 
