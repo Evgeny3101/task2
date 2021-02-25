@@ -1,27 +1,6 @@
 //- layout
 extends ../../layout/supporting
 
-//- local mixins
-mixin label-icon
-  +b.FIGURE.label-icon
-    +e.A.link(href='nav.html')
-      +e.IMG.img(src='assets/img/ui-kit-icon.svg', alt='иконка сайта')
-
-mixin color-demo(title, hex, mod)
-  +b.color-demo
-    +e.demo(class=mod)
-    +e.text-container
-      +e.SPAN.title= title
-      +e.SPAN.hex= hex
-
-mixin module-title(title, comment=false)
-  +b.module-title
-    +e.title
-      +b.H2.title_size-3= title
-    if (comment)
-      +e.comment
-        +e.SPAN.text= comment
-
 block head
   +head({ 'title': 'Toxin - UI Kit' })
 
@@ -34,20 +13,24 @@ block content
       +e.ui-kit-page1
         +b.ui-kit-page1
           +e.container-colors
-            +e.color-demo
-              +color-demo('Dark Shade 100%', '#1F2041')
-            +e.color-demo
-              +color-demo('Dark Shade 75%', '#1F2041', '_fade075')
-            +e.color-demo
-              +color-demo('Dark Shade 50%', '#1F2041', '_fade05')
-            +e.color-demo
-              +color-demo('Dark Shade 25%', '#1F2041', '_fade025')
-            +e.color-demo
-              +color-demo('Dark Shade 5%', '#1F2041', '_fade005')
-            +e.color-demo
-              +color-demo('Purple', '#BC9CFF', '_regular')
-            +e.color-demo
-              +color-demo('Green', '#6FCF97', '_second')
+            - const colorsDemo = [
+            - {title: 'Dark Shade 100%', hex: '#1F2041'},
+            - {title: 'Dark Shade 75%', hex: '#1F2041', mod: '_fade075'},
+            - {title: 'Dark Shade 50%', hex: '#1F2041', mod: '_fade05'},
+            - {title: 'Dark Shade 25%', hex: '#1F2041', mod: '_fade025'},
+            - {title: 'Dark Shade 5%', hex: '#1F2041', mod: '_fade005'},
+            - {title: 'Purple', hex: '#BC9CFF', mod: '_regular'},
+            - {title: 'Green', hex: '#6FCF97', mod: '_second'}
+            - ]
+
+            each item in colorsDemo
+              - const { title, hex, mod } = item;
+              +e.color-demo
+                +b.color-demo
+                  +e.demo(class=mod)
+                  +e.text-container
+                    +e.SPAN.title= title
+                    +e.SPAN.hex= hex
 
           +e.container-titles
             +b.title-demo
@@ -84,16 +67,16 @@ block content
                 +module-title('Text Field', 'Default')
 
               +e.text-field
-                +b.INPUT.text-field(type='text', placeholder='Email')
+                +b.INPUT.text-field(type="text", placeholder="Email")
 
             +e.container_pb20
               +e.container_pb5
                 +module-title('Text Field', 'Hover / Focus')
 
                 +b.INPUT.text-field._checked(
-                  type='text',
-                  placeholder='Email',
-                  value='This is pretty awesome'
+                  type="text",
+                  placeholder="Email",
+                  value="This is pretty awesome"
                 )
 
             +e.container_pb22
@@ -107,9 +90,9 @@ block content
                 +module-title('masked text field')
 
               +b.INPUT.text-field.js-masked-text-field(
-                type='text',
-                placeholder='ДД.ММ.ГГГГ',
-                spellcheck='false'
+                type="text",
+                placeholder="ДД.ММ.ГГГГ",
+                spellcheck="false"
               )
 
             +e.container_pb40
@@ -119,14 +102,14 @@ block content
                     +module-title('date Dropdown')
 
                   +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ' })._placeholder-dark(
-                    readonly='readonly'
+                    readonly="readonly"
                   )
                 +e.container_width-150
                   +e.container_pb6
                     +module-title('date Dropdown')
 
                   +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ', 'value': '19.08.2019' })._placeholder-dark(
-                    readonly='readonly'
+                    readonly="readonly"
                   )
 
             +e.container_width-266
@@ -135,7 +118,7 @@ block content
                   +module-title('filter date dropdown')
 
                 +dropdown({ 'type' : 'text', 'value': '19 авг - 23 авг.' })(
-                  readonly='readonly'
+                  readonly="readonly"
                 )
 
               +e.container
@@ -154,7 +137,9 @@ block content
               +e.container_pb10
                 +checkbox-item('Можно с питомцами')(checked)
               +e.container
-                +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
+                +checkbox-item('Можно пригласить гостей (до 10 человек)')(
+                  checked
+                )
 
             //-  Radio Buttons
             +e.container_pb16
@@ -202,22 +187,24 @@ block content
               +b.buttons-ui-kit
                 +e.container-button
                   +e.button
-                    +b.BUTTON.button._regular-big(type='button') CLICK ME
+                    +b.BUTTON.button._regular-big(type="button") CLICK ME
                   +e.button
-                    +b.BUTTON.button._regular-big.active(type='button') CLICK ME
+                    +b.BUTTON.button._regular-big.active(type="button") CLICK ME
                   +e.button
-                    +b.BUTTON.button._regular-big-transparent(type='button') CLICK ME
+                    +b.BUTTON.button._regular-big-transparent(type="button") CLICK ME
                   +e.button
-                    +b.BUTTON.button._regular-big-transparent.active(type='button') CLICK ME
+                    +b.BUTTON.button._regular-big-transparent.active(
+                      type="button"
+                    ) CLICK ME
 
                 +e.container-text-button
                   +e.text-button
-                    +b.BUTTON.button._regular-text(type='button') CLICK ME
+                    +b.BUTTON.button._regular-text(type="button") CLICK ME
                   +e.text-button
-                    +b.BUTTON.button._default-text-fade(type='button') CLICK ME
+                    +b.BUTTON.button._default-text-fade(type="button") CLICK ME
 
                 +e.button-with-icon
-                  +b.BUTTON.button._regular-big._relative(type='button') перейти к оплате
+                  +b.BUTTON.button._regular-big._relative(type="button") перейти к оплате
                     +e.I.icon.material-icons arrow_forward
 
             //-  Pagination
@@ -235,7 +222,7 @@ block content
 
               +b.dropdown-menu
                 +dropdown({ 'type' : 'text', 'placeholder': '2 спальни, 2 кровати...' })._placeholder-dark(
-                  readonly='readonly'
+                  readonly="readonly"
                 )
 
             +e.container_pb167
@@ -268,14 +255,7 @@ block content
 
             +e.container
               +e.checkbox-list
-                +checkbox-list('expandable checkbox list', [
-                  { 'text': 'Завтрак', 'name': 'breakfast' },
-                  { 'text': 'Письменный стол', 'name': 'desk', 'isActive': true },
-                  { 'text': 'Стул для кормления', 'name': 'feeding-chair', 'isActive': true },
-                  { 'text': 'Кроватка', 'name': 'crib', 'isActive': true },
-                  { 'text': 'Телевизор', 'name': 'tv-set' },
-                  { 'text': 'Шампунь', 'name': 'shampoo' }
-                ])
+                +checkbox-list('expandable checkbox list', [ { 'text': 'Завтрак', 'name': 'breakfast' }, { 'text': 'Письменный стол', 'name': 'desk', 'isActive': true }, { 'text': 'Стул для кормления', 'name': 'feeding-chair', 'isActive': true }, { 'text': 'Кроватка', 'name': 'crib', 'isActive': true }, { 'text': 'Телевизор', 'name': 'tv-set' }, { 'text': 'Шампунь', 'name': 'shampoo' } ])
 
           +e.container_pb201._mt-5
             //-  Rich Checkbox Buttons
@@ -333,95 +313,10 @@ block content
       +e.ui-kit-page4
         +b.ui-kit-page4
           +e.container
-            +header({ 
-              login: 'войти', 
-              register: 'зарегистрироваться', 
-              links : [{
-                'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true 
-              }, {
-                "title": "Услуги",
-                "dropdown": [
-                  {
-                    "text": "Услугa1",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Услугa2",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Услугa3",
-                    "href": "mock-address"
-                  }
-                ]
-              }, { 
-                'href' : 'mock-address', 'text' : 'Вакансии' 
-              }, { 
-                'href' : 'mock-address', 'text' : 'Новости', 
-              }, { 
-                "title": "Соглашения",
-                "dropdown": [
-                  {
-                    "text": "Соглашение1",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Соглашение2",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Соглашение3",
-                    "href": "mock-address"
-                  }
-                ]
-              }]
-            })
+            +header({ login: 'войти', register: 'зарегистрироваться', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { "title": "Услуги", "dropdown": [ { "text": "Услугa1", "href": "mock-address" }, { "text": "Услугa2", "href": "mock-address" }, { "text": "Услугa3", "href": "mock-address" } ] }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { "title": "Соглашения", "dropdown": [ { "text": "Соглашение1", "href": "mock-address" }, { "text": "Соглашение2", "href": "mock-address" }, { "text": "Соглашение3", "href": "mock-address" } ] }] })
 
           +e.container
-            +header({ 
-              login: 'войти', 
-              register: 'зарегистрироваться', 
-              user: 'Юлий Цезарь',
-              links : [{
-                'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true 
-              }, {
-                "title": "Услуги",
-                "dropdown": [
-                  {
-                    "text": "Услугa1",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Услугa2",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Услугa3",
-                    "href": "mock-address"
-                  }
-                ]
-              }, { 
-                'href' : 'mock-address', 'text' : 'Вакансии' 
-              }, { 
-                'href' : 'mock-address', 'text' : 'Новости', 
-              }, { 
-                "title": "Соглашения",
-                "dropdown": [
-                  {
-                    "text": "Соглашение1",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Соглашение2",
-                    "href": "mock-address"
-                  },
-                  {
-                    "text": "Соглашение3",
-                    "href": "mock-address"
-                  }
-                ]
-              }]
-            })
+            +header({ login: 'войти', register: 'зарегистрироваться', user: 'Юлий Цезарь', links : [{ 'href' : 'mock-address', 'text' : 'О нас', 'isMod' : true }, { "title": "Услуги", "dropdown": [ { "text": "Услугa1", "href": "mock-address" }, { "text": "Услугa2", "href": "mock-address" }, { "text": "Услугa3", "href": "mock-address" } ] }, { 'href' : 'mock-address', 'text' : 'Вакансии' }, { 'href' : 'mock-address', 'text' : 'Новости', }, { "title": "Соглашения", "dropdown": [ { "text": "Соглашение1", "href": "mock-address" }, { "text": "Соглашение2", "href": "mock-address" }, { "text": "Соглашение3", "href": "mock-address" } ] }] })
 
           +e.container
             +footer
