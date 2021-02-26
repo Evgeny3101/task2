@@ -1,6 +1,11 @@
+// libs
+import 'inputmask/dist/jquery.inputmask.min';
+
+// JS
 import DatePicker from '../datepicker/datepicker';
 import MenuForCount from '../menu-count/menu-count';
 
+// datepicker
 const datepicker = new DatePicker({
   baseElement: '.js-datepicker-payment',
   range: true,
@@ -20,6 +25,7 @@ const datepicker = new DatePicker({
   },
 });
 datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+
 
 // // меню подсчета
 // eslint-disable-next-line no-unused-vars
