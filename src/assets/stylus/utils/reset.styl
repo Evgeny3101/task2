@@ -12,7 +12,7 @@ a
   text-decoration  none
   cursor  pointer
   color  inherit
-  & active, & hover
+  &:active, &:hover
     outline  0
 
 
@@ -25,7 +25,7 @@ h1, h2, h3, h4, h5, h6
   font-weight  normal
 
 // Default
-*, * before, * after, input
+*, *:before, *:after, input
   box-sizing  border-box
 
 
@@ -57,3 +57,5 @@ button, input
   cursor pointer
   padding: 0
 
+*
+  -webkit-tap-highlight-color: transparent

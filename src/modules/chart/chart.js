@@ -2,16 +2,17 @@
 import Chart from 'chart.js';
 
 class PieChart {
-  constructor(id) {
-    this.init(id);
+  constructor(config) {
+    this.init(config);
   }
 
-  init(id) {
+  init(config) {
+    const { id } = config;
     this.canvas = document.getElementById(id);
     this.ctx = this.canvas.getContext('2d');
     this.elem = this.canvas.parentElement;
 
-    this.setChart();
+    this.setChart(config);
     this.connectingNumbersVotes();
     this.chart.options.onHover = this.handlerChartHover.bind(this);
   }
@@ -25,21 +26,20 @@ class PieChart {
     return gradient;
   }
 
-  setChart() {
+  setChart(config) {
     const { ctx } = this;
-    const gradients = [
-      this.getGradient('#919191', '#3D4975'),
-      this.getGradient('#BC9CFF', '#8BA4F9'),
-      this.getGradient('#6FCF97', '#66D2EA'),
-      this.getGradient('#FFE39C', '#FFBA9C'),
-    ];
+    const { data, textColors, gradientColors } = config;
+    const gradients = [];
+    gradientColors.forEach((colors, i) => {
+      gradients[i] = this.getGradient(colors[0], colors[1]);
+    });
 
     this.chart = new Chart(ctx, {
       type: 'pie',
       data: {
         datasets: [
           {
-            data: [0, 260, 260, 520],
+            data,
             backgroundColor: gradients,
 
             hoverBackgroundColor: gradients,
@@ -47,7 +47,7 @@ class PieChart {
             borderWidth: 1,
             hoverBorderColor: gradients,
 
-            text: ['#3D4975', '#8BA4F9', '#66D2EA', '#FFBA9C'],
+            text: textColors,
           },
         ],
       },

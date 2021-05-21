@@ -6,26 +6,27 @@
 @require '../../modules/background-slides/background-slides'
 
 .sign-up-page
-  position          relative
-  max-width         1440px
-  margin            0 auto
-  overflow          hidden
+  width 100%
+  margin 0 auto
+  overflow hidden
 
   &__background-slides
-    position        absolute
-    top             -70px
-    
-    @media  (max-width  phoneWidth)
-      display       none
+    position relative
+    top -70px
+    width 1440px
+    z-index -1
 
-    width           1440px
-    height          100%
-    z-index         -1
+    @media  (max-width  phoneWidth)
+      display none
+
 
   &__sign-up-menu
-    margin          19px 0 19px 6px
+    margin 19px 0 19px 6px
     container(space-around)
 
     @media  (max-width  phoneWidth)
-      margin        0
+      margin 0
 
+
+  @media  (max-width phoneWidth)
+    overflow visible

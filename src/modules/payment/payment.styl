@@ -37,6 +37,15 @@
     .dropdown__icon
       padding-top   0px
 
+  @media  (max-width phoneWidth)
+    &__datepicker,
+    &__menu-count
+      .dropdown__icon 
+        width 35px
+      
+      .text-field
+        padding-left 10px
+
   //
   &__price-list
     margin-top      20px
@@ -63,7 +72,7 @@
     &__number
       font-size       19px
 
-  //
+  // button apply
   &__button
     margin-top      20px
     height          44px

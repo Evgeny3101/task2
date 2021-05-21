@@ -13,19 +13,19 @@ block head
 
 block content
   //- config
-  - const commentsConfigArr = require("./comments.json");
+  - const commentsConfigArr = require('./comments.json');
 
   +b.MAIN.room-details
     +e.gallery
       +b.FIGURE.room-details-gallery
         +e.column1
-          +e.IMG.img1(src='assets/img/room-details1.jpg')
+          +e.IMG.img1(src="assets/img/room-details1.jpg")
 
         +e.column2
-          +e.IMG.img2(src='assets/img/room-details2.jpg')
-          +e.IMG.img3(src='assets/img/room-details3.jpg')
+          +e.IMG.img2(src="assets/img/room-details2.jpg")
+          +e.IMG.img3(src="assets/img/room-details3.jpg")
 
-    +e.wrapper.wrapper
+    +e.wrapper
       +e.details
         +e.SECTION.info
           +b.room-details-info
@@ -40,11 +40,7 @@ block content
                 +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
 
         +e.SECTION.impression
-          +impression({
-            title: 'Впечатления от номера',
-            text: 'голосов',
-            list: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
-          })
+          +impression({ title: 'Впечатления от номера', text: 'голосов', list: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'] })
 
         +e.SECTION.comments
           +b.room-details-comments
