@@ -18,35 +18,41 @@ class DatePicker {
 
     this.plugin = this.$mainField.datepicker(config).data('datepicker');
 
-    this.$clearButton = this.plugin.$datepicker.find('.datepicker--button[data-action="clear"]');
+    this.$clearButton = this.plugin.$datepicker.find(
+      '.datepicker--button[data-action="clear"]',
+    );
 
     // создаю кнопку 'Применить' в контейнере кнопок
-    this.plugin.$datepicker.find('.datepicker--buttons').append(
-      '<span class="datepicker--button js-datepicker--button-apply" data-action="apply">Применить</span>'
+    this.plugin.$datepicker
+      .find('.datepicker--buttons')
+      .append(
+        '<span class="datepicker--button js-datepicker--button-apply" data-action="apply">Применить</span>',
+      );
+    this.$applyButton = this.plugin.$datepicker.find(
+      '.js-datepicker--button-apply',
     );
-    this.$applyButton = this.plugin.$datepicker.find('.js-datepicker--button-apply');
   }
 
   setListeners() {
     const { $applyButton, $mainField, $secondField } = this;
 
-    $mainField.on('click', this._handleMainFieldClick.bind(this));
+    $mainField.on('click', this._handlerMainFieldClick.bind(this));
     $applyButton.on('click', this._handleApplyButtonClick.bind(this));
 
     if ($secondField) {
       $mainField
-        .on('focusin', this._handleMainFieldFocusIn.bind(this))
-        .on('focusout', this._handleMainFieldFocusOut.bind(this));
+        .on('focusin', this._handlerMainFieldFocusIn.bind(this))
+        .on('focusout', this._handlerMainFieldFocusOut.bind(this));
 
       $secondField
-        .on('focusin', this._handleSecondFieldFocusIn.bind(this))
-        .on('focusout', this._handleSecondFieldFocusOut.bind(this))
-        .on('click', this._handleSecondFieldClick.bind(this));
+        .on('focusin', this._handlerSecondFieldFocusIn.bind(this))
+        .on('focusout', this._handlerSecondFieldFocusOut.bind(this))
+        .on('click', this._handlerSecondFieldClick.bind(this));
     }
   }
 
   // вывод при выборе значений
-  // в date прилетают выбранные значения 
+  // в date прилетают выбранные значения
   _onSelect(date) {
     const { $mainField, $secondField, $clearButton } = this;
     const isDate = Boolean(date);
@@ -65,17 +71,17 @@ class DatePicker {
 
   _toggle() {
     if (this.isActive === false) {
-      this.isActive = true
+      this.isActive = true;
       this.plugin.show();
     } else {
-      this.isActive = false
+      this.isActive = false;
       this.plugin.hide();
     }
   }
 
   // установка обработчиков
-  _handleMainFieldClick() {
-    this._toggle()
+  _handlerMainFieldClick() {
+    this._toggle();
   }
 
   _handleApplyButtonClick() {
@@ -84,24 +90,24 @@ class DatePicker {
     this.$mainField.val(dateArray[0]);
   }
 
-  _handleMainFieldFocusIn() {
+  _handlerMainFieldFocusIn() {
     this.$secondField.addClass('text-field_checked');
   }
 
-  _handleMainFieldFocusOut() {
+  _handlerMainFieldFocusOut() {
     this.$secondField.removeClass('text-field_checked');
   }
 
-  _handleSecondFieldFocusIn() {
+  _handlerSecondFieldFocusIn() {
     this.$mainField.addClass('text-field_checked');
   }
 
-  _handleSecondFieldFocusOut() {
+  _handlerSecondFieldFocusOut() {
     this.$mainField.removeClass('text-field_checked');
   }
 
-  _handleSecondFieldClick() {
-    this._toggle()
+  _handlerSecondFieldClick() {
+    this._toggle();
   }
 }
 

@@ -11,10 +11,10 @@ class LikeButton {
   }
 
   _setListeners() {
-    this.elem.addEventListener('click', this._handleLikeButtonClick.bind(this));
+    this.elem.addEventListener('click', this._handlerLikeButtonClick.bind(this));
   }
 
-  _handleLikeButtonClick() {
+  _handlerLikeButtonClick() {
     const { elem, iconDOM, numberDOM } = this;
 
     elem.classList.toggle('like-button_checked');

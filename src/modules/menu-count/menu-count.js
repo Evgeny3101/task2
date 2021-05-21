@@ -10,21 +10,21 @@ class MenuForCount {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    document.addEventListener('keydown', this.handleDropdownMenuKeydown);
-    this.textFieldDOM.addEventListener('click', this.handleDropdownMenuClick);
+    document.addEventListener('keydown', this.handlerDropdownMenuKeydown);
+    this.textFieldDOM.addEventListener('click', this.handlerDropdownMenuClick);
 
     // кнопки + и -
     this.items.forEach((item) => {
-      item.plusBtnDOM.addEventListener('click', item.handlePlusBtnClick);
-      item.minusBtnDOM.addEventListener('click', item.handleMinusBtnClick);
-      item.plusBtnDOM.addEventListener('click', this.handlePlusBtnClick);
-      item.minusBtnDOM.addEventListener('click', this.handleMinusBtnClick);
+      item.plusBtnDOM.addEventListener('click', item.handlerPlusBtnClick);
+      item.minusBtnDOM.addEventListener('click', item.handlerMinusBtnClick);
+      item.plusBtnDOM.addEventListener('click', this.handlerPlusBtnClick);
+      item.minusBtnDOM.addEventListener('click', this.handlerMinusBtnClick);
     });
 
     // кнопки контроля
     if (areControlButtons) {
-      this.applyBtn.addEventListener('click', this.handleButtonApplyClick);
-      this.clearBtn.addEventListener('click', this.handleButtonClearClick);
+      this.applyBtn.addEventListener('click', this.handlerButtonApplyClick);
+      this.clearBtn.addEventListener('click', this.handlerButtonClearClick);
     }
   }
 
@@ -32,21 +32,24 @@ class MenuForCount {
     const { areControlButtons } = this.config;
 
     // открыть/закрыть меню
-    document.removeEventListener('keydown', this.handleDropdownMenuKeydown);
-    this.textFieldDOM.removeEventListener('click', this.handleDropdownMenuClick);
+    document.removeEventListener('keydown', this.handlerDropdownMenuKeydown);
+    this.textFieldDOM.removeEventListener(
+      'click',
+      this.handlerDropdownMenuClick,
+    );
 
     // кнопки + и -
     this.items.forEach((item) => {
-      item.plusBtnDOM.removeEventListener('click', item.handlePlusBtnClick);
-      item.minusBtnDOM.removeEventListener('click', item.handleMinusBtnClick);
-      item.plusBtnDOM.removeEventListener('click', this.handlePlusBtnClick);
-      item.minusBtnDOM.removeEventListener('click', this.handleMinusBtnClick);
+      item.plusBtnDOM.removeEventListener('click', item.handlerPlusBtnClick);
+      item.minusBtnDOM.removeEventListener('click', item.handlerMinusBtnClick);
+      item.plusBtnDOM.removeEventListener('click', this.handlerPlusBtnClick);
+      item.minusBtnDOM.removeEventListener('click', this.handlerMinusBtnClick);
     });
 
     // кнопки контроля
     if (areControlButtons) {
-      this.applyBtn.removeEventListener('click', this.handleButtonApplyClick);
-      this.clearBtn.removeEventListener('click', this.handleButtonClearClick);
+      this.applyBtn.removeEventListener('click', this.handlerButtonApplyClick);
+      this.clearBtn.removeEventListener('click', this.handlerButtonClearClick);
     }
   }
 
@@ -98,8 +101,8 @@ class MenuForCount {
 
     if (typeof baseElement === 'string') this.baseElement = document.querySelector(baseElement);
     else this.baseElement = baseElement;
-    this.textFieldDOM = this.baseElement.querySelector('.js-menu-count__text');
 
+    this.textFieldDOM = this.baseElement.querySelector('.js-menu-count__text');
   }
 
   _installComponents() {
@@ -147,7 +150,7 @@ class MenuForCount {
           <div>
             <button class="button button_regular-text js-menu-count-button-apply" type="button">применить</button>
           </div>
-        </div>`
+        </div>`,
       );
 
       this.applyBtn = wrapper.querySelector('.js-menu-count-button-apply');
@@ -163,26 +166,26 @@ class MenuForCount {
     const { areControlButtons } = this.config;
     const { textFieldDOM, items } = this;
     if (areControlButtons) {
-      this.handleButtonApplyClick = () => {
+      this.handlerButtonApplyClick = () => {
         const valuesByTypes = this._countValuesByTypes();
         textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);
         this.closeMenu();
       };
 
-      this.handleButtonClearClick = () => {
+      this.handlerButtonClearClick = () => {
         items.forEach((item) => item.clearResult());
         this._hideClearButton();
       };
     }
 
-    this.handleDropdownMenuClick = this.switchMenu.bind(this);
-    this.handleDropdownMenuKeydown = (e) => {
+    this.handlerDropdownMenuClick = this.switchMenu.bind(this);
+    this.handlerDropdownMenuKeydown = (e) => {
       if (e.code === 'Escape') {
         this.closeMenu();
       }
-    }
+    };
 
-    this.handlePlusBtnClick = () => {
+    this.handlerPlusBtnClick = () => {
       const valuesByTypes = this._countValuesByTypes();
 
       if (areControlButtons) {
@@ -194,11 +197,13 @@ class MenuForCount {
       this._setValuesInInput(valuesByTypes);
     };
 
-    this.handleMinusBtnClick = () => {
+    this.handlerMinusBtnClick = () => {
       const valuesByTypes = this._countValuesByTypes();
 
       if (areControlButtons) {
-        const isMinValue = !this.items.some((item) => item.isMinValue === false);
+        const isMinValue = !this.items.some(
+          (item) => item.isMinValue === false,
+        );
         if (isMinValue) this._hideClearButton();
       } else {
         this.textFieldDOM.innerText = this._addTypeDescription(valuesByTypes);

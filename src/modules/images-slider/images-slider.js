@@ -5,13 +5,11 @@ class ImagesSlider {
   }
 
   setListeners() {
-    this.controlBtnsDOM.forEach((item, i) =>
-      item.addEventListener('click', this.handleControlButtonClick(i))
-    );
-    this.prevBtnDOM.addEventListener('click', this.handleButtonPrevClick);
-    this.nextBtnDOM.addEventListener('click', this.handleButtonNextClick);
-    this.baseElement.addEventListener('mouseover', this.handleImagesSliderMouseover);
-    this.baseElement.addEventListener('mouseleave', this.handleImagesSliderMouseleave);
+    this.controlBtnsDOM.forEach((item, i) => item.addEventListener('click', this.handlerControlButtonClick(i)));
+    this.prevBtnDOM.addEventListener('click', this.handlerButtonPrevClick);
+    this.nextBtnDOM.addEventListener('click', this.handlerButtonNextClick);
+    this.baseElement.addEventListener('mouseover', this.handlerImagesSliderMouseover);
+    this.baseElement.addEventListener('mouseleave', this.handlerImagesSliderMouseleave);
   }
 
   toPrevImage() {
@@ -61,21 +59,21 @@ class ImagesSlider {
 
     oldImage.classList.remove(
       'js-images-slider__image_current',
-      'images-slider__image_current'
+      'images-slider__image_current',
     );
     this.imgsDOM[currentImageNumber].classList.add(
       'js-images-slider__image_current',
-      'images-slider__image_current'
+      'images-slider__image_current',
     );
 
     const oldCircle = this.baseElement.querySelector('.js-images-slider__circles-button_current');
     oldCircle.classList.remove(
       'js-images-slider__circles-button_current',
-      'images-slider__circles-button_current'
+      'images-slider__circles-button_current',
     );
     this.controlBtnsDOM[currentImageNumber].classList.add(
       'js-images-slider__circles-button_current',
-      'images-slider__circles-button_current'
+      'images-slider__circles-button_current',
     );
   }
 
@@ -89,11 +87,11 @@ class ImagesSlider {
   }
 
   _setHandlers() {
-    this.handleControlButtonClick = (index) => this.goToImage.bind(this, index);
-    this.handleButtonPrevClick = this.toPrevImage.bind(this);
-    this.handleButtonNextClick = this.toNextImage.bind(this);
-    this.handleImagesSliderMouseover = this.showArrows.bind(this);
-    this.handleImagesSliderMouseleave = this.hideArrows.bind(this);
+    this.handlerControlButtonClick = (index) => this.goToImage.bind(this, index);
+    this.handlerButtonPrevClick = this.toPrevImage.bind(this);
+    this.handlerButtonNextClick = this.toNextImage.bind(this);
+    this.handlerImagesSliderMouseover = this.showArrows.bind(this);
+    this.handlerImagesSliderMouseleave = this.hideArrows.bind(this);
   }
 } // класс
 

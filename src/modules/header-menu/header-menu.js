@@ -1,19 +1,38 @@
-function headerMenuDropdown() {
-  const $buttons = $('.js-header-menu__dropdown-title');
-  $buttons.find('.js-header-menu__dropdown-icon-up').hide();
+function initHeaderMenu() {
+  const $headerMenu = $('.js-header-menu');
 
-  const handleCheckboxListClick = (event) => {
-    const target = event.currentTarget;
-    const $iconUp = $(target).find('.js-header-menu__dropdown-icon-up');
-    const $iconDown = $(target).find('.js-header-menu__dropdown-icon-down');
-    const $menu = $(target.parentElement).find('.js-header-menu__dropdown-links');
+  // burger menu
+  const $burgerMenuButtons = $headerMenu.find('.js-header-menu__burger-menu');
 
-    $menu.slideToggle('.header-menu__dropdown-links_active');
-    $iconUp.toggle();
-    $iconDown.toggle();
+  const handlerBurgerMenuClick = (event) => {
+    const $menu = $(event.currentTarget.parentElement);
+
+    $menu.toggleClass('header-menu_burger-active');
   };
 
-  $buttons.on('click', handleCheckboxListClick);
+  const handlerResize = () => {
+    $headerMenu.removeClass('header-menu_burger-active');
+  };
+
+  window.addEventListener('resize', handlerResize);
+  $burgerMenuButtons.on('click', handlerBurgerMenuClick);
+
+  // dropdown menu
+  const $dropdownMenuButton = $headerMenu.find('.js-header-menu__dropdown-menu-button');
+
+  //  закрыть все открытые меню
+  const $menus = $('.js-header-menu__dropdown-menu-links');
+  $menus.slideUp(0);
+
+  const handlerDropdownMenuClick = (event) => {
+    const $menu = $(event.currentTarget.parentElement);
+    const $links = $menu.find('.js-header-menu__dropdown-menu-links');
+
+    $menu.toggleClass('header-menu__dropdown-menu_active');
+    $links.slideToggle();
+  };
+
+  $dropdownMenuButton.on('click', handlerDropdownMenuClick);
 }
 
-jQuery(headerMenuDropdown());
+jQuery(initHeaderMenu());

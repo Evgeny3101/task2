@@ -14,19 +14,27 @@
 
   &__datepicker
     margin-top 22px
+    
+    @media  (max-width smPhoneWidth)  
+      .dropdown__icon 
+        display none
 
-  &__title-menu
-    margin-top 20px
-
+    @media  (max-width  phoneWidth)
+      .text-field
+        padding 0px 8px 2px
+      
   &__menu-count
     margin-top  20px
 
+  &__datepicker,
+  &__menu-count
+    @media (min-width smPhoneWidth) and (max-width  phoneWidth)
+      .dropdown__icon 
+        width 30px
+    
   &__button
     margin-top 31px
     height  44px
 
     .button
       padding-right  3px
-
-
-

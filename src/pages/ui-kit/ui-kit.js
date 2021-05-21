@@ -24,7 +24,6 @@ buttonsDOM.forEach((button, i) => {
 
 // // меню подсчета
 const baseElementsMenuCount = document.querySelectorAll('.js-menu-count');
-const menuCountArr = [];
 const menuCountConfigArr = [
   {
     itemsCount: [
@@ -101,13 +100,15 @@ const menuCountConfigArr = [
     areControlButtons: true,
   },
 ];
+const menuCountArr = [];
 
 // установка
 menuCountConfigArr.forEach((config, i) => {
-  config.baseElement = baseElementsMenuCount[i]
-  menuCountArr[i] = new MenuForCount(config);
+  const newConfig = config;
+  newConfig.baseElement = baseElementsMenuCount[i];
+  menuCountArr[i] = new MenuForCount(newConfig);
   menuCountArr[i].switchMenu();
-})
+});
 
 // //checkbox-list
 const checkboxList = document.querySelectorAll('.checkbox-list__button')[1];

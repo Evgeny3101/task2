@@ -10,9 +10,7 @@ $('.js-range-slider__container').rangeSlider({
   textField: ['.js-range-slider__field1', '.js-range-slider__field2'],
 
   updateValues(values) {
-    const formalizedValuesArr = values.map((name) => {
-      return `${name.toLocaleString()} ₽`;
-    });
+    const formalizedValuesArr = values.map((name) => `${name.toLocaleString()} ₽`);
 
     resultValueDOM.innerText = formalizedValuesArr.join(' - ');
   },

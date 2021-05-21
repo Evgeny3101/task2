@@ -1,48 +1,138 @@
 .header-menu
-  color  fade-out(0.5)
+  color fade-out(0.5)
+  position relative
+
+  // burger-menu
+  &__burger-menu
+    display none
+    @media (max-width  smDesktopWidth)
+      container(center)
+      flex-direction column
+
+    &-open-icon,
+    &-close-icon
+      font-size 32px
+      color regular-color
+      cursor pointer
+      &:hover
+        color  fade-out(0.5, regular-color)
+
+    &-open-icon
+      display block
+
+    &-close-icon
+      display none
+
+  // links
+  &__items 
+    container()
+    background default-color
+    position relative
+    z-index 2
+
+    @media (max-width smDesktopWidth)
+      top 50px
+      right 0
+      
+      visibility hidden
+      opacity 0
+      transform scaleY(0)
+      transform-origin 0 0
+      transition 0.4s
+
+      container()
+      flex-direction column
+      position absolute
+      box-shadow 0px 0px 5px 0px fade-out(0.3)
 
   &__item
     margin 0 5px
+    
+    @media (max-width smDesktopWidth)
+      width 100%
 
   &__link
     letter-spacing 0.05px
-    padding 5px 0 5px 10px
+    padding-left 10px
+    white-space nowrap
 
     &_bold
       color fade-out()
       font-weight bold
       padding-right 1px
 
-  /// header-menu-dropdown  
-  &__dropdown-container
+    @media (max-width smDesktopWidth)
+      display inline-block
+      width 100%
+
+  /// header-menu__dropdown-menu  
+  &__dropdown-menu  
     position relative
-    z-index 2
 
-  &__dropdown-title
-    height 30px
-    display flex
-    align-items center
-    letter-spacing 0.05px
-    padding 5px 0 5px 10px
-    cursor pointer
-  
-  &__dropdown-links
-    width 100%
-    position absolute
-
-    display none
-    background default-color
-    box-shadow 0px 2px 3px 0px fade-out(0.2)
+    &-button
+      height 40px
+      padding-left 10px
+      position relative
+      z-index 1
       
-    &_active
-      display block
+      display flex
+      align-items center
+     
+      letter-spacing 0.05px
+      cursor pointer
+      @media (max-width smDesktopWidth)
+        justify-content space-between
 
-  &__dropdown-link
-    padding 5px 0 5px 10px
+    &-icon-up,
+    &-icon-down
+      padding-top 4px
+      @media (max-width smDesktopWidth)
+        padding-right 5px
 
-  &__dropdown-icon-up,
-  &__dropdown-icon-down
-    padding-top 4px
+    &-icon-up
+      display none
 
-  @media (max-width  smDesktopWidth)
-    display         none
+    &-link
+      line-height 40px
+      padding 0 10px
+      white-space nowrap
+      display inline-block
+
+    &-links
+      width 100%
+      position absolute
+      
+      background default-color
+      box-shadow inset 0px 0px 5px 0px fade-out(0.2)
+
+      @media (max-width smDesktopWidth)
+        position static
+
+    &_active 
+      .header-menu__dropdown-menu
+        &-button
+          @media (max-width smDesktopWidth)
+            box-shadow 0px 0px 5px 0px fade-out(0.3)
+          
+        &-icon-up
+          display block
+
+        &-icon-down
+          display none
+          
+  // burger-menu is active
+  &_burger-active
+    
+    .header-menu
+      &__burger-menu  
+        &-close-icon
+          display block
+
+        &-open-icon
+          display none
+
+      &__items 
+        visibility visible
+        opacity 1
+        transform scaleY(1)
+

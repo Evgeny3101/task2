@@ -1,22 +1,27 @@
 mixin header-menu(links)
-  +b.UL.header-menu
-    each itemConfig in links
-      - const { href, text, isMod, title, dropdown } = itemConfig;
-      - const classMod = isMod ? '_bold' : '';
+  +b.header-menu.js-header-menu
+    +e.BUTTON.burger-menu.js-header-menu__burger-menu
+      +e.I.burger-menu-open-icon.material-icons menu
+      +e.I.burger-menu-close-icon.material-icons close
 
-      +e.LI.item
-        if (text)
-          +e.A.link(href=href, class=classMod)= text
+    +e.UL.items.js-header-menu__items
+      each itemConfig in links
+        - const { href, text, isMod, title, dropdown } = itemConfig;
+        - const classMod = isMod ? '_bold' : '';
 
-        else
-          +e.dropdown-container
-            +e.dropdown-title.js-header-menu__dropdown-title= title
-              +e.I.icon-up.js-header-menu__dropdown-icon-up.material-icons keyboard_arrow_up
-              +e.I.icon-down.js-header-menu__dropdown-icon-down.material-icons keyboard_arrow_down
+        +e.LI.item
+          if (text)
+            +e.A.link(href=href, class=classMod)= text
 
-            +e.UL.dropdown-links.js-header-menu__dropdown-links
-              each item in dropdown
-                - const { href, text, isMod, title, dropdown } = item;
+          else
+            +e.dropdown-menu
+              +e.dropdown-menu-button.js-header-menu__dropdown-menu-button= title
+                +e.I.dropdown-menu-icon-up.material-icons keyboard_arrow_up
+                +e.I.dropdown-menu-icon-down.material-icons keyboard_arrow_down
 
-                +e.LI.dropdown-item
-                  +e.A.dropdown-link(href=href)= text
+              +e.UL.dropdown-menu-links.js-header-menu__dropdown-menu-links
+                each item in dropdown
+                  - const { href, text, isMod, title, dropdown } = item;
+
+                  +e.LI.dropdown-menu-item
+                    +e.A.dropdown-menu-link(href=href)= text

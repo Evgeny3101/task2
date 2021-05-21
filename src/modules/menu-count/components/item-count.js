@@ -3,8 +3,8 @@ class ItemCount {
     this._setConfig(config);
     elem.append(this._createHTML());
 
-    this.handleMinusBtnClick = this.minusOne.bind(this);
-    this.handlePlusBtnClick = this.plusOne.bind(this);
+    this.handlerMinusBtnClick = this.minusOne.bind(this);
+    this.handlerPlusBtnClick = this.plusOne.bind(this);
   }
 
   plusOne() {
@@ -15,17 +15,16 @@ class ItemCount {
     // уберет класс если значение больше(на 1) минимального
     const isMoreMinValue = this.value >= 1 + this.minValue;
 
-    if (isMoreMinValue)
-      this.minusBtnDOM.classList.remove('menu-count-item__minus-btn_deactive');
+    if (isMoreMinValue) this.minusBtnDOM.classList.remove('menu-count-item__minus-btn_deactive');
   }
 
   minusOne() {
     if (!this.isMinValue) this.value -= 1;
-    if (this.value === this.minValue) { 
+    if (this.value === this.minValue) {
       this.isMinValue = true;
       this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
     }
-  
+
     this.resultDOM.innerText = this.value;
   }
 
@@ -35,7 +34,9 @@ class ItemCount {
     this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
   }
 
-  _setConfig({ title, minValue, value, index }) {
+  _setConfig({
+    title, minValue, value, index,
+  }) {
     this.title = title || '';
     this.minValue = minValue || 0;
     this.value = value || this.minValue;

@@ -4,7 +4,6 @@ import '../range-slider/range-slider';
 import MenuForCount from '../menu-count/menu-count';
 import DatePicker from '../datepicker/datepicker';
 
-
 // меню подсчета
 const menuCountArr = [];
 menuCountArr[0] = new MenuForCount({
@@ -60,7 +59,6 @@ menuCountArr[1] = new MenuForCount({
     },
   ],
 });
-
 
 // календарь
 const datepicker = new DatePicker({

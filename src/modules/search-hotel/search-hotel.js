@@ -5,7 +5,6 @@ import 'inputmask/dist/jquery.inputmask.min';
 import DatePicker from '../datepicker/datepicker';
 import MenuForCount from '../menu-count/menu-count';
 
-
 // // DatePicker
 // eslint-disable-next-line no-unused-vars
 const datepicker = new DatePicker({
@@ -26,7 +25,6 @@ const datepicker = new DatePicker({
     days: 'MM yyyy',
   },
 });
-
 
 // // MenuForCount
 // eslint-disable-next-line no-unused-vars
@@ -53,7 +51,6 @@ const menuForCount = new MenuForCount({
   placeholder: 'Сколько гостей',
   areControlButtons: true,
 });
-
 
 // // input mask
 $('.js-datepicker-search-hotel').find('input').inputmask({

@@ -1,19 +1,15 @@
 function initCheckboxList() {
   const $buttons = $('.js-checkbox-list__button');
-  $buttons.find('.js-checkbox-list-button__icon-up').hide();
 
-  const handleCheckboxListClick = (event) => {
-    const target = event.currentTarget;
-    const $iconUp = $(target).find('.js-checkbox-list-button__icon-up');
-    const $iconDown = $(target).find('.js-checkbox-list-button__icon-down');
-    const $menu = $(target.parentElement).find('.js-checkbox-list__menu');
+  const handlerCheckboxListClick = (event) => {
+    const checkboxList = event.currentTarget.parentElement.parentElement;
+    const $list = $(checkboxList).find('.js-checkbox-list__list');
 
-    $menu.slideToggle('.checkbox-list__menu_active');
-    $iconUp.toggle();
-    $iconDown.toggle();
+    checkboxList.classList.toggle('checkbox-list_active');
+    $list.slideToggle();
   };
 
-  $buttons.on('click', handleCheckboxListClick);
+  $buttons.on('click', handlerCheckboxListClick);
 }
 
 jQuery(initCheckboxList());

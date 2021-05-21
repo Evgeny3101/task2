@@ -2,7 +2,7 @@ include ../logo/logo
 include ../header-menu/header-menu
 
 mixin header(config=false)
-  - if (!config) config = require("../../modules/header/header.json");
+  - if (!config) config = require('../../modules/header/header.json');
   - const { login, register, user, links } = config;
 
   +b.HEADER.header
@@ -17,13 +17,15 @@ mixin header(config=false)
         if (user)
           +e.user
             +e.button
-              +b.BUTTON.button._default(type='button')= user
+              +b.BUTTON.button._default(type="button")= user
 
         else
           +e.auth-btn
             +b.header-auth-button
-              +e.button-sign-in
-                +b.A.button._regular-big-transparent(href='sign-in.html')= login
+              +e.A.button-sign-in(href="sign-in.html")
+                +b.button._regular-big-transparent= login
+                +e.I.icon.material-icons login
 
-              +e.button-sign-up
-                +b.A.button._regular-big(href='sign-up.html')= register
+              +e.A.button-sign-up(href="sign-up.html")
+                +b.button._regular-big= register
+                +e.I.icon.material-icons person_add
