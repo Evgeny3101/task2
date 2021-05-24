@@ -3,7 +3,7 @@ include ../social-link/social-link
 include ../subscription/subscription
 
 mixin footer(config=false)
-  - if (!config) config = require("../../modules/footer/footer.json");
+  - if (!config) config = require('../../modules/footer/footer.json');
   - const { text, subTitle, subText, subPlace, bottomText, menus } = config;
 
   +b.FOOTER.footer
@@ -35,7 +35,7 @@ mixin footer(config=false)
             +e.SPAN.text= subText
 
             +e.subscription
-              +subscription({ type: 'email', placeholder: subPlace, name: "subscription"})
+              +subscription({ placeholder: subPlace })
 
     +e.bottom-area
       +b.footer-bottom-area

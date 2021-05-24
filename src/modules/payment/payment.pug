@@ -3,17 +3,20 @@ include ../menu-count/menu-count
 include ../hotel-price/hotel-price
 include ../price-list/price-list
 
-mixin payment
+mixin payment(config=false)
+  - if (!config) config = require('../../modules/payment/payment.json');
+  - const { hotelPrice, datepicker, menuCount } = config;
+
   +b.FORM.payment
     +e.wrapper
       +e.hotel-item-price
-        +hotel-price({ number: 888, price: '9 990₽', isLux: true, isH1: true })
+        +hotel-price(hotelPrice)
 
       +e.datepicker
-        +datepicker({ title: 'прибытие', placeholder: 'ДД.ММ.ГГГГ', name: 'arrival' }, { title: 'выезд', placeholder: 'ДД.ММ.ГГГГ', name: 'departure' }).js-datepicker-payment
+        +datepicker(datepicker[0], datepicker[1]).js-datepicker-payment
 
       +e.menu-count
-        +menu-count({ title: 'гости', placeholder: 'Сколько гостей', value: '3 гостя' }).js-menu-count-payment
+        +menu-count(menuCount).js-menu-count-payment
 
       +e.price-list
         +price-list

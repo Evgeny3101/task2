@@ -4,9 +4,13 @@
     "browser": true,
     "jquery": true
   },
-  "extends": ["airbnb-base"],
-  "plugins": ["fsd", "pug"],
-  
+  "extends": [
+    "airbnb-base"
+  ],
+  "plugins": [
+    "fsd",
+    "pug"
+  ],
   "rules": {
     "fsd/hof-name-prefix": "error",
     "fsd/no-heavy-constructor": "error",
@@ -14,9 +18,13 @@
     "fsd/jq-use-js-prefix-in-selector": "error",
     "fsd/no-function-declaration-in-event-listener": "error",
     "fsd/split-conditionals": "error",
-
     // my rules
     "linebreak-style": 0,
-    "no-underscore-dangle": ["error", { "allowAfterThis": true }]
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allowAfterThis": true
+      }
+    ]
   }
 }

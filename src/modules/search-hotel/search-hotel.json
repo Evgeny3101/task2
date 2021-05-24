@@ -1,0 +1,19 @@
+{
+  "title": "Найдём номера под ваши пожелания",
+  "datepicker": [
+    {
+      "title": "прибытие",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "name": "arrival"
+    },
+    {
+      "title": "выезд",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "name": "departure"
+    }
+  ],
+  "menuCount": {
+    "title": "гости",
+    "placeholder": "Сколько гостей"
+  }
+}

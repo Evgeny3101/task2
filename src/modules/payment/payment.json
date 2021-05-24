@@ -1,0 +1,25 @@
+{
+  "hotelPrice": {
+    "number": 888,
+    "price": "9 990₽",
+    "isLux": true,
+    "isH1": true
+  },
+  "datepicker": [
+    {
+      "title": "прибытие",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "name": "arrival"
+    },
+    {
+      "title": "выезд",
+      "placeholder": "ДД.ММ.ГГГГ",
+      "name": "departure"
+    }
+  ],
+  "menuCount": {
+    "title": "гости",
+    "placeholder": "Сколько гостей",
+    "value": "3 гостя"
+  }
+}

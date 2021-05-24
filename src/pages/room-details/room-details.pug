@@ -33,11 +33,11 @@ block content
               +b.H2.title_size-2 Сведения о номере
             +e.UL.container
               +e.item-info
-                +item-info('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+                +item-info({ icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены' })
               +e.item-info
-                +item-info('location_city', 'Удобство', 'Окно в каждой из спален')
+                +item-info({ icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' })
               +e.item-info
-                +item-info('whatshot', 'Уют', 'Номер оснащён камином')._border-none
+                +item-info({ icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' })
 
         +e.SECTION.impression
           +impression({ title: 'Впечатления от номера', text: 'голосов', list: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'] })

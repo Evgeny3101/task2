@@ -99,8 +99,9 @@ class MenuForCount {
   _findBaseElement() {
     const { baseElement } = this.config;
 
-    if (typeof baseElement === 'string') this.baseElement = document.querySelector(baseElement);
-    else this.baseElement = baseElement;
+    if (typeof baseElement === 'string') {
+      this.baseElement = document.querySelector(baseElement);
+    } else this.baseElement = baseElement;
 
     this.textFieldDOM = this.baseElement.querySelector('.js-menu-count__text');
   }

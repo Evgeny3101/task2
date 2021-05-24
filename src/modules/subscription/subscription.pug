@@ -1,10 +1,11 @@
-mixin subscription({type, placeholder, value, name})
+mixin subscription({ value, placeholder })
   +b.FORM.subscription
     +e.BUTTON.button
       +e.I.icon.material-icons arrow_forward
+
     +b.INPUT.text-field._padding-right(
-      type=type,
+      value=value,
       placeholder=placeholder,
-      name=name,
-      value=value
+      name="subscription",
+      type="email"
     )&attributes(attributes)
