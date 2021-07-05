@@ -14,6 +14,7 @@ const datepicker = new DatePicker({
   offset: 5,
   toggleSelected: true,
   keyboardNav: false,
+  minDate: new Date(),
 
   showButtonPanel: true,
   clearButton: true,

@@ -27,18 +27,19 @@
 
 // плагин
 .rs-range-slider
-  height 6px
-  border              1px solid fade-out(0.25)
-  border-radius       3px
+  &__line
+    height            8px
+    border            1px solid fade-out(0.25)
+    border-radius     3px
 
   &__button
-    top               -6px
     width             16px
     height            16px
     background        linear-gradient(secondary-gradient)
+    
+  &__interval
+    height 6px
 
-.rs-range-slider_horizontal .rs-slider-interval
-  height      6px
 
 .rs-slider-interval
   background  linear-gradient(secondary-gradient)

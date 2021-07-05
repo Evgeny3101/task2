@@ -2,7 +2,7 @@ import 'air-datepicker/dist/js/datepicker.min';
 
 class DatePicker {
   constructor(config) {
-    this.createCalendar(config); // isSingleField
+    this.createCalendar(config);
     this.plugin.update('onSelect', this._onSelect.bind(this));
     this._onSelect();
     this.setListeners();

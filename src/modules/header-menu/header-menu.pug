@@ -14,9 +14,8 @@ mixin header-menu(links)
             +e.A.link(href=href, class=classMod)= text
 
           else
-            +e.dropdown-menu
+            +e.dropdown-menu.js-header-menu__dropdown-menu
               +e.dropdown-menu-button.js-header-menu__dropdown-menu-button= title
-                +e.I.dropdown-menu-icon-up.material-icons keyboard_arrow_up
                 +e.I.dropdown-menu-icon-down.material-icons keyboard_arrow_down
 
               +e.UL.dropdown-menu-links.js-header-menu__dropdown-menu-links

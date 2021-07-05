@@ -1,38 +1,84 @@
 function initHeaderMenu() {
   const $headerMenu = $('.js-header-menu');
 
-  // burger menu
-  const $burgerMenuButtons = $headerMenu.find('.js-header-menu__burger-menu');
-
-  const handlerBurgerMenuClick = (event) => {
-    const $menu = $(event.currentTarget.parentElement);
-
-    $menu.toggleClass('header-menu_burger-active');
+  // Burger menu
+  const configBurger = {
+    menuClass: '.js-header-menu',
+    menuClassActive: 'header-menu_burger-active',
+    buttonClass: '.js-header-menu__burger-menu',
   };
 
-  const handlerResize = () => {
-    $headerMenu.removeClass('header-menu_burger-active');
+  function initBurgerMenu(config) {
+    const {
+      menuClass,
+      menuClassActive,
+      buttonClass,
+    } = config;
+
+    const $button = $headerMenu.find(buttonClass);
+
+    const handlerBurgerMenuClick = (event) => {
+      const $menu = $(event.currentTarget).closest(menuClass);
+      $menu.toggleClass(menuClassActive);
+    };
+
+    const handlerDocumentClick = (event) => {
+      if ($(event.target).closest(menuClass).length) {
+        return;
+      }
+      $headerMenu.removeClass(menuClassActive);
+    };
+
+    $(document).on('click', handlerDocumentClick);
+    $button.on('click', handlerBurgerMenuClick);
+  }
+
+  initBurgerMenu(configBurger);
+
+  // Dropdown
+  const configDropdown = {
+    menuClass: '.js-header-menu__dropdown-menu',
+    menuClassActive: 'header-menu__dropdown-menu_active',
+    buttonClass: '.js-header-menu__dropdown-menu-button',
+    linksClass: '.js-header-menu__dropdown-menu-links',
   };
 
-  window.addEventListener('resize', handlerResize);
-  $burgerMenuButtons.on('click', handlerBurgerMenuClick);
+  const initDropdownMenu = (value, config) => {
+    const {
+      menuClass,
+      menuClassActive,
+      buttonClass,
+      linksClass,
+    } = config;
+    const $menu = $(value);
+    const $button = $menu.find(buttonClass);
+    const $links = $menu.find(linksClass);
+    $links.slideUp(0);
 
-  // dropdown menu
-  const $dropdownMenuButton = $headerMenu.find('.js-header-menu__dropdown-menu-button');
+    // // clicked button
+    const handlerDropdownMenuClick = () => {
+      $menu.toggleClass(menuClassActive);
+      $links.slideToggle();
+    };
+    $button.on('click', handlerDropdownMenuClick);
 
-  //  закрыть все открытые меню
-  const $menus = $('.js-header-menu__dropdown-menu-links');
-  $menus.slideUp(0);
+    // // clicked not button
+    const handlerDocumentClick = (event) => {
+      const isClicked = $(event.target).closest(menuClass)[0] === $menu[0];
+      if (isClicked) {
+        return;
+      }
 
-  const handlerDropdownMenuClick = (event) => {
-    const $menu = $(event.currentTarget.parentElement);
-    const $links = $menu.find('.js-header-menu__dropdown-menu-links');
+      $menu.addClass(menuClassActive);
+      $links.slideUp();
+    };
 
-    $menu.toggleClass('header-menu__dropdown-menu_active');
-    $links.slideToggle();
+    $(document).on('click', handlerDocumentClick);
   };
 
-  $dropdownMenuButton.on('click', handlerDropdownMenuClick);
+  $(configDropdown.menuClass).each((index, value) => {
+    initDropdownMenu(value, configDropdown);
+  });
 }
 
 jQuery(initHeaderMenu());

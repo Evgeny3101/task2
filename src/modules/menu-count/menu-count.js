@@ -12,6 +12,7 @@ class MenuForCount {
     // открыть/закрыть меню
     document.addEventListener('keydown', this.handlerDropdownMenuKeydown);
     this.textFieldDOM.addEventListener('click', this.handlerDropdownMenuClick);
+    document.addEventListener('click', this.handlerDocumentClick);
 
     // кнопки + и -
     this.items.forEach((item) => {
@@ -166,6 +167,8 @@ class MenuForCount {
   _createHandlers() {
     const { areControlButtons } = this.config;
     const { textFieldDOM, items } = this;
+
+    //  control buttons
     if (areControlButtons) {
       this.handlerButtonApplyClick = () => {
         const valuesByTypes = this._countValuesByTypes();
@@ -179,13 +182,30 @@ class MenuForCount {
       };
     }
 
+    // out-of-menu click handler
+    this.handlerDocumentClick = (e) => {
+      const { target } = e;
+      const { baseElement, menuDOM } = this;
+      const isElement = target === baseElement || baseElement.contains(target);
+      const menuIsActive = menuDOM.classList.contains('menu-count-dropdown_active');
+      const isClickedOutside = !isElement && menuIsActive;
+
+      if (isClickedOutside) {
+        this.closeMenu();
+      }
+    };
+
+    // button
     this.handlerDropdownMenuClick = this.switchMenu.bind(this);
+
+    // escape
     this.handlerDropdownMenuKeydown = (e) => {
       if (e.code === 'Escape') {
         this.closeMenu();
       }
     };
 
+    // buttons + and -
     this.handlerPlusBtnClick = () => {
       const valuesByTypes = this._countValuesByTypes();
 
