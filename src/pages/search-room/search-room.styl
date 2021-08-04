@@ -6,21 +6,21 @@
 @require '../../modules/pagination/pagination'
 @require '../../modules/filter/filter'
 
+.page__content
+  display flex
+  justify-content space-around
+  border-bottom 1px solid fade-out(0.25)
 
 .room-search
-  min-height      1357px
-  border-bottom   1px solid fade-out(0.25)
-
-  &__wrapper
-    padding-top             29px
-    padding-bottom          30px
-    display                 grid
-    grid-gap                59px
-    grid-template-columns   266px auto
-    
-    @media  (max-width  625px)
-      grid-template-columns   266px
-      justify-content         space-around
+  padding-top             29px
+  padding-bottom          30px
+  display                 grid
+  grid-gap                59px
+  grid-template-columns   266px auto
+  
+  @media  (max-width  625px)
+    grid-template-columns   266px
+    justify-content         space-around
 
   &__filter
     margin-top              1px

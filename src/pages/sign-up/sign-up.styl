@@ -5,9 +5,11 @@
 @require '../../modules/sign-up-menu/sign-up-menu.styl'
 @require '../../modules/background-slides/background-slides'
 
+.page__content
+  display flex
+  justify-content space-around
+
 .sign-up-page
-  width 100%
-  margin 0 auto
   overflow hidden
 
   &__background-slides
@@ -19,14 +21,12 @@
     @media  (max-width  phoneWidth)
       display none
 
-
   &__sign-up-menu
     margin 19px 0 19px 6px
     container(space-around)
 
     @media  (max-width  phoneWidth)
       margin 0
-
 
   @media  (max-width phoneWidth)
     overflow visible

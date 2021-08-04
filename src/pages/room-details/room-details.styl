@@ -8,17 +8,17 @@
 @require '../../modules/payment/payment'
 @require '../../modules/impression/impression'
 
+.page__content
+  display flex
+  justify-content space-around
+  background default-color
 
 .room-details
   color fade-out()
-  background default-color
   border-bottom 1px solid fade-out(0.25)
+  max-width     1440px
 
-  // room-details-gallery
   &-gallery
-    max-width     1440px
-    max-height    485px
-    margin        0 auto
     display       flex
     @media (max-width  lDesktopWidth)
       &__img1
@@ -43,7 +43,6 @@
       &__img3
         width         50%
 
-
     &__column1
       width       68.125%
       @media (max-width  tableWidth)
@@ -56,8 +55,7 @@
       @media (max-width  tableWidth)
         width     100%
 
-  //
-  &__wrapper
+  &__content
     margin 69px auto 72px
     max-width 1160px
 
@@ -72,7 +70,6 @@
     @media (max-width tableWidth)
       padding-bottom 30px
 
-  //
   &__details
     padding-top             1px
     display                 grid
