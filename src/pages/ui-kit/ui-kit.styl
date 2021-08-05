@@ -1,23 +1,18 @@
-// layout
 @require '../../layout/supporting.styl'
 
 
-//
-// pages
 .ui-kit
   &__page
     background default-color
-    margin  50px 0 150px
+    margin 50px 0 150px
+
     &_background-gray
       background #F4F4F6
 
-  // label
   &__label-icon
-    padding-top  30px
+    padding-top 30px
     padding-left 30px
 
-
-  // page 1
   &__ui-kit-page1
     max-width 1140px
     margin 55px auto 0
@@ -30,57 +25,55 @@
       &__container-colors,
       &__container-titles
         display flex
-        flex-direction  column
+        flex-direction column
         width 447px
 
       &__color-demo
         margin-bottom 20px
 
-      //
       .color-demo
         display flex
 
         &__text-container
           display flex
           flex-direction column
-          margin-top  10px
+          margin-top 10px
 
         &__title
-          line-height  24px
-          font-size    19px
-          font-weight  bold
+          line-height 24px
+          font-size 19px
+          font-weight bold
           color fade-out(0)
 
         &__hex
-          margin-top  4px
-          font-size   19px
+          margin-top 4px
+          font-size 19px
 
         &__demo
           height 70px
           width 70px
-          border-radius  6px
-          background  fade-out(0)
-          margin-right  40px
+          border-radius 6px
+          background fade-out(0)
+          margin-right 40px
 
           &_fade075
-            background  fade-out()
+            background fade-out()
 
           &_fade05
-            background  fade-out(0.5)
+            background fade-out(0.5)
 
           &_fade025
-            background  fade-out(0.25)
+            background fade-out(0.25)
 
           &_fade005
-            background  fade-out(0.05)
+            background fade-out(0.05)
 
           &_regular
-            background  fade-out(0, regular-color)
+            background fade-out(0, regular-color)
 
           &_second
-            background  fade-out(0, secondary-color)
+            background fade-out(0, secondary-color)
 
-      //
       .title-demo
         display flex
         flex-direction column
@@ -103,21 +96,21 @@
         &__demo-body
           min-width 41px
           margin-right 29px
-          text-align  right
+          text-align right
           color fade-out(0.25)
 
         &__demo-h1
           margin-top 2px
-          font-size  24px
-          line-height  26px
+          font-size 24px
+          line-height 26px
 
         &__demo-h2
-          font-size  19px
-          line-height  23px
+          font-size 19px
+          line-height 23px
 
         &__demo-h3
-          font-size  12px
-          line-height  15px
+          font-size 12px
+          line-height 15px
 
         &__demo-body
           margin-top 3px
@@ -127,7 +120,6 @@
           color fade-out()
           line-height 24px
 
-  // page 2
   &__ui-kit-page2
     max-width 1158px
     margin 53px auto 0
@@ -152,46 +144,45 @@
           margin-top 5px
 
         &_pb2
-          padding-bottom  2px
+          padding-bottom 2px
         &_pb5
-          padding-bottom  5px
+          padding-bottom 5px
         &_pb6
-          padding-bottom  6px
+          padding-bottom 6px
         &_pb10
-          padding-bottom  10px
+          padding-bottom 10px
         &_pb13
-          padding-bottom  13px
+          padding-bottom 13px
         &_pb16
-          padding-bottom  16px
+          padding-bottom 16px
         &_pb17
-          padding-bottom  17px
+          padding-bottom 17px
         &_pb20
-          padding-bottom  20px
+          padding-bottom 20px
         &_pb21
-          padding-bottom  21px
+          padding-bottom 21px
         &_pb22
-          padding-bottom  22px
+          padding-bottom 22px
         &_pb36
-          padding-bottom  36px
+          padding-bottom 36px
         &_pb40
-          padding-bottom  40px
+          padding-bottom 40px
         &_pb41
-          padding-bottom  41px
+          padding-bottom 41px
         &_pb43
-          padding-bottom  43px
+          padding-bottom 43px
         &_pb45
-          padding-bottom  45px
+          padding-bottom 45px
         &_pb46
-          padding-bottom  46px
+          padding-bottom 46px
         &_pb100
-          padding-bottom  100px
+          padding-bottom 100px
         &_pb167
-          padding-bottom  167px
+          padding-bottom 167px
         &_pb201
-          padding-bottom  201px
+          padding-bottom 201px
         &_pb256
-          padding-bottom  256px
-
+          padding-bottom 256px
 
       &__date-dropdown,
       &__radio-buttons,
@@ -208,7 +199,6 @@
       &__rate-buttons
         width 260px
 
-      // buttons
       .buttons-ui-kit
         &__container-button
           width 240px
@@ -222,7 +212,6 @@
           height 100%
           width 100%
 
-        //
         &__container-text-button
           margin-top 27px
           margin-left 2px
@@ -231,51 +220,44 @@
         &__text-button
           margin-right 20px
 
-        //
         &__button-with-icon
           margin-top 25px
           width 320px
           height 44px
 
-      // pagination
       &__pagination
         margin-left 1px
 
-      // rich-checkbox
       &__rich-checkbox-item1
         width 230px
 
       &__rich-checkbox-item2
-        margin-top  8px
+        margin-top 8px
         width 260px
 
-      // bullet list
       .bullet-list__item
         margin-bottom 10px
 
-      // user-comment
       &__user-comment
         margin-top 30px
         grid-column 2/4
 
-  // page 3
   &__ui-kit-page3
-    margin-top  60px
+    margin-top 60px
     padding-bottom 100px
 
     .ui-kit-page3
-      display  grid
-      grid-template-columns  380px 380px auto
-      grid-gap  0 40px
+      display grid
+      grid-template-columns 380px 380px auto
+      grid-gap 0 40px
 
       &__column
-        display  grid
-        grid-template-rows  minmax( min-content, min-content ) minmax( min-content, min-content ) minmax( min-content, min-content )
-        grid-gap  40px 0
+        display grid
+        grid-template-rows minmax( min-content, min-content ) minmax( min-content, min-content ) minmax( min-content, min-content )
+        grid-gap 40px 0
 
-  // page 4
   &__ui-kit-page4
-    margin-top  50px
+    margin-top 50px
     padding-bottom 10px
 
     .ui-kit-page4
@@ -330,7 +312,3 @@
 
             &__text
               text-align center
-
-
-
-

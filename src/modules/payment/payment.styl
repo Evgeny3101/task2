@@ -5,13 +5,13 @@
 
 
 .payment
-  border            1px solid rgba(0, 0, 0, 0.12)
-  box-shadow        0px 0px 25px rgba(0, 0, 0, 0.2)
-  border-radius     4px
-  background        default-color
+  border 1px solid rgba(0, 0, 0, 0.12)
+  box-shadow 0px 0px 25px rgba(0, 0, 0, 0.2)
+  border-radius 4px
+  background default-color
 
   &__wrapper
-    padding         40px 0 29px
+    padding 40px 0 29px
 
   &__hotel-item-price,
   &__datepicker,
@@ -21,23 +21,20 @@
     padding-left 29px
     padding-right 29px
 
-  //
   &__hotel-item-price
     container()
-    color           fade-out(0.5)
+    color fade-out(0.5)
 
-  //
   &__datepicker
-    margin-top      20px
+    margin-top 20px
 
-  //
   &__menu-count
-    margin-top      20px
+    margin-top 20px
 
     .dropdown__icon
       padding-top   0px
 
-  @media  (max-width phoneWidth)
+  @media (max-width phoneWidth)
     &__datepicker,
     &__menu-count
       .dropdown__icon 
@@ -46,33 +43,30 @@
       .text-field
         padding-left 10px
 
-  //
   &__price-list
-    margin-top      20px
-    margin-left     1px
+    margin-top 20px
+    margin-left 1px
 
-  // payment-total
   &__total
     padding-left 30px
     padding-right 20px
     margin-top 15px
 
   &-total
-    display         flex
-    font-size       19px
-    font-weight     bold
-    color           primary-color
+    display flex
+    font-size 19px
+    font-weight bold
+    color primary-color
 
     &__line
-      height          18px
-      flex-grow       1
-      margin          0 3px
-      border-bottom   1px dotted fade-out(0.25)
+      height 18px
+      flex-grow 1
+      margin 0 3px
+      border-bottom 1px dotted fade-out(0.25)
 
     &__number
-      font-size       19px
+      font-size 19px
 
-  // button apply
   &__button
-    margin-top      20px
-    height          44px
+    margin-top 20px
+    height 44px

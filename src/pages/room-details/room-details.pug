@@ -1,7 +1,5 @@
-//- layout
 extends ../../layout/main
 
-//- modules
 include ../../modules/item-info/item-info
 include ../../modules/bullet-list/bullet-list
 include ../../modules/user-comment/user-comment
@@ -12,7 +10,6 @@ block head
   +head({ 'title': 'Toxin - Room Details' })
 
 block content
-  //- config
   - const commentsConfigArr = require('./comments.json');
 
   +b.MAIN.room-details

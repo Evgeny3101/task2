@@ -1,10 +1,8 @@
 // libs
 @require '../../../node_modules/air-datepicker/dist/css/datepicker.min.css'
 
-// modules
 @require '../dropdown/dropdown'
 
-// my container
 .datepicker-container
   display flex
 
@@ -32,13 +30,12 @@
 // for plugin
 .datepicker
   font-family mainFont
-  width   318px
-  background  default-color
-  border  1px solid fade-out(0.25)
-  border-radius  4px
-  box-shadow  0px 10px 20px fade-out(0.05)
+  width 318px
+  background default-color
+  border 1px solid fade-out(0.25)
+  border-radius 4px
+  box-shadow 0px 10px 20px fade-out(0.05)
   
-  // отключение прыгающей анимации
   &.-from-bottom-
     transform none
 
@@ -52,18 +49,19 @@
 
     &-action
       color regular-color
+
       &:hover
         background default-color
 
     &-title
-      line-height  28px
-      text-align  center
-      color  primary-color
-      font-weight  bold
-      font-size  18px
+      line-height 28px
+      text-align center
+      color primary-color
+      font-weight bold
+      font-size 18px
+
       &:hover
         background default-color
-
 
   &--content
     padding 0 20px
@@ -74,9 +72,9 @@
     container(space-around)
 
   &--day-name
-    width  40px
+    width 40px
     height 36px
-    font-size  12px
+    font-size 12px
     color regular-color
     font-weight bold
     flex-grow 0
@@ -85,17 +83,17 @@
 
   &--cell-day
     position relative
-    width  39.85px
+    width 39.85px
     height 40px
     padding-bottom 0.2px
 
-    font-size  12px
+    font-size 12px
     color fade-out(0.5)
 
     &.-current-
       color default-color
-      background  linear-gradient(secondary-gradient)
-      border-radius  22px
+      background linear-gradient(secondary-gradient)
+      border-radius 22px
       font-weight bold
 
     &.-selected-,
@@ -118,29 +116,27 @@
       height 40px
       color fade-out(0.5)
       opacity 0.25
-      background  linear-gradient(primary-gradient)
+      background linear-gradient(primary-gradient)
 
     &.-range-from-::before
-      border-top-left-radius  100%
-      border-bottom-left-radius  100%
+      border-top-left-radius 100%
+      border-bottom-left-radius 100%
 
     &.-range-to-::before
-      border-top-right-radius  100%
-      border-bottom-right-radius  100%
-
-
+      border-top-right-radius 100%
+      border-bottom-right-radius 100%
+ 
   &--buttons
     padding 9px 19px 10px
     container()
 
   &--button
     flex 0
-    font-style normal;
-    font-weight bold;
-    font-size 12px;
-    text-transform uppercase;
+    font-style normal
+    font-weight bold
+    font-size 12px
+    text-transform uppercase
     color regular-color
 
     &_hide
-      overflow hidden;
-
+      overflow hidden

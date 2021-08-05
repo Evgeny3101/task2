@@ -1,7 +1,7 @@
 @require '../checkbox-item/checkbox-item'
 
 .checkbox-list
-  position  relative
+  position relative
 
   &__button
     width 100%
@@ -14,29 +14,25 @@
 
     &-icon-up,
     &-icon-down
-      padding-top   3px
-      margin-right  10px
-
-      font-weight   normal
-      color         fade-out(0.5)
+      padding-top 3px
+      margin-right 10px
+      font-weight normal
+      color fade-out(0.5)
 
   &__list-container
-    margin-top      12px
-    margin-right    auto
+    margin-top 12px
+    margin-right auto
 
   &__list
-    display         none
+    display none
     
     &-item
-      margin-bottom   10px
+      margin-bottom 10px
 
   &_active 
     .checkbox-list__button
       &-icon-down
         display none
+
       &-icon-up
         display block
-
-
-
-

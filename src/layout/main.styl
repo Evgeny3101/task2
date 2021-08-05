@@ -1,4 +1,3 @@
-// assets
 @require '../assets/stylus/utils/reset.styl'
 @require '../assets/stylus/utils/fonts.styl'
 @require '../assets/stylus/utils/vars.styl'
@@ -8,45 +7,32 @@
 @require '../modules/footer/footer'
 
 
-// Page sizes
 .page
-  min-width  320px
-  width  100%
-  min-height  100vh
+  min-width 320px
+  width 100%
+  min-height 100vh
   height 1px
-  margin  0 auto
 
-// Page wrapper
-.wrapper
-  margin  0 auto
-  max-width  1160px
-
-  @media (max-width desktopWidth)
-    padding-left    20px
-    padding-right   20px
-
-
-// Common styles
 body
-  font-family  mainFont
-  font-size  14px
+  font-family mainFont
+  font-size 14px
   color fade-out()
   background default-color
 
 .title
-  font-weight  bold
+  font-weight bold
   color fade-out(0)
   &_size-1
-    font-size  24px
-    line-height  29px
+    font-size 24px
+    line-height 29px
 
   &_size-2
-    font-size  19px
-    line-height  24px
+    font-size 19px
+    line-height 24px
 
   &_size-3
-    text-transform  uppercase
-    font-size  12px
+    text-transform uppercase
+    font-size 12px
 
   &_normal
     color fade-out(0.75)

@@ -2,38 +2,37 @@
 @require './components/item-count'
 
 .menu-count
-  width   100%
+  width 100%
 
   &__title
-    margin-bottom  5px
+    margin-bottom 5px
 
   &__text-field
-    position    relative
-    width       100%
-    cursor      pointer
+    position relative
+    width 100%
+    cursor pointer
 
   &__input
     display none
 
-  // menu-count-dropdown
   &-dropdown
-    position      absolute
-    top           43px
-    width         100%
-    z-index       3
-    visibility    hidden
-    opacity       0
-    transition    0.3s
+    position absolute
+    top 43px
+    width 100%
+    z-index 3
+    visibility hidden
+    opacity 0
+    transition 0.3s
 
-    background    default-color
-    box-shadow    0px 10px 20px fade-out(0.05)
-    border        1px solid fade-out(0.5)
-    border-bottom-left-radius   4px
-    border-bottom-right-radius  4px
+    background default-color
+    box-shadow 0px 10px 20px fade-out(0.05)
+    border 1px solid fade-out(0.5)
+    border-bottom-left-radius 4px
+    border-bottom-right-radius 4px
 
     &_active
       visibility visible
-      opacity    1
+      opacity 1
 
     &__wrapper
       padding 6px 6px 0 14px
@@ -42,9 +41,9 @@
       padding-bottom 7px
 
     &__control-buttons
-      padding-top    9px
+      padding-top 9px
       padding-bottom 7px
       container()
 
   &-button_hidden
-    visibility  hidden
+    visibility hidden

@@ -1,9 +1,8 @@
-// layout
 @require '../../layout/main'
 
-// modules
 @require '../../modules/search-hotel/search-hotel'
 @require '../../modules/background-slides/background-slides'
+
 
 .page__content
   display flex
@@ -19,7 +18,7 @@
     height 100%
     display flex
 
-    @media  (max-width  tableWidth)
+    @media (max-width tableWidth)
       justify-content space-around
 
   &__background-slides
@@ -30,14 +29,14 @@
       &__img
         animation-duration 18s
 
-        @media  (max-width  868px)
-          width       868px
+        @media (max-width 868px)
+          width 868px
         
-        @media  (max-width  phoneWidth)
-          display     none
+        @media (max-width phoneWidth)
+          display none
 
       :nth-child(3)
-        animation-delay  12.0s
+        animation-delay 12.0s
 
       @keyframes anim_slides {
         0% {opacity: 0;}
@@ -48,16 +47,16 @@
       }
 
   &__search-hotel
-    padding-top    70px
-    padding-left   140px
+    padding-top 70px
+    padding-left 140px
     
-    @media  (max-width  smDesktopWidth)
+    @media (max-width smDesktopWidth)
       padding-left 30px
 
-    @media (min-width  phoneWidth + 1px) and (max-width  tableWidth)
+    @media (min-width phoneWidth + 1px) and (max-width tableWidth)
       min-height 480px
 
-    @media  (max-width  phoneWidth)
+    @media (max-width phoneWidth)
       width 100%
       padding 0
       margin 0
@@ -70,27 +69,27 @@
     width 100%
     height 100%
     container(flex-end,flex-end)
-    padding-bottom  21px
-    padding-right   134px
-    padding-left    20px
+    padding-bottom 21px
+    padding-right 134px
+    padding-left 20px
 
-    @media  (max-width  smDesktopWidth)
+    @media (max-width smDesktopWidth)
       padding-right 30px
 
-    @media  (max-width  tableWidth)
+    @media (max-width tableWidth)
       display none
 
     .welcome-text
-      max-width     265px
-      text-align    right
-      line-height   24px
-      color         fade-out()
+      max-width 265px
+      text-align right
+      line-height 24px
+      color fade-out()
 
-  @media  (max-width  smDesktopWidth)
+  @media (max-width smDesktopWidth)
     min-height 500px
 
-  @media (min-width  phoneWidth + 1px) and (max-width  tableWidth)
+  @media (min-width phoneWidth + 1px) and (max-width tableWidth)
     min-height 480px
 
-  @media  (max-width  phoneWidth)
+  @media (max-width phoneWidth)
     min-height 400px

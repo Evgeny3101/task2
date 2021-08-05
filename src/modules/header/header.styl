@@ -26,52 +26,50 @@
     height 100%
     margin-left 15px    
     padding-left 20px
-    border-left  1px solid fade-out(0.1)
+    border-left 1px solid fade-out(0.1)
 
-  // header-auth-button
   &-auth-button
     padding-left 15px
+
     @media (max-width  tableWidth)
       padding-left 0
 
     &__button-sign-in
-      width     87px
+      width 87px
 
     &__button-sign-up
-      width     196px
+      width 196px
       margin-left 20px
+
       @media (max-width  tableWidth)
         margin-left 10px
 
     &__button-sign-in,
     &__button-sign-up
-      height    34px
+      height 34px
+
       @media (max-width  tableWidth)
         width auto
 
     &__button-sign-in > .button,
     &__button-sign-up > .button
-      @media (max-width  tableWidth)
-        display   none
+
+      @media (max-width tableWidth)
+        display none
 
     &__icon
-      display   none
+      display none
       margin-left 10px
       font-size 32px
       color regular-color
 
       &.active,
       &:hover
-        color  fade-out(0.5, regular-color)
+        color fade-out(0.5, regular-color)
 
-      @media (max-width  tableWidth)
-        display   block
+      @media (max-width tableWidth)
+        display block
 
-  
-  // media
   @media (max-width  desktopWidth)
     padding-right 15px
     padding-left  15px
-
-
-

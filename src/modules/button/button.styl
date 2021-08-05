@@ -1,56 +1,51 @@
 .button
-  height          100%
-  width           100%
-  line-height     24px
-  cursor          pointer
-  text-transform  uppercase
-  font-size       11px
-  letter-spacing  0.8px
-  font-weight     bold
-  border-radius   22px
+  height 100%
+  width 100%
+  line-height 24px
+  cursor pointer
+  text-transform uppercase
+  font-size 11px
+  letter-spacing 0.8px
+  font-weight bold
+  border-radius 22px
   container(space-around)
 
   &__icon
-    position      absolute
-    right         -1px
-    width         44px
-    font-weight   normal
-    line-height   44px
-
+    position absolute
+    right -1px
+    width 44px
+    font-weight normal
+    line-height 44px
 
   &_default
-    letter-spacing  0
-    font-size       14px
-    color           fade-out(0.5)
-    font-weight     normal
-    text-transform  none
-
+    letter-spacing 0
+    font-size 14px
+    color fade-out(0.5)
+    font-weight normal
+    text-transform none
 
   &_regular-big-transparent
-    color           regular-color
-    border          2px solid regular-color
+    color regular-color
+    border 2px solid regular-color
 
     &.active,
     &:hover
-      border-color  fade-out(0.5, regular-color)
-
-
+      border-color fade-out(0.5, regular-color)
 
   &_regular-big
-    color           default-color
-    background      linear-gradient(primary-gradient)
+    color default-color
+    background linear-gradient(primary-gradient)
 
     &.active,
     &:hover
-      background    linear-gradient(primary-gradient)
-      opacity       0.5
+      background linear-gradient(primary-gradient)
+      opacity 0.5
 
   &_default-text-fade
-    color           fade-out(0.5)
+    color fade-out(0.5)
 
   &_regular-text
-    color           regular-color
+    color regular-color
 
   &_relative
-    position        relative
-
+    position relative

@@ -1,9 +1,8 @@
-// layout
 @require '../../layout/main'
 
-// modules
 @require '../../modules/sign-in-menu/sign-in-menu'
 @require '../../modules/background-slides/background-slides'
+
 
 .page__content
   display flex
@@ -17,25 +16,24 @@
   overflow hidden
     
   &__background-slides
-    position        relative
-    top             -70px
-    z-index         -1
+    position relative
+    top -70px
+    z-index -1
 
     @media (min-width phoneWidth + 1px) and (max-width lDesktopWidth)
       top -150px
       width 1440px
 
-    @media  (max-width phoneWidth)
+    @media (max-width phoneWidth)
       display none
 
   &__sign-in-menu
-    height          100%
+    height 100%
     container(space-around)
 
-  // media
   @media (min-width phoneWidth + 1px) and (max-width lDesktopWidth)
-    height          600px
+    height 600px
 
-  @media  (max-width phoneWidth)
+  @media (max-width phoneWidth)
     height auto
     overflow visible

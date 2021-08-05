@@ -1,9 +1,8 @@
-// layout
 @require '../../layout/main'
 
-// modules
 @require '../../modules/sign-up-menu/sign-up-menu.styl'
 @require '../../modules/background-slides/background-slides'
+
 
 .page__content
   display flex
@@ -18,15 +17,16 @@
     width 1440px
     z-index -1
 
-    @media  (max-width  phoneWidth)
+    @media (max-width phoneWidth)
       display none
 
   &__sign-up-menu
     margin 19px 0 19px 6px
     container(space-around)
 
-    @media  (max-width  phoneWidth)
+    @media (max-width phoneWidth)
       margin 0
 
-  @media  (max-width phoneWidth)
+  @media (max-width phoneWidth)
     overflow visible
+    width 100%

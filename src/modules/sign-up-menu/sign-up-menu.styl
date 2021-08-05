@@ -2,7 +2,6 @@
 @require '../toggle/toggle.styl'
 @require '../radio-button/radio-button.styl'
 
-
 .sign-up-menu
   max-width 380px
   width 100%
@@ -14,14 +13,15 @@
   &__wrapper
     padding 39px 29px 29px
 
-    @media  (max-width  phoneWidth)
+    @media (max-width phoneWidth)
       padding 20px 25px 29px
 
   &__title-main
     padding-bottom 21px
 
-    @media  (max-width  400px)
+    @media (max-width 400px)
       padding-bottom 10px
+
       .title_size-1
         font-size 20px
 
@@ -47,14 +47,14 @@
     padding-bottom 25.5px
 
   &__button-payment
-    height  44px
+    height 44px
     margin-bottom 30px
 
   &__footer
     container()
 
   &__text
-    padding-left  1px
+    padding-left 1px
     padding-bottom 2px
     color #000
 
@@ -62,8 +62,7 @@
     height 44px
     width 99px
 
-  // media 
-  @media  (max-width  phoneWidth)
+  @media (max-width phoneWidth)
     max-width none
     width 100%
     border none

@@ -1,40 +1,41 @@
 .checkbox-item
-  font-size               14px
-  cursor                  pointer
-  display                 flex
+  font-size 14px
+  cursor pointer
+  display flex
 
   &__input
-    display               none
+    display none
 
     &:checked ~ .checkbox-item__box
-      border            1px solid regular-color
+      border 1px solid regular-color
 
       &:after
-        border-right    2px solid regular-color
-        border-bottom   2px solid regular-color
-        border-image    linear-gradient(primary-gradient)
-        border-image-slice  1
+        border-right 2px solid regular-color
+        border-bottom 2px solid regular-color
+        border-image linear-gradient(primary-gradient)
+        border-image-slice 1
 
   &__box
-    position        relative
-    display         block
-    min-width       20px
-    height          20px
-    border          1px solid fade-out(0.25)
-    border-radius   4px
-    margin-right    10px
+    position relative
+    display block
+    min-width 20px
+    height 20px
+    border 1px solid fade-out(0.25)
+    border-radius 4px
+    margin-right 10px
 
     &:after
-      content     ''
-      position    absolute
-      width       6px
-      height      8px
-      top         4px
-      left        6px
-      transform   rotate(45deg)
+      content ''
+      position absolute
+      width 6px
+      height 8px
+      top 4px
+      left 6px
+      transform rotate(45deg)
 
   &__text
-    margin-top    1px
-    line-height   18px
-    font-style    14px
-    color         fade-out(0.5)
+    margin-top 1px
+    line-height 18px
+    font-style 14px
+    color fade-out(0.5)
+    
