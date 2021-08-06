@@ -1,4 +1,7 @@
-mixin chart({ id, text, width, height }={})
+mixin chart(config=false)
+  - if (!config) config = require('../../modules/chart/chart.json');
+  - const { id, text, width, height } = config;
+
   +b.FIGURE.chart
     +e.container.js-chart__container
       +e.number.js-chart__number

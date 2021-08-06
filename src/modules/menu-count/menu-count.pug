@@ -1,6 +1,11 @@
 include ../dropdown/dropdown
 
-mixin menu-count({title, placeholder, value}={})
+mixin menu-count(config={})
+  - const defaultConfig = require('../../modules/menu-count/menu-count.json');
+  - const result = Object.assign(defaultConfig, config);
+  - const { title, placeholder, value } = result;
+  - console.log(result);
+
   +b.SECTION.menu-count
     if (title)
       +e.title

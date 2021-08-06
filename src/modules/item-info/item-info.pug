@@ -1,4 +1,7 @@
-mixin item-info({ icon, title, text }={})
+mixin item-info(config=false)
+  - if (!config) config = require('../../modules/item-info/item-info.json');
+  - const { icon, title, text } = config;
+
   +b.item-info&attributes(attributes)
     +e.I.icon.material-icons= icon
     +e.container
