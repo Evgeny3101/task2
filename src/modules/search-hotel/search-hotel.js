@@ -34,11 +34,9 @@ const menuForCount = new MenuForCount({
   itemsCount: [
     {
       title: 'взрослые',
-      // value: 2
     },
     {
       title: 'дети',
-      // value: 1
     },
     {
       title: 'младенцы',
@@ -58,6 +56,6 @@ $('.js-datepicker-search-hotel').find('input').inputmask({
   placeholder: 'ДД.ММ.ГГГГ',
   alias: 'datetime',
   inputFormat: 'dd.mm.yyyy',
-  min: '01.01.2018',
+  min: '01.01.2021',
   max: '01.01.2029',
 });

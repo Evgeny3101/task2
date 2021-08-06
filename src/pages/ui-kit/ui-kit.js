@@ -14,6 +14,7 @@ import '../../modules/payment/payment';
 import MenuForCount from '../../modules/menu-count/menu-count';
 import LikeButton from '../../modules/like-button/like-button';
 import '../../layout/supporting';
+import DatePicker from '../../modules/datepicker/datepicker';
 
 // // подключение LikeButton
 const likeButtonArr = [];
@@ -122,3 +123,34 @@ $('.js-masked-text-field').inputmask({
   min: '01.01.1900',
   max: '01.01.2021',
 });
+
+// calendar
+const datepicker = new DatePicker({
+  baseElement: '.js-ui-kit-calendar',
+  dateFormat: 'dd M',
+  multipleDatesSeparator: ' - ',
+  startDate: new Date(2019, 7, 8),
+
+  isSingleField: true,
+  range: true,
+  multipleDates: true,
+  offset: -18,
+
+  toggleSelected: true,
+
+  showButtonPanel: true,
+  clearButton: true,
+
+  prevHtml: '<i class="month-selection__icon material-icons">arrow_back</i>',
+  nextHtml: '<i class="month-selection__icon material-icons">arrow_forward</i>',
+
+  navTitles: {
+    days: 'MM yyyy',
+  },
+});
+
+datepicker.plugin.selectDate([new Date(2019, 7, 19), new Date(2019, 7, 23)]);
+datepicker.plugin.show();
+
+const $currentDate = datepicker.plugin.$datepicker.find($('[data-date="8"][data-month="7"][data-year="2019"]'));
+$currentDate.addClass('-current-');
