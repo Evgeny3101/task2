@@ -2,7 +2,10 @@ include ../rate-button/rate-button
 include ../hotel-price/hotel-price
 include ../images-slider/images-slider
 
-mixin hotel-item({ srcArr, number, isLux, price, stars, reviews })
+mixin hotel-item(config=false)
+  - if (!config) config = require('../../modules/hotel-item/hotel-item.json');
+  - const { srcArr, number, isLux, price, stars, reviews } = config;
+
   +b.SECTION.hotel-item
     +e.images-slider
       +images-slider(srcArr)

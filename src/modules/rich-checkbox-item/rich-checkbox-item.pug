@@ -1,6 +1,9 @@
-mixin rich-checkbox-item(title, name, text)
+mixin rich-checkbox-item(config=false)
+  - if (!config) config = require('../../modules/rich-checkbox-item/rich-checkbox-item.json');
+  - const { title, name, text } = config;
+
   +b.LABEL.rich-checkbox-item
-    +e.INPUT.input(type='checkbox', name=name)&attributes(attributes)
+    +e.INPUT.input(type="checkbox", name=name)&attributes(attributes)
     +e.box
     +e.container
       +e.title

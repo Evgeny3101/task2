@@ -3,12 +3,12 @@ include ../menu-count/menu-count
 
 mixin search-hotel(config=false)
   - if (!config) config = require('../../modules/payment/payment.json');
-  - const { title, datepicker, menuCount } = config;
+  - const { datepicker, menuCount } = config;
 
   +b.FORM.search-hotel
     +e.wrapper 
       +e.title
-        +b.H1.title_size-1= title
+        +b.H1.title_size-1= 'Найдём номера под ваши пожелания'
 
       +e.datepicker
         +datepicker(datepicker[0], datepicker[1]).js-datepicker-search-hotel

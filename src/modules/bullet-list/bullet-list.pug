@@ -1,4 +1,6 @@
-mixin bullet-list(items)
+mixin bullet-list(items=false)
+  - if (!items) items = require('../../modules/bullet-list/bullet-list.json');
+
   +b.UL.bullet-list&attributes(attributes)
     each text in items
       +e.LI.item-wrapper

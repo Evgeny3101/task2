@@ -1,6 +1,9 @@
 include ../checkbox-item/checkbox-item
 
-mixin checkbox-list(title, items)
+mixin checkbox-list(config=false)
+  - if (!config) config = require('../../modules/checkbox-list/checkbox-list.json');
+  - const { title, items } = config;
+
   +b.SECTION.checkbox-list
     +e.button-container
       +e.button.js-checkbox-list__button

@@ -1,0 +1,12 @@
+{
+  "srcArr": [
+    "assets/img/hotel-item2.jpg",
+    "assets/img/hotel-item3.jpg",
+    "assets/img/hotel-item4.jpg",
+    "assets/img/hotel-item5.jpg"
+  ],
+  "number": 840,
+  "price": "9 900₽",
+  "stars": 4,
+  "reviews": 65
+}

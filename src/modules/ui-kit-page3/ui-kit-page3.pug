@@ -13,12 +13,15 @@ mixin ui-kit-page3
     +e.column
       +e.payment.js-payment
         +payment
+
       +sign-in-menu
 
     +e.column
       +e.calendar-wrapper.js-ui-kit-calendar
         +e.INPUT.calendar-input.js-datepicker-field
 
-      +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item1.jpg', 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', ], 'number' : 888, 'price' : '9 990₽', 'stars' : 5, 'reviews' : 145, 'isLux' : true, })
+      +hotel-item
 
-      +hotel-item({ 'srcArr' : [ 'assets/img/hotel-item2.jpg', 'assets/img/hotel-item3.jpg', 'assets/img/hotel-item4.jpg', 'assets/img/hotel-item5.jpg', ], 'number' : 840, 'price' : '9 900₽', 'stars' : 4, 'reviews' : 65 })
+      - const hotelListConfig = require('../../modules/ui-kit-page3/config/hotel-item.json');
+
+      +hotel-item(hotelListConfig)

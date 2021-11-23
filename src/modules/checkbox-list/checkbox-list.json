@@ -1,5 +1,5 @@
 {
-  "title": "дополнительные удобства",
+  "title": "expandable checkbox list",
   "items": [
     { "text": "Завтрак", "name": "breakfast" },
     { "text": "Письменный стол", "name": "desk", "isActive": true },

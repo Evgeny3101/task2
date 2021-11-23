@@ -9,27 +9,31 @@ mixin sign-up-menu
           +b.H1.title_size-1 Регистрация аккаунта
 
         +e.text-field
-          +b.INPUT.text-field(type='text', placeholder='Имя', name='name')
+          +b.INPUT.text-field(type="text", placeholder="Имя", name="name")
 
         +e.text-field
-          +b.INPUT.text-field(type='text', placeholder='Фамилия', name='surname')
+          +b.INPUT.text-field(
+            type="text",
+            placeholder="Фамилия",
+            name="surname"
+          )
 
         +e.radio-buttons-container
           +e.radio-button
             +radio-button({ name: 'gender', id: 'male', text: 'Мужчина', checked: true })
 
           +e.radio-button
-            +radio-button({ name: 'gender', id: 'female', text: 'Женщина', })
+            +radio-button({ name: 'gender', id: 'female', text: 'Женщина' })
 
         +e.title
           +b.H2.title_size-3 дата рождения
 
         +e.date-birth
           +b.INPUT.text-field.js-date-birth-text-field(
-            type='text',
-            placeholder='ДД.ММ.ГГГГ',
-            name='birthday',
-            spellcheck='false'
+            type="text",
+            placeholder="ДД.ММ.ГГГГ",
+            name="birthday",
+            spellcheck="false"
           )
 
         +e.title
@@ -37,28 +41,28 @@ mixin sign-up-menu
 
         +e.text-field
           +b.INPUT.text-field(
-            type='email',
-            placeholder='Email',
-            name='email',
-            autocomplete='email'
+            type="email",
+            placeholder="Email",
+            name="email",
+            autocomplete="email"
           )
 
         +e.text-field
           +b.INPUT.text-field(
-            type='password',
-            placeholder='Пароль',
-            name='password',
-            autocomplete='new-password'
+            type="password",
+            placeholder="Пароль",
+            name="password",
+            autocomplete="new-password"
           )
 
         +e.toggle
           +toggle('Получать спецпредложения', 'offers')
 
         +e.button-payment
-          +b.BUTTON.button._regular-big._relative перейти к оплате
+          +b.BUTTON.button._regular-big._relative зарегистрироваться
             +e.I.icon.material-icons arrow_forward
 
       +e.footer
         +e.text Уже есть аккаунт на Toxin
         +e.button-sign-in
-          +b.A.button._regular-big-transparent(href='sign-in.html') войти
+          +b.A.button._regular-big-transparent(href="sign-in.html") войти

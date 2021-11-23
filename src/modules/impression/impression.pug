@@ -1,6 +1,9 @@
 include ../chart/chart
 
-mixin impression({ title, text, list })
+mixin impression(config=false)
+  - if (!config) config = require('../../modules/impression/impression.json');
+  - const { title, text, list } = config;
+
   +b.impression
     +e.title
       +b.H2.title_size-2= title

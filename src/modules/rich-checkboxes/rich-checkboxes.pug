@@ -6,7 +6,7 @@ mixin rich-checkboxes(title, items)
     +e.UL.container
       each itemConfig in items
         - const { isShort, title, name, text, checked } = itemConfig;
-        - const classMod = isShort ? "_short" : "";
+        - const classMod = isShort ? '_short' : '';
 
         +e.rich-checkbox-item(class=classMod)
-          +rich-checkbox-item(title, name, text)(checked=checked)
+          +rich-checkbox-item({title, name, text})(checked=checked)
