@@ -13,6 +13,10 @@
   min-height 100vh
   height 1px
 
+  &__content
+    display flex
+    justify-content space-around
+
 body
   font-family mainFont
   font-size 14px
@@ -22,9 +26,13 @@ body
 .title
   font-weight bold
   color fade-out(0)
+  
   &_size-1
     font-size 24px
     line-height 29px
+
+    @media (max-width 400px)
+      font-size 22px
 
   &_size-2
     font-size 19px

@@ -4,12 +4,16 @@ mixin menu-count(config={})
   - const defaultConfig = require('../../modules/menu-count/menu-count.json');
   - const result = Object.assign(defaultConfig, config);
   - const { title, placeholder, value } = result;
-  - console.log(result);
 
   +b.SECTION.menu-count
     if (title)
       +e.title
         +b.H2.title_size-3= title
 
-    +e.text-field&attributes(attributes)
-      +dropdown({title, placeholder, value, isParagraph: true})._padding-right-large.js-menu-count__text
+    +e.wrapper&attributes(attributes)
+      +e.input-container
+        - const text = value ? value : placeholder;
+
+        +b.P.text-field._button._placeholder-dark._padding-right-large.js-menu-count__text= text
+
+        +e.I.icon._pad-top-3.material-icons keyboard_arrow_down

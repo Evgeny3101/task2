@@ -1,5 +1,6 @@
-@require '../text-field/text-field'
 @require './components/item-count'
+@require '../text-field/text-field.styl'
+@require '../button/button.styl'
 
 .menu-count
   width 100%
@@ -7,15 +8,33 @@
   &__title
     margin-bottom 5px
 
-  &__text-field
+  &__wrapper
     position relative
-    width 100%
     cursor pointer
+    
+  &__input-container
+    width 100%
+    position relative
+    z-index 1
 
   &__input
     display none
 
-  &-dropdown
+  &__icon
+    container(space-around)
+    width 44px
+    height 44px
+    padding-top 2px
+    position absolute
+    top 0px
+    right 0px
+    z-index -1
+    color fade-out( 0.5)
+
+    &_pad-top-3
+      padding-top 3px
+        
+  &__dropdown
     position absolute
     top 43px
     width 100%
@@ -23,7 +42,6 @@
     visibility hidden
     opacity 0
     transition 0.3s
-
     background default-color
     box-shadow 0px 10px 20px fade-out(0.05)
     border 1px solid fade-out(0.5)
@@ -34,16 +52,16 @@
       visibility visible
       opacity 1
 
-    &__wrapper
-      padding 6px 6px 0 14px
+  &__items-wrapper
+    padding 6px 6px 0 14px
 
-    &__item
-      padding-bottom 7px
+  &__item
+    padding-bottom 7px
 
-    &__control-buttons
-      padding-top 9px
-      padding-bottom 7px
-      container()
+  &__control-buttons
+    padding-top 9px
+    padding-bottom 7px
+    container()
 
-  &-button_hidden
+  &_button-hidden
     visibility hidden

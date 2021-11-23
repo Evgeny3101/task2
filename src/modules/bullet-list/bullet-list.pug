@@ -1,6 +1,7 @@
 mixin bullet-list(items)
-  +b.UL.bullet-list
+  +b.UL.bullet-list&attributes(attributes)
     each text in items
-      +e.LI.item
-        +e.circle
-        +e.SPAN.text= text
+      +e.LI.item-wrapper
+        +e.item
+          +e.circle
+          +e.SPAN.text= text

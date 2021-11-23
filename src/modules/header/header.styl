@@ -14,8 +14,7 @@
 
   &__wrapper,
   &__navigation,
-  &-auth-button,
-  &-menu
+  &__auth-wrapper
     container()
 
   &__logo,
@@ -28,47 +27,45 @@
     padding-left 20px
     border-left 1px solid fade-out(0.1)
 
-  &-auth-button
+  &__auth-wrapper
     padding-left 15px
 
     @media (max-width tableWidth)
       padding-left 0
 
-    &__button-sign-in
-      width 87px
+  &__button-sign-in
+    width 87px
 
-    &__button-sign-up
-      width 196px
-      margin-left 20px
+  &__button-sign-up
+    width 196px
+    margin-left 20px
 
-      @media (max-width tableWidth)
-        margin-left 10px
-
-    &__button-sign-in,
-    &__button-sign-up
-      height 34px
-
-      @media (max-width tableWidth)
-        width auto
-
-    &__button-sign-in > .button,
-    &__button-sign-up > .button
-
-      @media (max-width tableWidth)
-        display none
-
-    &__icon
-      display none
+    @media (max-width tableWidth)
       margin-left 10px
-      font-size 32px
-      color regular-color
 
-      &.active,
-      &:hover
-        color fade-out(0.5, regular-color)
+  &__button-sign-in,
+  &__button-sign-up
+    height 34px
 
-      @media (max-width tableWidth)
-        display block
+    @media (max-width tableWidth)
+      width auto
+
+  &__auth-button
+    @media (max-width tableWidth)
+      display none
+
+  &__icon
+    display none
+    margin-left 10px
+    font-size 32px
+    color regular-color
+
+    &:active,
+    &:hover
+      color fade-out(0.5, regular-color)
+
+    @media (max-width tableWidth)
+      display block
 
   @media (max-width desktopWidth)
     padding-right 15px

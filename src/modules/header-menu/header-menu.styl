@@ -1,4 +1,5 @@
 .header-menu
+  container()
   color fade-out(0.5)
   position relative
 
@@ -9,19 +10,20 @@
       container(center)
       flex-direction column
 
-    &-open-icon,
-    &-close-icon
-      font-size 32px
-      color regular-color
-      cursor pointer
-      &:hover
-        color fade-out(0.5, regular-color)
+  &__open-icon,
+  &__close-icon
+    font-size 32px
+    color regular-color
+    cursor pointer
 
-    &-open-icon
-      display block
+    &:hover
+      color fade-out(0.5, regular-color)
 
-    &-close-icon
-      display none
+  &__open-icon
+    display block
+
+  &__close-icon
+    display none
 
   &__items 
     container()
@@ -65,60 +67,54 @@
   &__dropdown-menu  
     position relative
 
-    &-button
-      height 40px
-      padding-left 10px
-      position relative
-      z-index 1
-      
-      display flex
-      align-items center
-     
-      letter-spacing 0.05px
-      cursor pointer
-
-      @media (max-width smDesktopWidth)
-        justify-content space-between
-
-    &-icon-down
-      padding-top 4px
-
-      @media (max-width smDesktopWidth)
-        padding-right 5px
-
-    &-link
-      line-height 40px
-      padding 0 10px
-      white-space nowrap
-      display inline-block
-
-    &-links
-      width 100%
-      position absolute
-      
-      background default-color
-      box-shadow inset 0px 0px 5px 0px fade-out(0.2)
-
-      @media (max-width smDesktopWidth)
-        position static
-
     &_active 
-      .header-menu__dropdown-menu
-        &-button
-          @media (max-width smDesktopWidth)
-            box-shadow 0px 0px 5px 0px fade-out(0.3)
+      .header-menu__menu-button
+        @media (max-width smDesktopWidth)
+          box-shadow 0px 0px 5px 0px fade-out(0.3)
+            
+  &__menu-button
+    height 40px
+    padding-left 10px
+    position relative
+    z-index 1
+    display flex
+    align-items center
+    letter-spacing 0.05px
+    cursor pointer
+
+    @media (max-width smDesktopWidth)
+      justify-content space-between
+
+  &__down-icon
+    padding-top 4px
+
+    @media (max-width smDesktopWidth)
+      padding-right 5px
+
+  &__menu-links
+    width 100%
+    position absolute
+    background default-color
+    box-shadow inset 0px 0px 5px 0px fade-out(0.2)
+
+    @media (max-width smDesktopWidth)
+      position static
+
+  &__menu-link
+    line-height 40px
+    padding 0 10px
+    white-space nowrap
+    display inline-block
           
   &_burger-active
     .header-menu
-      &__burger-menu  
-        &-close-icon
-          display block
+      &__close-icon
+        display block
 
-        &-open-icon
-          display none
+      &__open-icon
+        display none
 
       &__items 
         visibility visible
         opacity 1
         transform scaleY(1)
-

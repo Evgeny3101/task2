@@ -7,14 +7,14 @@ mixin hotel-item({ srcArr, number, isLux, price, stars, reviews })
     +e.images-slider
       +images-slider(srcArr)
 
-    +e.price
+    +e.hotel-price
       +hotel-price({ number, isLux, price })
 
-    +e.review
-      +b.hotel-item-review
+    +e.room-rating
+      +e.room-rating-container
         +e.rate-button
           +rate-button(stars)
 
-        +e.comments
-          +e.SPAN.number-comments= reviews
+        +e.reviews-wrapper
+          +e.SPAN.reviews-number= reviews
           +e.SPAN.text Отзывов

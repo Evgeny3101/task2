@@ -15,14 +15,14 @@ class ItemCount {
     // уберет класс если значение больше(на 1) минимального
     const isMoreMinValue = this.value >= 1 + this.minValue;
 
-    if (isMoreMinValue) this.minusBtnDOM.classList.remove('menu-count-item__minus-btn_deactive');
+    if (isMoreMinValue) this.minusBtnDOM.classList.remove('item-count__minus-btn_deactive');
   }
 
   minusOne() {
     if (!this.isMinValue) this.value -= 1;
     if (this.value === this.minValue) {
       this.isMinValue = true;
-      this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
+      this.minusBtnDOM.classList.add('item-count__minus-btn_deactive');
     }
 
     this.resultDOM.innerText = this.value;
@@ -31,7 +31,7 @@ class ItemCount {
   clearResult() {
     this.value = this.minValue;
     this.resultDOM.innerText = this.value;
-    this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
+    this.minusBtnDOM.classList.add('item-count__minus-btn_deactive');
   }
 
   _setConfig({
@@ -45,25 +45,25 @@ class ItemCount {
 
   _createHTML() {
     const item = document.createElement('div');
-    item.classList.add('menu-count-item');
+    item.classList.add('item-count');
     item.innerHTML = `
-    <div class="menu-count-item__title">
+    <div class="item-count__title">
       <h3 class="title title_size-3">${this.title}</h3>
     </div>
-    <div class="menu-count-item__container-button">
-      <button class="menu-count-item__minus-btn js-menu-count-item__minus-btn" type="button">-</button>
-      <div class="menu-count-item__result js-menu-count-item__result">${this.value}</div>
-      <button class="menu-count-item__plus-btn js-menu-count-item__plus-btn" type="button">+</button>
+    <div class="item-count__container-button">
+      <button class="item-count__minus-btn js-item-count__minus-btn" type="button">-</button>
+      <div class="item-count__result js-item-count__result">${this.value}</div>
+      <button class="item-count__plus-btn js-item-count__plus-btn" type="button">+</button>
     </div>`;
 
-    this.minusBtnDOM = item.querySelector('.js-menu-count-item__minus-btn');
-    this.plusBtnDOM = item.querySelector('.js-menu-count-item__plus-btn');
-    this.resultDOM = item.querySelector('.js-menu-count-item__result');
+    this.minusBtnDOM = item.querySelector('.js-item-count__minus-btn');
+    this.plusBtnDOM = item.querySelector('.js-item-count__plus-btn');
+    this.resultDOM = item.querySelector('.js-item-count__result');
 
     this.isMinValue = this.value === this.minValue;
     if (this.isMinValue) {
-      // добавит стиль menu-count-item__minus-btn_deactive
-      this.minusBtnDOM.classList.add('menu-count-item__minus-btn_deactive');
+      // добавит стиль item-count__minus-btn_deactive
+      this.minusBtnDOM.classList.add('item-count__minus-btn_deactive');
     }
 
     return item;

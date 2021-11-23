@@ -20,7 +20,7 @@
       padding-right 15px
       padding-left 15px
 
-    @media (max-width smDesktopWidth + 50px)
+    @media (min-width tableWidth) and (max-width smDesktopWidth + 50px)
       padding-top 70px
       flex-direction column
 
@@ -28,10 +28,11 @@
       padding-bottom 60px
 
     @media (max-width tableWidth)    
+      padding-top 90px
       padding-bottom 0px
       box-shadow none
 
-  &__represent
+  &__represent-wrapper
     width 260px
     margin-right 40px
 
@@ -39,7 +40,7 @@
       width 100%
       margin-right 0
 
-  &-represent
+  &__represent-container
     @media (max-width smDesktopWidth + 50px)
       container()
       flex-direction column
@@ -50,20 +51,20 @@
     @media (max-width tableWidth)
       padding-bottom 0px
 
-    &__logo
-      padding-bottom 17px
+  &__represent-logo
+    padding-bottom 17px
 
-    &__text
-      line-height 24px
+  &__represent-text
+    line-height 24px
 
-      @media (max-width smDesktopWidth + 50px)
-        max-width 500px
-        text-align center
+    @media (max-width smDesktopWidth + 50px)
+      max-width 500px
+      text-align center
 
-      @media (max-width tableWidth)
-        display none
+    @media (max-width tableWidth)
+      display none
 
-  &__menu
+  &__menu-wrapper
     flex-grow 1
     padding-top 4px
 
@@ -73,7 +74,7 @@
     @media (max-width tableWidth)
       display none
 
-  &-menu
+  &__menu-container
     display flex
     justify-content space-between
 
@@ -85,46 +86,48 @@
       grid-template-rows 1fr 1fr
       justify-content space-evenly
 
-    &__container
-      width 150px
-      display flex
-      flex-direction column
+  &__list-container
+    width 150px
+    display flex
+    flex-direction column
 
-      &_big
-        width 260px
+    &_big
+      width 260px
 
-    &__link
-      color fade-out(0.5)
-      margin-bottom 20px
+  &__list-title
+    margin-bottom 21px
+    
+  &__link
+    color fade-out(0.5)
+    margin-bottom 20px
 
-    &__title
-      margin-bottom 21px
+  &__title-sub
+    margin-bottom 18px
 
-    &__title-sub
-      margin-bottom 18px
+  &__sub-text
+    line-height 24px
 
-    &__text
-      line-height 24px
+  &__subscription
+    margin-top 23px
 
-    &__subscription
-      margin-top 23px
-
-  &__bottom-area
-    padding-left 2px
-    box-shadow 0px 10px 20px fade-out(0.05)
+  &__line
     border-top 1px solid #E5E5E5
+    box-shadow 0px 10px 20px fade-out(0.05)
+
+    @media (max-width tableWidth)
+      border-top 0px
+      box-shadow none
+  
+  &__bottom-area-wrapper
+    padding-left 2px
+    max-width 1161px
+    margin 0 auto
     
     @media (max-width desktopWidth)
       padding-right 15px
       padding-left  15px
 
-    @media (max-width tableWidth)
-      border-top 0px
-      box-shadow none
-
-  &-bottom-area
-    max-width 1161px
-    margin 0 auto
+  &__bottom-area-container
     height 70px
     container()
 
@@ -132,9 +135,45 @@
       line-height 24px
       flex-direction column
       
-      &__text
+  &__bottom-text
+    text-align center
+
+
+  &_minimal
+    min-height 367px
+
+    .footer
+      &__menu-wrapper
+        display none
+
+      &__represent-wrapper
+        width 100%
+        margin-right 0px
+
+      &__represent-container
+        container()
+        flex-direction column
+        padding-bottom 0px
+
+      &__represent-text
+        display none
+
+      &__top-area
+        padding-top 120px
+        padding-bottom 0px
+        box-shadow none
+
+      &__line
+        border-top 0px
+        box-shadow none
+
+      &__bottom-area-container
+        line-height 24px
+        flex-direction column
+
+      &__bottom-text
         text-align center
 
   @media (max-width tableWidth)
-    padding-top 20px
     min-height 367px
+    

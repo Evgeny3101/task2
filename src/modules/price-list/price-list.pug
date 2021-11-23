@@ -1,13 +1,13 @@
 mixin price-list(config=false)
-  - if (!config) config = require("../../modules/price-list/price-list.json");
+  - if (!config) config = require('../../modules/price-list/price-list.json');
 
   +b.price-list
     +e.UL.items
       each itemConfig in config
         - const { hasInfo, text, sum } = itemConfig;
-        - const classMod = hasInfo ? "" : "_without-info";
+        - const infoMod = hasInfo ? '' : '_hidden';
 
-        +b.LI.price-list-item(class=classMod)
+        +e.LI.list-item
           +e.SPAN.text= text
-          +e.SPAN.info i
+          +e.SPAN.info(class=infoMod) i
           +e.SPAN.sum= sum

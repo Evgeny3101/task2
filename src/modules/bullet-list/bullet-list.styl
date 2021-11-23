@@ -15,3 +15,21 @@
   &__text
     max-width 240px
     line-height  24px
+
+  &_mt-10
+    .bullet-list 
+      &__item-wrapper
+        margin-bottom 10px
+    
+  &_color-items
+    .bullet-list__item
+      grid-template-columns 5px auto
+
+    :first-child .bullet-list__circle
+      background linear-gradient(tertiary-gradient)
+    :nth-child(2) .bullet-list__circle
+      background linear-gradient(secondary-gradient)
+    :nth-child(3) .bullet-list__circle
+      background linear-gradient(primary-gradient)
+    :nth-child(4) .bullet-list__circle
+      background linear-gradient(quaternary-gradient)

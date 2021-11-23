@@ -1,4 +1,4 @@
 mixin background-slides(srcArr=[])
-  +b.FIGURE.background-slides
+  +b.FIGURE.background-slides&attributes(attributes)
     each path in srcArr
-      +e.IMG.img(src=path, alt='фоновая картинка')
+      +e.IMG.img(src=path, alt="фоновая картинка")

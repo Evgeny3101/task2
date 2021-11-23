@@ -4,15 +4,12 @@
 @require '../../modules/background-slides/background-slides'
 
 
-.page__content
-  display flex
-  justify-content space-around
-
 .landing-page
   max-width 1440px
   max-height 830px
   width 100%
   height 58vw
+  overflow hidden
 
   &__container
     height 100%
@@ -24,27 +21,6 @@
   &__background-slides
     position relative
     z-index -1
-
-    .background-slides
-      &__img
-        animation-duration 18s
-
-        @media (max-width 868px)
-          width 868px
-        
-        @media (max-width phoneWidth)
-          display none
-
-      :nth-child(3)
-        animation-delay 12.0s
-
-      @keyframes anim_slides {
-        0% {opacity: 0;}
-        4% {opacity: 1;}
-        28% {opacity: 1;}
-        32% {opacity: 0;}
-        100% {opacity: 0;}
-      }
 
   &__search-hotel
     padding-top 70px
@@ -61,14 +37,10 @@
       padding 0
       margin 0
 
-      .search-hotel
-        width 100%
-        padding 0 10px
-
-  &__welcome-text
+  &__welcome-text-wrapper
     width 100%
     height 100%
-    container(flex-end,flex-end)
+    container(flex-end, flex-end)
     padding-bottom 21px
     padding-right 134px
     padding-left 20px
@@ -79,11 +51,11 @@
     @media (max-width tableWidth)
       display none
 
-    .welcome-text
-      max-width 265px
-      text-align right
-      line-height 24px
-      color fade-out()
+  &__welcome-text-container
+    max-width 265px
+    text-align right
+    line-height 24px
+    color fade-out()
 
   @media (max-width smDesktopWidth)
     min-height 500px

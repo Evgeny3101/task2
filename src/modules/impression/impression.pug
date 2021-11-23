@@ -1,7 +1,7 @@
 include ../chart/chart
 
 mixin impression({ title, text, list })
-  +b.room-details-impression
+  +b.impression
     +e.title
       +b.H2.title_size-2= title
 
@@ -10,4 +10,4 @@ mixin impression({ title, text, list })
         +chart({ id: 'js-chart', text: text, width: '124', height: '124' })
 
       +e.bullet-list
-        +bullet-list(list)
+        +bullet-list(list)._color-items

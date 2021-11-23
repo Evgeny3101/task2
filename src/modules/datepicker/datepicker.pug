@@ -2,6 +2,7 @@ include ../dropdown/dropdown
 
 mixin datepicker(main, second=false)
   - const { title, placeholder, name, value } = main;
+  - const dropdownIconClass = second ? '' : 'dropdown__icon_pad-top-3';
 
   +b.SECTION.datepicker-container&attributes(attributes)
     +e.main-field
@@ -9,19 +10,34 @@ mixin datepicker(main, second=false)
         +b.H2.title_size-3= title
 
       +e.dropdown-wrapper
-        +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field(
-          autocomplete="off",
-          spellcheck="false"
-        )
+        +e.dropdown-container
+          +b.INPUT.text-field._placeholder-dark.js-datepicker-field(
+            type=type,
+            placeholder=placeholder,
+            name=name,
+            value=value,
+            autocomplete="off",
+            spellcheck="false"
+          )
+
+          +e.I.dropdown-icon.material-icons keyboard_arrow_down
 
     if (second)
       - const { title, placeholder, name, value } = second;
+
       +e.second-field
         +e.title
           +b.H2.title_size-3= title
 
         +e.dropdown-wrapper
-          +dropdown({placeholder: placeholder, name: name, value: value})._placeholder-dark.js-datepicker-field(
-            autocomplete="off",
-            spellcheck="false"
-          )
+          +e.dropdown-container
+            +b.INPUT.text-field._placeholder-dark.js-datepicker-field(
+              type=type,
+              placeholder=placeholder,
+              name=name,
+              value=value,
+              autocomplete="off",
+              spellcheck="false"
+            )
+
+            +e.I.dropdown-icon.material-icons keyboard_arrow_down

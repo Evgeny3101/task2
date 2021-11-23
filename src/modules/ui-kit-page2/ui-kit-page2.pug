@@ -1,0 +1,240 @@
+include ../module-title/module-title
+include ../dropdown/dropdown
+include ../subscription/subscription
+include ../checkbox-item/checkbox-item
+include ../radio-button/radio-button
+include ../toggle/toggle
+include ../like-button/like-button
+include ../rate-button/rate-button
+include ../range-slider/range-slider
+include ../pagination/pagination
+include ../menu-count/menu-count
+include ../checkbox-list/checkbox-list
+include ../rich-checkbox-item/rich-checkbox-item
+include ../bullet-list/bullet-list
+include ../item-info/item-info
+include ../user-comment/user-comment
+
+mixin ui-kit-page2
+  +b.ui-kit-page2
+    // rows 1
+    +e.container_width-320._pb100
+      +e.container_pb21
+        +e.container_pb5
+          +module-title('Text Field', 'Default')
+
+        +e.text-field
+          +b.INPUT.text-field(type="text", placeholder="Email")
+
+      +e.container_pb20
+        +e.container_pb5
+          +module-title('Text Field', 'Hover / Focus')
+
+          +b.INPUT.text-field._checked(
+            type="text",
+            placeholder="Email",
+            value="This is pretty awesome"
+          )
+
+      +e.container_pb22
+        +e.container_pb5
+          +module-title('Dropdown')
+
+        +dropdown({ 'type' : 'button', 'value': 'Сколько гостей' })
+
+      +e.container_pb40
+        +e.container_pb5
+          +module-title('masked text field')
+
+        +b.INPUT.text-field.js-masked-text-field(
+          type="text",
+          placeholder="ДД.ММ.ГГГГ",
+          spellcheck="false"
+        )
+
+      +e.container_pb40
+        +e.date-dropdown
+          +e.container_width-150
+            +e.container_pb6
+              +module-title('date Dropdown')
+
+            +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ' })._placeholder-dark(
+              readonly="readonly"
+            )
+          +e.container_width-150
+            +e.container_pb6
+              +module-title('date Dropdown')
+
+            +dropdown({ 'type' : 'text', 'placeholder': 'ДД.ММ.ГГГГ', 'value': '19.08.2019' })._placeholder-dark(
+              readonly="readonly"
+            )
+
+      +e.container_width-266
+        +e.container_pb41
+          +e.container_pb5
+            +module-title('filter date dropdown')
+
+          +dropdown({ 'type' : 'text', 'value': '19 авг - 23 авг.' })(
+            readonly="readonly"
+          )
+
+        +e.container
+          +e.container_pb5
+            +module-title('subscription text field')
+
+          +subscription({ type: 'email', placeholder: 'Email', name: 'subscription'})
+
+    +e.container_width-266
+      //-  Checkbox Buttons
+      +e.container_pb17
+        +module-title('Checkbox Buttons')
+      +e.container_pb41._width-240
+        +e.container_pb10
+          +checkbox-item('Можно курить')
+        +e.container_pb10
+          +checkbox-item('Можно с питомцами')(checked)
+        +e.container
+          +checkbox-item('Можно пригласить гостей (до 10 человек)')(checked)
+
+      //-  Radio Buttons
+      +e.container_pb16
+        +module-title('Radio Buttons')
+      +e.container_pb41
+        +e.radio-buttons
+          +radio-button({ name: 'gender', id: 'male', text: 'Мужчина', checked: true })
+
+          +radio-button({ name: 'gender', id: 'female', text: 'Женщина' })
+
+      //-  Toggle
+      +e.container_pb16
+        +module-title('Toggle')
+      +e.container_pb16
+        +toggle('Получать спецпредложения')(checked)
+      +e.container_pb46
+        +toggle('Получать спецпредложения')
+
+      //-  Like button
+      +e.container_pb16
+        +module-title('Like button')
+      +e.container_pb40
+        +e.like-buttons
+          +like-button(2)
+          +like-button(12).like-button_checked
+
+      //-  Rate button
+      +e.container_pb16
+        +module-title('rate button')
+      +e.container
+        +e.rate-buttons
+          +rate-button('4')
+          +rate-button('5')
+
+    +e.container
+      //-  Range Slider
+      +e.container_pb43
+        +e.range-slider
+          +range-slider('Range Slider')
+
+      //-  Buttons
+      +e.container_pb16
+        +module-title('Buttons')
+      +e.container_pb40
+        +e.buttons-wrapper
+          +e.buttons
+            +e.button-container
+              +b.BUTTON.button._regular-big(type="button") CLICK ME
+            +e.button-container
+              +b.BUTTON.button._regular-big.active(type="button") CLICK ME
+            +e.button-container
+              +b.BUTTON.button._regular-big-transparent(type="button") CLICK ME
+            +e.button-container
+              +b.BUTTON.button._regular-big-transparent.active(type="button") CLICK ME
+
+          +e.text-buttons
+            +e.text-button-container
+              +b.BUTTON.button._regular-text(type="button") CLICK ME
+            +e.text-button-container
+              +b.BUTTON.button._default-text-fade(type="button") CLICK ME
+
+          +e.button-with-icon
+            +b.BUTTON.button._regular-big._relative(type="button") перейти к оплате
+              +e.I.icon.material-icons arrow_forward
+
+      //-  Pagination
+      +e.pagination
+        +e.container_pb17
+          +module-title('pagination')
+        +e.container_width-240
+          +pagination
+
+    // rows 2
+    +e.container_width-266
+      +e.container_pb20
+        +e.container_pb5
+          +module-title('dropdown', 'default')
+
+        +e.dropdown-menu
+          +dropdown({ 'type' : 'text', 'placeholder': '2 спальни, 2 кровати...' })._placeholder-dark(
+            readonly="readonly"
+          )
+
+      +e.container_pb167
+        +e.container_pb5
+          +module-title('dropdown', 'expanded')
+
+        +e.menu-count
+          +menu-count.js-menu-count
+
+    +e.container
+      //-  Dropdown, guest count
+      +e.container_pb5
+        +module-title('dropdown')
+
+      +e.container
+        +menu-count.js-menu-count
+
+    +e.container
+      //-  Dropdown, guest count
+      +e.container_pb5
+        +module-title('dropdown')
+      +e.container
+        +menu-count.js-menu-count
+
+    // rows 3
+    +e.container_width-266
+      +e.container_pb24
+        +e.checkbox-list
+          +checkbox-list('expandable checkbox list', [])
+
+      +e.container
+        +e.checkbox-list
+          +checkbox-list('expandable checkbox list', [ { 'text': 'Завтрак', 'name': 'breakfast' }, { 'text': 'Письменный стол', 'name': 'desk', 'isActive': true }, { 'text': 'Стул для кормления', 'name': 'feeding-chair', 'isActive': true }, { 'text': 'Кроватка', 'name': 'crib', 'isActive': true }, { 'text': 'Телевизор', 'name': 'tv-set' }, { 'text': 'Шампунь', 'name': 'shampoo' } ])
+
+    +e.container_pb201._mt-5
+      //-  Rich Checkbox Buttons
+      +e.container_pb16
+        +module-title('Rich Checkbox Buttons')
+      +e.container
+        +e.rich-checkbox-item1
+          +rich-checkbox-item('Широкий коридор', 'wide-corridor', 'Ширина коридоров в номере не менее 91 см.')
+        +e.rich-checkbox-item2
+          +rich-checkbox-item('Помощник для инвалидов', 'disabled-assistant', 'На 1 этаже вас встретит специалист и проводит до номера.')
+
+    +e.container_mt-5
+      //-  Bullet list
+      +e.container_pb13
+        +module-title('Bullet list')
+
+      +e.container
+        +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])._mt-10
+
+    // rows 4
+    +e.container
+      +e.item-info
+        +item-info({ icon: 'insert_emoticon', title: 'Комфорт', text: 'Шумопоглощающие стены' })
+
+      +e.item-info
+        +item-info({ icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' })
+
+    +e.user-comment
+      +user-comment

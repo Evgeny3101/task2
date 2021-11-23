@@ -39,8 +39,8 @@ function initHeaderMenu() {
   const configDropdown = {
     menuClass: '.js-header-menu__dropdown-menu',
     menuClassActive: 'header-menu__dropdown-menu_active',
-    buttonClass: '.js-header-menu__dropdown-menu-button',
-    linksClass: '.js-header-menu__dropdown-menu-links',
+    buttonClass: '.js-header-menu__menu-button',
+    linksClass: '.js-header-menu__menu-links',
   };
 
   const initDropdownMenu = (value, config) => {

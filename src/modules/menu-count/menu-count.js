@@ -56,12 +56,12 @@ class MenuForCount {
 
   // для выпадающего меню
   closeMenu() {
-    this.menuDOM.classList.remove('menu-count-dropdown_active');
+    this.menuDOM.classList.remove('menu-count__dropdown_active');
     this.textFieldDOM.classList.remove('text-field_dropdown-active');
   }
 
   switchMenu() {
-    this.menuDOM.classList.toggle('menu-count-dropdown_active');
+    this.menuDOM.classList.toggle('menu-count__dropdown_active');
     this.textFieldDOM.classList.toggle('text-field_dropdown-active');
   }
 
@@ -113,18 +113,18 @@ class MenuForCount {
     const inputsFragment = document.createDocumentFragment();
 
     this.menuDOM = document.createElement('div');
-    this.menuDOM.classList.add('menu-count-dropdown');
+    this.menuDOM.classList.add('menu-count__dropdown');
 
     const wrapper = document.createElement('div');
     const container = document.createElement('ul');
-    wrapper.classList.add('menu-count-dropdown__wrapper');
-    container.classList.add('menu-count-dropdown__items-container');
+    wrapper.classList.add('menu-count__items-wrapper');
+    container.classList.add('menu-count__items-container');
     wrapper.appendChild(container);
     this.menuDOM.appendChild(wrapper);
 
     itemsCount.forEach((itemConfig, i) => {
       const item = document.createElement('li');
-      item.classList.add('menu-count-dropdown__item');
+      item.classList.add('menu-count__item');
       items[i] = new ItemCount(item, itemConfig);
       container.appendChild(item);
     });
@@ -145,18 +145,18 @@ class MenuForCount {
       wrapper.insertAdjacentHTML(
         'beforeend',
         `
-        <div class="menu-count-dropdown__control-buttons">
+        <div class="menu-count__control-buttons">
           <div>
-            <button class="button button_default-text-fade js-menu-count-button-clear" type="button">очистить</button>
+            <button class="button button_default-text-fade js-menu-count__button-clear" type="button">очистить</button>
           </div>
           <div>
-            <button class="button button_regular-text js-menu-count-button-apply" type="button">применить</button>
+            <button class="button button_regular-text js-menu-count__button-apply" type="button">применить</button>
           </div>
         </div>`,
       );
 
-      this.applyBtn = wrapper.querySelector('.js-menu-count-button-apply');
-      this.clearBtn = wrapper.querySelector('.js-menu-count-button-clear');
+      this.applyBtn = wrapper.querySelector('.js-menu-count__button-apply');
+      this.clearBtn = wrapper.querySelector('.js-menu-count__button-clear');
     }
 
     // вставить в страницу
@@ -187,7 +187,7 @@ class MenuForCount {
       const { target } = e;
       const { baseElement, menuDOM } = this;
       const isElement = target === baseElement || baseElement.contains(target);
-      const menuIsActive = menuDOM.classList.contains('menu-count-dropdown_active');
+      const menuIsActive = menuDOM.classList.contains('menu-count__dropdown_active');
       const isClickedOutside = !isElement && menuIsActive;
 
       if (isClickedOutside) {
@@ -236,11 +236,11 @@ class MenuForCount {
 
   // для кнопки очистить
   _showClearButton() {
-    this.clearBtn.classList.remove('menu-count-button_hidden');
+    this.clearBtn.classList.remove('menu-count_button-hidden');
   }
 
   _hideClearButton() {
-    this.clearBtn.classList.add('menu-count-button_hidden');
+    this.clearBtn.classList.add('menu-count_button-hidden');
   }
 
   // посчитает значения по типам и вернет их массивом

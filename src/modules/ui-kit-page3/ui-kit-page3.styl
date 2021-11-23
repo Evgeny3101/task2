@@ -1,0 +1,18 @@
+@require '../search-hotel/search-hotel'
+@require '../sign-up-menu/sign-up-menu'
+@require '../payment/payment'
+@require '../sign-in-menu/sign-in-menu'
+@require '../hotel-item/hotel-item'
+
+.ui-kit-page3
+  display grid
+  grid-template-columns 380px 380px auto
+  grid-gap 0 40px
+
+  &__column
+    display grid
+    grid-template-rows minmax( min-content, min-content ) minmax( min-content, min-content ) minmax( min-content, min-content )
+    grid-gap 40px 0
+
+  &__calendar-wrapper
+    height 400px

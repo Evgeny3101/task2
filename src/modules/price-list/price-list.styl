@@ -2,23 +2,21 @@
   display flex
   flex-direction column
 
-  &-item
+  &__list-item
     display grid
     grid-template-columns auto 20px 80px
     margin-bottom 14.2px
 
-    &__sum
-      text-align right
+  &__sum
+    text-align right
 
-    &__info
-      width 20px
-      height 20px
-      text-align center
-      color fade-out(0.25)
-      border 1px solid fade-out(0.25)
-      border-radius 100%
+  &__info
+    width 20px
+    height 20px
+    text-align center
+    color fade-out(0.25)
+    border 1px solid fade-out(0.25)
+    border-radius 100%
 
-    &_without-info
-      .price-list-item
-        &__info
-          visibility hidden
+    &_hidden
+      visibility hidden

@@ -13,8 +13,8 @@ block content
   - const commentsConfigArr = require('./comments.json');
 
   +b.MAIN.room-details
-    +e.gallery
-      +b.FIGURE.room-details-gallery
+    +e.gallery-wrapper
+      +e.FIGURE.gallery-container
         +e.column1
           +e.IMG.img1(src="assets/img/room-details1.jpg")
 
@@ -24,11 +24,12 @@ block content
 
     +e.content
       +e.details
-        +e.SECTION.info
-          +b.room-details-info
-            +e.title
+        +e.SECTION.info-wrapper 
+          +e.info-container
+            +e.info-title
               +b.H2.title_size-2 Сведения о номере
-            +e.UL.container
+
+            +e.UL.items
               +e.item-info
                 +item-info
               +e.item-info
@@ -39,32 +40,33 @@ block content
         +e.SECTION.impression
           +impression({ title: 'Впечатления от номера', text: 'голосов', list: ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован'] })
 
-        +e.SECTION.comments
-          +b.room-details-comments
-            +e.header
-              +e.title
+        +e.SECTION.comments-wrapper
+          +e.comments-container
+            +e.comments-header
+              +e.comments-title
                 +b.H2.title_size-2 Отзывы посетителей номера
-              +e.SPAN.number 2 отзыва
+              +e.SPAN.comments-number 2 отзыва
 
-            +e.UL.container
+            +e.UL.user-comment-wrapper
               each itemConfig in commentsConfigArr
-                +e.user-comment
+                +e.user-comment-container
                   +user-comment(itemConfig)
 
-        +e.SECTION.rules
-          +b.room-details-rules
-            +e.title
+        +e.SECTION.rules-wrapper
+          +e.rules-container
+            +e.rules-title
               +b.H2.title_size-2 Правила
-            +e.container
-              +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
 
-        +e.SECTION.cancel
-          +b.room-details-cancel
-            +e.title
+            +e.bullet-list-wrapper
+              +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])._mt-10
+
+        +e.SECTION.cancel-wrapper
+          +e.cancel-container
+            +e.cancel-title
               +b.H2.title_size-2 Отмена
 
-            +e.container
-              +e.P.text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+            +e.cancel-content
+              +e.P.cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-      +e.SECTION.payment
+      +e.SECTION.payment-wrapper
         +payment

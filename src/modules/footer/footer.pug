@@ -6,21 +6,21 @@ mixin footer(config=false)
   - if (!config) config = require('../../modules/footer/footer.json');
   - const { text, subTitle, subText, subPlace, bottomText, menus } = config;
 
-  +b.FOOTER.footer
+  +b.FOOTER.footer&attributes(attributes)
     +e.top-area
-      +e.represent
-        +b.footer-represent
-          +e.logo
+      +e.represent-wrapper
+        +e.represent-container
+          +e.represent-logo
             +logo
-          +e.SPAN.text= text
+          +e.SPAN.represent-text= text
 
-      +e.menu
-        +b.UL.footer-menu
+      +e.menu-wrapper
+        +e.UL.menu-container
           each menu in menus
             - const { title, links } = menu;
 
-            +e.LI.container
-              +e.title
+            +e.LI.list-container
+              +e.list-title
                 +b.H2.title_size-3= title
 
               +e.UL.list
@@ -29,16 +29,17 @@ mixin footer(config=false)
                     +e.LI.link
                       +b.A.link(href=href)= text
 
-          +e.SECTION.container._big
+          +e.SECTION.list-container._big
             +e.title-sub
               +b.H2.title_size-3= subTitle
-            +e.SPAN.text= subText
+            +e.SPAN.sub-text= subText
 
             +e.subscription
               +subscription({ placeholder: subPlace })
 
-    +e.bottom-area
-      +b.footer-bottom-area
-        +e.SMALL.text= bottomText
+    +e.line
+    +e.bottom-area-wrapper
+      +e.bottom-area-container
+        +e.SMALL.bottom-text= bottomText
         +e.social-link
           +social-link

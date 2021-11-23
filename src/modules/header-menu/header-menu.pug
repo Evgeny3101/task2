@@ -1,8 +1,8 @@
 mixin header-menu(links)
   +b.header-menu.js-header-menu
     +e.BUTTON.burger-menu.js-header-menu__burger-menu
-      +e.I.burger-menu-open-icon.material-icons menu
-      +e.I.burger-menu-close-icon.material-icons close
+      +e.I.open-icon.material-icons menu
+      +e.I.close-icon.material-icons close
 
     +e.UL.items.js-header-menu__items
       each itemConfig in links
@@ -15,12 +15,12 @@ mixin header-menu(links)
 
           else
             +e.dropdown-menu.js-header-menu__dropdown-menu
-              +e.dropdown-menu-button.js-header-menu__dropdown-menu-button= title
-                +e.I.dropdown-menu-icon-down.material-icons keyboard_arrow_down
+              +e.menu-button.js-header-menu__menu-button= title
+                +e.I.down-icon.material-icons keyboard_arrow_down
 
-              +e.UL.dropdown-menu-links.js-header-menu__dropdown-menu-links
+              +e.UL.menu-links.js-header-menu__menu-links
                 each item in dropdown
                   - const { href, text, isMod, title, dropdown } = item;
 
-                  +e.LI.dropdown-menu-item
-                    +e.A.dropdown-menu-link(href=href)= text
+                  +e.LI.menu-item
+                    +e.A.menu-link(href=href)= text

@@ -1,0 +1,42 @@
+mixin ui-kit-page1
+  +b.ui-kit-page1
+    +e.container-colors
+      - const colorsDemo = [
+      - {title: 'Dark Shade 100%', hex: '#1F2041'},
+      - {title: 'Dark Shade 75%', hex: '#1F2041', mod: '_fade075'},
+      - {title: 'Dark Shade 50%', hex: '#1F2041', mod: '_fade05'},
+      - {title: 'Dark Shade 25%', hex: '#1F2041', mod: '_fade025'},
+      - {title: 'Dark Shade 5%', hex: '#1F2041', mod: '_fade005'},
+      - {title: 'Purple', hex: '#BC9CFF', mod: '_regular'},
+      - {title: 'Green', hex: '#6FCF97', mod: '_second'}
+      - ]
+
+      each item in colorsDemo
+        - const { title, hex, mod } = item;
+        +e.color-demo-wrapper
+          +e.color-demo-container
+            +e.demo(class=mod)
+            +e.text-container
+              +e.SPAN.title= title
+              +e.SPAN.hex= hex
+
+    +e.container-titles
+      +e.title-h1-wrapper
+        +e.title-container
+          +e.SPAN.demo-h1 H1
+          +b.H1.title_size-1 This one is the sub-section or widget title
+
+      +e.title-h2-wrapper
+        +e.title-container
+          +e.SPAN.demo-h2 H2
+          +b.H2.title_size-2 Next one is the item title inside widgets
+
+      +e.title-h3-wrapper
+        +e.title-container
+          +e.SPAN.demo-h3 H3
+          +b.H3.title_size-3 This is a label or CTA text
+
+      +e.title-body-wrapper
+        +e.title-container
+          +e.SPAN.demo-body Body
+          +e.SPAN.text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.

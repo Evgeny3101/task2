@@ -5,8 +5,8 @@ mixin user-comment(config=false)
   - const { name, date, isActive, image, likes, text } = config;
 
   +b.ARTICLE.user-comment
-    +e.FIGURE.image
-      +b.IMG.user-comment-image(src=image, alt="аватар пользователя")
+    +e.FIGURE.image-wrapper
+      +e.IMG.image(src=image, alt="аватар пользователя")
 
     +e.header
       +e.name

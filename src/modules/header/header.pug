@@ -20,12 +20,13 @@ mixin header(config=false)
               +b.BUTTON.button._default(type="button")= user
 
         else
-          +e.auth-btn
-            +b.header-auth-button
-              +e.A.button-sign-in(href="sign-in.html")
+          +e.auth-wrapper
+            +e.A.button-sign-in(href="sign-in.html")
+              +e.auth-button
                 +b.button._regular-big-transparent= login
-                +e.I.icon.material-icons login
+              +e.I.icon.material-icons login
 
-              +e.A.button-sign-up(href="sign-up.html")
+            +e.A.button-sign-up(href="sign-up.html")
+              +e.auth-button
                 +b.button._regular-big= register
-                +e.I.icon.material-icons person_add
+              +e.I.icon.material-icons person_add

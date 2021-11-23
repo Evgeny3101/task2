@@ -1,9 +1,9 @@
 mixin hotel-price({ isH1, number, isLux=false, price })
-  - const classMod = isH1 ? "_h1" : "";
+  - const classMod = isH1 ? '_h1' : '';
 
   +b.hotel-price(class=classMod)&attributes(attributes)
-    +e.room
-      +b.DIV.hotel-price-room
+    +e.room-wrapper
+      +e.DIV.room-container
         +e.SPAN.icon №
 
         if (isH1)
@@ -12,9 +12,9 @@ mixin hotel-price({ isH1, number, isLux=false, price })
           +e.H2.number= number
 
         if (isLux)
-          +e.STRONG.room-class_visible люкс
+          +e.STRONG.room-class люкс
 
-    +e.SPAN.day
-      +b.SPAN.hotel-price-day
+    +e.SPAN.day-wrapper
+      +e.SPAN.day-container
         +e.STRONG.price= price
         +e.SPAN.text в сутки

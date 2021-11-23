@@ -1,8 +1,10 @@
-mixin dropdown({ type, placeholder, value, name, isParagraph}= false)
+mixin dropdown({ type, placeholder, value, name }= false)
   +b.dropdown
-    if (isParagraph)
-      +b.P.text-field._button._placeholder-dark&attributes(attributes)= value ? value : placeholder
-    else
-      +b.INPUT.text-field(type=type, placeholder=placeholder, name=name, value=value)&attributes(attributes)
+    +b.INPUT.text-field(
+      type=type,
+      placeholder=placeholder,
+      name=name,
+      value=value
+    )&attributes(attributes)
 
     +e.I.icon.material-icons keyboard_arrow_down

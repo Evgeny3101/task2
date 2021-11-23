@@ -6,26 +6,26 @@ mixin sign-in-menu
 
       +e.text-field
         +b.INPUT.text-field(
-          type='email',
-          placeholder='Email',
-          name='email',
-          autocomplete='email'
+          type="email",
+          placeholder="Email",
+          name="email",
+          autocomplete="email"
         )
 
       +e.text-field
         +b.INPUT.text-field(
-          type='password',
-          placeholder='Пароль',
-          name='password',
-          autocomplete='new-password'
+          type="password",
+          placeholder="Пароль",
+          name="password",
+          autocomplete="new-password"
         )
 
       +e.login-button
-        +b.BUTTON.button._regular-big._relative(type='submit') войти
+        +b.BUTTON.button._regular-big._relative(type="submit") войти
           +e.I.icon.material-icons arrow_forward
 
-      +e.create-account
-        +b.sign-in-menu-create-account
+      +e.create-account-wrapper
+        +e.create-account-container
           +e.text Нет аккаунта на Toxin?
           +e.button-create
-            +b.A.button._regular-big-transparent(href='sign-up.html') создать
+            +b.A.button._regular-big-transparent(href="sign-up.html") создать

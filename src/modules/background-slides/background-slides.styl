@@ -8,15 +8,38 @@
     z-index 0
     position absolute
     opacity 0
-    animation anim_slides 12s linear infinite 0s
+    animation animation12s 12s linear infinite 0s
 
   :nth-child(2)
     animation-delay 6.0s
 
-  @keyframes anim_slides {
+  @keyframes animation12s {
     0% {opacity: 0;}
     10% {opacity: 1;}
     40% {opacity: 1;}
     50% {opacity: 0;}
+    100% {opacity: 0;}
+  }
+
+  &_index-page-style
+    .background-slides
+      &__img
+        animation-duration 18s
+        animation-name animation18s
+
+        @media (max-width 868px)
+          width 868px
+        
+        @media (max-width phoneWidth)
+          display none
+ 
+    :nth-child(3)
+      animation-delay 12.0s
+
+  @keyframes animation18s {
+    0% {opacity: 0;}
+    4% {opacity: 1;}
+    28% {opacity: 1;}
+    32% {opacity: 0;}
     100% {opacity: 0;}
   }

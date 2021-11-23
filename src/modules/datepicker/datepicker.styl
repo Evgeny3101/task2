@@ -1,7 +1,7 @@
 // libs
 @require '../../../node_modules/air-datepicker/dist/css/datepicker.min.css'
-
-@require '../dropdown/dropdown'
+  
+@require '../text-field/text-field.styl'
 
 .datepicker-container
   display flex
@@ -15,19 +15,35 @@
 
   &__dropdown-wrapper
     margin-top 6px
-  
-  & .text-field
-    line-height 24px
+    
+  &__dropdown-container
+    width 100%
+    max-width 100%
+    position relative
+    z-index 1
 
-// dropdown datepicker menu from plugin
+  &__dropdown-icon
+    container(space-around)
+    width 44px
+    height 44px
+    padding-top 2px
+    position absolute
+    top 0px
+    right 0px
+    z-index -1
+    color fade-out(0.5)
+
+    @media  (max-width smPhoneWidth)
+      display: none
+    
+// for plugin
 .datepickers-container
-  @media (min-width smPhoneWidth) and (max-width 375px)
+  @media (min-width smPhoneWidth + 1) and (max-width 375px)
     left -20px
     
   @media  (max-width smPhoneWidth)
     left -40px
     
-// for plugin
 .datepicker
   font-family mainFont
   width 318px

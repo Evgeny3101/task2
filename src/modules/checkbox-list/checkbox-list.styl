@@ -9,15 +9,15 @@
     container()
     cursor pointer
 
-    &-icon-up
-      display none
+  &__button-icon-up
+    display none
 
-    &-icon-up,
-    &-icon-down
-      padding-top 3px
-      margin-right 10px
-      font-weight normal
-      color fade-out(0.5)
+  &__button-icon-up,
+  &__button-icon-down
+    padding-top 3px
+    margin-right 10px
+    font-weight normal
+    color fade-out(0.5)
 
   &__list-container
     margin-top 12px
@@ -26,13 +26,13 @@
   &__list
     display none
     
-    &-item
-      margin-bottom 10px
+  &__list-item
+    margin-bottom 10px
 
   &_active 
-    .checkbox-list__button
-      &-icon-down
+    .checkbox-list
+      &__button-icon-down
         display none
 
-      &-icon-up
+      &__button-icon-up
         display block
