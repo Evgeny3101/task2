@@ -4,8 +4,8 @@ include ../payment/payment
 include ../sign-in-menu/sign-in-menu
 include ../hotel-item/hotel-item
 
-mixin ui-kit-page3
-  +b.ui-kit-page3
+mixin cards
+  +b.cards
     +e.column
       +search-hotel
       +sign-up-menu
@@ -22,6 +22,6 @@ mixin ui-kit-page3
 
       +hotel-item
 
-      - const hotelListConfig = require('../../modules/ui-kit-page3/config/hotel-item.json');
+      - const hotelListConfig = require('../../modules/cards/config/hotel-item.json');
 
       +hotel-item(hotelListConfig)

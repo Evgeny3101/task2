@@ -1,10 +1,10 @@
 extends ../../layout/supporting
 
 include ../../modules/label-icon/label-icon
-include ../../modules/ui-kit-page1/ui-kit-page1
-include ../../modules/ui-kit-page2/ui-kit-page2
-include ../../modules/ui-kit-page3/ui-kit-page3
-include ../../modules/ui-kit-page4/ui-kit-page4
+include ../../modules/colors-type/colors-type
+include ../../modules/form-elements/form-elements
+include ../../modules/cards/cards
+include ../../modules/headers-footers/headers-footers
 
 block head
   +head({ 'title': 'Toxin - UI Kit' })
@@ -15,26 +15,26 @@ block content
       +e.label-icon
         +label-icon
 
-      +e.ui-kit-page1
-        +ui-kit-page1
+      +e.colors-type
+        +colors-type
 
     +e.page
       +e.label-icon
         +label-icon
 
-      +e.ui-kit-page2
-        +ui-kit-page2
+      +e.form-elements
+        +form-elements
 
     +e.page._background-gray
       +e.label-icon
         +label-icon
 
-      +e.ui-kit-page3
-        +ui-kit-page3
+      +e.cards
+        +cards
 
     +e.page._background-gray
       +e.label-icon
         +label-icon
 
-      +e.ui-kit-page4
-        +ui-kit-page4
+      +e.headers-footers
+        +headers-footers

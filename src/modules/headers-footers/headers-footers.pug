@@ -1,0 +1,18 @@
+include ../header/header
+include ../footer/footer
+
+mixin headers-footers
+  +b.headers-footers
+    +e.container
+      - const headerConfig = require('../../modules/headers-footers/config/header.json');
+      +header(headerConfig)
+
+    +e.container
+      - const headerUserConfig = require('../../modules/headers-footers/config/header-user.json');
+      +header(headerUserConfig)
+
+    +e.container
+      +footer
+
+    +e.footer-minimal
+      +footer._minimal

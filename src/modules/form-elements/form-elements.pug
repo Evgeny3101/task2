@@ -15,8 +15,8 @@ include ../bullet-list/bullet-list
 include ../item-info/item-info
 include ../user-comment/user-comment
 
-mixin ui-kit-page2
-  +b.ui-kit-page2
+mixin form-elements
+  +b.form-elements
     // rows 1
     +e.container_width-320._pb100
       +e.container_pb21
@@ -219,7 +219,7 @@ mixin ui-kit-page2
           +rich-checkbox-item
 
         +e.rich-checkbox-item2
-          - const richCheckboxItemConfig = require('../../modules/ui-kit-page2/config/rich-checkbox-item.json');
+          - const richCheckboxItemConfig = require('../../modules/form-elements/config/rich-checkbox-item.json');
 
           +rich-checkbox-item(richCheckboxItemConfig)
 
