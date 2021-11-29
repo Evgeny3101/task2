@@ -14,7 +14,7 @@ const PATHS = {
 const PAGES_DIR = `${PATHS.src}/pages/`;
 const PAGES = [
   'index',
-  'nav',
+  'nav-box',
   'room-details',
   'search-room',
   'sign-in',
@@ -30,7 +30,7 @@ module.exports = {
 
   entry: {
     'index': `${PAGES_DIR}index/index.js`,
-    'nav': `${PAGES_DIR}nav/nav.js`,
+    'nav-box': `${PAGES_DIR}nav-box/nav-box.js`,
     'room-details': `${PAGES_DIR}room-details/room-details.js`,
     'search-room': `${PAGES_DIR}search-room/search-room.js`,
     'sign-in': `${PAGES_DIR}sign-in/sign-in.js`,
