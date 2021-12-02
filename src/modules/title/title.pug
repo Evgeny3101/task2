@@ -1,0 +1,13 @@
+mixin title(elem, text)
+  - const isH1 = elem == 'h1' ? true : false;
+  - const isH2 = elem == 'h2' ? true : false;
+  - const isH3 = elem == 'h3' ? true : false;
+
+  - if (isH1) 
+    +b.H1.title&attributes(attributes)= text
+
+  - if (isH2)
+    +b.H2.title&attributes(attributes)= text
+
+  - if (isH3)
+    +b.H3.title&attributes(attributes)= text

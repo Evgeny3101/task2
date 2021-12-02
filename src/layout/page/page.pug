@@ -1,0 +1,19 @@
+include ../../assets/pug/bemto/lib/index
+
+include ../../modules/head/head
+include ../../modules/header/header
+include ../../modules/footer/footer
+
+doctype html
+html(lang="ru")
+  head
+    block head
+
+  body.page
+    block header
+      +header
+
+    block content
+
+    block footer
+      +footer

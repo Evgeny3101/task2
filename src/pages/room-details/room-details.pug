@@ -1,4 +1,4 @@
-extends ../../layout/main
+extends ../../layout/page/page
 
 include ../../modules/item-info/item-info
 include ../../modules/bullet-list/bullet-list
@@ -13,60 +13,61 @@ block content
   - const commentsConfigArr = require('./comments.json');
 
   +b.MAIN.room-details
-    +e.gallery-wrapper
-      +e.FIGURE.gallery-container
-        +e.column1
-          +e.IMG.img1(src="assets/img/room-details1.jpg")
+    +e.wrapper
+      +e.gallery-wrapper
+        +e.FIGURE.gallery-container
+          +e.column1
+            +e.IMG.img1(src="assets/img/room-details1.jpg")
 
-        +e.column2
-          +e.IMG.img2(src="assets/img/room-details2.jpg")
-          +e.IMG.img3(src="assets/img/room-details3.jpg")
+          +e.column2
+            +e.IMG.img2(src="assets/img/room-details2.jpg")
+            +e.IMG.img3(src="assets/img/room-details3.jpg")
 
-    +e.content
-      +e.details
-        +e.SECTION.info-wrapper 
-          +e.info-container
-            +e.info-title
-              +b.H2.title_size-2 Сведения о номере
+      +e.content
+        +e.details
+          +e.SECTION.info-wrapper 
+            +e.info-container
+              +e.info-title
+                +b.H2.title._size-medium Сведения о номере
 
-            +e.UL.items
-              +e.item-info
-                +item-info
-              +e.item-info
-                +item-info({ icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' })
-              +e.item-info
-                +item-info({ icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' })
+              +e.UL.items
+                +e.item-info
+                  +item-info
+                +e.item-info
+                  +item-info({ icon: 'location_city', title: 'Удобство', text: 'Окно в каждой из спален' })
+                +e.item-info
+                  +item-info({ icon: 'whatshot', title: 'Уют', text: 'Номер оснащён камином' })
 
-        +e.SECTION.impression
-          +impression
+          +e.SECTION.impression
+            +impression
 
-        +e.SECTION.comments-wrapper
-          +e.comments-container
-            +e.comments-header
-              +e.comments-title
-                +b.H2.title_size-2 Отзывы посетителей номера
-              +e.SPAN.comments-number 2 отзыва
+          +e.SECTION.comments-wrapper
+            +e.comments-container
+              +e.comments-header
+                +e.comments-title
+                  +b.H2.title._size-medium Отзывы посетителей номера
+                +e.SPAN.comments-number 2 отзыва
 
-            +e.UL.user-comment-wrapper
-              each itemConfig in commentsConfigArr
-                +e.user-comment-container
-                  +user-comment(itemConfig)
+              +e.UL.user-comment-wrapper
+                each itemConfig in commentsConfigArr
+                  +e.user-comment-container
+                    +user-comment(itemConfig)
 
-        +e.SECTION.rules-wrapper
-          +e.rules-container
-            +e.rules-title
-              +b.H2.title_size-2 Правила
+          +e.SECTION.rules-wrapper
+            +e.rules-container
+              +e.rules-title
+                +b.H2.title._size-medium Правила
 
-            +e.bullet-list-wrapper
-              +bullet-list._mt-10
+              +e.bullet-list-wrapper
+                +bullet-list._mt-10
 
-        +e.SECTION.cancel-wrapper
-          +e.cancel-container
-            +e.cancel-title
-              +b.H2.title_size-2 Отмена
+          +e.SECTION.cancel-wrapper
+            +e.cancel-container
+              +e.cancel-title
+                +b.H2.title._size-medium Отмена
 
-            +e.cancel-content
-              +e.P.cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+              +e.cancel-content
+                +e.P.cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-      +e.SECTION.payment-wrapper
-        +payment
+        +e.SECTION.payment-wrapper
+          +payment

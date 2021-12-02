@@ -1,15 +1,19 @@
-@require '../../layout/main'
+@require '../../layout/page/page'
 
 @require '../../modules/search-hotel/search-hotel'
 @require '../../modules/background-slides/background-slides'
 
 
-.landing-page
-  max-width 1440px
-  max-height 830px
-  width 100%
-  height 58vw
-  overflow hidden
+.index
+  display flex
+  justify-content space-around
+
+  &__wrapper
+    max-width 1440px
+    max-height 830px
+    width 100%
+    height 58vw
+    overflow hidden
 
   &__container
     height 100%

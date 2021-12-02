@@ -2,4 +2,4 @@
 import './sign-in.styl';
 
 // JS
-import '../../layout/main';
+import '../../layout/page/page';

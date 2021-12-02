@@ -5,4 +5,4 @@ import './room-details.styl';
 import '../../modules/impression/impression';
 import '../../modules/user-comment/user-comment';
 import '../../modules/payment/payment';
-import '../../layout/main';
+import '../../layout/page/page';

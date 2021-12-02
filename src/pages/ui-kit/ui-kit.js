@@ -13,7 +13,7 @@ import '../../modules/search-hotel/search-hotel';
 import '../../modules/payment/payment';
 import MenuForCount from '../../modules/menu-count/menu-count';
 import LikeButton from '../../modules/like-button/like-button';
-import '../../layout/supporting';
+import '../../layout/supporting/supporting';
 import DatePicker from '../../modules/datepicker/datepicker';
 
 // // подключение LikeButton

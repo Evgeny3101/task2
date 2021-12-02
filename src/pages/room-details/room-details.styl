@@ -1,4 +1,4 @@
-@require '../../layout/main'
+@require '../../layout/page/page'
 
 @require '../../modules/item-info/item-info'
 @require '../../modules/bullet-list/bullet-list'
@@ -7,13 +7,15 @@
 @require '../../modules/impression/impression'
 
 
-.page__content
+.room-details
+  display flex
+  justify-content space-around
   background default-color
   border-bottom 1px solid fade-out(0.25)
-
-.room-details
   color fade-out()
-  max-width 1440px
+
+  &__wrapper
+    max-width 1440px
 
   &__gallery-container
     display flex

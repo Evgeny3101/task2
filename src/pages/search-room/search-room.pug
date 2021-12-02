@@ -1,4 +1,4 @@
-extends ../../layout/main
+extends ../../layout/page/page
 
 include ../../modules/hotel-list/hotel-list
 include ../../modules/pagination/pagination
@@ -9,16 +9,17 @@ block head
 
 block content
   +b.MAIN.room-search
-    +e.filter
-      +filter
+    +e.wrapper
+      +e.filter
+        +filter
 
-    +e.result-wrapper
-      +e.SECTION.result-container
-        +e.title
-          +b.H1.title_size-1 Номера, которые мы для вас подобрали
+      +e.result-wrapper
+        +e.SECTION.result-container
+          +e.title
+            +b.H1.title._size-large Номера, которые мы для вас подобрали
 
-        +e.hotel-list
-          +hotel-list
+          +e.hotel-list
+            +hotel-list
 
-        +e.pagination
-          +pagination
+          +e.pagination
+            +pagination

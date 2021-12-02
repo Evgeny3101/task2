@@ -1,0 +1,26 @@
+@require '../../assets/stylus/utils/reset.styl'
+@require '../../assets/stylus/utils/fonts.styl'
+@require '../../assets/stylus/utils/vars.styl'
+@require '../../assets/stylus/utils/mixins.styl'
+
+@require '../../modules/header/header'
+@require '../../modules/footer/footer'
+@require '../../modules/title/title'
+@require '../../modules/button/button'
+@require '../../modules/text-field/text-field'
+
+body
+  font-family mainFont
+  font-size 14px
+  color fade-out()
+  background default-color
+
+.page
+  min-width 320px
+  width 100%
+  min-height 100vh
+  height 1px
+
+  &__content
+    display flex
+    justify-content space-around

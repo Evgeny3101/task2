@@ -1,20 +1,22 @@
-@require '../../layout/main'
+@require '../../layout/page/page'
 
-
-body
-  background #414c5c
 
 .nav-box
-  height 100%
-  width max-content
-  padding 300px
-
+  background #414c5c
+  height 100vmax
+  
+  &__wrapper 
+    padding 15vmax 0 0 15vmax
+  
   &__container
+    width 250px
+    height 300px
     border 1px solid black
     padding 40px
     background #fff
 
   &__link
-    color blue
+    color rgb(30, 101, 104)
     font-size 20px
     line-height 28px
+    font-weight bold
