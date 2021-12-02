@@ -48,7 +48,7 @@ class ItemCount {
     item.classList.add('item-count');
     item.innerHTML = `
     <div class="item-count__title">
-      <h3 class="title title_size-3">${this.title}</h3>
+      <h3 class="title title_size-small">${this.title}</h3>
     </div>
     <div class="item-count__container-button">
       <button class="item-count__minus-btn js-item-count__minus-btn" type="button">-</button>

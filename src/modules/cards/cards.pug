@@ -17,11 +17,10 @@ mixin cards
       +sign-in-menu
 
     +e.column
-      +e.calendar-wrapper.js-ui-kit-calendar
+      +e.calendar-wrapper.js-datepicker-cards
         +e.INPUT.calendar-input.js-datepicker-field
 
       +hotel-item
 
       - const hotelListConfig = require('../../modules/cards/config/hotel-item.json');
-
       +hotel-item(hotelListConfig)

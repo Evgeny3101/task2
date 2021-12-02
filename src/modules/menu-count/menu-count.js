@@ -1,7 +1,7 @@
 import { declOfNum } from '../../assets/js/mixins';
 import ItemCount from './components/item-count';
 
-class MenuForCount {
+class MenuCount {
   constructor(config) {
     this._init(config);
   }
@@ -289,10 +289,10 @@ class MenuForCount {
   }
 }
 
-export default MenuForCount;
+export default MenuCount;
 
 // use
-// const menuForCountGuests = new MenuForCount('.js-menuForCount', {
+// const menuCountGuests = new MenuCount('.js-menuCount', {
 //   itemsCount: [
 //     {
 //       title          : 'взрослые',        // default = ''
