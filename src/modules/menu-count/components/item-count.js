@@ -47,8 +47,8 @@ class ItemCount {
     const item = document.createElement('div');
     item.classList.add('item-count');
     item.innerHTML = `
-    <div class="item-count__title">
-      <h3 class="title title_size-small">${this.title}</h3>
+    <div class="item-count__title-wrapper">
+      <h3 class="item-count__title">${this.title}</h3>
     </div>
     <div class="item-count__container-button">
       <button class="item-count__minus-btn js-item-count__minus-btn" type="button">-</button>

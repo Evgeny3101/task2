@@ -1,4 +1,4 @@
-@require '../datepicker/datepicker'
+@require '../date-fields/date-fields'
 @require '../menu-count/menu-count'
 
 .search-hotel
@@ -11,15 +11,22 @@
   &__wrapper
     padding 38.5px 29px 29px
 
+  &__title
+    title-style('large')
+
   &__datepicker
     margin-top 22px
     
   &__menu-count
     margin-top  20px
 
-  &__button
+  &__button-wrapper
     margin-top 31px
     height  44px
+    
+  &__button
+    button-style('regular', true)
+    padding-right  3px
 
   @media (max-width phoneWidth)
     width 100%

@@ -1,7 +1,7 @@
 mixin module-title(title, comment=false)
   +b.module-title
-    +e.title
-      +b.H2.title._size-small= title
+    +e.title-wrapper
+      +e.H2.title= title
     if (comment)
       +e.comment
         +e.SPAN.text= comment

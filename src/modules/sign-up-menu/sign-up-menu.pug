@@ -5,8 +5,8 @@ mixin sign-up-menu
   +b.SECTION.sign-up-menu
     +e.wrapper
       +e.FORM.container
-        +e.title-main
-          +b.H1.title._size-large Регистрация аккаунта
+        +e.title-main-wrapper
+          +e.H1.title-main Регистрация аккаунта
 
         +e.text-field
           +b.INPUT.text-field(type="text", placeholder="Имя", name="name")
@@ -25,8 +25,8 @@ mixin sign-up-menu
           +e.radio-button
             +radio-button({ name: 'gender', id: 'female', text: 'Женщина' })
 
-        +e.title
-          +b.H2.title._size-small дата рождения
+        +e.title-wrapper
+          +e.H2.title дата рождения
 
         +e.date-birth
           +b.INPUT.text-field.js-date-birth-text-field(
@@ -36,8 +36,8 @@ mixin sign-up-menu
             spellcheck="false"
           )
 
-        +e.title
-          +b.H2.title._size-small данные для входа в сервис
+        +e.title-wrapper
+          +e.H2.title данные для входа в сервис
 
         +e.text-field
           +b.INPUT.text-field(
@@ -58,11 +58,11 @@ mixin sign-up-menu
         +e.toggle
           +toggle('Получать спецпредложения', 'offers')
 
-        +e.button-payment
-          +b.BUTTON.button._regular-big._relative зарегистрироваться
+        +e.button-payment-wrapper
+          +e.BUTTON.button-payment зарегистрироваться
             +e.I.icon.material-icons arrow_forward
 
       +e.footer
         +e.text Уже есть аккаунт на Toxin
-        +e.button-sign-in
-          +b.A.button._regular-big-transparent(href="sign-in.html") войти
+        +e.sign-in-wrapper
+          +e.A.button-sign-in(href="sign-in.html") войти

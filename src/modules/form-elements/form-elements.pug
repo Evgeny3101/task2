@@ -142,23 +142,27 @@ mixin form-elements
         +e.buttons-wrapper
           +e.buttons
             +e.button-container
-              +b.BUTTON.button._regular-big(type="button") CLICK ME
+              +e.BUTTON.button-regular(type="button") CLICK ME
+
             +e.button-container
-              +b.BUTTON.button._regular-big.active(type="button") CLICK ME
+              +e.BUTTON.button-regular-active(type="button") CLICK ME
+
             +e.button-container
-              +b.BUTTON.button._regular-big-transparent(type="button") CLICK ME
+              +e.BUTTON.button-transparent(type="button") CLICK ME
+
             +e.button-container
-              +b.BUTTON.button._regular-big-transparent.active(type="button") CLICK ME
+              +e.BUTTON.button-transparent-active(type="button") CLICK ME
 
           +e.text-buttons
             +e.text-button-container
-              +b.BUTTON.button._regular-text(type="button") CLICK ME
-            +e.text-button-container
-              +b.BUTTON.button._default-text-fade(type="button") CLICK ME
+              +e.BUTTON.button-regular-text(type="button") CLICK ME
 
-          +e.button-with-icon
-            +b.BUTTON.button._regular-big._relative(type="button") перейти к оплате
-              +e.I.icon.material-icons arrow_forward
+            +e.text-button-container
+              +e.BUTTON.button-fade-text(type="button") CLICK ME
+
+          +e.with-icon
+            +e.BUTTON.button-with-icon(type="button") перейти к оплате
+              +e.I.button-icon.material-icons arrow_forward
 
       //-  Pagination
       +e.pagination

@@ -6,9 +6,9 @@ mixin checkbox-list(config=false)
 
   +b.SECTION.checkbox-list
     +e.button-container
-      +e.button.js-checkbox-list__button
-        +e.button-title
-          +b.H2.title._size-small= title
+      +e.BUTTON.button.js-checkbox-list__button(type="button")
+        +e.title-wrapper
+          +e.button-title= title
         +e.I.button-icon-up.material-icons keyboard_arrow_up
         +e.I.button-icon-down.material-icons keyboard_arrow_down
 

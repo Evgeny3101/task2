@@ -1,13 +1,13 @@
 include ../dropdown/dropdown
 
-mixin datepicker(main, second=false)
+mixin date-fields(main, second=false)
   - const { title, placeholder, name, value } = main;
   - const dropdownIconClass = second ? '' : 'dropdown__icon_pad-top-3';
 
-  +b.SECTION.datepicker-container&attributes(attributes)
+  +b.SECTION.date-fields&attributes(attributes)
     +e.main-field
-      +e.title
-        +b.H2.title._size-small= title
+      +e.title-wrapper
+        +e.H2.title= title
 
       +e.dropdown-wrapper
         +e.dropdown-container
@@ -26,8 +26,8 @@ mixin datepicker(main, second=false)
       - const { title, placeholder, name, value } = second;
 
       +e.second-field
-        +e.title
-          +b.H2.title._size-small= title
+        +e.title-wrapper
+          +e.H2.title= title
 
         +e.dropdown-wrapper
           +e.dropdown-container

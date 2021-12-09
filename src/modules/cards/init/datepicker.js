@@ -1,4 +1,4 @@
-import DatePicker from '../../datepicker/datepicker';
+import DatePicker from '../../date-fields/date-fields';
 
 const datepicker = new DatePicker({
   baseElement: '.js-datepicker-cards',

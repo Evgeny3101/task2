@@ -1,8 +1,8 @@
 mixin sign-in-menu
   +b.SECTION.sign-in-menu
     +e.FORM.wrapper
-      +e.title
-        +b.H1.title._size-large Войти
+      +e.title-wrapper
+        +e.H1.title Войти
 
       +e.text-field
         +b.INPUT.text-field(
@@ -20,12 +20,12 @@ mixin sign-in-menu
           autocomplete="new-password"
         )
 
-      +e.login-button
-        +b.BUTTON.button._regular-big._relative(type="submit") войти
+      +e.login-button-wrapper
+        +e.BUTTON.login-button(type="submit") войти
           +e.I.icon.material-icons arrow_forward
 
       +e.create-account-wrapper
         +e.create-account-container
           +e.text Нет аккаунта на Toxin?
-          +e.button-create
-            +b.A.button._regular-big-transparent(href="sign-up.html") создать
+          +e.button-create-wrapper
+            +e.A.button-create(href="sign-up.html") создать

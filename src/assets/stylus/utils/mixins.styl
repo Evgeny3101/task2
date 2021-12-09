@@ -4,17 +4,83 @@ container(content = space-between, al-items = center)
   justify-content  content
   align-items  al-items
 
-
 //  px to rem  (size, pagging...)
 rem(pixels, context = mainFontSize)
   1rem * pixels / context
-
 
 // colors
 fade-out(amount = 0.75, color = primary-color)
   valye = 1 - amount
   color - rgba(0,0,0,valye)
 
+// for titles
+title-style(size, fade-out = 0)
+  font-weight bold
+  color fade-out(fade-out)
+
+  if size is 'large'
+    font-size 24px
+    line-height 29px
+
+    @media (max-width 400px)
+      font-size 22px
 
 
+  if size is 'medium'
+    font-size 19px
+    line-height 24px
 
+
+  if size is 'small'
+    text-transform uppercase
+    font-size 12px
+
+
+// // for text fields
+// text-field(type)
+// for button
+button-style(type=false, isIcon= false)
+  height 100%
+  width 100%
+  line-height 24px
+  cursor pointer
+  text-transform uppercase
+  font-size 11px
+  letter-spacing 0.8px
+  font-weight bold
+  border-radius 22px
+  container(space-around)
+  
+  if type is 'default'
+    letter-spacing 0
+    font-size 14px
+    color fade-out(0.5)
+    font-weight normal
+    text-transform none
+
+  if type is 'transparent'
+    color regular-color
+    border 2px solid regular-color
+
+    &:active,
+    &:hover
+      border-color fade-out(0.5, regular-color)
+      
+  if type is 'regular'
+    color default-color
+    background linear-gradient(primary-gradient)
+
+    &:active,
+    &:hover
+      background linear-gradient(primary-gradient)
+      opacity 0.5
+
+  if isIcon is true
+    position relative
+
+    .material-icons
+      position absolute
+      right -1px
+      width 44px
+      font-weight normal
+      line-height 44px

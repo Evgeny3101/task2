@@ -15,11 +15,14 @@
     @media (max-width phoneWidth)
       padding 20px 25px 29px
 
-  &__title-main
+  &__title-main-wrapper
     padding-bottom 21px
 
     @media (max-width 400px)
       padding-bottom 10px
+
+  &__title-main
+    title-style('large')
 
   &__text-field
     padding-bottom 10px
@@ -32,8 +35,11 @@
   &__radio-button
     margin-right 20px
 
-  &__title
+  &__title-wrapper
     padding-bottom 5px
+
+  &__title
+    title-style('small')
 
   &__date-birth
     padding-bottom 20px
@@ -42,9 +48,12 @@
   &__toggle
     padding-bottom 25.5px
 
-  &__button-payment
+  &__button-payment-wrapper
     height 44px
     margin-bottom 30px
+
+  &__button-payment
+    button-style('regular', true)
 
   &__footer
     container()
@@ -54,10 +63,13 @@
     padding-bottom 2px
     color #000
 
-  &__button-sign-in
+  &__sign-in-wrapper
     height 44px
     width 99px
-
+  
+  &__button-sign-in
+    button-style('transparent')
+    
   @media (max-width phoneWidth)
     max-width none
     width 100%

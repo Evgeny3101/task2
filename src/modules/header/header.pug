@@ -16,17 +16,17 @@ mixin header(config=false)
 
         if (user)
           +e.user
-            +e.button
-              +b.BUTTON.button._default(type="button")= user
+            +e.user-button-wrapper
+              +e.BUTTON.user-button(type="button")= user
 
         else
           +e.auth-wrapper
-            +e.A.button-sign-in(href="sign-in.html")
+            +e.A.sign-in(href="sign-in.html")
               +e.auth-button
-                +b.button._regular-big-transparent= login
+                +e.button-sing-in= login
               +e.I.icon.material-icons login
 
-            +e.A.button-sign-up(href="sign-up.html")
+            +e.A.sign-up(href="sign-up.html")
               +e.auth-button
-                +b.button._regular-big= register
+                +e.button-sing-up= register
               +e.I.icon.material-icons person_add

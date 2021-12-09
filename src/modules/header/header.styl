@@ -26,32 +26,41 @@
     padding-left 20px
     border-left 1px solid fade-out(0.1)
 
+  &__user-button
+    button-style('default')
+
   &__auth-wrapper
     padding-left 15px
 
     @media (max-width tableWidth)
       padding-left 0
 
-  &__button-sign-in
+  &__sign-in,
+  &__sign-up
+    height 34px
+
+    @media (max-width tableWidth)
+      width auto
+
+  &__sign-in
     width 87px
 
-  &__button-sign-up
+  &__sign-up
     width 196px
     margin-left 20px
 
     @media (max-width tableWidth)
       margin-left 10px
 
-  &__button-sign-in,
-  &__button-sign-up
-    height 34px
-
-    @media (max-width tableWidth)
-      width auto
-
   &__auth-button
     @media (max-width tableWidth)
       display none
+
+  &__button-sing-in
+    button-style('transparent')
+
+  &__button-sing-up
+    button-style('regular')
 
   &__icon
     display none

@@ -3,8 +3,11 @@
 .menu-count
   width 100%
 
-  &__title
+  &__title-wrapper
     margin-bottom 5px
+
+  &__title
+    title-style('small')
 
   &__wrapper
     position relative
@@ -60,6 +63,11 @@
     padding-top 9px
     padding-bottom 7px
     container()
+
+  &__button-clear,
+  &__button-apply
+    button-style()
+    color regular-color
 
   &_button-hidden
     visibility hidden

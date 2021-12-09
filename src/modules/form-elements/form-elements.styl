@@ -102,18 +102,44 @@
     height 100%
     width 100%
 
+  &__button-regular,
+  &__button-regular-active
+    button-style('regular')
+
+  &__button-regular-active
+    background linear-gradient(primary-gradient)
+    opacity 0.5
+
+  &__button-transparent,
+  &__button-transparent-active
+    button-style('transparent')
+
+  &__button-transparent-active
+    border-color fade-out(0.5, regular-color)
+
   &__text-buttons
     margin-top 27px
     margin-left 2px
     display flex
 
+  &__button-regular-text
+    button-style()
+    color regular-color
+
+  &__button-fade-text
+    button-style()
+    color fade-out(0.5)
+
   &__text-button-container
     margin-right 20px
 
-  &__button-with-icon
+  &__with-icon
     margin-top 25px
     width 320px
     height 44px
+
+  &__button-with-icon
+    button-style('regular', true)
 
   &__pagination
     margin-left 1px

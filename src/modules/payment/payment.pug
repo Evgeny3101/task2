@@ -1,4 +1,4 @@
-include ../datepicker/datepicker
+include ../date-fields/date-fields
 include ../menu-count/menu-count
 include ../hotel-price/hotel-price
 include ../price-list/price-list
@@ -13,7 +13,7 @@ mixin payment(config=false)
         +hotel-price(hotelPrice)
 
       +e.datepicker
-        +datepicker(datepicker[0], datepicker[1]).js-datepicker-payment
+        +date-fields(datepicker[0], datepicker[1]).js-datepicker-payment
 
       +e.menu-count
         +menu-count(menuCount).js-menu-count-payment
@@ -23,11 +23,11 @@ mixin payment(config=false)
 
       +e.total-wrapper 
         +e.total-container
-          +e.total-title
-            +b.H2.title._size-medium Итого
+          +e.title-wrapper
+            +e.H2.title Итого
           +e.total-line
           +e.STRONG.total-number 38 081₽
 
       +e.button-wrapper
-        +b.BUTTON.button._regular-big._relative забронировать
+        +e.BUTTON.button забронировать
           +e.I.icon.material-icons arrow_forward

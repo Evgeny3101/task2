@@ -147,10 +147,10 @@ class MenuCount {
         `
         <div class="menu-count__control-buttons">
           <div>
-            <button class="button button_default-text-fade js-menu-count__button-clear" type="button">очистить</button>
+            <button class="menu-count__button-clear js-menu-count__button-clear" type="button">очистить</button>
           </div>
           <div>
-            <button class="button button_regular-text js-menu-count__button-apply" type="button">применить</button>
+            <button class="menu-count__button-apply js-menu-count__button-apply" type="button">применить</button>
           </div>
         </div>`,
       );

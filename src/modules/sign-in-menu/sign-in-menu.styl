@@ -8,15 +8,21 @@
   &__wrapper
     padding 39px 29px 31px
 
-  &__title
+  &__title-wrapper
     margin-bottom 21px
+
+  &__title
+    title-style('large')
 
   &__text-field
     margin-top 10px
 
-  &__login-button
+  &__login-button-wrapper
     height 44px
     margin-top 20px
+
+  &__login-button
+    button-style('regular', true)
 
   &__create-account-wrapper
     margin-top 30px
@@ -28,9 +34,12 @@
     padding-bottom 2px
     color #000
 
-  &__button-create
+  &__button-create-wrapper
     height 44px
     width 99px
+
+  &__button-create
+    button-style('transparent')
 
   @media  (max-width phoneWidth)
     width 100%

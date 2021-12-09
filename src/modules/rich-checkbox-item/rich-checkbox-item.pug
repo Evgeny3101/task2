@@ -6,6 +6,6 @@ mixin rich-checkbox-item(config=false)
     +e.INPUT.input(type="checkbox", name=name)&attributes(attributes)
     +e.box
     +e.container
-      +e.title
-        +b.EM.title._normal= title
+      +e.title-container
+        +e.EM.title= title
       +e.text= text

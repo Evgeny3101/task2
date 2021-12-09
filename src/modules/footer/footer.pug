@@ -21,7 +21,7 @@ mixin footer(config=false)
 
             +e.LI.list-container
               +e.list-title
-                +b.H2.title._size-small= title
+                +e.H2.title= title
 
               +e.UL.list
                 each itemConfig in links
@@ -31,7 +31,7 @@ mixin footer(config=false)
 
           +e.SECTION.list-container._big
             +e.title-sub
-              +b.H2.title._size-small= subTitle
+              +e.H2.title= subTitle
             +e.SPAN.sub-text= subText
 
             +e.subscription

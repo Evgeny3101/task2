@@ -3,7 +3,7 @@ include ../checkbox-item/checkbox-item
 include ../rich-checkbox-item/rich-checkbox-item
 include ../checkbox-list/checkbox-list
 include ../menu-count/menu-count
-include ../datepicker/datepicker
+include ../date-fields/date-fields
 include ../checkboxes/checkboxes
 include ../rich-checkboxes/rich-checkboxes
 
@@ -15,7 +15,7 @@ mixin filter
 
   +b.FORM.filter
     +e.datepicker-container
-      +datepicker(datepickerConfig).js-datepicker-filter
+      +date-fields(datepickerConfig).js-datepicker-filter
 
     +e.menu-count-guest
       +menu-count({ title: 'гости' }).js-menu-count-guests

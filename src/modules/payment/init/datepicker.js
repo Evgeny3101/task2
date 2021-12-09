@@ -2,7 +2,7 @@
 import 'inputmask/dist/jquery.inputmask.min';
 
 // JS
-import DatePicker from '../../datepicker/datepicker';
+import DatePicker from '../../date-fields/date-fields';
 
 // eslint-disable-next-line no-unused-vars
 const datepicker = new DatePicker({

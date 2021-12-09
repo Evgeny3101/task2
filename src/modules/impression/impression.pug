@@ -5,8 +5,8 @@ mixin impression(config=false)
   - const { title, text, list } = config;
 
   +b.impression
-    +e.title
-      +b.H2.title._size-medium= title
+    +e.title-wrapper
+      +e.H2.title= title
 
     +e.container
       +e.chart

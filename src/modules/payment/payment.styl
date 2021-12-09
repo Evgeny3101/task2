@@ -1,4 +1,4 @@
-@require '../datepicker/datepicker'
+@require '../date-fields/date-fields'
 @require '../menu-count/menu-count'
 @require '../hotel-price/hotel-price'
 @require '../price-list/price-list'
@@ -47,6 +47,9 @@
     color primary-color
     padding-right 8px
 
+  &__title
+    title-style('medium')
+
   &__total-line
     height 18px
     flex-grow 1
@@ -59,6 +62,9 @@
   &__button-wrapper
     margin 20px 30px 0
     height 44px
+
+  &__button
+    button-style('regular', true)
 
   @media (max-width phoneWidth)
     width 100%

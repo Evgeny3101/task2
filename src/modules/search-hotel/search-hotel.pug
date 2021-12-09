@@ -1,4 +1,4 @@
-include ../datepicker/datepicker
+include ../date-fields/date-fields
 include ../menu-count/menu-count
 
 mixin search-hotel(config=false)
@@ -7,15 +7,15 @@ mixin search-hotel(config=false)
 
   +b.FORM.search-hotel
     +e.wrapper 
-      +e.title
-        +b.H1.title._size-large= 'Найдём номера под ваши пожелания'
+      +e.title-wrapper
+        +e.H1.title= 'Найдём номера под ваши пожелания'
 
       +e.datepicker
-        +datepicker(datepicker[0], datepicker[1]).js-datepicker-search-hotel
+        +date-fields(datepicker[0], datepicker[1]).js-datepicker-search-hotel
 
       +e.menu-count
         +menu-count(menuCount).js-menu-count-search-hotel
 
-      +e.button
-        +b.BUTTON.button_regular-big._relative._pos-text-left Подобрать номер
+      +e.button-wrapper
+        +e.BUTTON.button Подобрать номер
           +e.I.icon.material-icons arrow_forward

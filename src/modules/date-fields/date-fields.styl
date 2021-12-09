@@ -1,7 +1,7 @@
 // libs
 @require '../../../node_modules/air-datepicker/dist/css/datepicker.min.css'
   
-.datepicker-container
+.date-fields
   display flex
 
   &__main-field,
@@ -11,9 +11,12 @@
   &__second-field
     margin-left 20px
 
+  &__title
+    title-style('small')
+
   &__dropdown-wrapper
     margin-top 6px
-    
+     
   &__dropdown-container
     width 100%
     max-width 100%

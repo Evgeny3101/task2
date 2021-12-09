@@ -7,8 +7,8 @@ mixin menu-count(config={})
 
   +b.SECTION.menu-count
     if (title)
-      +e.title
-        +b.H2.title._size-small= title
+      +e.title-wrapper
+        +e.H2.title= title
 
     +e.wrapper&attributes(attributes)
       +e.input-container
