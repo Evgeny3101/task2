@@ -8,11 +8,11 @@ mixin sign-up-menu
         +e.title-main-wrapper
           +e.H1.title-main Регистрация аккаунта
 
-        +e.text-field
-          +b.INPUT.text-field(type="text", placeholder="Имя", name="name")
+        +e.text-field-wrapper
+          +e.INPUT.text-field(type="text", placeholder="Имя", name="name")
 
-        +e.text-field
-          +b.INPUT.text-field(
+        +e.text-field-wrapper
+          +e.INPUT.text-field(
             type="text",
             placeholder="Фамилия",
             name="surname"
@@ -29,7 +29,7 @@ mixin sign-up-menu
           +e.H2.title дата рождения
 
         +e.date-birth
-          +b.INPUT.text-field.js-date-birth-text-field(
+          +e.INPUT.text-field.js-date-birth-text-field(
             type="text",
             placeholder="ДД.ММ.ГГГГ",
             name="birthday",
@@ -39,16 +39,16 @@ mixin sign-up-menu
         +e.title-wrapper
           +e.H2.title данные для входа в сервис
 
-        +e.text-field
-          +b.INPUT.text-field(
+        +e.text-field-wrapper
+          +e.INPUT.text-field(
             type="email",
             placeholder="Email",
             name="email",
             autocomplete="email"
           )
 
-        +e.text-field
-          +b.INPUT.text-field(
+        +e.text-field-wrapper
+          +e.INPUT.text-field(
             type="password",
             placeholder="Пароль",
             name="password",

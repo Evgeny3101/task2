@@ -1,0 +1,20 @@
+title-style(size=false, fade-out = 0)
+  font-weight bold
+  color fade-out(fade-out)
+
+  if size is 'large'
+    font-size 24px
+    line-height 29px
+
+    @media (max-width 400px)
+      font-size 22px
+
+
+  if size is 'medium'
+    font-size 19px
+    line-height 24px
+
+
+  if size is 'small'
+    text-transform uppercase
+    font-size 12px

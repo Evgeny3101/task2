@@ -4,16 +4,16 @@ mixin sign-in-menu
       +e.title-wrapper
         +e.H1.title Войти
 
-      +e.text-field
-        +b.INPUT.text-field(
+      +e.text-field-wrapper
+        +e.INPUT.text-field(
           type="email",
           placeholder="Email",
           name="email",
           autocomplete="email"
         )
 
-      +e.text-field
-        +b.INPUT.text-field(
+      +e.text-field-wrapper
+        +e.INPUT.text-field(
           type="password",
           placeholder="Пароль",
           name="password",

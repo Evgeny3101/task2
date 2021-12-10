@@ -1,4 +1,4 @@
-.button
+button(type=false, isIcon= false)
   height 100%
   width 100%
   line-height 24px
@@ -9,30 +9,23 @@
   font-weight bold
   border-radius 22px
   container(space-around)
-
-  &__icon
-    position absolute
-    right -1px
-    width 44px
-    font-weight normal
-    line-height 44px
-
-  &_default
+  
+  if type is 'default'
     letter-spacing 0
     font-size 14px
     color fade-out(0.5)
     font-weight normal
     text-transform none
 
-  &_regular-big-transparent
+  if type is 'transparent'
     color regular-color
     border 2px solid regular-color
 
     &:active,
     &:hover
       border-color fade-out(0.5, regular-color)
-
-  &_regular-big
+      
+  if type is 'regular'
     color default-color
     background linear-gradient(primary-gradient)
 
@@ -41,14 +34,12 @@
       background linear-gradient(primary-gradient)
       opacity 0.5
 
-  &_default-text-fade
-    color fade-out(0.5)
-
-  &_regular-text
-    color regular-color
-
-  &_relative
+  if isIcon is true
     position relative
 
-  &_pos-text-left
-    padding-right  3px
+    .material-icons
+      position absolute
+      right -1px
+      width 44px
+      font-weight normal
+      line-height 44px

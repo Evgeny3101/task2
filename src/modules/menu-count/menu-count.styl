@@ -18,6 +18,19 @@
     position relative
     z-index 1
 
+  &__text
+    text-field()
+    cursor pointer
+    padding-right 90px
+
+    &::placeholder
+      color fade-out(0.75)
+
+    &_active
+      border-color fade-out(0.5)
+      border-bottom-left-radius 0px
+      border-bottom-right-radius 0px
+
   &__input
     display none
 
@@ -66,7 +79,7 @@
 
   &__button-clear,
   &__button-apply
-    button-style()
+    button()
     color regular-color
 
   &_button-hidden

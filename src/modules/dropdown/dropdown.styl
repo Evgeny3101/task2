@@ -4,6 +4,9 @@
   position relative
   z-index 1
 
+  &__text-field
+    text-field()
+
   &__icon
     container(space-around)
     width 44px
@@ -17,3 +20,10 @@
 
     &_pad-top-3
       padding-top 3px
+
+  &_placeholder-dark 
+    .dropdown
+      &__text-field
+        &::placeholder
+          color fade-out(0.75)
+            

@@ -75,6 +75,13 @@
     &_pb256
       padding-bottom 256px
 
+  &__text-field,
+  &__text-field-active
+    text-field()
+
+  &__text-field-active
+    border 1px solid fade-out(0.5)
+
   &__date-dropdown,
   &__radio-buttons,
   &__like-buttons,
@@ -104,7 +111,7 @@
 
   &__button-regular,
   &__button-regular-active
-    button-style('regular')
+    button('regular')
 
   &__button-regular-active
     background linear-gradient(primary-gradient)
@@ -112,7 +119,7 @@
 
   &__button-transparent,
   &__button-transparent-active
-    button-style('transparent')
+    button('transparent')
 
   &__button-transparent-active
     border-color fade-out(0.5, regular-color)
@@ -123,11 +130,11 @@
     display flex
 
   &__button-regular-text
-    button-style()
+    button()
     color regular-color
 
   &__button-fade-text
-    button-style()
+    button()
     color fade-out(0.5)
 
   &__text-button-container
@@ -139,7 +146,7 @@
     height 44px
 
   &__button-with-icon
-    button-style('regular', true)
+    button('regular', true)
 
   &__pagination
     margin-left 1px

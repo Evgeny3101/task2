@@ -1,10 +1,11 @@
 mixin dropdown({ type, placeholder, value, name }= false)
-  +b.dropdown
-    +b.INPUT.text-field(
+  +b.dropdown&attributes(attributes)
+    +e.INPUT.text-field(
       type=type,
       placeholder=placeholder,
       name=name,
-      value=value
-    )&attributes(attributes)
+      value=value,
+      readonly="readonly"
+    )
 
     +e.I.icon.material-icons keyboard_arrow_down

@@ -14,15 +14,18 @@
   &__title
     title-style('large')
 
-  &__text-field
+  &__text-field-wrapper
     margin-top 10px
+
+  &__text-field
+    text-field()
 
   &__login-button-wrapper
     height 44px
     margin-top 20px
 
   &__login-button
-    button-style('regular', true)
+    button('regular', true)
 
   &__create-account-wrapper
     margin-top 30px
@@ -39,7 +42,7 @@
     width 99px
 
   &__button-create
-    button-style('transparent')
+    button('transparent')
 
   @media  (max-width phoneWidth)
     width 100%

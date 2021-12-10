@@ -24,8 +24,11 @@
   &__title-main
     title-style('large')
 
-  &__text-field
+  &__text-field-wrapper
     padding-bottom 10px
+
+  &__text-field
+    text-field()
 
   &__radio-buttons-container
     display flex
@@ -53,7 +56,7 @@
     margin-bottom 30px
 
   &__button-payment
-    button-style('regular', true)
+    button('regular', true)
 
   &__footer
     container()
@@ -68,7 +71,7 @@
     width 99px
   
   &__button-sign-in
-    button-style('transparent')
+    button('transparent')
     
   @media (max-width phoneWidth)
     max-width none

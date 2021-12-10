@@ -57,12 +57,12 @@ class MenuCount {
   // для выпадающего меню
   closeMenu() {
     this.menuDOM.classList.remove('menu-count__dropdown_active');
-    this.textFieldDOM.classList.remove('text-field_dropdown-active');
+    this.textFieldDOM.classList.remove('menu-count__text_active');
   }
 
   switchMenu() {
     this.menuDOM.classList.toggle('menu-count__dropdown_active');
-    this.textFieldDOM.classList.toggle('text-field_dropdown-active');
+    this.textFieldDOM.classList.toggle('menu-count__text_active');
   }
 
   // установка
