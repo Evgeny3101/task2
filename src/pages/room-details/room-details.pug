@@ -10,7 +10,7 @@ block head
   +head({ 'title': 'Toxin - Room Details' })
 
 block content
-  - const commentsConfigArr = require('./comments.json');
+  - const config = require('./room-details.json');
 
   +b.MAIN.room-details
     +e.wrapper
@@ -49,7 +49,7 @@ block content
                 +e.SPAN.comments-number 2 отзыва
 
               +e.UL.user-comment-wrapper
-                each itemConfig in commentsConfigArr
+                each itemConfig in config.comments
                   +e.user-comment-container
                     +user-comment(itemConfig)
 

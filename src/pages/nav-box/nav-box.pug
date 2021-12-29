@@ -1,22 +1,10 @@
 include ../../assets/pug/bemto/lib/index
 
+- const config = require('./nav-box.json');
+
 +b.nav-box
   +e.wrapper
     +e.UL.container
-      +e.LI.item
-        +e.A.link(href="ui-kit.html") ui-kit
-
-      +e.LI.item
-        +e.A.link(href="index.html") index
-
-      +e.LI.item
-        +e.A.link(href="search-room.html") search-room
-
-      +e.LI.item
-        +e.A.link(href="room-details.html") room-details
-
-      +e.LI.item
-        +e.A.link(href="sign-in.html") sign-in
-
-      +e.LI.item
-        +e.A.link(href="sign-up.html") sign-up
+      each item in config.links
+        +e.LI.item
+          +e.A.link(href=`${item}.html`)= item
