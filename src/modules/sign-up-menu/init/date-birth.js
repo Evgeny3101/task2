@@ -2,7 +2,7 @@
 import 'inputmask/dist/jquery.inputmask.min';
 
 // js
-$('.js-date-birth-text-field').inputmask({
+$('.js-sign-up-menu__text-field').inputmask({
   placeholder: 'ДД.ММ.ГГГГ',
   alias: 'datetime',
   inputFormat: 'dd.mm.yyyy',
